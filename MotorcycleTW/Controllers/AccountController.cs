@@ -423,6 +423,12 @@ namespace MotorcycleTW.Controllers
             base.Dispose(disposing);
         }
 
+        [AllowAnonymous]
+        public ActionResult MemberInfomation()
+        {
+            return View();
+        }
+
         #region Helper
         // 新增外部登入時用來當做 XSRF 保護
         private const string XsrfKey = "XsrfId";
