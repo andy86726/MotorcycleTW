@@ -215,6 +215,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\1.jpg" />
+    <Content Include="Assets\images\2.jpg" />
+    <Content Include="Assets\images\3.jpg" />
+    <Content Include="Assets\images\4.jpg" />
+    <Content Include="Assets\images\5.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\2.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\3.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\4.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\6.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\l1.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\r1.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
+    <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -275,6 +288,8 @@
     <Content Include="Views\CRUD\Details.cshtml" />
     <Content Include="Views\CRUD\Edit.cshtml" />
     <Content Include="Views\CRUD\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
+    <Content Include="Views\Home\bbc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
