@@ -3,87 +3,7 @@
 @{
     ViewBag.Title = "登入";
 }
-@section topCSS{
-    <style>
-        body {
-            background: #ECF0F1;
-        }
-
-        .center {
-            width: 500px;
-            margin: 0;
-            margin: auto;
-            margin-top: 40px;
-        }
-
-            .center h2 {
-                margin: auto;
-                font-size: 44px;
-                font-weight: lighter;
-            }
-
-            .center .inner {
-                margin: auto;
-                padding: 50px;
-                background: #fff;
-                margin-top: 10px;
-                font-size: 18px;
-            }
-
-                .center .inner a {
-                    color: #000;
-                    font-size: 20px;
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: center;
-                    width: 236px;
-                    padding: 18px 24px;
-                    margin: auto;
-                    border: 1px solid #f1f3f3;
-                    background: #f1f3f3;
-                    border-radius: 32px;
-                }
-
-                    .center .inner a:hover {
-                        color: #fff;
-                        border: 1px solid #B9BCBF;
-                        background: #B9BCBF;
-                    }
-
-        .text-center input {
-            font-size: 18px;
-            margin-top: 30px;
-            width: 90px;
-            height: 60px;
-            border-radius: 30px;
-            font-weight: bold;
-        }
-
-            .text-center input:hover {
-                background: #00FFCC;
-                border: 1px solid #00FFCC;
-            }
-
-
-        .left {
-            color: #C1C1C3;
-            font-size: 22px;
-            padding: 0;
-        }
-
-        .right {
-            float: right;
-            color: #C1C1C3;
-            font-size: 22px;
-            padding: 0;
-        }
-
-        a:hover {
-            text-decoration: none;
-            color: #444;
-        }
-    </style>
-}
+<link href="~/Asset/css/Login.css" rel="stylesheet" />
 <div class="center">
     <h2 class="text-center">@ViewBag.Title</h2>
     <div class="inner">
@@ -104,7 +24,7 @@
                 <div class="input">
                     @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                     <div class="">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @style = "width:400px" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
