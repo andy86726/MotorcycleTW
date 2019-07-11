@@ -28,7 +28,7 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult bbc()
         {
-            var a= 123;
+            var a= 1234;
             return View();
         }
     }
