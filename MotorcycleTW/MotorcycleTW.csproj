@@ -226,6 +226,7 @@
     <Content Include="Assets\images\HomeCarsouel\pictures\6.jpg" />
     <Content Include="Assets\images\HomeCarsouel\pictures\l1.jpg" />
     <Content Include="Assets\images\HomeCarsouel\pictures\r1.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\video\change_battery.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
     <Content Include="Content\bootstrap-theme.css" />
