@@ -212,8 +212,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
+    <Content Include="Assets\images\1.jpg" />
+    <Content Include="Assets\images\2.jpg" />
+    <Content Include="Assets\images\3.jpg" />
+    <Content Include="Assets\images\4.jpg" />
+    <Content Include="Assets\images\5.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\2.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\3.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\4.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\6.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\l1.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\pictures\r1.jpg" />
+    <Content Include="Assets\images\HomeCarsouel\video\change_battery.mp4" />
+    <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
+    <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -235,9 +248,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
