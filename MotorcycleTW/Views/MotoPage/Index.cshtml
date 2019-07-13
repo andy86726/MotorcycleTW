@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section topCSS{
+    <style>
+        .series-list-container {
+            height: 200px;
+            /*background-color: #323237;*/
+            background-color: #888;
+        }
+
+            .series-list-container ul {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                background-color: #888;
+            }
+
+            .series-list-container li {
+                list-style: none;
+                padding: 0 50px;
+                
+            }
+
+                .series-list-container li a {
+                    color: #444;
+                }
+
+                    .series-list-container li a:hover {
+                        text-decoration: none;
+                    }
+                    svg{
+                        display:block;
+                        position:relative;
+                        line-height:100px;
+                    }
+
+    </style>
+}
+
+<div class="series-list-container">
+    <ul class="warp">
+        <li>S</li>
+        <li>3</li>
+        <li>2</li>
+        <li>1</li>
+    </ul>
+</div>
+
