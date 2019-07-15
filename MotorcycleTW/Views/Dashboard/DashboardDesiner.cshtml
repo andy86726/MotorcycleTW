@@ -3,5 +3,99 @@
     Layout = "~/Views/Shared/_Dashboard.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
 
+
+
+<div class="container">
+    <div class="jumbotron alert-success">
+        <h2>以Line Chart折線圖繪製各地月均溫</h2>
+    </div>
+    <canvas id="lineChart"></canvas>
+</div>
+
+
+@section endJS{
+    <script>
+        var ctx = document.getElementById("lineChart");
+        var chart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                datasets: [{
+                    label: "台北",
+                    data: [16.1, 16.5, 18.5, 21.9, 25.2, 27.7, 29.6, 29.2, 27.4, 24.5, 21.5, 17.9],
+                    fill: false,
+                    backgroundColor: 'rgba(255,165,0,0.3)',
+                    borderColor: 'rgb(255,165,0)',
+                    pointStyle: "circle",
+                    pointBackgroundColor: 'rgb(0,255,0)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10
+                }, {
+                    label: "台中",
+                    data: [16.6, 17.3, 19.6, 23.1, 26.0, 27.6, 28.6, 28.3, 27.4, 25.2, 21.9, 18.1],
+                    fill: false,
+                    backgroundColor: 'rgba(0,255,255,0.3)',
+                    borderColor: 'rgb(0,255,255)',
+                    pointStyle: "triangle",
+                    pointBackgroundColor: 'rgb(0,0,0)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10
+                }, {
+                    label: "高雄",
+                    data: [19.3, 20.3, 22.6, 25.4, 27.5, 28.5, 29.2, 28.7, 28.1, 26.7, 24.0, 20.6],
+                    fill: false,
+                    backgroundColor: 'rgba(153,50,204,0.3)',
+                    borderColor: 'rgb(153,50,204)',
+                    pointStyle: "rect",
+                    pointBackgroundColor: 'rgb(220,20,60)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    fontSize: 26,
+                    text: '1981-2010年氣溫月平均值'
+                },
+                tooltips: {
+                    mode: 'point',
+                    intersect: true,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: '月份',
+                            fontSize: 20
+                        },
+                        ticks: {
+                            fontSize: 15
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: '溫度(攝氏)',
+                            fontSize: 20
+                        },
+                        ticks: {
+                            fontSize: 15
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 3000
+                }
+            }
+        });
+    </script>
+}

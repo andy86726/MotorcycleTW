@@ -11,7 +11,7 @@ namespace MotorcycleTW.Controllers.Dashboard
         // GET: Dashboard
         public ActionResult DashboardDesiner()
         {
-            return View("DashboardDesiner");
+            return View();
         }
     }
 }
