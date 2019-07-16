@@ -13,5 +13,10 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
+
+        public ActionResult S1()
+        {
+            return View();
+        }
     }
 }
