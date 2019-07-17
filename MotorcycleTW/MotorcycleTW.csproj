@@ -198,7 +198,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\MemberInfoamtion.cs" />
     <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Order_Detail.cs" />
@@ -213,6 +212,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
     <Content Include="Assets\images\1.jpg" />
     <Content Include="Assets\images\2.jpg" />
