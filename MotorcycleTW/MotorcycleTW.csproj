@@ -230,9 +230,6 @@
     <Content Include="Assets\images\HomeCarsouel\video\change_battery.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
-    <Content Include="Assets\images\Motopage\S1.png" />
-    <Content Include="Assets\images\Motopage\S2 Adventure.png" />
-    <Content Include="Assets\images\Motopage\S2.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -299,6 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\images\Motopage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
