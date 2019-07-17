@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MotorcycleTW.Models
@@ -79,6 +80,26 @@ namespace MotorcycleTW.Models
         [Display(Name = "確認密碼")]
         [Compare("Password", ErrorMessage = "密碼和確認密碼不相符。")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "電話號碼")]
+        public int Phone { get; set; }
+
+        [Required]
+        [Display(Name ="地址")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name ="生日")]
+        public DateTime Birthday { get; set; }
+
+        [Required]
+        [DataType(DataType.Custom)]
+        [Display(Name ="身分證字號")]
+        [StringLength(10, ErrorMessage = "身分證格式錯誤。", MinimumLength = 10)]
+        public string Identitiy_number { get; set; }
+        public string Identitiy { get; set; }
     }
 
     public class ResetPasswordViewModel

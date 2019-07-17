@@ -10,6 +10,7 @@
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
+                @Html.AntiForgeryToken()
                 <div class="text-center">
                     <a href="#" class="btn btn-solid-light-gray btn-facebook-login">
                         <div class="layout-row">
