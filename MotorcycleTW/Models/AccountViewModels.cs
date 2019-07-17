@@ -99,6 +99,7 @@ namespace MotorcycleTW.Models
         [Display(Name ="身分證字號")]
         [StringLength(10, ErrorMessage = "身分證格式錯誤。", MinimumLength = 10)]
         public string Identitiy_number { get; set; }
+        public string Identitiy { get; set; }
     }
 
     public class ResetPasswordViewModel
