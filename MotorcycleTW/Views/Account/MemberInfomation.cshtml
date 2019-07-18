@@ -75,9 +75,10 @@
             display: inline-block;
         }
 
-        form-group {
-            display: flex;
-        }
+
+            .form-group .radio input {
+                margin:0px;
+            }
     </style>
 }
 <div class="header text-center">
@@ -123,7 +124,7 @@
                 <div class="row">
                     <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-6">
                         <div class="radio">
-                            <input type="radio" name="Gender" ng-change="checkIdNum(user.IDCard)" ng-model="user.Gender" id="GenderMan" value="1" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+                            <input type="radio" name="Gender"  id="GenderMan" value="1" class="ng-valid ng-dirty ng-valid-parse ng-touched">
                             <label for="GenderMan">男</label>
                         </div>
                     </div>
