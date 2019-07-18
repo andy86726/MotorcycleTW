@@ -100,6 +100,17 @@ namespace MotorcycleTW.Models
         [StringLength(10, ErrorMessage = "身分證格式錯誤。", MinimumLength = 10)]
         public string Identitiy_number { get; set; }
         public string Identitiy { get; set; }
+
+        [Required]
+        [Display(Name = "姓氏")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "名字")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "暱稱")]
+        public string NickName { get; set; }
     }
 
     public class ResetPasswordViewModel
