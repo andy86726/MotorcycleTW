@@ -21,12 +21,12 @@ namespace MotorcycleTW.Migrations
             //  to avoid creating duplicate seed data.
             context.Categories.AddOrUpdate(
                 p => p.c_id,
-                new Category { c_id = 1, c_name = "Battery" },
-                new Category { c_id = 2, c_name = "Electric_motor_car" },
-                new Category { c_id = 3, c_name = "Helment" },
-                new Category { c_id = 4, c_name = "Mat" },
-                new Category { c_id = 5, c_name = "Rear_Carrier" },
-                new Category { c_id = 6, c_name = "Fender" }
+                new Categories { c_id = 1, c_name = "Battery" },
+                new Categories { c_id = 2, c_name = "Electric_motor_car" },
+                new Categories { c_id = 3, c_name = "Helment" },
+                new Categories { c_id = 4, c_name = "Mat" },
+                new Categories { c_id = 5, c_name = "Rear_Carrier" },
+                new Categories { c_id = 6, c_name = "Fender" }
                 );
         }
     }
