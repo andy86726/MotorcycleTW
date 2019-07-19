@@ -6,18 +6,16 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Shopping_Cart
+    public partial class Classifie
     {
         [Key]
-        public int cart_id { get; set; }
+        public int cl_id { get; set; }
 
-        public int m_id { get; set; }
+        public string cl_specs { get; set; }
+
+        public string cl_content { get; set; }
 
         public int p_id { get; set; }
-
-        public int cart_quantity { get; set; }
-
-        public virtual Member Members { get; set; }
 
         public virtual Product Products { get; set; }
     }
