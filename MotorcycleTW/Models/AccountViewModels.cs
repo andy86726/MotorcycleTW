@@ -87,10 +87,6 @@ namespace MotorcycleTW.Models
         public int Phone { get; set; }
 
         [Required]
-        [Display(Name ="地址")]
-        public string Address { get; set; }
-
-        [Required]
         [Display(Name ="生日")]
         public DateTime Birthday { get; set; }
 
@@ -111,6 +107,18 @@ namespace MotorcycleTW.Models
 
         [Display(Name = "暱稱")]
         public string NickName { get; set; }
+
+        [Required]
+        [Display(Name = "縣市")]
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "地區")]
+        public string Village { get; set; }
+
+        [Required]
+        [Display(Name = "地址")]
+        public string Address { get; set; }
     }
 
     public class ResetPasswordViewModel
