@@ -211,7 +211,6 @@
     <Compile Include="Models\Battery_store.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Classifie.cs" />
-    <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="Models\Delivery_way.cs" />
     <Compile Include="Models\Discount.cs" />
     <Compile Include="Models\IdentityModel.cs" />
@@ -248,6 +247,16 @@
     <Content Include="Assets\images\HomeCarsouel\video\change_battery.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
+    <Content Include="Assets\images\Product\20180826_fcam_medium.jpg" />
+    <Content Include="Assets\images\Product\20180927_phonestand_medium.jpg" />
+    <Content Include="Assets\images\Product\20190128_gasnozzle_v2_basic_medium.jpg" />
+    <Content Include="Assets\images\Product\caterpillar_vintage_seat_medium.jpg" />
+    <Content Include="Assets\images\Product\driving_recorder_01_medium.jpg" />
+    <Content Include="Assets\images\Product\escrambler_front_protection_medium.jpg" />
+    <Content Include="Assets\images\Product\escrambler_front_rack_medium.jpg" />
+    <Content Include="Assets\images\Product\g1_extended_rear_grip_blackchrome_medium.jpg" />
+    <Content Include="Assets\images\Product\g1_pebble_windshield_black_medium.jpg" />
+    <Content Include="Assets\images\Product\turbine_frame_slider_medium.jpg" />
     <Content Include="Assets\js\Myscript.js" />
     <Content Include="Assets\js\site4.js" />
     <Content Include="Content\bootstrap-theme.css" />
