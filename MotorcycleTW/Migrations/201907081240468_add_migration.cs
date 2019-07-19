@@ -56,21 +56,7 @@ namespace MotorcycleTW.Migrations
                 .PrimaryKey(t => t.p_id)
                 .ForeignKey("dbo.Categories", t => t.c_id, cascadeDelete: true)
                 .Index(t => t.c_id);
-            
-            CreateTable(
-                "dbo.Product_Detail",
-                c => new
-                    {
-                        pd_id = c.Int(nullable: false, identity: true),
-                        pd_color = c.String(),
-                        pd_stock = c.Int(nullable: false),
-                        pd_onorder = c.Int(nullable: false),
-                        p_id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.pd_id)
-                .ForeignKey("dbo.Products", t => t.p_id, cascadeDelete: true)
-                .Index(t => t.p_id);
-            
+
             CreateTable(
                 "dbo.Classifies",
                 c => new
