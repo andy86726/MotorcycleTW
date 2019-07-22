@@ -12,7 +12,6 @@ namespace MotorcycleTW.Models
         {
         }
 
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Battery_store> Battery_store { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Classifie> Classifies { get; set; }
