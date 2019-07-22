@@ -6,10 +6,10 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Order
+    public partial class Orders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Orders()
         {
             Order_Detail = new HashSet<Order_Detail>();
         }
@@ -41,13 +41,13 @@ namespace MotorcycleTW.Models
 
         public virtual Delivery_way Delivery_way { get; set; }
 
-        public virtual Member Members { get; set; }
+        public virtual Members Members { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Detail> Order_Detail { get; set; }
 
-        public virtual Payment Payments { get; set; }
+        public virtual Payments Payments { get; set; }
 
-        public virtual Store Stores { get; set; }
+        public virtual Stores Stores { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace MotorcycleTW.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Categories()
         {
-            Discounts = new HashSet<Discount>();
+            Discounts = new HashSet<Discounts>();
         }
 
         [Key]
@@ -20,6 +20,6 @@ namespace MotorcycleTW.Models
         public string c_name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Discount> Discounts { get; set; }
+        public virtual ICollection<Discounts> Discounts { get; set; }
     }
 }

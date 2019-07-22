@@ -202,29 +202,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907081240468_add_migration.cs" />
-    <Compile Include="Migrations\201907081240468_add_migration.Designer.cs">
-      <DependentUpon>201907081240468_add_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201907200901171_one.cs" />
+    <Compile Include="Migrations\201907200901171_one.Designer.cs">
+      <DependentUpon>201907200901171_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Battery_store.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Classifie.cs" />
+    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Classifies.cs" />
     <Compile Include="Models\Delivery_way.cs" />
-    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\Discounts.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\MotorcycleContext.cs" />
-    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Members.cs" />
+    <Compile Include="Models\MrtorcycleContext.cs" />
+    <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Order_Detail.cs" />
-    <Compile Include="Models\Payment.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Payments.cs" />
+    <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Product_Feature.cs" />
     <Compile Include="Models\Product_Picture.cs" />
     <Compile Include="Models\Shopping_Cart.cs" />
-    <Compile Include="Models\Store.cs" />
+    <Compile Include="Models\Stores.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -269,6 +269,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\Json\TaiwanAddress.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -340,8 +341,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907081240468_add_migration.resx">
-      <DependentUpon>201907081240468_add_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907200901171_one.resx">
+      <DependentUpon>201907200901171_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,7 +11,7 @@ namespace MotorcycleTW.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Delivery_way()
         {
-            Orders = new HashSet<Order>();
+            Orders = new HashSet<Orders>();
         }
 
         [Key]
@@ -20,6 +20,6 @@ namespace MotorcycleTW.Models
         public int dw_way { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

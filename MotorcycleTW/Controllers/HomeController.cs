@@ -29,9 +29,8 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult bbc()
         {
-            var db = new MotorcycleContext();
+            var db = new MrtorcycleContext();
             var b=db.Products.FirstOrDefault();
-            var a= 123;
             return View(b);
         }
     }

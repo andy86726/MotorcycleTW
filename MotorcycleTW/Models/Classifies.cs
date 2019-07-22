@@ -6,7 +6,7 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Classifie
+    public partial class Classifies
     {
         [Key]
         public int cl_id { get; set; }
@@ -17,6 +17,6 @@ namespace MotorcycleTW.Models
 
         public int p_id { get; set; }
 
-        public virtual Product Products { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

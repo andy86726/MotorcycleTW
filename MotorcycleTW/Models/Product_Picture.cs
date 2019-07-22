@@ -17,6 +17,6 @@ namespace MotorcycleTW.Models
 
         public int p_id { get; set; }
 
-        public virtual Product Products { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

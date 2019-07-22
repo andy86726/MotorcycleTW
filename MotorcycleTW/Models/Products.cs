@@ -6,12 +6,12 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Product
+    public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Products()
         {
-            Classifies = new HashSet<Classifie>();
+            Classifies = new HashSet<Classifies>();
             Product_Feature = new HashSet<Product_Feature>();
             Product_Picture = new HashSet<Product_Picture>();
         }
@@ -21,23 +21,23 @@ namespace MotorcycleTW.Models
 
         public string p_name { get; set; }
 
-        public decimal p_unitprice { get; set; }
+        public decimal? p_unitprice { get; set; }
 
-        public int c_id { get; set; }
+        public int? c_id { get; set; }
 
         public string p_status { get; set; }
 
         public string p_photo { get; set; }
 
-        public int p_stock { get; set; }
+        public int? p_stock { get; set; }
 
         [StringLength(50)]
         public string p_color { get; set; }
 
-        public int p_onorder { get; set; }
+        public int? p_onorder { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Classifie> Classifies { get; set; }
+        public virtual ICollection<Classifies> Classifies { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Feature> Product_Feature { get; set; }
