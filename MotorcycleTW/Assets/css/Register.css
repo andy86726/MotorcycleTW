@@ -50,12 +50,15 @@
     height: 60px;
     border-radius: 30px;
     font-weight: bold;
+    background: #323237;
+    color: #fff;
 }
 
-    .l input:hover {
-        background: #00FFCC;
-        border: 1px solid #00FFCC;
-    }
+.text-center input:hover {
+    background: #fff;
+    border: 2px solid #323237;
+}
+
 
 
 
@@ -75,4 +78,8 @@
 a:hover {
     text-decoration: none;
     color: #444;
+}
+
+.input {
+    margin:40px 0;
 }

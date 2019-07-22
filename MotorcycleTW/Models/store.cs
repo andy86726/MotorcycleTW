@@ -1,22 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
 namespace MotorcycleTW.Models
 {
-    public class Store
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Store
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Store()
+        {
+            Orders = new HashSet<Order>();
+        }
+
         [Key]
         public int s_id { get; set; }
-        [Display(Name ="店名")]
+
         public string s_name { get; set; }
-        [Display(Name ="區域")]
+
         public string s_block { get; set; }
-        [Display(Name ="地址")]
+
         public string s_address { get; set; }
 
-        public virtual ICollection<Order> Order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

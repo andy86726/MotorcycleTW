@@ -1,5 +1,5 @@
 ﻿@using MotorcycleTW.Models
-@model LoginViewModel
+@model RegisterViewModel
 @{
     ViewBag.Title = "會員資料";
 }
@@ -70,23 +70,259 @@
         .Edit {
             margin: 0 200px;
         }
+
+        #profile-edit .select-block {
+            display: inline-block;
+        }
+
+
+            .form-group .radio input {
+                margin:0px;
+            }
     </style>
 }
 <div class="header text-center">
     <div class="figure">
         <div class="inner">
             <div class="picture">
-                <a ng-click="toggleModal();$event.preventDefault()" href="#" class="photo-edit-link"><img class="" src="//images.gogoroapp.com/my-gogoro/photo-edit-camera.png" alt="編輯我的照片"></a>
+                <a href="#" class="photo-edit-link"><img class="" src="//images.gogoroapp.com/my-gogoro/photo-edit-camera.png" alt="編輯我的照片"></a>
             </div>
         </div>
     </div>
 </div>
 <div class="row Edit">
     <div class="col-xs-7">
-        <h3 class="first">會員資料</h3>
         <div class="row">
-            <div class="col-lg-6">姓氏</div>
-            <div class="col-lg-6">名字</div>
+            <h3 class="first">會員資料</h3>
+            
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group first-column col-lg-6">
+                <label for="LastName"><strong>姓氏</strong></label>
+                <input type="text" value="" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
+
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="FirstName"><strong>名字</strong></label>
+                <input type="text" value="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength" id="FirstName" ng-model="user.FirstName" name="FirstName" maxlength="20" required="" special-char-validator="" placeholder="請輸入你的名字">
+
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label for="NickName"><strong>顯示名稱</strong> <span class="optional">（將會在 Gogoro® App中的個人檔案及在 GoStation® 交換電池時顯示）</span></label>
+                <input type="text" class="form-control ng-valid-maxlength ng-dirty ng-valid-parse ng-valid ng-valid-special-char ng-touched" id="NickName" name="NickName" ng-model="user.NickName" maxlength="12" special-char-validator="" placeholder="請輸入顯示名稱">
+
+            </div>
+
+            <div class="form-group col-lg-12">
+                <strong>身份</strong>
+                <div class="row">
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                        <div class="radio">
+                            <input type="radio" name="Gender"  id="GenderMan" value="1" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+                            <label for="GenderMan">男</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                        <div class="radio">
+                            <input type="radio" name="Gender" ng-change="checkIdNum(user.IDCard)" ng-model="user.Gender" id="GenderWomen" value="2" class="ng-pristine ng-untouched ng-valid">
+                            <label for="GenderWomen">女</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                        <div class="radio">
+                            <input type="radio" name="Gender" ng-change="checkIdNum(user.IDCard)" ng-model="user.Gender" id="GenderCompany" value="3" class="ng-valid ng-dirty ng-touched">
+                            <label for="GenderCompany">法人</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--身分證字號 -->
+            <div class="form-group first-column col-lg-6">
+                <label for="Mobile"><strong>身分證字號 / 統一編號</strong></label>
+                <div class="">
+                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <!--Date of birth -->
+            <div class="form-group first-column col-lg-12">
+                <div class="form-group select-block">
+                    <label class="block" for=""><strong>生日</strong></label>
+
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select ng-model="temp.BirthYear" ng-options="year.name as year.name for year in BirthYears" class="ng-pristine ng-untouched ng-valid"><option value="" class="">請選擇</option><option value="0" label="1918">1918</option><option value="1" label="1919">1919</option><option value="2" label="1920">1920</option><option value="3" label="1921">1921</option><option value="4" label="1922">1922</option><option value="5" label="1923">1923</option><option value="6" label="1924">1924</option><option value="7" label="1925">1925</option><option value="8" label="1926">1926</option><option value="9" label="1927">1927</option><option value="10" label="1928">1928</option><option value="11" label="1929">1929</option><option value="12" label="1930">1930</option><option value="13" label="1931">1931</option><option value="14" label="1932">1932</option><option value="15" label="1933">1933</option><option value="16" label="1934">1934</option><option value="17" label="1935">1935</option><option value="18" label="1936">1936</option><option value="19" label="1937">1937</option><option value="20" label="1938">1938</option><option value="21" label="1939">1939</option><option value="22" label="1940">1940</option><option value="23" label="1941">1941</option><option value="24" label="1942">1942</option><option value="25" label="1943">1943</option><option value="26" label="1944">1944</option><option value="27" label="1945">1945</option><option value="28" label="1946">1946</option><option value="29" label="1947">1947</option><option value="30" label="1948">1948</option><option value="31" label="1949">1949</option><option value="32" label="1950">1950</option><option value="33" label="1951">1951</option><option value="34" label="1952">1952</option><option value="35" label="1953">1953</option><option value="36" label="1954">1954</option><option value="37" label="1955">1955</option><option value="38" label="1956">1956</option><option value="39" label="1957">1957</option><option value="40" label="1958">1958</option><option value="41" label="1959">1959</option><option value="42" label="1960">1960</option><option value="43" label="1961">1961</option><option value="44" label="1962">1962</option><option value="45" label="1963">1963</option><option value="46" label="1964">1964</option><option value="47" label="1965">1965</option><option value="48" label="1966">1966</option><option value="49" label="1967">1967</option><option value="50" label="1968">1968</option><option value="51" label="1969">1969</option><option value="52" label="1970">1970</option><option value="53" label="1971">1971</option><option value="54" label="1972">1972</option><option value="55" label="1973">1973</option><option value="56" label="1974">1974</option><option value="57" label="1975">1975</option><option value="58" label="1976">1976</option><option value="59" label="1977">1977</option><option value="60" label="1978">1978</option><option value="61" label="1979">1979</option><option value="62" label="1980">1980</option><option value="63" label="1981">1981</option><option value="64" label="1982">1982</option><option value="65" label="1983">1983</option><option value="66" label="1984">1984</option><option value="67" label="1985">1985</option><option value="68" label="1986">1986</option><option value="69" label="1987">1987</option><option value="70" label="1988">1988</option><option value="71" label="1989">1989</option><option value="72" label="1990">1990</option><option value="73" label="1991">1991</option><option value="74" label="1992">1992</option><option value="75" label="1993">1993</option><option value="76" label="1994">1994</option><option value="77" label="1995">1995</option><option value="78" label="1996">1996</option><option value="79" selected="selected" label="1997">1997</option><option value="80" label="1998">1998</option><option value="81" label="1999">1999</option><option value="82" label="2000">2000</option><option value="83" label="2001">2001</option><option value="84" label="2002">2002</option><option value="85" label="2003">2003</option><option value="86" label="2004">2004</option><option value="87" label="2005">2005</option><option value="88" label="2006">2006</option><option value="89" label="2007">2007</option><option value="90" label="2008">2008</option><option value="91" label="2009">2009</option><option value="92" label="2010">2010</option><option value="93" label="2011">2011</option><option value="94" label="2012">2012</option><option value="95" label="2013">2013</option><option value="96" label="2014">2014</option><option value="97" label="2015">2015</option><option value="98" label="2016">2016</option><option value="99" label="2017">2017</option><option value="100" label="2018">2018</option><option value="101" label="2019">2019</option></select>
+                    </span>
+                    <div class="error-container ng-hide" ng-show="submitted">
+                        <span class="help-block ng-hide" ng-show="frm.BirthYear.$error.required">
+                            你的顯示名稱為必塡欄位
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group select-block">
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select ng-model="temp.BirthMonth" ng-options="month.name as month.name for month in BirthMonths" class="ng-pristine ng-untouched ng-valid"><option value="" class="">請選擇</option><option value="0" selected="selected" label="1">1</option><option value="1" label="2">2</option><option value="2" label="3">3</option><option value="3" label="4">4</option><option value="4" label="5">5</option><option value="5" label="6">6</option><option value="6" label="7">7</option><option value="7" label="8">8</option><option value="8" label="9">9</option><option value="9" label="10">10</option><option value="10" label="11">11</option><option value="11" label="12">12</option></select>
+                    </span>
+                </div>
+                <div class="form-group select-block">
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select ng-model="temp.BirthDay" ng-options="day.name as day.name for day in BirthDays" class="ng-pristine ng-untouched ng-valid"><option value="" class="">請選擇</option><option value="0" label="1">1</option><option value="1" label="2">2</option><option value="2" label="3">3</option><option value="3" label="4">4</option><option value="4" label="5">5</option><option value="5" label="6">6</option><option value="6" label="7">7</option><option value="7" label="8">8</option><option value="8" label="9">9</option><option value="9" label="10">10</option><option value="10" label="11">11</option><option value="11" label="12">12</option><option value="12" label="13">13</option><option value="13" label="14">14</option><option value="14" label="15">15</option><option value="15" label="16">16</option><option value="16" label="17">17</option><option value="17" label="18">18</option><option value="18" label="19">19</option><option value="19" label="20">20</option><option value="20" label="21">21</option><option value="21" label="22">22</option><option value="22" label="23">23</option><option value="23" label="24">24</option><option value="24" label="25">25</option><option value="25" label="26">26</option><option value="26" label="27">27</option><option value="27" label="28">28</option><option value="28" selected="selected" label="29">29</option><option value="29" label="30">30</option><option value="30" label="31">31</option></select>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="form-group first-column col-lg-6">
+                <label for="Mobile"><strong>手機號碼</strong></label>
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼">
+                <div class="error-container ng-hide" ng-show="submitted">
+
+                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.minlength">
+                        手機號碼必需為十個數字
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.maxlength">
+                        手機號碼必需為十個數字
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.pattern">
+                        手機號碼的格式不正確
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label for="HomePhone"><strong>住家號碼</strong></label>
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼">
+            </div>
+
+            <!-- Home address -->
+            <div class="form-group col-lg-12">
+                <div class="form-group select-block">
+                    <label class="block" for=""><strong>聯絡地址</strong></label>
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select ng-options="country.id as country.name for country in countries" ng-required="user.Address" name="SelectCountry" ng-model="temp.Country" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="台灣">台灣</option></select>
+                    </span>
+                </div>
+
+                <div class="form-group select-block">
+                    <label class="block" for=""><strong></strong></label>
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select id="city" ng-required="user.Address" name="SelectCity" ng-change="cityOnSelected(temp.City)" ng-options="city.Id as city.ChineseName for city in cities" ng-model="temp.City" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="基隆市">基隆市</option><option value="1" label="臺北市">臺北市</option><option value="2" selected="selected" label="新北市">新北市</option><option value="3" label="桃園市">桃園市</option><option value="4" label="新竹市">新竹市</option><option value="5" label="新竹縣">新竹縣</option><option value="6" label="苗栗縣">苗栗縣</option><option value="7" label="臺中市">臺中市</option><option value="8" label="彰化縣">彰化縣</option><option value="9" label="南投縣">南投縣</option><option value="10" label="雲林縣">雲林縣</option><option value="11" label="嘉義市">嘉義市</option><option value="12" label="嘉義縣">嘉義縣</option><option value="13" label="臺南市">臺南市</option><option value="14" label="高雄市">高雄市</option><option value="15" label="屏東縣">屏東縣</option><option value="16" label="臺東縣">臺東縣</option><option value="17" label="花蓮縣">花蓮縣</option><option value="18" label="宜蘭縣">宜蘭縣</option><option value="19" label="澎湖縣">澎湖縣</option><option value="20" label="金門縣">金門縣</option><option value="21" label="連江縣">連江縣</option></select>
+                    </span>
+                </div>
+
+                <div class="form-group select-block">
+                    <label class="block" for=""><strong></strong></label>
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select ng-change="districtOnSelected(temp.City,temp.District)" ng-required="user.Address" name="SelectDistrict" ng-options="district.Id as district.ChineseName for district in districts" ng-model="temp.District" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="萬里區">萬里區</option><option value="1" label="金山區">金山區</option><option value="2" label="板橋區">板橋區</option><option value="3" selected="selected" label="汐止區">汐止區</option><option value="4" label="深坑區">深坑區</option><option value="5" label="石碇區">石碇區</option><option value="6" label="瑞芳區">瑞芳區</option><option value="7" label="平溪區">平溪區</option><option value="8" label="雙溪區">雙溪區</option><option value="9" label="貢寮區">貢寮區</option><option value="10" label="新店區">新店區</option><option value="11" label="坪林區">坪林區</option><option value="12" label="烏來區">烏來區</option><option value="13" label="永和區">永和區</option><option value="14" label="中和區">中和區</option><option value="15" label="土城區">土城區</option><option value="16" label="三峽區">三峽區</option><option value="17" label="樹林區">樹林區</option><option value="18" label="鶯歌區">鶯歌區</option><option value="19" label="三重區">三重區</option><option value="20" label="新莊區">新莊區</option><option value="21" label="泰山區">泰山區</option><option value="22" label="林口區">林口區</option><option value="23" label="蘆洲區">蘆洲區</option><option value="24" label="五股區">五股區</option><option value="25" label="八里區">八里區</option><option value="26" label="淡水區">淡水區</option><option value="27" label="三芝區">三芝區</option><option value="28" label="石門區">石門區</option></select>
+                    </span>
+                </div>
+                <div class="form-group select-block">
+                    <label class="block" for="ZipCode"><strong></strong> <span class="optional">(自動産生)</span></label>
+                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="ZipCode" readonly="" ng-model="temp.ZipCode" placeholder="區碼">
+                </div>
+                <div class="form-group select-block">
+                    <label class="block" for=""><strong></strong></label>
+                    <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                        <select name="SelectVillage" ng-options="village.Id as village.ChineseName for village in village" ng-model="temp.Village" class="ng-pristine ng-untouched ng-valid"><option value="" class="">請選擇</option><option value="0" label="八連里">八連里</option><option value="1" label="大同里">大同里</option><option value="2" label="山光里">山光里</option><option value="3" label="中興里">中興里</option><option value="4" label="仁德里">仁德里</option><option value="5" label="文化里">文化里</option><option value="6" label="北山里">北山里</option><option value="7" selected="selected" label="北峰里">北峰里</option><option value="8" label="白雲里">白雲里</option><option value="9" label="江北里">江北里</option><option value="10" label="自強里">自強里</option><option value="11" label="秀山里">秀山里</option><option value="12" label="秀峰里">秀峰里</option><option value="13" label="宜興里">宜興里</option><option value="14" label="忠山里">忠山里</option><option value="15" label="忠孝里">忠孝里</option><option value="16" label="東山里">東山里</option><option value="17" label="東勢里">東勢里</option><option value="18" label="金龍里">金龍里</option><option value="19" label="長安里">長安里</option><option value="20" label="長青里">長青里</option><option value="21" label="信望里">信望里</option><option value="22" label="保安里">保安里</option><option value="23" label="保長里">保長里</option><option value="24" label="保新里">保新里</option><option value="25" label="厚德里">厚德里</option><option value="26" label="城中里">城中里</option><option value="27" label="建成里">建成里</option><option value="28" label="拱北里">拱北里</option><option value="29" label="茄苳里">茄苳里</option><option value="30" label="烘內里">烘內里</option><option value="31" label="崇德里">崇德里</option><option value="32" label="康福里">康福里</option><option value="33" label="復興里">復興里</option><option value="34" label="智慧里">智慧里</option><option value="35" label="湖光里">湖光里</option><option value="36" label="湖蓮里">湖蓮里</option><option value="37" label="湖興里">湖興里</option><option value="38" label="鄉長里">鄉長里</option><option value="39" label="新昌里">新昌里</option><option value="40" label="義民里">義民里</option><option value="41" label="福山里">福山里</option><option value="42" label="福安里">福安里</option><option value="43" label="福德里">福德里</option><option value="44" label="樟樹里">樟樹里</option><option value="45" label="橫科里">橫科里</option><option value="46" label="橋東里">橋東里</option><option value="47" label="興福里">興福里</option><option value="48" label="環河里">環河里</option><option value="49" label="禮門里">禮門里</option></select>
+                    </span>
+                </div>
+                <input type="text" class="form-control" id="Address" name="Address" ng-mode="user.Address" value="明峰街111號12樓" placeholder="請輸入住家地址">
+                <div class="error-container ng-hide" ng-show="submitted">
+                    <span class="help-block ng-hide" ng-show="frm.SelectCountry.$error.required">
+                        請選擇國家
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.SelectCity.$error.required">
+                        請選擇縣市
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.SelectDistrict.$error.required">
+                        請選擇地區
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label class="block" for="Occupation"><strong>職業</strong></label>
+                <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
+                    <select ng-model="temp.Occupation" ng-options="o.id as o.name for o in occupations" class="ng-pristine ng-untouched ng-valid"><option value="" class="">請選擇</option><option value="0" label="學生">學生</option><option value="1" label="上班族">上班族</option><option value="2" label="家管">家管</option><option value="3" label="自由業">自由業</option><option value="4" label="待業中">待業中</option><option value="5" label="自營">自營</option></select>
+                </span>
+            </div>
+
+
+
+
+
+
+            <h3 class="col-lg-12">登入資訊</h3>
+            <div class="form-group col-lg-12">
+                <label for="Email"><strong>電子郵件</strong> <span class="optional">(修改後系統將重新寄發認證信)</span></label>
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" id="Email" name="Email" ng-model="user.Email" required="" placeholder="請塡入的你的電子信箱">
+                <div class="error-container ng-hide" ng-show="submitted">
+                    <span class="help-block ng-hide" ng-show="frm.Email.$error.required">
+                        電子信箱為必塡欄位
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.Email.$error.email">
+                        電子信箱格式不正確
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-12">
+                <label for="NewPassword"><strong>新密碼</strong></label>
+                <input type="password" class="form-control ng-pristine ng-untouched ng-valid ng-valid-minlength ng-valid-maxlength" id="NewPassword" ng-minlength="8" ng-maxlength="20" ng-model="newPassword" name="NewPassword" placeholder="請輸入新密碼">
+                <div class="error-container ng-hide" ng-show="submitted">
+                    <span class="help-block ng-hide" ng-show="frm.NewPassword.$error.minlength">
+                        請輸入最少8以及最多20個數字的密碼
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.NewPassword.$error.maxlength">
+                        請輸入最少8以及最多20個數字的密碼
+                    </span>
+                </div>
+            </div>
+            <div class="form-group col-lg-12">
+                <label for="NewConfimPassword"><strong>確認新密碼</strong></label>
+                <input type="password" class="form-control ng-pristine ng-untouched ng-valid ng-valid-minlength ng-valid-maxlength" id="NewConfimPassword" name="NewConfimPassword" ng-minlength="8" ng-maxlength="20" ng-model="newConfimPassword" placeholder="請輸入確認新密碼">
+                <div class="error-container ng-hide" ng-show="submitted">
+                    <span class="help-block ng-hide" ng-show="frm.NewConfimPassword.$error.minlength">
+                        請輸入最少8以及最多20個數字的密碼
+                    </span>
+                    <span class="help-block ng-hide" ng-show="frm.NewConfimPassword.$error.maxlength">
+                        請輸入最少8以及最多20個數字的密碼
+                    </span>
+                </div>
+            </div>
+
+            <h3 class="col-lg-12">社群平台連結</h3>
+            <div class="form-group col-lg-12">
+
+                <p class="facebook-notice">立即與<span class="graphik-light">Facebook</span>帳號連結，體驗最完整的<span class="graphik-light">Gogoro</span>樂趣。在沒有您的同意下，我們保證不會張貼任何東西到<span class="graphik-light">Facebook</span>個人頁面。</p>
+
+                <a ng-click="facebookLinkConnect(); $event.preventDefault();" ng-show="facebookLink==0" href="#" class="btn btn-solid-light-gray btn-facebook-login">
+                    <div class="layout-table">
+                        <div class="layout-row">
+                            <div class="layout-cell"><img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png" alt=""></div>
+                            <div class="layout-cell vbottom">跟<span class="graphik-semibold">Facebook</span>帳戶連結</div>
+                        </div>
+                    </div><!-- layout-table -->
+                </a>
+                <a ng-click="$event.preventDefault();" ng-show="facebookLink==1" href="#" class="btn btn-solid-light-gray btn-facebook-login ng-hide">
+                    <div class="layout-table">
+                        <div class="layout-row">
+                            <div class="layout-cell"><img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png" alt=""></div>
+                            <div class="layout-cell vbottom"><span class="graphik-semibold ng-binding"></span></div>
+                        </div>
+                    </div><!-- layout-table -->
+                </a>
+                <a ng-show="facebookLink==1" ng-click="facebookUnlinkConnect();$event.preventDefault();" class="btn btn-text-gray ng-hide">取消連結</a>
+            </div>
+
+
         </div>
     </div>
     <div class="col-xs-5">
