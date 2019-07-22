@@ -9,100 +9,112 @@
 @section topCSS{
     <style>
     </style>
- }
-    <div class="center">
-        <h2 class="text-center">@ViewBag.Title</h2>
-        <div class="inner">
-            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="text-center">
-                    <a href="#" class="btn btn-solid-light-gray btn-facebook-login">
-                        <div class="layout-row">
-                            <div class="layout-cell">
-                                <img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png"
-                                     style="margin-right: 10px;" alt="">用 Facebook 註冊
-                            </div>
-                        </div><!-- layout-table -->
-                    </a>
-                    <p style="margin:20px 0;">或</p>
-                </div>
+}
+<div class="center">
+    <h2 class="text-center">@ViewBag.Title</h2>
+    <div class="inner">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="text-center">
+                <a href="#" class="btn btn-solid-light-gray btn-facebook-login">
+                    <div class="layout-row">
+                        <div class="layout-cell">
+                            <img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png"
+                                 style="margin-right: 10px;" alt="">用 Facebook 註冊
+                        </div>
+                    </div><!-- layout-table -->
+                </a>
+                <p style="margin:20px 0;">或</p>
+            </div>
 
 
-                @Html.ValidationSummary("", new { @class = "text-danger" })
-                <div>身分</div>
-                <div class="form-group row" style="display:flex; margin:0;">
-                    <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="1" style="margin:0; margin-right:15px" />男</div>
-                    <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="2" style="margin:0; margin-right:15px" />女</div>
-                    <div class="col-lg-6" style="margin:0; padding:0;"><input type="radio" name="gender" value="3" style="margin:0; margin-right:15px" />法人</div>
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <label class="control-label">身分</label>
+            <div class="form-group row" style="display:flex; margin:0;">
+                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="1" style="margin:0; margin-right:15px" />男</div>
+                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="2" style="margin:0; margin-right:15px" />女</div>
+                <div class="col-lg-6" style="margin:0; padding:0;"><input type="radio" name="gender" value="3" style="margin:0; margin-right:15px" />法人</div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+                <div class="">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "請輸入你的姓氏" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
-                    <div class="">
-                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "請輸入你的姓氏" })
-                    </div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+                <div class="">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "請輸入你的姓氏" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
-                    <div class="">
-                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "請輸入你的姓氏" })
-                    </div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                <div class="">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "請輸入你的電子郵件" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-                    <div class="">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "請輸入你的電子郵件" })
-                    </div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+                <div class="">
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "請輸入你的電話號碼" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
-                    <div class="">
-                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "請輸入你的電話號碼" })
-                    </div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                <div class="">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "請輸入你的密碼(最少6碼)" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-                    <div class="">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "請輸入你的密碼(最少6碼)" })
-                    </div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                <div class="">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "請輸入你的密碼" })
                 </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
-                    <div class="">
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "請輸入你的密碼" })
-                    </div>
+            </div>
+            <label class="control-label">聯絡地址</label>
+            <div class="form-group row" style="display:flex; margin:0;">
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>縣市</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>地區</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><input type="text" style="width:100%; margin:0;" readonly placeholder="區碼" /></div>
+            </div>
+            <div class="form-group row" style="display:flex; margin:0;">
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>村里</option></select></div>
+                <div class="col-lg-8" style="padding:10px 0"><input placeholder="請輸入地址" style="width:100%" /></div>
+            </div>
+            <div class="input">
+                @Html.LabelFor(m => m.Identitiy_number, new { @class = "control-label" })
+                <div class="">
+                    @Html.PasswordFor(m => m.Identitiy, new { @class = "form-control", @placeholder = "請輸入身份證字號" })
                 </div>
-                <div>聯絡地址</div>
-                <div class="form-group row" style="display:flex; margin:0;">
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>縣市</option></select></div>
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>地區</option></select></div>
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><input type="text" style="width:100%; margin:0;" readonly placeholder="區碼" /></div>
-                </div>
-                <div class="form-group row" style="display:flex; margin:0;">
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>村里</option></select></div>
-                    <div class="col-lg-8" style="padding:10px 0"><input placeholder="請輸入地址" style="width:100%" /></div>
-                </div>
-                <div class="input">
-                    @Html.LabelFor(m => m.Identitiy_number, new { @class = "control-label" })
-                    <div class="">
-                        @Html.PasswordFor(m => m.Identitiy, new { @class = "form-control", @placeholder = "請輸入身份證字號" })
-                    </div>
-                </div>
-                <div>生日</div>
-                <div class="form-group row" style="display:flex; margin:0;">
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>年</option></select></div>
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>月</option></select></div>
-                    <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>日</option></select></div>
-                </div>
-                <div class="text-center">
-                    <input type="submit" class="btn" style="" value="註冊" />
-                </div>
-            }
-        </div>
-        <div>
-            @Html.ActionLink("已經有帳號了？", "Login", "Account", new { @class = "left" })
-        </div>
+            </div>
+            <label class="control-label">生日</label>
+            <div class="form-group row" style="display:flex; margin:0;">
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>年</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>月</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>日</option></select></div>
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn" style="" value="註冊" />
+            </div>
+        }
     </div>
+    <div>
+        @Html.ActionLink("已經有帳號了？", "Login", "Account", new { @class = "left" })
+    </div>
+</div>
+@*<a href="~/Assets/Json/TaiwanAddress.json">~/Assets/Json/TaiwanAddress.json</a>*@
+<button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("/Assets/Json/TaiwanAddress.json", function (Result, City) {
+                alert(Result)
+            });
+        });
+    });
+</script>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -18,7 +18,7 @@ namespace MotorcycleTW.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public MotorcycleContext db = new MotorcycleContext();
+        public MrtorcycleContext db = new MrtorcycleContext();
         public AccountController()
         {
         }
@@ -76,7 +76,7 @@ namespace MotorcycleTW.Controllers
 
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
-            Member user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
+            Members user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
             if (user == null)
             {
                 ModelState.AddModelError("", "您的電子郵件或密碼輸入錯誤了");

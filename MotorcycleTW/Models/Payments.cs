@@ -6,24 +6,20 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Store
+    public partial class Payments
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Store()
+        public Payments()
         {
-            Orders = new HashSet<Order>();
+            Orders = new HashSet<Orders>();
         }
 
         [Key]
-        public int s_id { get; set; }
+        public int pay_id { get; set; }
 
-        public string s_name { get; set; }
-
-        public string s_block { get; set; }
-
-        public string s_address { get; set; }
+        public string pay_name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }
