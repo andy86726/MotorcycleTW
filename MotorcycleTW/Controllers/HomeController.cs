@@ -31,5 +31,10 @@ namespace MotorcycleTW.Controllers
             var a= 1243;
             return View();
         }
+
+        public ActionResult StorePage()
+        {
+            return View();
+        }
     }
 }
