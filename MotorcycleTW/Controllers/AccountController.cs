@@ -73,7 +73,17 @@ namespace MotorcycleTW.Controllers
             {
                 return View(model);
             }
-
+            //這段是做Email Confirmed功能，未經Email Confirmed確認，不讓登入
+            // Require the user to have a confirmed email before they can log on.
+            var user = await UserManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                if(!await UserManager.IsEmailConfirmedAsync(user.Id))
+                {
+                    ViewBag.errorMessage = "You must have a confirmed email to log on.";
+                    return View("Error");
+                }
+            }
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
             Members user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();

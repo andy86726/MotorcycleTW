@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -26,8 +27,8 @@ namespace MotorcycleTW
         private async Task configSendGridasync(IdentityMessage message)
         {
             // 將您的電子郵件服務外掛到這裡以傳送電子郵件。
-            var apiKey = "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";
-            //apiKey = ConfigurationManager.AppSettings["SendGrid_BuildSchool2019"];
+
+            var apiKey = ConfigurationManager.AppSettings["SendGrid_BuildSchool2019"];
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("Services@CodeMagic.com", "CodeMagic客服人員");
             var to = new EmailAddress(message.Destination);

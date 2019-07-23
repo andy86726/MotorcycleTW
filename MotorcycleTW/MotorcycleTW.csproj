@@ -323,6 +323,7 @@
     <Content Include="Views\Account\MemberInfomation.cshtml" />
     <Content Include="Views\Shared\_Layout4.cshtml" />
     <Content Include="Views\Home\bbc.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
