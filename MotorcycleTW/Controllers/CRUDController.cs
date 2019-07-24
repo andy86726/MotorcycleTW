@@ -12,7 +12,7 @@ namespace MotorcycleTW.Controllers
 {
     public class CRUDController : Controller
     {
-        private MotorcycleContext db = new MotorcycleContext();
+        private MrtorcycleContext db = new MrtorcycleContext();
 
         // GET: CRUD
         public ActionResult Index()
@@ -27,7 +27,7 @@ namespace MotorcycleTW.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Products product = db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace MotorcycleTW.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "p_id,p_name,p_unitprice,p_lauchdate,c_id,p_status")] Product product)
+        public ActionResult Create([Bind(Include = "p_id,p_name,p_unitprice,p_lauchdate,c_id,p_status")] Products product)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace MotorcycleTW.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Products product = db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace MotorcycleTW.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "p_id,p_name,p_unitprice,p_lauchdate,c_id,p_status")] Product product)
+        public ActionResult Edit([Bind(Include = "p_id,p_name,p_unitprice,p_lauchdate,c_id,p_status")] Products product)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace MotorcycleTW.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Products product = db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace MotorcycleTW.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
+            Products product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
             return RedirectToAction("Index");

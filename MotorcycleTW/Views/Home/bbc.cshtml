@@ -1,7 +1,15 @@
-﻿@model Product
+﻿
 @{
     ViewBag.Title = "bbc";
 }
-
-<h2>@Model.p_name</h2>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<button>获得 JSON 数据</button>
+<script>
+$(document).ready(function () {
+        $("button").click(function () {
+            $.get("/Assets/Json/TaiwanAddress.json", function (json) {
+                alert(json.document);
+            });
+        });
+    });
+</script>

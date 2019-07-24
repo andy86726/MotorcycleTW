@@ -6,7 +6,7 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Discount
+    public partial class Discounts
     {
         [Key]
         public int d_id { get; set; }

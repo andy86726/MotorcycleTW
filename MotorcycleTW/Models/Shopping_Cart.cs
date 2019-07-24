@@ -17,8 +17,8 @@ namespace MotorcycleTW.Models
 
         public int cart_quantity { get; set; }
 
-        public virtual Member Members { get; set; }
+        public virtual Members Members { get; set; }
 
-        public virtual Product Products { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

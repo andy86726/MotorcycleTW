@@ -21,6 +21,6 @@ namespace MotorcycleTW.Models
 
         public int pd_id { get; set; }
 
-        public virtual Order Orders { get; set; }
+        public virtual Orders Orders { get; set; }
     }
 }
