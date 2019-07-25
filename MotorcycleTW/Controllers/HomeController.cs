@@ -29,9 +29,10 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult bbc()
         {
-            var db = new MrtorcycleContext();
-            var b=db.Products.FirstOrDefault();
-            return View(b);
+            //var db = new MrtorcycleContext();
+            //var b=db.Products.FirstOrDefault();
+            return View();
         }
+        
     }
 }
