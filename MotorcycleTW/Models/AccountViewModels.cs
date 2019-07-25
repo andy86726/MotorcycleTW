@@ -114,7 +114,7 @@ namespace MotorcycleTW.Models
 
         [Required]
         [Display(Name = "地區")]
-        public string Village { get; set; }
+        public List<string> AreaList { get; set; }
 
         [Required]
         [Display(Name = "地址")]

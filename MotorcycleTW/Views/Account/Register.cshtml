@@ -74,13 +74,12 @@
             </div>
             <label class="control-label">聯絡地址</label>
             <div class="form-group row" style="display:flex; margin:0;">
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>縣市</option></select></div>
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>地區</option></select></div>
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><input type="text" style="width:100%; margin:0;" readonly placeholder="區碼" /></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" id="city" onchange="bbc()"><option>縣　市</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" id="arealist" onchange="abc()"><option>地　區</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><input type="text" style="width:100%; margin:0;" readonly placeholder="區碼" id="zipcode" /></div>
             </div>
-            <div class="form-group row" style="display:flex; margin:0;">
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>村里</option></select></div>
-                <div class="col-lg-8" style="padding:10px 0"><input placeholder="請輸入地址" style="width:100%" /></div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Address, new { @class = "form-control", @placeholder = "請輸入地址" })
             </div>
             <div class="input">
                 @Html.LabelFor(m => m.Identitiy_number, new { @class = "control-label" })
@@ -105,15 +104,50 @@
 </div>
 @*<a href="~/Assets/Json/TaiwanAddress.json">~/Assets/Json/TaiwanAddress.json</a>*@
 <button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
-
 <script>
-    $(document).ready(function () {
-        $("button").click(function () {
-            $.get("/Assets/Json/TaiwanAddress.json", function (Result, City) {
-                alert(Result)
-            });
-        });
+    //$(document).ready(function () {
+    //    $("button").click(function () {
+
+    //    });
+    //});
+    var a;
+    var b;
+    var x;
+    $.get("/Assets/Json/TaiwanAddress.json", function (Result) {
+        a = Result;
+        for (var i = 0; i <= Result.length; i++) {
+            //console.log(Result[i].City);
+            $("#city").append("<option value='" + i + "'>" + Result[i].City + "</option>");
+        };
+        
     });
+    function bbc() {
+        $("#arealist").empty();
+        x = $("#city").val();
+        for (var j = 0; j <= a[x].AreaList.length; j++) {
+            $("#arealist").append("<option value='" + j + "'>" + a[x].AreaList[j].AreaName + "</option>");  
+        };
+    }
+    function abc() {
+        var y = $("#arealist").val();
+        b = a[x].AreaList;
+        document.getElementById("zipcode").value = b[y].ZipCode;
+        //alert(b[y].ZipCode);
+    }
+    
+    @*<a href="~/Assets/Json/TaiwanAddress.json">~/Assets/Json/TaiwanAddress.json</a>
+    $.ajax({
+        type:"GET",
+        dataType: "json",
+        url: @Url.Action() url("~/Assets/Json / TaiwanAddress.json"),
+        data: data,
+        success: function (r) {
+            for (var i in r.data) {
+                $("#city").addObject("i.City");
+                alert(i);
+            }
+        }
+    });*@
 </script>
 
 @section Scripts {
