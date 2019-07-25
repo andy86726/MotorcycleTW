@@ -12,7 +12,7 @@ namespace MotorcycleTW.Controllers
 {
     public class CRUDController : Controller
     {
-        private MrtorcycleContext db = new MrtorcycleContext();
+        private MotorcycleContext db = new MotorcycleContext();
 
         // GET: CRUD
         public ActionResult Index()
