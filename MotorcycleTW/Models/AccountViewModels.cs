@@ -86,16 +86,16 @@ namespace MotorcycleTW.Models
         [Display(Name = "電話號碼")]
         public int Phone { get; set; }
 
-        [Required]
-        [Display(Name ="生日")]
+        //[Required]
+        [Display(Name = "生日")]
         public DateTime Birthday { get; set; }
 
         [Required]
-        [DataType(DataType.Custom)]
-        [Display(Name ="身分證字號")]
+        //[DataType(DataType.Custom)]
+        [Display(Name = "身分證字號")]
         [StringLength(10, ErrorMessage = "身分證格式錯誤。", MinimumLength = 10)]
         public string Identitiy_number { get; set; }
-        public string Identitiy { get; set; }
+        //public string Identitiy { get; set; }
 
         [Required]
         [Display(Name = "姓氏")]
@@ -105,16 +105,19 @@ namespace MotorcycleTW.Models
         [Display(Name = "名字")]
         public string FirstName { get; set; }
 
-        [Display(Name = "暱稱")]
-        public string NickName { get; set; }
+        //[Display(Name = "暱稱")]
+        //public string NickName { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "縣市")]
         public string City { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "地區")]
-        public List<string> AreaList { get; set; }
+        public string Area { get; set; }
+
+        [Display(Name = "郵遞區號")]
+        public string Zipcode { get; set; }
 
         [Required]
         [Display(Name = "地址")]
