@@ -3,7 +3,7 @@ namespace MotorcycleTW.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class one : DbMigration
+    public partial class InitialDb : DbMigration
     {
         public override void Up()
         {
@@ -120,6 +120,9 @@ namespace MotorcycleTW.Migrations
                         m_name = c.String(),
                         m_email = c.String(),
                         m_password = c.String(),
+                        m_verification = c.String(),
+                        m_status = c.String(),
+                        m_adress = c.String(),
                     })
                 .PrimaryKey(t => t.m_id);
             

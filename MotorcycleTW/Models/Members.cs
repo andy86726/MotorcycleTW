@@ -24,6 +24,13 @@ namespace MotorcycleTW.Models
 
         public string m_password { get; set; }
 
+        public string m_verification { get; set; }
+        public string m_status { get; set; }
+
+
+        public string m_adress { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
 

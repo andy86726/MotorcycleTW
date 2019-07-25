@@ -199,12 +199,17 @@
     <Compile Include="Controllers\CRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907200901171_one.cs" />
-    <Compile Include="Migrations\201907200901171_one.Designer.cs">
-      <DependentUpon>201907200901171_one.cs</DependentUpon>
+    <Compile Include="Migrations\201907250459330_InitialDb.cs" />
+    <Compile Include="Migrations\201907250459330_InitialDb.Designer.cs">
+      <DependentUpon>201907250459330_InitialDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907250517550_secondDb.cs" />
+    <Compile Include="Migrations\201907250517550_secondDb.Designer.cs">
+      <DependentUpon>201907250517550_secondDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -216,7 +221,7 @@
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
-    <Compile Include="Models\MrtorcycleContext.cs" />
+    <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Order_Detail.cs" />
     <Compile Include="Models\Payments.cs" />
@@ -228,6 +233,7 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\RegisterViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\Register.css" />
@@ -323,6 +329,7 @@
     <Content Include="Views\Account\MemberInfomation.cshtml" />
     <Content Include="Views\Shared\_Layout4.cshtml" />
     <Content Include="Views\Home\bbc.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,8 +348,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907200901171_one.resx">
-      <DependentUpon>201907200901171_one.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907250459330_InitialDb.resx">
+      <DependentUpon>201907250459330_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907250517550_secondDb.resx">
+      <DependentUpon>201907250517550_secondDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

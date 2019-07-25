@@ -7,8 +7,8 @@
 <script>
 $(document).ready(function () {
         $("button").click(function () {
-            $.get("/Assets/Json/TaiwanAddress.json", function (json) {
-                alert(json.document);
+            $.get("https://localhost:44388/api/Test", function (json) {
+                alert(JSON.stringify(json));
             });
         });
     });

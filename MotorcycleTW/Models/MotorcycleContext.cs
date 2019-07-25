@@ -5,10 +5,10 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MrtorcycleContext : DbContext
+    public partial class MotorcycleContext : DbContext
     {
-        public MrtorcycleContext()
-            : base("name=MrtorcycleDB")
+        public MotorcycleContext()
+            : base("name=MotorclcleDB")
         {
         }
 
@@ -27,6 +27,7 @@ namespace MotorcycleTW.Models
         public virtual DbSet<Shopping_Cart> Shopping_Cart { get; set; }
         public virtual DbSet<Stores> Stores { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Products>()
@@ -38,6 +39,5 @@ namespace MotorcycleTW.Models
                 .WithOptional(e => e.Stores)
                 .HasForeignKey(e => e.Delive_Way_s_id);
         }
-
     }
 }
