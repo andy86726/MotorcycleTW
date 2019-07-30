@@ -18,7 +18,7 @@ namespace MotorcycleTW.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public MotorcycleContext db = new MotorcycleContext();
+        public MrtorcycleContext db = new MrtorcycleContext();
         public AccountController()
         {
         }
