@@ -5,10 +5,10 @@ namespace MotorcycleTW.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class MotorclcleDB_1 : DbContext
+    public partial class MotorcycleContext : DbContext
     {
-        public MotorclcleDB_1()
-            : base("name=MotorclcleDB_1")
+        public MotorcycleContext()
+            : base("name=MotorclcleDB")
         {
         }
 

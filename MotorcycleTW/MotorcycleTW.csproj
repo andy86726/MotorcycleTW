@@ -203,6 +203,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907250459330_InitialDb.cs" />
+    <Compile Include="Migrations\201907250459330_InitialDb.Designer.cs">
+      <DependentUpon>201907250459330_InitialDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Battery_store.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -212,7 +217,7 @@
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
-    <Compile Include="Models\MotorclcleDB_1.cs" />
+    <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Order_Detail.cs" />
     <Compile Include="Models\Payments.cs" />
@@ -337,6 +342,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907250459330_InitialDb.resx">
+      <DependentUpon>201907250459330_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
