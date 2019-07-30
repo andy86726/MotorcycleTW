@@ -66,6 +66,10 @@ namespace MotorcycleTW.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "身分")]
+        public string Identitiy { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "電子郵件")]
         public string Email { get; set; }
@@ -86,16 +90,11 @@ namespace MotorcycleTW.Models
         [Display(Name = "電話號碼")]
         public int Phone { get; set; }
 
-        [Required]
-        [Display(Name ="生日")]
-        public DateTime Birthday { get; set; }
-
-        [Required]
-        [DataType(DataType.Custom)]
-        [Display(Name ="身分證字號")]
+        //[DataType(DataType.Custom)]
+        [Display(Name = "身分證字號")]
         [StringLength(10, ErrorMessage = "身分證格式錯誤。", MinimumLength = 10)]
         public string Identitiy_number { get; set; }
-        public string Identitiy { get; set; }
+        //public string Identitiy { get; set; }
 
         [Required]
         [Display(Name = "姓氏")]
@@ -105,20 +104,29 @@ namespace MotorcycleTW.Models
         [Display(Name = "名字")]
         public string FirstName { get; set; }
 
-        [Display(Name = "暱稱")]
-        public string NickName { get; set; }
-
-        [Required]
+        //[Display(Name = "暱稱")]
+        //public string NickName { get; set; }
+        
         [Display(Name = "縣市")]
         public string City { get; set; }
-
-        [Required]
+        
         [Display(Name = "地區")]
-        public List<string> AreaList { get; set; }
+        public string Area { get; set; }
 
-        [Required]
+        [Display(Name = "郵遞區號")]
+        public string Zipcode { get; set; }
+        
         [Display(Name = "地址")]
         public string Address { get; set; }
+
+        [Display(Name = "年")]
+        public DateTime Year { get; set; }
+
+        [Display(Name = "月")]
+        public DateTime Month { get; set; }
+
+        [Display(Name = "日")]
+        public DateTime Day { get; set; }
     }
 
     public class ResetPasswordViewModel
