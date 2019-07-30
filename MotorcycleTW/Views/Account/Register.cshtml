@@ -30,11 +30,11 @@
 
 
             @Html.ValidationSummary("", new { @class = "text-danger" })
-            <label class="control-label">身分</label>
+            @Html.LabelFor(m => m.Identitiy, new { @class = "control-label" })
             <div class="form-group row" style="display:flex; margin:0;">
-                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="1" style="margin:0; margin-right:15px" />男</div>
-                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="gender" value="2" style="margin:0; margin-right:15px" />女</div>
-                <div class="col-lg-6" style="margin:0; padding:0;"><input type="radio" name="gender" value="3" style="margin:0; margin-right:15px" />法人</div>
+                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="Identitiy" value="男" style="margin:0; margin-right:15px" checked/>男</div>
+                <div class="col-lg-3" style="margin:0; padding:0;"><input type="radio" name="Identitiy" value="女" style="margin:0; margin-right:15px" />女</div>
+                <div class="col-lg-6" style="margin:0; padding:0;"><input type="radio" name="Identitiy" value="法人" style="margin:0; margin-right:15px" />法人</div>
             </div>
             <div class="input">
                 @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
@@ -55,12 +55,6 @@
                 </div>
             </div>
             <div class="input">
-                @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
-                <div class="">
-                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "請輸入你的電話號碼" })
-                </div>
-            </div>
-            <div class="input">
                 @Html.LabelFor(m => m.Password, new { @class = "control-label" })
                 <div class="">
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "請輸入你的密碼(最少6碼)" })
@@ -72,37 +66,32 @@
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "請輸入你的密碼" })
                 </div>
             </div>
+            <div class="input">
+                @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+                <div class="">
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "請輸入你的電話號碼" })
+                </div>
+            </div>
             <label class="control-label">聯絡地址</label>
             <div class="form-group row" style="display:flex; margin:0;">
                 <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="City" id="city" onchange="bbc()"><option>縣　市</option></select></div>
                 <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="Area" id="arealist" onchange="abc()"><option>地　區</option></select></div>
                 <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><input type="text" style="width:100%; margin:0;" readonly placeholder="區碼" name="Zipcode" id="zipcode" /></div>
-                @Html.DropDownList("City", new SelectList(new[] { "縣市", "地區" }))
-                @{
-                    List<SelectListItem> Contact_AddressList123 = new List<SelectListItem>
-                            {
-                                new SelectListItem {Text="1",Value="1"},
-                                new SelectListItem {Text="2",Value="2"},
-                                new SelectListItem {Text="3",Value="3"}
-                            };
-                }
-                @Html.DropDownList("Contact_Address456", Contact_AddressList123)<br />
-                @Html.DropDownListFor(m => m.City, Contact_AddressList123)
             </div>
             <div class="form-group">
                 @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @placeholder = "請輸入地址" })
+            </div>
+            <label class="input control-label">生日</label>
+            <div class="form-group row" style="display:flex; margin:0;">
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="Year" id="year" onchange="getDays()"><option>年</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="Month" id="month" onchange="getDays()"><option>月</option></select></div>
+                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="Day" id="day"><option>日</option></select></div>
             </div>
             <div class="input">
                 @Html.LabelFor(m => m.Identitiy_number, new { @class = "control-label" })
                 <div class="">
                     @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control", @placeholder = "請輸入身份證字號" })
                 </div>
-            </div>
-            <label class="control-label">生日</label>
-            <div class="form-group row" style="display:flex; margin:0;">
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>年</option></select></div>
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>月</option></select></div>
-                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;"><select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;"><option>日</option></select></div>
             </div>
             <div class="text-center">
                 <input type="submit" class="btn" style="" value="註冊" />
@@ -114,7 +103,7 @@
     </div>
 </div>
 @*<a href="~/Assets/Json/TaiwanAddress.json">~/Assets/Json/TaiwanAddress.json</a>*@
-<script>
+<script type="text/javascript">
     var a;
     var b;
     var x;
@@ -168,6 +157,46 @@
             }
         }
     });*@
+    
+
+    $(document).ready(function () {
+        var date = new Date();//创建日期对象
+        var year = date.getFullYear();//获取当前年份
+        for (var i = year - 70; i <= year; i++) {//在id为year的selector附加option选项
+            $("#year").append("<option value=\"" + i + "\">" + i + "</option>");//append函数附加html到元素结尾处
+        }
+        for (var i = 1; i <= 12; i++) {
+            $("#month").append("<option value=\"" + i + "\">" + i + "</option>");//为Id为month的selector附加option选项
+        }
+        getDays($("#month").val(), $("#year").val());
+    });
+
+    
+    function getDaysInMonth(month, year) {//年月对应的日数算法
+        var days;
+        if (month == 2) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {     //排除百年，每四年一闰；每四百年一闰；
+                days = 29; //闰年29
+            } else {
+                days = 28; //平年28
+            }
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            days = 30;//固定30
+        }
+        else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            days = 31;//固定31
+        }
+        return days;//返回该年月的日数
+    }
+    function getDays() {
+        var year = $("#year").val();//year selector οnchange="getDays()"动态获取用户选择的year值
+        var month = $("#month").val();//month selector οnchange="getDays()"动态获取用户选择的month值
+        var days = getDaysInMonth(month, year);//调用算法函数计算对应年月的日数
+        for (var i = 1; i <= days; i++) {
+            $("#day").append("<option value=\"" + i + "\">" + i + "</option>");
+        }
+    }
 </script>
 
 @section Scripts {
