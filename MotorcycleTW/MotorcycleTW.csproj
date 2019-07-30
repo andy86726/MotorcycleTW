@@ -203,6 +203,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907301225190_Create_Database.cs" />
+    <Compile Include="Migrations\201907301225190_Create_Database.Designer.cs">
+      <DependentUpon>201907301225190_Create_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907301242064_AddMemerFiled.cs" />
+    <Compile Include="Migrations\201907301242064_AddMemerFiled.Designer.cs">
+      <DependentUpon>201907301242064_AddMemerFiled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Battery_store.cs" />
     <Compile Include="Models\Categories.cs" />
@@ -212,7 +221,7 @@
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
-    <Compile Include="Models\MotorclcleDB_1.cs" />
+    <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Order_Detail.cs" />
     <Compile Include="Models\Payments.cs" />
@@ -293,7 +302,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
@@ -321,6 +329,7 @@
     <Content Include="Views\Shared\_Layout4.cshtml" />
     <Content Include="Views\Home\bbc.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Account\VerifyRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +346,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907301225190_Create_Database.resx">
+      <DependentUpon>201907301225190_Create_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907301242064_AddMemerFiled.resx">
+      <DependentUpon>201907301242064_AddMemerFiled.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

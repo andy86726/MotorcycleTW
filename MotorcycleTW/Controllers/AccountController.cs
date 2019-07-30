@@ -18,7 +18,7 @@ namespace MotorcycleTW.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public MrtorcycleContext db = new MrtorcycleContext();
+        public MotorcycleContext db = new MotorcycleContext();
         public AccountController()
         {
         }
@@ -179,26 +179,43 @@ namespace MotorcycleTW.Controllers
                     ModelState.AddModelError("", "The email is invalid.");
                     return View();
                 }
-                var user = new Members { m_name = model.FirstName + model.LastName, m_email = model.Email, m_password = model.Password, m_verification = code.ToString() ,m_status="0"};
+                Members user = new Members()
+                {
+                    m_id=1,
+                    m_name = model.FirstName + model.LastName,
+                    m_email = model.Email,
+                    m_password = model.Password,
+                    m_verification = code.ToString(),
+                    m_status="0",
+                    m_address=model.Address,
+                    m_phone=model.Phone,
+                    m_zipcode=model.Zipcode,
+                    m_identitiy=model.Identitiy,
+                    m_identitiy_number=model.Identitiy_number,
+                    m_birthday=DateTime.Parse(model.Year.ToString()+"/"+model.Month.ToString()+"/"+model.Day.ToString()),                 
+                };
                 db.Members.Add(user);
                 db.SaveChanges();
+                Session["user_id"] = user.m_id;
+                Session["user_name"] = user.m_name;
+                //寄信給對方 確認信箱有效
+                var email = db.Members.Where(x => x.m_id == user.m_id).FirstOrDefault().m_email;    //收信人的email(小問題這裡選用的Email為甚麼要對照資料庫的E-mail而不是直接從memb的E-mail)??         
+                //MyMail的參考文獻(https://docs.microsoft.com/zh-tw/dotnet/api/system.net.mail.mailmessage?view=netframework-4.8)
+                System.Net.Mail.MailMessage MyMail = new System.Net.Mail.MailMessage();//建立MAIL   
+                MyMail.From = new System.Net.Mail.MailAddress("motorcycle95@gmail.com", "MotorcycleTW");//寄信人(From)
+                MyMail.To.Add(new System.Net.Mail.MailAddress(email));//收信人1(To) 
+                MyMail.Subject = "Welcome to Guru. Please verify your account to become Guru's member.";//主題   
+                MyMail.Body = "Hello,\n\n Thank you for your registration\n\n This is your account verification code \n\n" + code + "\n\n Best Regards,\n\n";//內容 
+                //SmtpClient將信件發送出去，參考文獻(https://aspnetmars.blogspot.com/2017/05/email-send-c-smtpclient.html)
+                //SmtpClient的參考文獻(https://docs.microsoft.com/zh-tw/dotnet/api/system.net.mail.smtpclient?view=netframework-4.8)
+                System.Net.Mail.SmtpClient Client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);//GMAIL主機   
+                                                                                                          //System.Net.Mail.SmtpClient Client = new System.Net.Mail.SmtpClient("msa.hinet.net");//hinet主機   
+                Client.Credentials = new System.Net.NetworkCredential("gash86726@gmail.com", "gash7525199786726");//帳密，Hinet不用但須在它的ADLS(區段)裡面   
+                Client.EnableSsl = true;//Gmail需啟動SSL，Hinet不用   
+                Client.Send(MyMail);//寄出
 
-                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                //var result = await UserManager.CreateAsync(user, model.Password);
-                //if (result.Succeeded)
-                //{
-                //    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);//註冊後直接登入
+                return View("VerifyRegistration");
 
-                //    // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771
-                //    // 傳送包含此連結的電子郵件
-                //     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId=user.m_email, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.m_email, "確認您的帳戶", "請按一下此連結確認您的帳戶 <a href=\"" + callbackUrl + "\">這裏</a>");
-                ViewBag.Message = "Check your email and confirm your account, you must be confirmed " + "before you can log in.";         
-                return View("Info");
-                //return RedirectToAction("Index", "Home");
-                //}
-                //AddErrors(result);
             }
 
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
@@ -208,17 +225,29 @@ namespace MotorcycleTW.Controllers
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        public  ActionResult ConfirmEmail(Members c)
         {
-            if (userId == null || code == null)
+            Session["wrong-code"] = null;
+            var membid = int.Parse(Session["user_id"].ToString());
+            var memb = db.Members.Where(x => x.m_id == membid).FirstOrDefault();
+
+            if (!ModelState.IsValid)
             {
-                return View("Error");
+                return View("VerifyRegistration");
             }
-            //var result = await UserManager.ConfirmEmailAsync(userId, code);
-            var result = db.Members.Where(x => x.m_email == userId && x.m_verification == code).FirstOrDefault();
-            result.m_status = "1";
-            
-            return View("Login");
+            //如果認證過 把狀態改為1
+            if (memb.m_verification.ToString() == c.m_verification)
+            {
+                memb.m_status = "1";
+                db.SaveChanges();
+                return View("Login");
+            }
+            //認證碼錯誤
+            else
+            {
+                Session["wrong-code"] = "Verification failed.";
+                return View("VerifyRegistration");
+            }
         }
 
         //

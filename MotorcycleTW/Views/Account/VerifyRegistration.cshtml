@@ -1,0 +1,24 @@
+﻿@model Members
+@{
+    ViewBag.Title = "VerifyRegistration";
+}
+
+@using (Html.BeginForm("ConfirmEmail", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <h3>嗨!@Session["user_name"]</h3>
+
+    @Html.AntiForgeryToken()
+    if (Session["wrong-code"] != null)
+    {
+        <p class="text-danger">@Session["wrong-code"]</p>
+    }
+<div class="input">
+    <p>請輸入你的驗證碼</p>
+    <div class="">
+        @Html.TextBoxFor(m => m.m_verification, new { @class = "form-control", @placeholder = "請輸入驗證碼" })
+    </div>
+    <input type="submit" class="btn" style="" value="註冊" />
+</div>
+}
+
+

@@ -120,13 +120,13 @@ namespace MotorcycleTW.Models
         public string Address { get; set; }
 
         [Display(Name = "年")]
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
 
         [Display(Name = "月")]
-        public DateTime Month { get; set; }
+        public int Month { get; set; }
 
         [Display(Name = "日")]
-        public DateTime Day { get; set; }
+        public int Day { get; set; }
     }
 
     public class ResetPasswordViewModel

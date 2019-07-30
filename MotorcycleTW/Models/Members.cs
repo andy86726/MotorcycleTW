@@ -23,14 +23,15 @@ namespace MotorcycleTW.Models
         public string m_email { get; set; }
 
         public string m_password { get; set; }
-
-        public string m_verification { get; set; }
-        public string m_status { get; set; }
-
-
-        public string m_adress { get; set; }
-
-
+        public string m_identitiy { get; set; }//男、女、法人
+        public int m_phone { get; set; }//電話號碼
+        public string m_identitiy_number { get; set; }//身份證字號
+        public string m_address { get; set; }//居住地
+        public string m_zipcode { get; set; }//郵遞區號
+        public DateTime m_birthday { get; set; }//生日
+        public string m_status { get; set; }//驗證狀態
+        [Display(Name ="驗證碼")]
+        public string m_verification { get; set; }//驗證碼
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
 
