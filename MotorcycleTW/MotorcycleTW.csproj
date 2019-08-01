@@ -293,6 +293,9 @@
     <Content Include="Views\CRUD\Edit.cshtml" />
     <Content Include="Views\CRUD\Index.cshtml" />
     <Content Include="Views\Account\MemberInfomation.cshtml" />
+    <Content Include="Views\MotoPage\Index.cshtml" />
+    <Content Include="Views\MotoPage\S1.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
