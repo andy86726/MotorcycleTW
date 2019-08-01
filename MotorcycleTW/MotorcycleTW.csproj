@@ -296,6 +296,7 @@
     <Content Include="Views\MotoPage\Index.cshtml" />
     <Content Include="Views\MotoPage\S1.cshtml" />
     <Content Include="Views\Shared\_Layout4.cshtml" />
+    <Content Include="Views\Shared\_Layout4.1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
