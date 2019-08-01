@@ -181,7 +181,6 @@
     <Compile Include="Controllers\CRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MotoPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,7 +198,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\MotoPage.cs" />
     <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Order_Detail.cs" />
@@ -230,6 +228,8 @@
     <Content Include="Assets\images\HomeCarsouel\video\change_battery.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\com_loop_futurenow_x.mp4" />
     <Content Include="Assets\images\HomeCarsouel\video\mobile_com_loop_swap2018.mp4" />
+    <Content Include="Assets\js\Myscript.js" />
+    <Content Include="Assets\js\site4.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -291,12 +291,10 @@
     <Content Include="Views\CRUD\Edit.cshtml" />
     <Content Include="Views\CRUD\Index.cshtml" />
     <Content Include="Views\Account\MemberInfomation.cshtml" />
-    <Content Include="Views\MotoPage\Index.cshtml" />
-    <Content Include="Views\MotoPage\S1.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\images\Motopage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
