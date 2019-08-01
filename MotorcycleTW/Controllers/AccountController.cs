@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MotorcycleTW.Models;
+using MotorcycleTW.Severce;
 
 namespace MotorcycleTW.Controllers
 {
@@ -75,37 +76,46 @@ namespace MotorcycleTW.Controllers
             }
             //這段是做Email Confirmed功能，未經Email Confirmed確認，不讓登入
             // Require the user to have a confirmed email before they can log on.
-            var user = await UserManager.FindByEmailAsync(model.Email);
-            if (user != null)
-            {
-                if(!await UserManager.IsEmailConfirmedAsync(user.Id))
-                {
-                    ViewBag.errorMessage = "You must have a confirmed email to log on.";
-                    return View("Error");
-                }
-            }
-            // 這不會計算為帳戶鎖定的登入失敗
-            // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
-            //Members user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
-            //if (user == null)
+            //var user = await UserManager.FindByEmailAsync(model.Email);
+            //if (user != null)
             //{
-            //    ModelState.AddModelError("", "您的電子郵件或密碼輸入錯誤了");
-            //    return View();
+            //    if(!await UserManager.IsEmailConfirmedAsync(user.Id))
+            //    {
+            //        ViewBag.errorMessage = "You must have a confirmed email to log on.";
+            //        return View("Error");
+            //    }
             //}
-            ////create FormsAuthenticationTicket
-            //var ticket = new FormsAuthenticationTicket(
-            //version: 1,//問老師如果不設定會有甚麼影響嗎
-            //name: user.m_email.ToString(), //可以放使用者Id
-            //issueDate: DateTime.UtcNow,//現在UTC時間
-            //expiration: DateTime.UtcNow.AddMinutes(30),//Cookie有效時間=現在時間往後+30分鐘
-            //isPersistent: true,// 是否要記住我 true or false
-            //userData: "", //可以放使用者角色名稱
-            //cookiePath: FormsAuthentication.FormsCookiePath);
-            //// Encrypt the ticket.
-            //var encryptedTicket = FormsAuthentication.Encrypt(ticket);//把驗證的表單加密
-            //// Create the cookie.
-            //var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-            //Response.Cookies.Add(cookie);
+            //這不會計算為帳戶鎖定的登入失敗
+            //若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
+            Members user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
+            if (user == null)
+            {
+                ModelState.AddModelError("", "您的電子郵件或密碼輸入錯誤了");
+                return View();
+            }
+            if (user.m_verification=="0")
+            {
+                var mail = new MailService();
+                mail.MailService_1(user.m_email,user.m_verification);
+                return View("VerifyRegistration");
+            }
+            Session["m_name"] = user.m_name.ToString();
+            Session["m_id"] = user.m_id;
+            Session["m_email"] = user.m_email;
+            //create FormsAuthenticationTicket
+            var ticket = new FormsAuthenticationTicket(
+            version: 1,//問老師如果不設定會有甚麼影響嗎
+            name: user.m_email.ToString(), //可以放使用者Id
+            issueDate: DateTime.UtcNow,//現在UTC時間
+            expiration: DateTime.UtcNow.AddMinutes(30),//Cookie有效時間=現在時間往後+30分鐘
+            isPersistent: true,// 是否要記住我 true or false
+            userData: "", //可以放使用者角色名稱
+            cookiePath: FormsAuthentication.FormsCookiePath);
+            // Encrypt the ticket.
+            var encryptedTicket = FormsAuthentication.Encrypt(ticket);//把驗證的表單加密
+            // Create the cookie.
+            var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+            Response.Cookies.Add(cookie);
             return RedirectToAction("Index", "Home");
         }
 
@@ -201,19 +211,8 @@ namespace MotorcycleTW.Controllers
                 //寄信給對方 確認信箱有效
                 var email = db.Members.Where(x => x.m_id == user.m_id).FirstOrDefault().m_email;    //收信人的email(小問題這裡選用的Email為甚麼要對照資料庫的E-mail而不是直接從memb的E-mail)??         
                 //MyMail的參考文獻(https://docs.microsoft.com/zh-tw/dotnet/api/system.net.mail.mailmessage?view=netframework-4.8)
-                System.Net.Mail.MailMessage MyMail = new System.Net.Mail.MailMessage();//建立MAIL   
-                MyMail.From = new System.Net.Mail.MailAddress("motorcycle95@gmail.com", "MotorcycleTW");//寄信人(From)
-                MyMail.To.Add(new System.Net.Mail.MailAddress(email));//收信人1(To) 
-                MyMail.Subject = "Welcome to Guru. Please verify your account to become Guru's member.";//主題   
-                MyMail.Body = "Hello,\n\n Thank you for your registration\n\n This is your account verification code \n\n" + code + "\n\n Best Regards,\n\n";//內容 
-                //SmtpClient將信件發送出去，參考文獻(https://aspnetmars.blogspot.com/2017/05/email-send-c-smtpclient.html)
-                //SmtpClient的參考文獻(https://docs.microsoft.com/zh-tw/dotnet/api/system.net.mail.smtpclient?view=netframework-4.8)
-                System.Net.Mail.SmtpClient Client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);//GMAIL主機   
-                                                                                                          //System.Net.Mail.SmtpClient Client = new System.Net.Mail.SmtpClient("msa.hinet.net");//hinet主機   
-                Client.Credentials = new System.Net.NetworkCredential("gash86726@gmail.com", "gash7525199786726");//帳密，Hinet不用但須在它的ADLS(區段)裡面   
-                Client.EnableSsl = true;//Gmail需啟動SSL，Hinet不用   
-                Client.Send(MyMail);//寄出
-
+                MailService mail = new MailService();
+                mail.MailService_1(email, user.m_verification);
                 return View("VerifyRegistration");
 
             }
@@ -453,10 +452,9 @@ namespace MotorcycleTW.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session["m_name"] = null;
             return RedirectToAction("Index", "Home");
         }
 

@@ -232,6 +232,7 @@
     <Compile Include="Models\Stores.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\RegisterViewModels.cs" />
   </ItemGroup>
