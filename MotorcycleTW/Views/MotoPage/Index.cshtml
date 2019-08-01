@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout4.1.cshtml";
 }
 
 @section topCSS{
@@ -40,11 +40,15 @@
             line-height: 100px;
         }
 
+        .card {
+            border: none;
+        }
+
         .card-container {
-            margin:auto;
+            margin: auto;
             margin-top: 50px;
             font-size: 16px;
-            width:950px;
+            width: 950px;
         }
 
             .card-container a:hover {
@@ -115,6 +119,7 @@
             background-size: cover;
             background-position: 50%;
         }
+
         .card-container .card .gogoro_2_Delight {
             width: 310px;
             height: 177px;
@@ -122,6 +127,7 @@
             background-size: cover;
             background-position: 50%;
         }
+
         .card-container .card .gogoro_2_Rumber {
             width: 310px;
             height: 177px;
@@ -129,6 +135,7 @@
             background-size: cover;
             background-position: 50%;
         }
+
         .card-container .card .gogoro_2_Utility {
             width: 310px;
             height: 177px;
@@ -136,6 +143,7 @@
             background-size: cover;
             background-position: 50%;
         }
+
         .card-container .card .gogoro_1_Plus {
             width: 310px;
             height: 177px;
@@ -153,31 +161,35 @@
         }
 
         .col-lg-4 {
-            padding:0;
+            padding: 0;
+        }
+
+        li a:focus {
+            color: #fff;
         }
     </style>
 }
 
 <div class="series-list-container">
     <ul class="warp">
-        <li><a href="#" onclick="gogoroS()"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="s-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#FF1C41"></stop><stop data-v-28f15424="" offset="100%" stop-color="#802984"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#s-icon-gradient)" fill-rule="nonzero" d="M25.95 27.22h-8.616a9.151 9.151 0 0 1-6.557-2.741 9.55 9.55 0 0 1-2.756-6.704 9.54 9.54 0 0 1 2.71-6.728c1.755-1.803 4.09-2.8 6.572-2.81l20.837-.005L39.516 6l-22.22.012c-3.066.011-5.948 1.243-8.113 3.467a11.782 11.782 0 0 0-3.342 8.304c.023 6.45 5.177 11.668 11.497 11.668h8.612c8.174 0 14.842 6.752 14.869 15.094.015 4.047-1.518 7.862-4.319 10.743-2.805 2.877-6.53 4.472-10.497 4.488H1.369L0 62h26.01c9.406-.035 17.028-7.87 16.99-17.462-.031-9.57-7.677-17.319-17.05-17.319m-8.87 7.568h8.625c2.475 0 4.805.962 6.567 2.744a9.509 9.509 0 0 1 2.76 6.706 9.508 9.508 0 0 1-2.71 6.723c-1.758 1.806-4.095 2.803-6.583 2.812H4.798L3.428 56l22.32-.003c3.07-.013 5.956-1.244 8.124-3.47a11.747 11.747 0 0 0 3.343-8.299 11.76 11.76 0 0 0-3.404-8.276 11.347 11.347 0 0 0-8.118-3.398h-.042l-8.517.004h-.054c-8.187 0-14.865-6.751-14.896-15.098-.012-4.046 1.523-7.858 4.33-10.74 2.805-2.876 6.54-4.472 10.512-4.487l24.603-.004L43 0 17.019.008C7.599.043-.034 7.878 0 17.468c.034 9.57 7.692 17.319 17.08 17.319" transform="translate(11 1)"></path></svg><span>S performance</span></a></li>
-        <li><a href="#" onclick="gogoro3()"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g3-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#FFE600"></stop><stop data-v-28f15424="" offset="100%" stop-color="#FFE600"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g3-icon-gradient)" fill-rule="evenodd" d="M8.06 41.774h14.955c.528 0 .973.386 1.049.904.603 4.1 2.705 6.73 7.684 6.73 4.657 0 6.86-2.18 6.86-6.04 0-4.027-2.203-6.124-7.114-6.124h-4.827V25.75h4.573c4.996 0 7.367-2.182 7.367-6.04 0-3.105-2.032-5.203-6.097-5.203-3.885 0-6.137 2.207-6.964 6.206-.102.49-.535.842-1.038.842H9.617a1.056 1.056 0 0 1-1.055-1.166C9.822 8.706 17.77 1 33.018 1 47.753 1 56.56 7.376 56.56 17.612c0 6.711-3.895 11.074-10.416 12.92C53.174 31.79 58 36.74 58 43.872 58 55.365 49.447 63 32.933 63 15.9 63 7.982 55.713 7.003 42.908a1.057 1.057 0 0 1 1.058-1.134"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 3 Series</span></a></li>
-        <li><a href="#" onclick="gogoro2()"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g2-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#00D7FF"></stop><stop data-v-28f15424="" offset="100%" stop-color="#00D7FF"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g2-icon-gradient)" fill-rule="nonzero" d="M51.246 62c.417 0 .754-.319.754-.713V49.63c0-.394-.337-.713-.754-.713h-20.95l9.043-8.295c7.235-6.585 12.209-12.913 12.209-21.294C51.548 8.039 43.138 0 27.31 0 11.914 0 2.21 7.538 1.303 22.37c-.024.39.303.72.717.72h15.313c.412 0 .788-.317.841-.703.92-6.738 3.773-9.217 8.233-9.217 4.612 0 6.873 2.736 6.873 6.841 0 5.131-4.25 10.348-10.671 16.847L.41 59.108c-.264.265-.411.615-.411.978v1.201c0 .394.337.713.754.713h50.492z" transform="translate(6 1)"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 2 Series</span></a></li>
-        <li><a href="#" onclick="gogoro1()"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g1-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#00D7FF"></stop><stop data-v-28f15424="" offset="100%" stop-color="#0961CE"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g1-icon-gradient)" fill-rule="nonzero" d="M12.292 62.228h11.769c.406 0 .736-.33.736-.736V.736A.736.736 0 0 0 24.061 0H12.999c-.406 0-1.005.19-1.336.426L.6 7.049C.27 7.284 0 7.804 0 8.21v11.168c0 .407.276.556.616.333l10.94-5.59v47.37c0 .407.33.736.736.736" transform="translate(15 1)"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 1 Series</span></a></li>
+        <li><a href="#" onclick="gogoroS()" class="gogoroS" style="text-decoration:none"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="s-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#FF1C41"></stop><stop data-v-28f15424="" offset="100%" stop-color="#802984"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#s-icon-gradient)" fill-rule="nonzero" d="M25.95 27.22h-8.616a9.151 9.151 0 0 1-6.557-2.741 9.55 9.55 0 0 1-2.756-6.704 9.54 9.54 0 0 1 2.71-6.728c1.755-1.803 4.09-2.8 6.572-2.81l20.837-.005L39.516 6l-22.22.012c-3.066.011-5.948 1.243-8.113 3.467a11.782 11.782 0 0 0-3.342 8.304c.023 6.45 5.177 11.668 11.497 11.668h8.612c8.174 0 14.842 6.752 14.869 15.094.015 4.047-1.518 7.862-4.319 10.743-2.805 2.877-6.53 4.472-10.497 4.488H1.369L0 62h26.01c9.406-.035 17.028-7.87 16.99-17.462-.031-9.57-7.677-17.319-17.05-17.319m-8.87 7.568h8.625c2.475 0 4.805.962 6.567 2.744a9.509 9.509 0 0 1 2.76 6.706 9.508 9.508 0 0 1-2.71 6.723c-1.758 1.806-4.095 2.803-6.583 2.812H4.798L3.428 56l22.32-.003c3.07-.013 5.956-1.244 8.124-3.47a11.747 11.747 0 0 0 3.343-8.299 11.76 11.76 0 0 0-3.404-8.276 11.347 11.347 0 0 0-8.118-3.398h-.042l-8.517.004h-.054c-8.187 0-14.865-6.751-14.896-15.098-.012-4.046 1.523-7.858 4.33-10.74 2.805-2.876 6.54-4.472 10.512-4.487l24.603-.004L43 0 17.019.008C7.599.043-.034 7.878 0 17.468c.034 9.57 7.692 17.319 17.08 17.319" transform="translate(11 1)"></path></svg><span>S performance</span></a></li>
+        <li><a href="#" onclick="gogoro3()" class="gogoro3" style="text-decoration:none"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g3-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#FFE600"></stop><stop data-v-28f15424="" offset="100%" stop-color="#FFE600"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g3-icon-gradient)" fill-rule="evenodd" d="M8.06 41.774h14.955c.528 0 .973.386 1.049.904.603 4.1 2.705 6.73 7.684 6.73 4.657 0 6.86-2.18 6.86-6.04 0-4.027-2.203-6.124-7.114-6.124h-4.827V25.75h4.573c4.996 0 7.367-2.182 7.367-6.04 0-3.105-2.032-5.203-6.097-5.203-3.885 0-6.137 2.207-6.964 6.206-.102.49-.535.842-1.038.842H9.617a1.056 1.056 0 0 1-1.055-1.166C9.822 8.706 17.77 1 33.018 1 47.753 1 56.56 7.376 56.56 17.612c0 6.711-3.895 11.074-10.416 12.92C53.174 31.79 58 36.74 58 43.872 58 55.365 49.447 63 32.933 63 15.9 63 7.982 55.713 7.003 42.908a1.057 1.057 0 0 1 1.058-1.134"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 3 Series</span></a></li>
+        <li><a href="#" onclick="gogoro2()" class="gogoro2" style="text-decoration:none"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g2-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#00D7FF"></stop><stop data-v-28f15424="" offset="100%" stop-color="#00D7FF"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g2-icon-gradient)" fill-rule="nonzero" d="M51.246 62c.417 0 .754-.319.754-.713V49.63c0-.394-.337-.713-.754-.713h-20.95l9.043-8.295c7.235-6.585 12.209-12.913 12.209-21.294C51.548 8.039 43.138 0 27.31 0 11.914 0 2.21 7.538 1.303 22.37c-.024.39.303.72.717.72h15.313c.412 0 .788-.317.841-.703.92-6.738 3.773-9.217 8.233-9.217 4.612 0 6.873 2.736 6.873 6.841 0 5.131-4.25 10.348-10.671 16.847L.41 59.108c-.264.265-.411.615-.411.978v1.201c0 .394.337.713.754.713h50.492z" transform="translate(6 1)"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 2 Series</span></a></li>
+        <li><a href="#" onclick="gogoro1()" class="gogoro1" style="text-decoration:none"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g1-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#5A5B60"></stop>@*<stop data-v-28f15424="" offset="100%" stop-color="#0961CE">*@</stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g1-icon-gradient)" fill-rule="nonzero" d="M12.292 62.228h11.769c.406 0 .736-.33.736-.736V.736A.736.736 0 0 0 24.061 0H12.999c-.406 0-1.005.19-1.336.426L.6 7.049C.27 7.284 0 7.804 0 8.21v11.168c0 .407.276.556.616.333l10.94-5.59v47.37c0 .407.33.736.736.736" transform="translate(15 1)"></path></svg><span data-v-28f15424="" class="series-name">Gogoro 1 Series</span></a></li>
     </ul>
 </div>
 
 <div class="S">
     <div class="card-container row">
         <a href="#" class="col-lg-4">
-            <div class="card" style="">
+            <div class="card">
                 <div class="S1"></div>
                 <div class="card-body">
                     <p class="card-text">Gogoro <span class="gc-blod">S1</span></p>
                 </div>
             </div>
         </a>
-        <a href="#"class="col-lg-4">
+        <a href="#" class="col-lg-4">
             <div class="card" style="">
                 <div class="S2"></div>
                 <div class="card-body">
@@ -206,7 +218,7 @@
     </div>
 </div>
 
-<div class="3 hidden" >
+<div class="3 hidden">
     <div class="card-container row">
         <a href="#" class="col-lg-4">
             <div class="card" style="">
@@ -270,31 +282,33 @@
         </a>
     </div>
 </div>
-    @section endJS {
-        <script>
-            function gogoroS() {
-                $(".S").removeClass("hidden");
-                $(".3").addClass("hidden");
-                $(".2").addClass("hidden");
-                $(".1").addClass("hidden");
-            }
-            function gogoro3() {
-                $(".S").addClass("hidden");
-                $(".3").removeClass("hidden");
-                $(".2").addClass("hidden");
-                $(".1").addClass("hidden");
-            }
-            function gogoro2() {
-                $(".S").addClass("hidden");
-                $(".3").addClass("hidden");
-                $(".2").removeClass("hidden");
-                $(".1").addClass("hidden");
-            }
-            function gogoro1() {
-                $(".S").addClass("hidden");
-                $(".3").addClass("hidden");
-                $(".2").addClass("hidden");
-                $(".1").removeClass("hidden");
-            }
-        </script>
-    }
+@section endJS {
+    <script>
+        function gogoroS() {
+            $(".S").removeClass("hidden");
+            $(".3").addClass("hidden");
+            $(".2").addClass("hidden");
+            $(".1").addClass("hidden");
+            
+        }
+        function gogoro3() {
+            $(".S").addClass("hidden");
+            $(".3").removeClass("hidden");
+            $(".2").addClass("hidden");
+            $(".1").addClass("hidden");
+        }
+        function gogoro2() {
+            $(".S").addClass("hidden");
+            $(".3").addClass("hidden");
+            $(".2").removeClass("hidden");
+            $(".1").addClass("hidden");
+        }
+        function gogoro1() {
+            $(".S").addClass("hidden");
+            $(".3").addClass("hidden");
+            $(".2").addClass("hidden");
+            $(".1").removeClass("hidden");
+            $(".S").append("<stop>'" + stop-color = "#00D7FF" + "'</stop>");
+        }
+    </script>
+}
