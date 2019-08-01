@@ -452,9 +452,10 @@ namespace MotorcycleTW.Controllers
         //
         // POST: /Account/LogOff
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            Session["m_name"] = null;
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
 
