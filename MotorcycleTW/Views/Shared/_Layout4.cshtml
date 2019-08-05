@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MotorcycleTW</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
           asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
@@ -18,7 +19,48 @@
 </head>
 <body>
     <header>
-        <div>
+        <div class="mx-5 d-flex justify-content-between"
+             style="font-family: 'Noto Sans TC', sans-serif;  height: 60px;">
+            <ul class="d-flex mt-3 p-0 justify-content-between" style="list-style:none; width: 1000px;">
+                <li>
+                    <h4>@Html.ActionLink("Gogoro", "Index", "", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                </li>
+                <li>
+                    <h4>@Html.ActionLink("智慧雙輪", "Index", "MotoPage", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                </li>
+                <li>
+                    <h4>智慧能源</h4>
+                </li>
+                <li>
+                    <h4>電池交換站</h4>
+                </li>
+                <li>
+                    <h4>@Html.ActionLink("網路商店", "StorePage", "", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                </li>
+                <li>
+                    <h4>最新優惠</h4>
+                </li>
+                <li>
+                    <h4>預約試騎</h4>
+                </li>
+            </ul>
+            <ul class="mt-3 p-0" style="list-style:none;height: 60px;">
+                <li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <div>
+                            <h4>@Html.ActionLink("會員管理", "MemberInfomation", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                            <h4>@Html.ActionLink("登出", "LogOff", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                        </div>
+                    }
+                    else
+                    {
+                        <h4>@Html.ActionLink("登入", "Login", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                    }
+                </li>
+            </ul>
+        </div>
+        @*<div>
             <div class="container">
                 <ul class="d-flex justify-content-around mb-3" style="list-style:none;height: 60px;">
                     <li>
@@ -57,7 +99,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>*@
     </header>
     <div>
         <partial name="_CookieConsentPartial" />
@@ -66,49 +108,85 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="p-3 mb-2 bg-secondary text-white">
-            <div class="container my-5">
-                <div class="d-flex justify-content-around text-white">
-                    <div>
-                        <h4 role="presentation">
-                            Airbnb
-                        </h4>
-                        <ul class="list-unstyled ">
-                            <li><a>工作機會</a></li>
-                            <li><a>媒體</a></li>
-                            <li><a>政策</a></li>
-                            <li><a>協助</a></li>
-                            <li><a>多元化與歸屬感</a></li>
+    <footer style="font-family: 'Noto Sans TC', sans-serif; background-color: #444444;">
+        <div class="container">
+            <div style="margin: 0 auto; text-align:center;">
+                <input class="mt-4 mb-3 col-5 text-center" type="email" placeholder="輸入Email以獲取最新資訊"
+                       style="border-radius: 30px; height: 40px; outline: none; border: 0;">
+                <button type="submit"
+                        style="color: #444444; border-radius: 30px; width: 80px;  height: 30px; align-items: center; position: relative; right: 90px; outline: none; border: 0;">
+                    送出
+                </button>
+            </div>
+            <div class="d-flex">
+                <div class="col-10 d-flex flex-wrap">
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">智慧雙輪</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 3 系列</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 2 系列</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 1 系列</a></li>
+                            <li><a href="" style="color: #888888;">S Performance</a></li>
+                            <li><a href="" style="color: #888888;">iQ System®</a></li>
+                            <li><a href="" style="color: #888888;">規格比較表</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 role="presentation">
-                            Tenso
-                        </h4>
-                        <ul class="list-unstyled">
-                            <li><a>信任與安全</a></li>
-                            <li><a>Travel Credit</a></li>
-                            <li><a>Airbnb公民</a></li>
-                            <li><a>商務差旅</a></li>
-                            <li><a>旅遊指南</a></li>
-                            <li><a>Airbnb雜誌</a></li>
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">購買資訊</a></li>
+                            <li><a href="" style="color: #888888;">門市/服務中心據點</a></li>
+                            <li><a href="" style="color: #888888;">政府補助</a></li>
+                            <li><a href="" style="color: #888888;">最新優惠</a></li>
+                            <li><a href="" style="color: #888888;">電池資費方案</a></li>
+                            <li><a href="" style="color: #888888;">網路商店</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 原廠認證配件</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 role="presentation">
-                            Rate
-                        </h4>
-                        <ul class="list-unstyled">
-                            <li><a>出租的好處</a></li>
-                            <li><a>邀請房東</a></li>
-                            <li><a>待客服務</a></li>
-                            <li><a>房東義務</a></li>
-                            <li><a>舉辦體驗新推出</a></li>
-                            <li><a> Open Homes計劃</a></li>
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">線上支援</a></li>
+                            <li><a href="" style="color: #888888;">售後服務與保固政策</a></li>
+                            <li><a href="" style="color: #888888;">支援服務</a></li>
+                            <li><a href="" style="color: #888888;">政府補助進度查詢</a></li>
+                            <li><a href="" style="color: #888888;">常見問題</a></li>
+                            <li><a href="" style="color: #888888;">車主論壇</a></li>
+                            <li><a href="" style="color: #888888;">聯絡我們</a></li>
                         </ul>
                     </div>
-
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">智慧能源</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 能源網路</a></li>
+                            <li><a href="" style="color: #888888;">GoCharger® Mobile 隨車電池充電器</a></li>
+                            <li><a href="" style="color: #888888;">尋找電池交換站</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">商務專案</a></li>
+                            <li><a href="" style="color: #888888;">Gogoro 智慧雙輪推廣站招募</a></li>
+                            <li><a href="" style="color: #888888;">GoShare® 移動共享服務</a></li>
+                            <li><a href="" style="color: #888888;">郵務車專案</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 mt-4">
+                        <ul style="list-style: none;">
+                            <li class="mb-2"><a href="" style="color: #fff;">關於 Gogoro</a></li>
+                            <li><a href="" style="color: #888888;">關於我們</a></li>
+                            <li><a href="" style="color: #888888;">官方部落格</a></li>
+                            <li><a href="" style="color: #888888;">媒體專區</a></li>
+                            <li><a href="" style="color: #888888;">人才招募</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <ul style="list-style: none;">
+                        <li><a href="" class="href" style="background: url('/image/001.svg');"></a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         </div>
