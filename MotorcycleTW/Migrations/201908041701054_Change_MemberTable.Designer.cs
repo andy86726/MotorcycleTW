@@ -7,13 +7,13 @@ namespace MotorcycleTW.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddMemerFiled : IMigrationMetadata
+    public sealed partial class Change_MemberTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMemerFiled));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Change_MemberTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907301242064_AddMemerFiled"; }
+            get { return "201908041701054_Change_MemberTable"; }
         }
         
         string IMigrationMetadata.Source

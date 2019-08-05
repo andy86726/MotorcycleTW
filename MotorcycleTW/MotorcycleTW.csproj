@@ -203,16 +203,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907301225190_Create_Database.cs" />
-    <Compile Include="Migrations\201907301225190_Create_Database.Designer.cs">
-      <DependentUpon>201907301225190_Create_Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908041422132_Create_Database.cs" />
+    <Compile Include="Migrations\201908041422132_Create_Database.Designer.cs">
+      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907301242064_AddMemerFiled.cs" />
-    <Compile Include="Migrations\201907301242064_AddMemerFiled.Designer.cs">
-      <DependentUpon>201907301242064_AddMemerFiled.cs</DependentUpon>
+    <Compile Include="Migrations\201908041701054_Change_MemberTable.cs" />
+    <Compile Include="Migrations\201908041701054_Change_MemberTable.Designer.cs">
+      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRoles.cs" />
+    <Compile Include="Models\AspNetUserClaims.cs" />
+    <Compile Include="Models\AspNetUserLogins.cs" />
+    <Compile Include="Models\AspNetUsers.cs" />
     <Compile Include="Models\Battery_store.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Classifies.cs" />
@@ -237,6 +241,8 @@
     <Compile Include="ViewModel\RegisterViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
+    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
@@ -331,9 +337,7 @@
     <Content Include="Views\Home\bbc.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
     <Content Include="Views\Account\VerifyRegistration.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -349,11 +353,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907301225190_Create_Database.resx">
-      <DependentUpon>201907301225190_Create_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908041422132_Create_Database.resx">
+      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907301242064_AddMemerFiled.resx">
-      <DependentUpon>201907301242064_AddMemerFiled.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
+      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

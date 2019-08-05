@@ -60,8 +60,8 @@ namespace MotorcycleTW
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "1014929615167-qh3fo14035ta17jcdtk4uo0pdfd6okop.apps.googleusercontent.com",
+            //    ClientSecret = "AIzaSyC1Zp0wBPQ7cbLFzUaw_5rOvz3BO70X04k"
             //});
         }
     }

@@ -11,7 +11,10 @@ namespace MotorcycleTW.Models
             : base("name=MotorclcleDB")
         {
         }
-
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Battery_store> Battery_store { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Classifies> Classifies { get; set; }
@@ -30,6 +33,21 @@ namespace MotorcycleTW.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetRoles>()
+                   .HasMany(e => e.AspNetUsers)
+                   .WithMany(e => e.AspNetRoles)
+                   .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserClaims)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserLogins)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
             modelBuilder.Entity<Products>()
                 .HasOptional(e => e.Shopping_Cart)
                 .WithRequired(e => e.Products);

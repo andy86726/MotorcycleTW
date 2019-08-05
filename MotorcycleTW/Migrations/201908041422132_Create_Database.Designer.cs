@@ -13,7 +13,7 @@ namespace MotorcycleTW.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201907301225190_Create_Database"; }
+            get { return "201908041422132_Create_Database"; }
         }
         
         string IMigrationMetadata.Source

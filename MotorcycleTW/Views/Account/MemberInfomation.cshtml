@@ -1,7 +1,7 @@
-﻿@using MotorcycleTW.Models
-@model RegisterViewModel
+﻿@model RegisterViewModel
 @{
     ViewBag.Title = "會員資料";
+    var member = ViewBag.member;
 }
 <link href="~/Assets/css/MemberInfomation.css" rel="stylesheet" />
 @section topCSS{
@@ -29,13 +29,13 @@
             </div>
             <div class="form-group first-column col-lg-6">
                 <label for="LastName"><strong>姓氏</strong></label>
-                <input type="text" value="" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
+                <input type="text" value="@member.m_lastName" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
 
             </div>
 
             <div class="form-group col-lg-6">
                 <label for="FirstName"><strong>名字</strong></label>
-                <input type="text" value="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength" id="FirstName" ng-model="user.FirstName" name="FirstName" maxlength="20" required="" special-char-validator="" placeholder="請輸入你的名字">
+                <input type="text" value="@member.m_firstName" class="form-control ng-pristine ng-untouched ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength" id="FirstName" ng-model="user.FirstName" name="FirstName" maxlength="20" required="" special-char-validator="" placeholder="請輸入你的名字">
 
             </div>
 
@@ -73,7 +73,7 @@
             <div class="form-group first-column col-lg-6">
                 <label for="Mobile"><strong>身分證字號 / 統一編號</strong></label>
                 <div class="">
-                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control",@Value=member.m_identitiy_number });
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
 
             <div class="form-group first-column col-lg-6">
                 <label for="Mobile"><strong>手機號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼" value="@member.m_phone">
                 <div class="error-container ng-hide" ng-show="submitted">
 
                     <span class="help-block ng-hide" ng-show="frm.Mobile.$error.minlength">
@@ -124,7 +124,7 @@
 
             <div class="form-group col-lg-6">
                 <label for="HomePhone"><strong>住家號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="@member.m_zipcode">
             </div>
 
             <!-- Home address -->
