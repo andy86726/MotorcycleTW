@@ -534,7 +534,7 @@ namespace IdentityEmailConfirm.Controllers
             var callbackUrl = Url.Action("ConfirmEmail", "Account",
                new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             await UserManager.SendEmailAsync(userID, subject,
-               "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+               "請按此<a href=\"" + callbackUrl + "\">連結</a>以驗證您的帳號 ");
 
             return callbackUrl;
         }

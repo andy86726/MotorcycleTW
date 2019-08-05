@@ -347,6 +347,7 @@
     <Content Include="Views\MotoPage\Index.cshtml" />
     <Content Include="Views\MotoPage\S1.cshtml" />
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
+    <Content Include="Views\Shared\MotoPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
