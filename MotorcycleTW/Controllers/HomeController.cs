@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MotorcycleTW.Models;
 
 namespace MotorcycleTW.Controllers
 {
@@ -28,13 +29,10 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult bbc()
         {
-            var a= 1243;
+            //var db = new MrtorcycleContext();
+            //var b=db.Products.FirstOrDefault();
             return View();
         }
-
-        public ActionResult StorePage()
-        {
-            return View();
-        }
+        
     }
 }

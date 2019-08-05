@@ -1,84 +1,11 @@
-﻿@using MotorcycleTW.Models
-@model RegisterViewModel
+﻿@model RegisterViewModel
 @{
     ViewBag.Title = "會員資料";
+    var member = ViewBag.member;
 }
-@*<link href="~/Asset/css/MemberInfomation.css" rel="stylesheet" />*@
+<link href="~/Assets/css/MemberInfomation.css" rel="stylesheet" />
 @section topCSS{
     <style>
-        .body-content {
-            padding: 0;
-        }
-
-        html {
-            font-size: 18px;
-        }
-
-        .header {
-            padding-top: 25px;
-            height: 400px;
-            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a9de32), color-stop(50%, #76df5c), color-stop(100%, #59df76), color-stop(100%, #36e096), color-stop(100%, #59df76));
-            display: flex;
-            justify-content: center;
-        }
-
-            .header .figure {
-                padding: 10px;
-                position: relative;
-                width: 350px;
-                height: 350px;
-                background: #fff;
-                border-radius: 175px;
-            }
-
-                .header .figure .inner {
-                    width: 330px;
-                    height: 330px;
-                    border: 10px solid #76df5c;
-                    border-radius: 165px;
-                }
-
-                    .header .figure .inner .picture {
-                        margin: 0;
-                        background-size: 320px;
-                        background-image: url(//images.gogoroapp.com/my-gogoro/profile_pic_default.jpg);
-                        width: 310px;
-                        height: 310px;
-                        border-radius: 155px;
-                    }
-
-                        .header .figure .inner .picture .photo-edit-link {
-                            display: block;
-                            position: absolute;
-                            background-color: #888;
-                            padding-top: 15px;
-                            width: 60px;
-                            height: 60px;
-                            border-radius: 30px;
-                            bottom: 35px;
-                            left: 151px;
-                        }
-
-                        .header .figure .inner .picture a:hover {
-                            background: #000;
-                        }
-
-                        .header .figure .inner .picture .photo-edit-link img {
-                            width: 45px;
-                        }
-
-        .Edit {
-            margin: 0 200px;
-        }
-
-        #profile-edit .select-block {
-            display: inline-block;
-        }
-
-
-            .form-group .radio input {
-                margin:0px;
-            }
     </style>
 }
 <div class="header text-center">
@@ -91,10 +18,9 @@
     </div>
 </div>
 <div class="row Edit">
-    <div class="col-xs-7">
-        <div class="row">
+    <div class="col-lg-7">
             <h3 class="first">會員資料</h3>
-            
+
             <div class="form-group">
                 @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
@@ -103,13 +29,13 @@
             </div>
             <div class="form-group first-column col-lg-6">
                 <label for="LastName"><strong>姓氏</strong></label>
-                <input type="text" value="" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
+                <input type="text" value="@member.m_lastName" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
 
             </div>
 
             <div class="form-group col-lg-6">
                 <label for="FirstName"><strong>名字</strong></label>
-                <input type="text" value="" class="form-control ng-pristine ng-untouched ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength" id="FirstName" ng-model="user.FirstName" name="FirstName" maxlength="20" required="" special-char-validator="" placeholder="請輸入你的名字">
+                <input type="text" value="@member.m_firstName" class="form-control ng-pristine ng-untouched ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength" id="FirstName" ng-model="user.FirstName" name="FirstName" maxlength="20" required="" special-char-validator="" placeholder="請輸入你的名字">
 
             </div>
 
@@ -124,7 +50,7 @@
                 <div class="row">
                     <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-6">
                         <div class="radio">
-                            <input type="radio" name="Gender"  id="GenderMan" value="1" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+                            <input type="radio" name="Gender" id="GenderMan" value="1" class="ng-valid ng-dirty ng-valid-parse ng-touched">
                             <label for="GenderMan">男</label>
                         </div>
                     </div>
@@ -147,7 +73,7 @@
             <div class="form-group first-column col-lg-6">
                 <label for="Mobile"><strong>身分證字號 / 統一編號</strong></label>
                 <div class="">
-                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control",@Value=member.m_identitiy_number })
                 </div>
             </div>
 
@@ -181,7 +107,7 @@
 
             <div class="form-group first-column col-lg-6">
                 <label for="Mobile"><strong>手機號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼" value="@member.m_phone">
                 <div class="error-container ng-hide" ng-show="submitted">
 
                     <span class="help-block ng-hide" ng-show="frm.Mobile.$error.minlength">
@@ -198,7 +124,7 @@
 
             <div class="form-group col-lg-6">
                 <label for="HomePhone"><strong>住家號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="">
             </div>
 
             <!-- Home address -->
@@ -321,11 +247,8 @@
                 </a>
                 <a ng-show="facebookLink==1" ng-click="facebookUnlinkConnect();$event.preventDefault();" class="btn btn-text-gray ng-hide">取消連結</a>
             </div>
-
-
-        </div>
     </div>
-    <div class="col-xs-5">
+    <div class="col-lg-5">
         <div class="aside-inner-container">
             <h3 class="first">更新個人資訊</h3>
             <p>請再次確認您所修改的資訊</p>
@@ -333,7 +256,9 @@
         </div>
     </div>
 </div>
+<script>
 
+</script>
 
 
 @section Scripts {

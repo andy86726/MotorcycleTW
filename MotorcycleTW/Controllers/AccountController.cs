@@ -5,25 +5,25 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MotorcycleTW;
 using MotorcycleTW.Models;
 
-namespace MotorcycleTW.Controllers
+namespace IdentityEmailConfirm.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public MrtorcycleContext db = new MrtorcycleContext();
+        MotorcycleContext db = new MotorcycleContext();
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -35,9 +35,9 @@ namespace MotorcycleTW.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -74,29 +74,37 @@ namespace MotorcycleTW.Controllers
                 return View(model);
             }
 
+            //這段是做Email Confirmed功能，未經Email Confirmed確認，不讓登入
+            // Require the user to have a confirmed email before they can log on.
+            var user = await UserManager.FindByNameAsync(model.Email);
+            if (user != null)
+            {
+                if (!await UserManager.IsEmailConfirmedAsync(user.Id))
+                {
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account-Resend");
+                    ViewBag.errorMessage = "You must have a confirmed email to log on."
+                        + "The confirmation token has been resent to your email account.";
+                    return View("Error");
+                }
+            }
+
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
-            Members user = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
-            if (user == null)
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+            switch (result)
             {
-                ModelState.AddModelError("", "您的電子郵件或密碼輸入錯誤了");
-                return View();
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "登入嘗試失試。");
+                    return View(model);
             }
-            //create FormsAuthenticationTicket
-            var ticket = new FormsAuthenticationTicket(
-            version: 1,//問老師如果不設定會有甚麼影響嗎
-            name: user.m_email.ToString(), //可以放使用者Id
-            issueDate: DateTime.UtcNow,//現在UTC時間
-            expiration: DateTime.UtcNow.AddMinutes(30),//Cookie有效時間=現在時間往後+30分鐘
-            isPersistent: true,// 是否要記住我 true or false
-            userData: "", //可以放使用者角色名稱
-            cookiePath: FormsAuthentication.FormsCookiePath);
-            // Encrypt the ticket.
-            var encryptedTicket = FormsAuthentication.Encrypt(ticket);//把驗證的表單加密
-            // Create the cookie.
-            var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-            Response.Cookies.Add(cookie);
-            return RedirectToAction("Index", "Home");
         }
 
         //
@@ -128,7 +136,7 @@ namespace MotorcycleTW.Controllers
             // 如果使用者輸入不正確的代碼來表示一段指定的時間，則使用者帳戶 
             // 會有一段指定的時間遭到鎖定。 
             // 您可以在 IdentityConfig 中設定帳戶鎖定設定
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -163,24 +171,50 @@ namespace MotorcycleTW.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);//註冊後直接登入
-                    
+                    //此行註解掉，註冊帳號成功後，就不會直接登入
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
                     // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771
                     // 傳送包含此連結的電子郵件
-                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Email, code = code }, protocol: Request.Url.Scheme);
-                     await UserManager.SendEmailAsync(user.Email, "確認您的帳戶", "請按一下此連結確認您的帳戶 <a href=\"" + callbackUrl + "\">這裏</a>");
-                     ViewBag.Message = "Check your email and confirm your account, you must be confirmed " + "before you can log in.";
-                     return View("Info");
+                    Members members = new Members()
+                    {
+                        m_identitiy = model.Identitiy,
+                        m_lastName = model.LastName,
+                        m_firstName=model.FirstName,
+                        m_email = model.Email,
+                        m_password=model.Password,
+                        m_phone=model.Phone,
+                        m_city=model.City,
+                        m_area=model.Area,
+                        m_address=model.Address,
+                        m_zipcode=model.Zipcode,
+                        m_birthday=DateTime.Parse(model.Month.ToString()+"/"+model.Day.ToString()+"/"+model.Year.ToString()),
+                        m_identitiy_number=model.Identitiy_number                      
+                    };
+                    db.Members.Add(members);
+                    db.SaveChanges();
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
+
+                    ViewBag.Message = "請去您的信箱確認驗證信件 ";
+
+                    return View("Info",members);
                     //return RedirectToAction("Index", "Home");
                 }
+
                 AddErrors(result);
             }
 
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
             return View(model);
         }
-
+        [Authorize]
+        public ActionResult MemberInfomation()
+        {
+            var useremail = User.Identity.Name;
+            var b = db.Members.Where(x => x.m_email == useremail).FirstOrDefault();
+            ViewBag.member = b ;
+            return View();
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -220,10 +254,10 @@ namespace MotorcycleTW.Controllers
 
                 // 如需如何進行帳戶確認及密碼重設的詳細資訊，請前往 https://go.microsoft.com/fwlink/?LinkID=320771
                 // 傳送包含此連結的電子郵件
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "重設密碼", "請按 <a href=\"" + callbackUrl + "\">這裏</a> 重設密碼");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "重設密碼", "請按 <a href=\"" + callbackUrl + "\">這裏</a> 重設密碼");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
@@ -266,6 +300,9 @@ namespace MotorcycleTW.Controllers
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
+                var result_1 = db.Members.Where(x => x.m_email == model.Email).FirstOrDefault();
+                result_1.m_password = model.Password;
+                db.SaveChanges();
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             AddErrors(result);
@@ -396,9 +433,10 @@ namespace MotorcycleTW.Controllers
 
         //
         // POST: /Account/LogOff
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult LogOff(int? id)
+
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
@@ -411,7 +449,7 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -430,12 +468,6 @@ namespace MotorcycleTW.Controllers
             }
 
             base.Dispose(disposing);
-        }
-
-        [AllowAnonymous]
-        public ActionResult MemberInfomation()
-        {
-            return View();
         }
 
         #region Helper
@@ -494,6 +526,17 @@ namespace MotorcycleTW.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+
+        }
+        private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account",
+               new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            await UserManager.SendEmailAsync(userID, subject,
+               "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+            return callbackUrl;
         }
         #endregion
     }

@@ -199,15 +199,28 @@
     <Compile Include="Controllers\CRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907200901171_one.cs" />
-    <Compile Include="Migrations\201907200901171_one.Designer.cs">
-      <DependentUpon>201907200901171_one.cs</DependentUpon>
+    <Compile Include="Migrations\201908041422132_Create_Database.cs" />
+    <Compile Include="Migrations\201908041422132_Create_Database.Designer.cs">
+      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908041701054_Change_MemberTable.cs" />
+    <Compile Include="Migrations\201908041701054_Change_MemberTable.Designer.cs">
+      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908051544145_Change_members.cs" />
+    <Compile Include="Migrations\201908051544145_Change_members.Designer.cs">
+      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRoles.cs" />
+    <Compile Include="Models\AspNetUserClaims.cs" />
+    <Compile Include="Models\AspNetUserLogins.cs" />
+    <Compile Include="Models\AspNetUsers.cs" />
     <Compile Include="Models\Battery_store.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\Classifies.cs" />
@@ -216,7 +229,7 @@
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
-    <Compile Include="Models\MrtorcycleContext.cs" />
+    <Compile Include="Models\MotorcycleContext.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Order_Detail.cs" />
     <Compile Include="Models\Payments.cs" />
@@ -227,9 +240,13 @@
     <Compile Include="Models\Stores.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\RegisterViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
+    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
@@ -296,7 +313,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
@@ -323,9 +339,9 @@
     <Content Include="Views\Account\MemberInfomation.cshtml" />
     <Content Include="Views\Shared\_Layout4.cshtml" />
     <Content Include="Views\Home\bbc.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Account\VerifyRegistration.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -341,8 +357,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907200901171_one.resx">
-      <DependentUpon>201907200901171_one.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908041422132_Create_Database.resx">
+      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
+      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908051544145_Change_members.resx">
+      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
