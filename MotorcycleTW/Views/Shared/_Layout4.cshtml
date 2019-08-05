@@ -47,7 +47,7 @@
                             <p>@Session["m_name"]</p>
                             <div>
                                 <h4>@Html.ActionLink("會員管理", "MemberInfomation", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
-                                <h4>@Html.ActionLink("登出", "LogOff", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                                <h4>@Html.ActionLink("登出", "LogOff", "Account", FormMethod.Post, new { @class = "text-dark", style = "text-decoration:none" })</h4>
                                 @* 無法登出 *@
                             </div>
                         }

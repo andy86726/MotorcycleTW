@@ -206,9 +206,8 @@ namespace IdentityEmailConfirm.Controllers
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
             return View(model);
         }
-        public async Task<ActionResult> MemberInfomation()
+        public ActionResult MemberInfomation()
         {
-            var m_id = DefaultAuthenticationTypes.ApplicationCookie;
             return View();
         }
         //
@@ -429,7 +428,7 @@ namespace IdentityEmailConfirm.Controllers
 
         //
         // POST: /Account/LogOff
-        [HttpPost]
+        //[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
