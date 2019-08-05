@@ -349,6 +349,7 @@
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\StorePage.cshtml" />
+    <Content Include="Views\Home\StoreBatteryMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "StoreBatteryMap";
+}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"
+            integrity="sha256-chlNFSVx3TdcQ2Xlw7SvnbLAavAQLO0Y/LBiWX04viY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-places.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="mapContainer">
+
+        <div>
+            <h2>目前暫點87個</h2>
+        </div>
+        <button id="pg2">規劃全部路徑</button>
+
+    </div>
+
+    <script>
+
+        var hidpi = ('devicePixelRatio' in window && devicePixelRatio > 1);
+
+        var platform = new H.service.Platform({
+            'app_id': 'OngksD1vZ1DUr73k6LID',
+            'app_code': 'v0xqQWskjgM8HyVvx2oBpw',
+            userHTTPS: true
+        });
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers(hidpi ? 512 : 256, hidpi ? 320 : null);
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.terrain.base,
+            {
+                center: { lng: 121.4, lat: 23.1 },
+                zoom: 7
+            });
+
+        //設定縮放按鈕位置
+        var ui = H.ui.UI.createDefault(map, defaultLayers);
+        ui.getControl('zoom').setAlignment('bottom-center');
+        ui.getControl('scalebar').setAlignment('bottom-center');
+        ui.getControl('mapsettings').setAlignment('bottom-center');
+        //滾輪縮放
+        var mapBehavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+        $.ajax({
+
+            type: "get",
+            url: "https://wapi.gogoro.com/tw/api/vm/list",
+            dataType: "json",
+            success: function (response) {
+
+                for (var i of response.data) {
+
+                    var midMarker = new H.map.Marker(
+                        {
+                            lat: i.Latitude,
+                            lng: i.Longitude,
+                        }); map.addObject(midMarker); console.log(midMarker);
+                }
+            }
+        });
+            // $("#pg2").click(function () {
+            //     console.log(map.);
+            // });
+
+    </script>
+</body>
+
+
