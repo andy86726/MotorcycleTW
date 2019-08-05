@@ -95,8 +95,6 @@ namespace IdentityEmailConfirm.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    var a = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
-                    Session["m_name"] = a.m_lastName+a.m_firstName;
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
