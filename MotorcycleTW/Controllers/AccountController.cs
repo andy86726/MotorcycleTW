@@ -12,7 +12,7 @@ using MotorcycleTW;
 using MotorcycleTW.Models;
 
 namespace IdentityEmailConfirm.Controllers
-{  
+{
     [Authorize]
     public class AccountController : Controller
     {
@@ -91,10 +91,13 @@ namespace IdentityEmailConfirm.Controllers
             // 這不會計算為帳戶鎖定的登入失敗
             // 若要啟用密碼失敗來觸發帳戶鎖定，請變更為 shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
             switch (result)
             {
                 case SignInStatus.Success:
-                        return RedirectToLocal(returnUrl);
+                    var a = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
+                    Session["m_name"] = a.m_lastName+a.m_firstName;
+                    return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -206,8 +209,12 @@ namespace IdentityEmailConfirm.Controllers
             // 如果執行到這裡，發生某項失敗，則重新顯示表單
             return View(model);
         }
+        [Authorize]
         public ActionResult MemberInfomation()
         {
+            var useremail = User.Identity.Name;
+            var b = db.Members.Where(x => x.m_email == useremail).FirstOrDefault();
+            ViewBag.member = b ;
             return View();
         }
         //
@@ -429,8 +436,9 @@ namespace IdentityEmailConfirm.Controllers
         //
         // POST: /Account/LogOff
         //[HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        //[ValidateAntiForgeryToken]
+        public ActionResult LogOff(int? id)
+
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");

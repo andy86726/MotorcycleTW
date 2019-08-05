@@ -73,7 +73,7 @@
             <div class="form-group first-column col-lg-6">
                 <label for="Mobile"><strong>身分證字號 / 統一編號</strong></label>
                 <div class="">
-                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control",@Value=member.m_identitiy_number });
+                    @Html.TextBoxFor(m => m.Identitiy_number, new { @class = "form-control",@Value=member.m_identitiy_number })
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
 
             <div class="form-group col-lg-6">
                 <label for="HomePhone"><strong>住家號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="@member.m_zipcode">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="">
             </div>
 
             <!-- Home address -->
@@ -256,7 +256,9 @@
         </div>
     </div>
 </div>
+<script>
 
+</script>
 
 
 @section Scripts {

@@ -25,6 +25,7 @@ namespace MotorcycleTW.Models
         public int m_phone { get; set; }//電話號碼
         public string m_identitiy_number { get; set; }//這個是身份證字號
         public DateTime m_birthday { get; set; }//生日
+        public string m_industry { get; set; }//職業
         public string m_city { get; set; }//居住的城市
         public string m_area { get; set; }//居住地居
         public string m_address { get; set; }//地址
