@@ -94,11 +94,7 @@ namespace IdentityEmailConfirm.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    {
-                        var member = db.Members.Where(x => x.m_email == model.Email && x.m_password == model.Password).FirstOrDefault();
-                        Session["m_id"] = member.m_id;
                         return RedirectToLocal(returnUrl);
-                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -198,10 +194,9 @@ namespace IdentityEmailConfirm.Controllers
                     db.SaveChanges();
                     string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirm your account");
 
-                    ViewBag.Message = "Check your email and confirm your account, you must be confirmed "
-                                    + "before you can log in.";
+                    ViewBag.Message = "請去您的信箱確認驗證信件 ";
 
-                    return View("Info");
+                    return View("Info",members);
                     //return RedirectToAction("Index", "Home");
                 }
 
@@ -213,9 +208,7 @@ namespace IdentityEmailConfirm.Controllers
         }
         public async Task<ActionResult> MemberInfomation()
         {
-            var m_id = int.Parse(Session["m_id"].ToString());
-            var member = db.Members.Where(x => x.m_id == ).FirstOrDefault();
-            ViewBag.member = member;
+            var m_id = DefaultAuthenticationTypes.ApplicationCookie;
             return View();
         }
         //

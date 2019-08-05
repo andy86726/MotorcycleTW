@@ -30,7 +30,7 @@ namespace MotorcycleTW
 
             var apiKey = ConfigurationManager.AppSettings["SendGrid_BuildSchool2019"];
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("Services@CodeMagic.com", "CodeMagic客服人員");
+            var from = new EmailAddress("Services@CodeMagic.com", "MotorcycleTW客服人員");
             var to = new EmailAddress(message.Destination);
             var subject = message.Subject;
             var msg = MailHelper.CreateSingleEmail(from, to, subject, message.Body, message.Body);
