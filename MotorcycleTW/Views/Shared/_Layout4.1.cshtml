@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MotorcycleTW</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+          crossorigin="anonymous"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("topCSS", required: false)
+    @RenderSection("topJS", required: false)
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei';
+        }
+    </style>
+    <header>
+        <div>
+            <div class="container">
+                <ul class="d-flex justify-content-around mb-3" style="list-style:none;height: 60px;">
+                    <li>
+                        <h4>Gogoro</h4>
+                    </li>
+                    <li>
+                        <h4>智慧雙輪</h4>
+                    </li>
+                    <li>
+                        <h4>智慧能源</h4>
+                    </li>
+                    <li>
+                        <h4>電池交換站</h4>
+                    </li>
+                    <li>
+                        <h4>網路商店</h4>
+                    </li>
+                    <li>
+                        <h4>最新優惠</h4>
+                    </li>
+                    <li>
+                        <h4>預約試騎</h4>
+                    </li>
+                    <li>
+                        <h4>@Html.ActionLink("登入", "Login", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div>
+        <partial name="_CookieConsentPartial" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <div class="container my-5">
+                <div class="d-flex justify-content-around text-white">
+                    <div>
+                        <h4 role="presentation">
+                            Airbnb
+                        </h4>
+                        <ul class="list-unstyled ">
+                            <li><a>工作機會</a></li>
+                            <li><a>媒體</a></li>
+                            <li><a>政策</a></li>
+                            <li><a>協助</a></li>
+                            <li><a>多元化與歸屬感</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 role="presentation">
+                            Tenso
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li><a>信任與安全</a></li>
+                            <li><a>Travel Credit</a></li>
+                            <li><a>Airbnb公民</a></li>
+                            <li><a>商務差旅</a></li>
+                            <li><a>旅遊指南</a></li>
+                            <li><a>Airbnb雜誌</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 role="presentation">
+                            Rate
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li><a>出租的好處</a></li>
+                            <li><a>邀請房東</a></li>
+                            <li><a>待客服務</a></li>
+                            <li><a>房東義務</a></li>
+                            <li><a>舉辦體驗新推出</a></li>
+                            <li><a> Open Homes計劃</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>*@
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+    </script>
+
+    <script src="~/Assets/js/site4.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @RenderSection("endCSS", required: false)
+    @RenderSection("endJS", required: false)
+</body>
+</html>

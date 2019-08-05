@@ -1,0 +1,170 @@
+﻿.series-list-container {
+    height: 150px;
+    /*background-color: #323237;*/
+    background-color: #202023;
+}
+
+    .series-list-container ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #202023;
+    }
+
+    .series-list-container li {
+        list-style: none;
+        padding: 0 50px;
+        margin-top: 40px;
+    }
+
+        .series-list-container li a {
+            color: #888;
+        }
+
+            .series-list-container li a:hover {
+                text-decoration: none;
+            }
+
+svg {
+    display: block;
+    position: relative;
+    line-height: 100px;
+}
+
+.card {
+    border: none;
+}
+
+.card-container {
+    margin: auto;
+    margin-top: 50px;
+    font-size: 16px;
+    width: 950px;
+}
+
+    .card-container a:hover {
+        text-decoration: none;
+    }
+
+    .card-container .card {
+        padding: 0;
+        color: #000;
+    }
+
+.card-text {
+    text-align: center;
+}
+
+    .card-text .gc-blod {
+        font-weight: 700;
+    }
+
+.card-container-2 {
+    display: flex;
+}
+
+.card-container .card .S1 {
+    width: 310px;
+    height: 177px;
+    background: #242427 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_gs1.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .S2 {
+    width: 310px;
+    height: 177px;
+    background: #242427 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_gs2.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .S2_Adventure {
+    width: 310px;
+    height: 177px;
+    background: #aa9f72 url(//cdn.gogoro.com/libs/ggr-components/images/v5/nav_model_gs2adv.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .S2_Café_Racer {
+    width: 310px;
+    height: 177px;
+    background: #3e2923 url(//cdn.gogoro.com/libs/ggr-components/images/v5/nav_model_gs2cafe.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_3_Plus {
+    width: 310px;
+    height: 177px;
+    background: #f8e414 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g3p.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_2_Plus {
+    width: 310px;
+    height: 177px;
+    background: #28c3ff url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g2p.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_2_Delight {
+    width: 310px;
+    height: 177px;
+    background: #d197f3 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g2dlt.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_2_Rumber {
+    width: 310px;
+    height: 177px;
+    background: #b9bcbf url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g2rbl.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_2_Utility {
+    width: 310px;
+    height: 177px;
+    background: #535357 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g2u.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-container .card .gogoro_1_Plus {
+    width: 310px;
+    height: 177px;
+    background: #e9e9e9 url(//cdn.gogoro.com/libs/ggr-components/images/v5/Nav_model_g1p.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.series-list-container li svg {
+    margin: auto;
+}
+
+.series-list-container li span {
+    font-size: 12px;
+}
+
+.col-lg-4 {
+    padding: 0;
+}
+
+li a:focus {
+    color: #fff;
+}
+
+.gogoroS, .gogoro3, .gogoro2, .gogoro1 {
+    opacity: 0.4;
+    transition: opacity .3s;
+}
+
+.gogoro-acticve {
+    opacity: 1;
+}
