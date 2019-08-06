@@ -252,6 +252,7 @@
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
+    <Content Include="Assets\css\SalesPage.css" />
     <Content Include="Assets\images\1.jpg" />
     <Content Include="Assets\images\2.jpg" />
     <Content Include="Assets\images\3.jpg" />
@@ -276,6 +277,11 @@
     <Content Include="Assets\images\Product\g1_extended_rear_grip_blackchrome_medium.jpg" />
     <Content Include="Assets\images\Product\g1_pebble_windshield_black_medium.jpg" />
     <Content Include="Assets\images\Product\turbine_frame_slider_medium.jpg" />
+    <Content Include="Assets\images\SalesPage\Store011.jpg" />
+    <Content Include="Assets\images\SalesPage\Store012.jpg" />
+    <Content Include="Assets\images\SalesPage\Store013.jpg" />
+    <Content Include="Assets\images\SalesPage\Store014.jpg" />
+    <Content Include="Assets\images\SalesPage\Store015.png" />
     <Content Include="Assets\js\Myscript.js" />
     <Content Include="Assets\js\site4.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -350,6 +356,7 @@
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\StorePage.cshtml" />
     <Content Include="Views\Home\StoreBatteryMap.cshtml" />
+    <Content Include="Views\Home\SalesPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
