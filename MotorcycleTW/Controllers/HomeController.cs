@@ -27,6 +27,12 @@ namespace MotorcycleTW.Controllers
 
             return View();
         }
+
+        public ActionResult SalesPage()
+        {
+
+            return View();
+        }
         public ActionResult bbc()
         {
             //var db = new MrtorcycleContext();

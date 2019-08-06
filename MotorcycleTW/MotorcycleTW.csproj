@@ -252,6 +252,7 @@
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
+    <Content Include="Assets\css\SalesPage.css" />
     <Content Include="Assets\images\1.jpg" />
     <Content Include="Assets\images\2.jpg" />
     <Content Include="Assets\images\3.jpg" />
@@ -348,6 +349,7 @@
     <Content Include="Views\MotoPage\S1.cshtml" />
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
+    <Content Include="Views\Home\SalesPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
