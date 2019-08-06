@@ -33,6 +33,10 @@ namespace MotorcycleTW.Controllers
             //var b=db.Products.FirstOrDefault();
             return View();
         }
+        public ActionResult SalesPage()
+        {
+            return View();
+        }
         
     }
 }
