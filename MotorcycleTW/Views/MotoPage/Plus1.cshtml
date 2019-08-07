@@ -1,0 +1,423 @@
+﻿
+@{
+    ViewBag.Title = "Plus1";
+    Layout = "~/Views/Shared/_Layout4.1.cshtml";
+}
+
+@section topCSS {
+    <style>
+        .series-1-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 46px;
+            z-index: 1000;
+            transition: border-color .3s, background-color .3s;
+            border-bottom: 1px solid rgba(240,240,240,0);
+        }
+    </style>
+}
+<nav data-v-3ac9e016="" class="ggr-nav ggr-nav--light ggr-nav--scrolling-bg">
+    <!---->
+    <style data-v-3ac9e016="">
+        :root {
+            --nav-header-bg-color: var(--color-white);
+            --nav-list-bg-color: var(--color-light-gray);
+            --nav-sm-list-bg-color: var(--color-white);
+            --nav-link-color: var(--color-charcoal);
+            --nav-secondary-text-color: var(--color-gray);
+            --nav-series-bg-color: var(--color-charcoal);
+            --nav-model-menu-bg-color: var(--color-opacity-light-gray);
+        }
+    </style><input data-v-3ac9e016="" type="checkbox" id="nav-menustate" class="nav-menustate gc-hide"><input data-v-3ac9e016="" type="checkbox" id="scooter-menu-toggle" class="gc-hide"><label data-v-3ac9e016="" for="nav-menustate" class="close-scooter-menu"></label><div data-v-3ac9e016="" class="ggr-nav-container" style="transform: translateY(0px); background-color: rgba(255, 255, 255, 0);">
+        <div data-v-3ac9e016="" class="ggr-header-container"><div data-v-3ac9e016="" class="gc-container"><ul data-v-3ac9e016="" class="ggr-header"><li data-v-3ac9e016="" class="ggr-header-item menuicon-item"><label data-v-3e840438="" data-v-3ac9e016="" for="nav-menustate" class="nav-menuicon"><span data-v-3e840438="" class="nav-menuicon-bread nav-menuicon-bread--top"><span data-v-3e840438="" class="nav-menuicon-crust nav-menuicon-crust--top"></span></span><span data-v-3e840438="" class="nav-menuicon-bread nav-menuicon-bread--middle"><span data-v-3e840438="" class="nav-menuicon-crust nav-menuicon-crust--middle"></span></span><span data-v-3e840438="" class="nav-menuicon-bread nav-menuicon-bread--bottom"><span data-v-3e840438="" class="nav-menuicon-crust nav-menuicon-crust--bottom"></span></span></label></li><li data-v-3ac9e016="" class="ggr-header-item logo-item"><a data-v-0cc9144e="" data-v-3ac9e016="" href="/tw/" class="nav-logo nav-logo--light">Gogoro</a></li><li data-v-3ac9e016="" class="ggr-header-item my-gogoro-item"><!----><a data-v-13da14d3="" data-v-3ac9e016="" href="//my.gogoro.com" class="ggr-nav-link nav-list__link nav-list__link--login nav-list__link--light">登入</a></li></ul></div></div><div data-v-3ac9e016="" class="ggr-nav-list-container" style="display: none;">
+            <div data-v-3ac9e016="" class="gc-container">
+                <ul data-v-3ac9e016="" class="ggr-nav-list">
+                    <li data-v-3ac9e016="" class="ggr-nav-item ggr-nav-item--logo gc-desktop-visible"><a data-v-0cc9144e="" data-v-3ac9e016="" href="/tw/" class="nav-logo nav-logo--light">Gogoro</a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item ggr-nav-item--scooter">
+                        <a data-v-e2386ca6="" href="javascript:;" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6=""><label for="scooter-menu-toggle">智慧雙輪 <span class="gc-chevron"></span></label></span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a><div data-v-28f15424="" data-v-3ac9e016="" data-v-e2386ca6="">
+                            <div data-v-28f15424="" class="series-menu" style="display: none; height: 0px;">
+                                <div data-v-28f15424="">
+                                    <div data-v-28f15424="" class="series-list-container" style="display: none;"><ul data-v-28f15424="" class="series-list"><li data-v-28f15424="" class="series-item series-item--active"><div data-v-28f15424="" class="series-icon"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="s-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#FF1C41"></stop><stop data-v-28f15424="" offset="100%" stop-color="#802984"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#s-icon-gradient)" fill-rule="nonzero" d="M25.95 27.22h-8.616a9.151 9.151 0 0 1-6.557-2.741 9.55 9.55 0 0 1-2.756-6.704 9.54 9.54 0 0 1 2.71-6.728c1.755-1.803 4.09-2.8 6.572-2.81l20.837-.005L39.516 6l-22.22.012c-3.066.011-5.948 1.243-8.113 3.467a11.782 11.782 0 0 0-3.342 8.304c.023 6.45 5.177 11.668 11.497 11.668h8.612c8.174 0 14.842 6.752 14.869 15.094.015 4.047-1.518 7.862-4.319 10.743-2.805 2.877-6.53 4.472-10.497 4.488H1.369L0 62h26.01c9.406-.035 17.028-7.87 16.99-17.462-.031-9.57-7.677-17.319-17.05-17.319m-8.87 7.568h8.625c2.475 0 4.805.962 6.567 2.744a9.509 9.509 0 0 1 2.76 6.706 9.508 9.508 0 0 1-2.71 6.723c-1.758 1.806-4.095 2.803-6.583 2.812H4.798L3.428 56l22.32-.003c3.07-.013 5.956-1.244 8.124-3.47a11.747 11.747 0 0 0 3.343-8.299 11.76 11.76 0 0 0-3.404-8.276 11.347 11.347 0 0 0-8.118-3.398h-.042l-8.517.004h-.054c-8.187 0-14.865-6.751-14.896-15.098-.012-4.046 1.523-7.858 4.33-10.74 2.805-2.876 6.54-4.472 10.512-4.487l24.603-.004L43 0 17.019.008C7.599.043-.034 7.878 0 17.468c.034 9.57 7.692 17.319 17.08 17.319" transform="translate(11 1)"></path></svg></div><span data-v-28f15424="" class="series-name">S Performance</span></li><li data-v-28f15424="" class="series-item"><div data-v-28f15424="" class="series-icon"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g3-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#FFE600"></stop><stop data-v-28f15424="" offset="100%" stop-color="#FFE600"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g3-icon-gradient)" fill-rule="evenodd" d="M8.06 41.774h14.955c.528 0 .973.386 1.049.904.603 4.1 2.705 6.73 7.684 6.73 4.657 0 6.86-2.18 6.86-6.04 0-4.027-2.203-6.124-7.114-6.124h-4.827V25.75h4.573c4.996 0 7.367-2.182 7.367-6.04 0-3.105-2.032-5.203-6.097-5.203-3.885 0-6.137 2.207-6.964 6.206-.102.49-.535.842-1.038.842H9.617a1.056 1.056 0 0 1-1.055-1.166C9.822 8.706 17.77 1 33.018 1 47.753 1 56.56 7.376 56.56 17.612c0 6.711-3.895 11.074-10.416 12.92C53.174 31.79 58 36.74 58 43.872 58 55.365 49.447 63 32.933 63 15.9 63 7.982 55.713 7.003 42.908a1.057 1.057 0 0 1 1.058-1.134"></path></svg></div><span data-v-28f15424="" class="series-name">Gogoro 3 Series</span></li><li data-v-28f15424="" class="series-item"><div data-v-28f15424="" class="series-icon"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g2-icon-gradient" x1="100%" x2="0%" y1="0%" y2="100%"><stop data-v-28f15424="" offset="0%" stop-color="#00D7FF"></stop><stop data-v-28f15424="" offset="100%" stop-color="#00D7FF"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g2-icon-gradient)" fill-rule="nonzero" d="M51.246 62c.417 0 .754-.319.754-.713V49.63c0-.394-.337-.713-.754-.713h-20.95l9.043-8.295c7.235-6.585 12.209-12.913 12.209-21.294C51.548 8.039 43.138 0 27.31 0 11.914 0 2.21 7.538 1.303 22.37c-.024.39.303.72.717.72h15.313c.412 0 .788-.317.841-.703.92-6.738 3.773-9.217 8.233-9.217 4.612 0 6.873 2.736 6.873 6.841 0 5.131-4.25 10.348-10.671 16.847L.41 59.108c-.264.265-.411.615-.411.978v1.201c0 .394.337.713.754.713h50.492z" transform="translate(6 1)"></path></svg></div><span data-v-28f15424="" class="series-name">Gogoro 2 Series</span></li><li data-v-28f15424="" class="series-item"><div data-v-28f15424="" class="series-icon"><svg data-v-28f15424="" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs data-v-28f15424=""><linearGradient data-v-28f15424="" id="g1-icon-gradient" x1="50%" x2="50%" y1="100%" y2="0%"><stop data-v-28f15424="" offset="0%" stop-color="#00D7FF"></stop><stop data-v-28f15424="" offset="100%" stop-color="#0961CE"></stop></linearGradient></defs><path data-v-28f15424="" fill="url(#g1-icon-gradient)" fill-rule="nonzero" d="M12.292 62.228h11.769c.406 0 .736-.33.736-.736V.736A.736.736 0 0 0 24.061 0H12.999c-.406 0-1.005.19-1.336.426L.6 7.049C.27 7.284 0 7.804 0 8.21v11.168c0 .407.276.556.616.333l10.94-5.59v47.37c0 .407.33.736.736.736" transform="translate(15 1)"></path></svg></div><span data-v-28f15424="" class="series-name">Gogoro 1 Series</span></li></ul></div><div data-v-28f15424="" class="scooter-model-menu-shared-bg" style="height: 0px;"></div><div data-v-3ae62132="" data-v-28f15424="" class="scooter-model-menu scooter-models active" style="">
+                                        <div data-v-3ae62132="" class="gc-container">
+                                            <ul data-v-3ae62132="" class="scooter-model-list scooter-model-list--s-performance"><li data-v-3ae62132="" class="scooter-model-item"><a data-v-3ae62132="" href="/tw/smartscooter/s-performance/s1/performance/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g1-s"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">S1</span></div></a></li><li data-v-3ae62132="" class="scooter-model-item"><a data-v-3ae62132="" href="/tw/smartscooter/s-performance/s2/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-s"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">S2</span></div></a></li><li data-v-3ae62132="" class="scooter-model-item scooter-model-item--edition"><a data-v-3ae62132="" href="/tw/smartscooter/s-performance/s2/adventure/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-s-adv"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">S2</span> Adventure</div></a></li><li data-v-3ae62132="" class="scooter-model-item scooter-model-item--edition"><a data-v-3ae62132="" href="/tw/smartscooter/s-performance/s2/cafe-racer/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-s-cafe"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">S2</span> Café Racer</div></a></li></ul><div data-v-28f15424="" data-v-3ae62132="" class="gc-center">
+                                                <button data-v-28f15424="" data-v-3ae62132="" class="other-models">
+                                                    <svg data-v-28f15424="" data-v-3ae62132="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="model-arrow"><g data-v-28f15424="" data-v-3ae62132="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-28f15424="" data-v-3ae62132="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="model-arrow-path"><polyline data-v-28f15424="" data-v-3ae62132="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg>
+                                                    other models
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div><div data-v-3ae62132="" data-v-28f15424="" class="scooter-model-menu scooter-models" style="display: none;">
+                                        <div data-v-3ae62132="" class="gc-container">
+                                            <ul data-v-3ae62132="" class="scooter-model-list scooter-model-list--g3-series"><li data-v-3ae62132="" class="scooter-model-item scooter-model-item--new"><a data-v-3ae62132="" href="/tw/smartscooter/3-series/plus/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g3-plus"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">3</span> Plus</div></a></li></ul><div data-v-28f15424="" data-v-3ae62132="" class="gc-center">
+                                                <button data-v-28f15424="" data-v-3ae62132="" class="other-models">
+                                                    <svg data-v-28f15424="" data-v-3ae62132="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="model-arrow"><g data-v-28f15424="" data-v-3ae62132="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-28f15424="" data-v-3ae62132="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="model-arrow-path"><polyline data-v-28f15424="" data-v-3ae62132="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg>
+                                                    other models
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div><div data-v-3ae62132="" data-v-28f15424="" class="scooter-model-menu scooter-models" style="display: none;">
+                                        <div data-v-3ae62132="" class="gc-container">
+                                            <ul data-v-3ae62132="" class="scooter-model-list scooter-model-list--g2-series"><li data-v-3ae62132="" class="scooter-model-item"><a data-v-3ae62132="" href="/tw/smartscooter/2-series/plus/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-plus"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">2</span> Plus</div></a></li><li data-v-3ae62132="" class="scooter-model-item scooter-model-item--edition"><a data-v-3ae62132="" href="/tw/smartscooter/2-series/delight/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-delight"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">2</span> Delight</div></a></li><li data-v-3ae62132="" class="scooter-model-item scooter-model-item--new scooter-model-item--edition"><a data-v-3ae62132="" href="/tw/smartscooter/2-series/rumbler/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-rumbler"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">2</span> Rumbler</div></a></li><li data-v-3ae62132="" class="scooter-model-item"><a data-v-3ae62132="" href="/tw/smartscooter/2-series/utility/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g2-utility"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">2</span> Utility</div></a></li></ul><div data-v-28f15424="" data-v-3ae62132="" class="gc-center">
+                                                <button data-v-28f15424="" data-v-3ae62132="" class="other-models">
+                                                    <svg data-v-28f15424="" data-v-3ae62132="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="model-arrow"><g data-v-28f15424="" data-v-3ae62132="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-28f15424="" data-v-3ae62132="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="model-arrow-path"><polyline data-v-28f15424="" data-v-3ae62132="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg>
+                                                    other models
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div><div data-v-3ae62132="" data-v-28f15424="" class="scooter-model-menu scooter-models" style="display: none;">
+                                        <div data-v-3ae62132="" class="gc-container">
+                                            <ul data-v-3ae62132="" class="scooter-model-list scooter-model-list--g1-series"><li data-v-3ae62132="" class="scooter-model-item"><a data-v-3ae62132="" href="/tw/smartscooter/1-series/plus/" class="scooter-model-link"><div data-v-3ae62132="" class="scooter-model-image scooter-model-image--g1-plus"></div><div data-v-3ae62132="" class="scooter-model-name">Gogoro <span class="gc-bold">1</span> Plus</div></a></li></ul><div data-v-28f15424="" data-v-3ae62132="" class="gc-center">
+                                                <button data-v-28f15424="" data-v-3ae62132="" class="other-models">
+                                                    <svg data-v-28f15424="" data-v-3ae62132="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="model-arrow"><g data-v-28f15424="" data-v-3ae62132="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-28f15424="" data-v-3ae62132="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="model-arrow-path"><polyline data-v-28f15424="" data-v-3ae62132="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg>
+                                                    other models
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item"><a data-v-e2386ca6="" href="https://network.gogoro.com/tw/" target="_blank" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6="">智慧能源</span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item"><a data-v-e2386ca6="" href="/tw/findus/?filter=1000" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6="">電池交換站</span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item"><a data-v-e2386ca6="" href="https://store.gogoro.com/tw" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6="">網路商店</span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item"><a data-v-e2386ca6="" href="http://promotion.gogoro.com/" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6="">最新優惠</span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item ggr-nav-item--divider gc-desktop-visible"></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item ggr-nav-item--secondary"><a data-v-e2386ca6="" href="/tw/book-a-ride" class="ggr-nav-link nav-list__link--light"><span data-v-e2386ca6="">預約試騎</span><svg data-v-e2386ca6="" width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ggr-nav-item-arrow"><g data-v-e2386ca6="" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g data-v-e2386ca6="" transform="translate(-106.000000, -205.000000)" stroke="#323237" stroke-width="2" class="ggr-nav-item-arrow-path"><polyline data-v-e2386ca6="" id="model-arrow" transform="translate(112.500000, 210.000000) scale(1, -1) translate(-112.500000, -210.000000) " points="107 207.048694 112.477591 213 118 207"></polyline></g></g></svg></a></li>
+                    <li data-v-e2386ca6="" data-v-3ac9e016="" class="ggr-nav-item ggr-nav-item--secondary ggr-nav-item--login gc-desktop-visible"><a data-v-13da14d3="" data-v-3ac9e016="" href="//my.gogoro.com" class="ggr-nav-link nav-list__link nav-list__link--login nav-list__link--light" data-v-e2386ca6="">登入</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="page-series-1">
+    <section class="section section-general-hero section-hero section-hero--overview active">
+        <div class="series-1-nav-placeholder gc-nav-against"></div>
+        <input type="checkbox" id="series-1-page-nav-toggle" class="hide">
+        <div class="series-1-nav sticking">
+            <div class="container">
+                <div class="nav-flex">
+                    <div class="series-1-page-nav">
+                        <a href="/tw/smartscooter/1-series/" class="series-1-page-nav-title d-inline-block d-lg-none">Gogoro <span class="nav-series-desc"><span class="nav-series-num">1</span> 系列</span></a>
+                        <label class="series-1-page-nav-trigger d-inline-block d-lg-none" for="series-1-page-nav-toggle">全面進化</label>
+                        <ul class="series-1-page-list reset-list">
+                            <li class="series-1-page-item"><a class="series-1-page-link " href="/tw/smartscooter/1-series/plus/faster/">更快速</a></li>
+                            <li class="series-1-page-item"><a class="series-1-page-link " href="/tw/smartscooter/1-series/plus/smarter/">更智慧</a></li>
+                            <li class="series-1-page-item"><a class="series-1-page-link " href="/tw/smartscooter/1-series/plus/easier/">更簡單</a></li>
+                            <li class="series-1-page-item"><a class="series-1-page-link " href="/tw/smartscooter/1-series/plus/customize/">隨心所欲</a></li>
+                        </ul>
+                    </div>
+                    <div class="series-1-actions">
+                        <ul class="actions reset-list">
+                            <li><a class="action-link action-link--primary" target="_blank" href="http://store.gogoro.com/tw/scooter?model=gp">打造愛車</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="overview-hero-wrapper">
+            <figure class="overview-hero-image"></figure>
+
+            <div class="hero-content-container hero-content-container--overview container text-center">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                        <div class="hero-title headline-super">All New.</div>
+                        <h1 class="hero-subtitle">Gogoro <span class="series-desc"><span class="series-num">1</span> 系列 2018 年款</span></h1>
+                        <p>領先創新的 Gogoro 1 系列，搭載超跑級鋁合金車架、賽車式多連桿懸吊及高效能水冷馬達。現在更快、更安全、更智慧。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="divider">
+
+    <section class="section section-evolution">
+        <div class="container">
+            <h2 class="headline-super" style="opacity: 1;">全面進化 <br class="d-block d-md-none">持續領先</h2>
+        </div>
+        <video id="evolution-video" preload="auto" playsinline="" muted="">
+            <source src="//cdn.gogoro.com/resources/videos/1-series/web_2018_index_videobanner_short.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="section section-intro-badge section-overview-intro-badge">
+        <svg class="intro-badge-svg-defs">
+            <defs>
+                <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="badge-linear-gradient">
+                    <stop stop-color="#00D7FF" offset="0%"></stop>
+                    <stop stop-color="#036AFF" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="container">
+            <div class="section-content">
+                <ul class="badge-list reset-list js-intro-badges dark-dots slick-initialized slick-slider active-3">
+                    <div aria-live="polite" class="slick-list draggable">
+                        <div class="slick-track" style="opacity: 1; width: 1134px; transform: translate3d(0px, 0px, 0px);" role="listbox">
+                            <li class="badge-item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 378px;">
+                                <h3 class="badge-heading">還要更快</h3>
+                                <div class="badge">
+                                    <div class="badge__icon">
+                                        <svg width="133px" height="107px" viewBox="0 0 133 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g class="svg-icon" transform="translate(-993.000000, -101.000000)" fill="url(#badge-linear-gradient)">
+                                                    <path d="M1121.762,181.926 C1121.762,194.31 1114.094,203.094 1099.55,203.094 C1085.294,203.094 1076.762,194.31 1076.762,182.214 L1076.762,125.911 C1076.762,113.383 1085.15,104.887 1099.406,104.887 C1113.662,104.887 1121.762,113.959 1121.762,125.479 L1121.762,181.926 Z M1099.55,101 C1084.862,101 1072.762,109.783 1072.762,125.767 L1072.762,182.214 C1072.762,198.054 1083.71,207.125 1099.406,207.125 C1114.382,207.125 1125.762,198.486 1125.762,182.214 L1125.762,125.479 C1125.762,109.783 1114.958,101 1099.55,101 L1099.55,101 Z M1054.963,205.542 L1059.571,205.542 L1059.571,193.014 L1054.963,193.014 L1054.963,205.542 Z M1032.167,205.542 L1036.631,205.542 L1036.631,175.878 L1050.167,175.878 L1050.167,171.846 L1036.631,171.846 L1036.631,144.343 L1032.167,148.231 L1032.167,171.846 L997.752,171.846 L1035.335,102.871 L1030.439,102.871 L993,171.99 L993,175.878 L1032.167,175.878 L1032.167,205.542 Z" id="F1_icon_40"></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="badge__sub">
+                                        秒<br>0-50KM/H<br>直線加速*
+                                    </div>
+                                </div>
+                                <p>搭載最新版 G1 馬達科技<br>加速扭力再升級</p>
+                            </li><li class="badge-item slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 378px;">
+                                <h3 class="badge-heading">安全在握</h3>
+                                <div class="badge">
+                                    <div class="badge__icon">
+                                        <svg width="192px" height="107px" viewBox="0 0 192 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g class="svg-icon" transform="translate(-1207.000000, -101.000000)" fill="url(#badge-linear-gradient)">
+                                                    <path d="M1342.559,196.326 L1345.439,192.87 C1353.647,199.926 1360.559,202.806 1371.646,202.806 C1385.47,202.806 1393.966,193.014 1393.966,181.062 C1393.966,166.951 1384.462,161.191 1375.534,156.583 L1363.727,150.535 C1352.207,144.919 1345.439,136.855 1345.439,126.055 C1345.439,111.368 1356.671,101 1372.222,101 C1383.022,101 1392.094,104.6 1397.566,109.784 L1394.974,112.952 C1390.078,109.352 1383.31,105.032 1371.214,105.032 C1360.127,105.032 1350.047,112.52 1350.047,125.335 C1350.047,134.695 1355.519,141.463 1366.463,146.647 L1377.838,152.407 C1390.222,158.743 1398.574,166.663 1398.574,180.63 C1398.574,195.462 1388.494,207.126 1371.358,207.126 C1358.975,207.126 1349.903,203.238 1342.559,196.326 L1342.559,196.326 Z M1306.026,201.677 L1281.808,201.677 L1281.808,154.677 L1303.29,154.677 C1316.106,154.677 1329.066,161.473 1329.066,177.601 C1329.066,194.304 1319.994,201.677 1306.026,201.677 L1306.026,201.677 Z M1281.808,106.677 L1305.162,106.677 C1316.682,106.677 1326.186,112.981 1326.186,127.957 C1326.186,143.94 1313.946,150.677 1302.282,150.677 L1281.808,150.677 L1281.808,106.677 Z M1311.808,152.695 L1311.808,152.263 C1322.808,150.823 1330.661,139.782 1330.661,127.398 C1330.661,111.846 1320.858,102.677 1305.738,102.677 L1277.808,102.677 L1277.808,205.677 L1306.602,205.677 C1320.282,205.677 1333.829,197.689 1333.829,177.818 C1333.829,165.29 1325.808,154.567 1311.808,152.695 L1311.808,152.695 Z M1235.8,207.126 C1252.935,207.126 1263.015,195.462 1263.015,180.63 C1263.015,166.663 1254.663,158.743 1242.279,152.407 L1230.904,146.647 C1219.96,141.463 1214.488,134.695 1214.488,125.335 C1214.488,112.52 1224.568,105.032 1235.656,105.032 C1247.751,105.032 1254.519,109.352 1259.415,112.952 L1262.007,109.784 C1256.535,104.6 1247.463,101 1236.664,101 C1221.112,101 1209.88,111.368 1209.88,126.055 C1209.88,136.855 1216.648,144.919 1228.168,150.535 L1239.975,156.583 C1248.903,161.191 1258.407,166.951 1258.407,181.062 C1258.407,193.014 1249.911,202.806 1236.088,202.806 C1225,202.806 1218.088,199.926 1209.88,192.87 L1207,196.326 C1214.344,203.238 1223.416,207.126 1235.8,207.126 L1235.8,207.126 Z" id="F2_icon_SBS"></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="badge__sub">
+
+                                    </div>
+                                </div>
+                                <p>同步煞車系統與多項配備調校<br>安全穩定再提升</p>
+                            </li><li class="badge-item slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 378px;">
+                                <h3 class="badge-heading">智高一籌</h3>
+                                <div class="badge">
+                                    <div class="badge__icon">
+                                        <svg width="121px" height="110px" viewBox="0 0 121 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <defs></defs>
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g class="svg-icon" transform="translate(-1480.000000, -101.000000)" fill="url(#badge-linear-gradient)">
+                                                    <path d="M1579.182,191.43 L1562.465,173.718 L1559.147,176.886 L1575.415,194.166 C1568.648,198.918 1560.387,201.51 1551.171,201.51 C1525.54,201.51 1506.336,180.918 1506.336,154.135 L1506.336,152.983 C1506.336,125.911 1524.7,105.32 1550.908,105.32 C1576.971,105.32 1595.336,126.199 1595.336,152.551 L1595.336,153.703 C1595.336,169.398 1589.262,182.79 1579.182,191.43 L1579.182,191.43 Z M1600.336,153.703 L1600.336,152.551 C1600.336,123.607 1578.775,101 1550.408,101 C1522.184,101 1500.336,123.751 1500.336,152.983 L1500.336,154.135 C1500.336,182.934 1522.034,205.974 1550.834,205.974 C1561.058,205.974 1570.683,202.95 1578.459,197.478 L1591.479,211.014 L1594.677,207.846 L1582.027,194.742 C1593.403,185.238 1600.336,170.406 1600.336,153.703 L1600.336,153.703 Z M1483.888,113.24 C1486.048,113.24 1487.632,111.368 1487.632,109.352 C1487.632,107.336 1486.048,105.608 1483.888,105.608 C1481.728,105.608 1480,107.336 1480,109.352 C1480,111.368 1481.728,113.24 1483.888,113.24 L1483.888,113.24 Z M1481.44,204.966 L1486.336,204.966 L1486.336,129.655 L1481.44,129.655 L1481.44,204.966 Z" id="F3_icon_iQ"></path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="badge__sub">
+                                        4.0
+                                    </div>
+                                </div>
+                                <p>更貼心聰明的 iQ System®<br>智慧功能再進化</p>
+                            </li>
+                        </div>
+                    </div>
+
+
+                    <li class="badge-frisbee"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--standard">
+            <div class="gc-container">
+                <div class="flb-container">
+                    <button class="flb-close"></button><div class="flb-content">
+                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
+                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-1-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-torque">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-4 col-md-8 col-md-offset-2 text-lg-left text-center">
+                    <h3 class="headline">扭力提升，更快更出色</h3>
+                    <p>G1 水冷馬達，緊緻小巧，卻動力驚人。扭力瞬間釋放，時速 0 到 50 公里直線加速僅需 4.0 秒*，起步的瞬間就是超越！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-safety">
+        <div class="section-header">
+            <div class="container">
+                <div class="col-xl-10 col-xl-offset-1">
+                    <h2 class="headline-super headline-box headline-box--light">煞車配備 <br class="d-block d-md-none">全面晉級</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="safety-sbs">
+            <div class="sbs-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-4 col-md-8 col-md-offset-2">
+                            <h3 class="headline">前後同步 安全在握</h3>
+                            <p>搭載 Gogoro 車系最先進的 SBS 同步煞車系統，按下煞車桿，瞬間將制動力分配至前後碟煞。煞得快，更煞得穩。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sbs-indicator">
+                <div class="sbs-icon"></div>
+                <p class="sbs-description">Synchronized Braking System</p>
+                <div class="sbs-arrows"></div>
+            </div>
+        </div>
+
+        <div class="safety-feature-container container text-center text-lg-left">
+            <div class="safety-features js-safety-feature blue-light-dots slick-initialized slick-slider">
+                <div class="safety-feature">
+                    <div class="safety-feature-image-column">
+                        <figure class="safety-metal-hose-image abs-full"></figure>
+                    </div>
+                    <div class="safety-feature-content-column">
+                        <div class="safety-feature-content">
+                            <strong class="safety-feature-name">前後碟煞搭配金屬油管</strong>
+                            <p>高剛性金屬油管，精準傳達每分剎車力道，煞車手感更清晰；搭配前後金屬煞車碟盤，造就完美整體制動力。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-feature-image-column">
+                        <figure class="safety-light-night-image abs-full" style="z-index: auto; opacity: 1;"></figure>
+                        <figure class="safety-light-day-image abs-full" style="z-index: auto; opacity: 1;"></figure>
+                    </div>
+                    <div class="safety-feature-content-column">
+                        <div class="safety-feature-content">
+                            <strong class="safety-feature-name">全時點亮行車燈</strong>
+                            <p>搶先跟進 2018 最新法規，馬達啟動瞬間，低耗電、高亮度的 LED 車燈，將給你全天候的守護，騎得更安全順暢。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-feature-image-column">
+                        <figure class="safety-big-mirror-image abs-full"></figure>
+                    </div>
+                    <div class="safety-feature-content-column">
+                        <div class="safety-feature-content">
+                            <strong class="safety-feature-name">加大鏡面後視鏡</strong>
+                            <p>增幅 3 公分的鏡面，提供 25% 擴展的廣大視野，搭配一體式的結構，質輕且堅韌。後顧無憂，前行更無懼。</p>
+                        </div>
+                    </div>
+                </div>
+                <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);" role="listbox"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-app-security">
+        <div class="app-security-content">
+            <div class="section-header">
+                <div class="container">
+                    <div class="col-xl-10 col-xl-offset-1">
+                        <h2 class="headline-super headline-box headline-box--dark">極致創新 <br class="d-block d-md-none">智慧功能</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <h3 class="headline">雙重防盜保護</h3>
+                <div class="row">
+                    <div class="col-xl-4 col-xl-offset-4 col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+                        <p class="app-desc">與銀行同等級的 256 位元數位加密，搭配指紋驗證科技，雙重防盜更安心。沒有你的指示，誰也騎不走。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <figure class="app-security-image"></figure>
+    </section>
+
+    <section class="section section-app-dashboard">
+        <div class="app-dashboard-content">
+            <div class="container text-center">
+                <h3 class="headline">熱血騎士專屬儀表板</h3>
+                <div class="row">
+                    <div class="col-xl-4 col-xl-offset-4 col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+                        <p class="app-desc">智慧手機搭配專屬手機架，延伸你的儀表板，讓動力輸出、性能狀態等資訊完整呈現。打造專業個人榜。每段路程都是精采賽事！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <figure class="dashboard-scooter-image d-none d-md-block">
+            <figure class="dashboard-iphone">
+                <div class="app-dashboard-video-wrapper">
+                    <video id="app-dashboard-video" class="abs-full" playsinline="" muted="">
+                        <source src="//cdn.gogoro.com/resources/videos/1-series/PM_app_B_CH_250_miro.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </figure>
+        </figure>
+        <figure class="dashboard-scooter-mobile-image d-md-none"></figure>
+    </section>
+
+    <hr class="divider">
+    <section class="section section-buy">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-red">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-blue">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-yellow">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-orange">
+        <input checked="" type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-white">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-grey">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="plus-silver">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="normal-white">
+        <input type="radio" name="scooter-color-selector" class="scooter-color-selector d-none" id="normal-grey">
+
+        <input type="radio" name="scooter-model-selector" class="scooter-model-selector d-none" id="normal-selector">
+        <input type="radio" name="scooter-model-selector" class="scooter-model-selector d-none" checked="" id="plus-selector">
+
+        <div class="scooter-stage">
+            <figure class="scooter-image scooter-image--plus-red"></figure>
+            <figure class="scooter-image scooter-image--plus-blue"></figure>
+            <figure class="scooter-image scooter-image--plus-yellow"></figure>
+            <figure class="scooter-image scooter-image--plus-orange"></figure>
+            <figure class="scooter-image scooter-image--plus-white"></figure>
+            <figure class="scooter-image scooter-image--plus-grey"></figure>
+            <figure class="scooter-image scooter-image--plus-silver"></figure>
+            <figure class="scooter-image scooter-image--normal-white"></figure>
+            <figure class="scooter-image scooter-image--normal-grey"></figure>
+
+            <a class="specs-link" href="/tw/smartscooter/specs?models=1-series">詳細規格表</a>
+
+        </div>
+
+        <div class="series-details container">
+            <div class="d-flex justify-center">
+                <div>
+                    <h3 class="scooter-title"><label for="plus-selector">Gogoro <span class="scooter-series-name">1 Plus</span></label></h3>
+                    <div class="price-box d-en-none">$87,000*<sub>起</sub></div>
+                    <ul class="scooter-features">
+                        <li>SBS 同步煞車系統</li>
+                        <li>無段式預載可調，阻尼可調後避震器</li>
+                        <li>燻黑造型風鏡</li>
+                        <li>轉向輔助照地燈</li>
+                        <li>輔助剎車燈</li>
+                        <li>Snap-on 快拆配件系統</li>
+                    </ul>
+
+                    <a class="btn btn-build" target="_blank" href="http://store.gogoro.com/tw/scooter?model=gp">打造愛車</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <ul class="sosumi">
+                <li>測試條件及限制，請見規格表。</li>
+                <li>需搭配性能提升服務。</li>
+                <li>本金額係以扣除淘汰二行程機車並新購電動機車時，中央政府、雲林縣補助款及電動機車鋰電池補助後試算所得之金額，此試算金額僅供您參考使用，政府補助方案之相關具體規定及限制，包括但不限於申請方式、期限、限制或名額等，可能隨時有變動或名額用罄之情形，仍依中央或地方政府所公告之法令及規定內容為準。</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</main>
+
