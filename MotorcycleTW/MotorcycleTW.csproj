@@ -257,6 +257,7 @@
     <Content Include="Assets\images\3.jpg" />
     <Content Include="Assets\images\4.jpg" />
     <Content Include="Assets\images\5.jpg" />
+    <Content Include="Assets\images\Booking\Booking01.jpg" />
     <Content Include="Assets\images\HomeCarsouel\pictures\2.jpg" />
     <Content Include="Assets\images\HomeCarsouel\pictures\3.jpg" />
     <Content Include="Assets\images\HomeCarsouel\pictures\4.jpg" />
@@ -365,6 +366,7 @@
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
+    <Content Include="Views\Home\Booking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
