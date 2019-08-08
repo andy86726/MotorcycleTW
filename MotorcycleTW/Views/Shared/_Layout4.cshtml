@@ -293,8 +293,10 @@
     //    $(".MotoPage_1").removeClass("MotoPage_1");
     //})
     function aav() {
-        $(".aab").css("visibility", "visible");
-        $(".aab").
+        if ($(".aab").hasClass(".aab")) {
+            $(".aab").removeClass("aab").addClass("bba");
+        }
+        if ($(".bba").hasClass(".bba")) {}
     }
     </script>
     <script src="~/Assets/js/site4.js"></script>
