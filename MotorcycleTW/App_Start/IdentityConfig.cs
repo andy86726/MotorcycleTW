@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -11,15 +12,31 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MotorcycleTW.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace MotorcycleTW
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await configSendGridasync(message);
+        }
+
+        private async Task configSendGridasync(IdentityMessage message)
         {
             // 將您的電子郵件服務外掛到這裡以傳送電子郵件。
-            return Task.FromResult(0);
+
+            var apiKey = ConfigurationManager.AppSettings["SendGrid_BuildSchool2019"];
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("Services@CodeMagic.com", "MotorcycleTW客服人員");
+            var to = new EmailAddress(message.Destination);
+            var subject = message.Subject;
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, message.Body, message.Body);
+            var response = await client.SendEmailAsync(msg);
+
+            await Task.FromResult(0);
         }
     }
 

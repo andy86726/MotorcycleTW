@@ -1,0 +1,62 @@
+﻿/* html{
+            font-family: 'Noto Sans TC', sans-serif;
+        } */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* .store005{
+            background-image: url('/image/Store005.png');
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        } */
+
+/*.main-menu li {
+}*/
+
+.bigger01 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store005.jpg) no-repeat center;
+    background-position: 50%;
+    background-size: cover;
+}
+
+    .bigger01:hover {
+        /* -webkit-transition: 1s ease-in-out; */
+        transition: all 1s ease-out;
+        background-size: auto 600px;
+    }
+
+.left01 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store006.jpg) no-repeat center;
+}
+
+.right01 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store007.jpg) no-repeat center;
+}
+
+.bigger02 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store008.jpg) no-repeat center;
+}
+
+.left02 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store009.jpg) no-repeat center;
+}
+
+.right02 {
+    height: 500px;
+    background: url(/Assets/images/StorePage/Store010.jpg) no-repeat center;
+}
+
+.href {
+    display: block;
+    height: 32px;
+    width: 32px;
+}

@@ -1,39 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using MotorcycleTW.Models;
-
 namespace MotorcycleTW.Models
 {
-    public class MotorcycleContext : DbContext
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
+    public partial class MotorcycleContext : DbContext
     {
-        // You can add custom code to this file. Changes will not be overwritten.
-        // 
-        // If you want Entity Framework to drop and regenerate your database
-        // automatically whenever you change your model schema, please use data migrations.
-        // For more information refer to the documentation:
-        // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
-        public MotorcycleContext() : base("name=MotorcycleContext")
+        public MotorcycleContext()
+            : base("name=MotorclcleDB")
         {
         }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Battery_store> Battery_store { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Classifies> Classifies { get; set; }
+        public virtual DbSet<Delivery_way> Delivery_way { get; set; }
+        public virtual DbSet<Discounts> Discounts { get; set; }
+        public virtual DbSet<Members> Members { get; set; }
+        public virtual DbSet<Order_Detail> Order_Detail { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Payments> Payments { get; set; }
+        public virtual DbSet<Product_Feature> Product_Feature { get; set; }
+        public virtual DbSet<Product_Picture> Product_Picture { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Shopping_Cart> Shopping_Cart { get; set; }
+        public virtual DbSet<Stores> Stores { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
-        public System.Data.Entity.DbSet<Category> Categories { get; set; }
-        public System.Data.Entity.DbSet<Classify> Classifies { get; set; }
-        public System.Data.Entity.DbSet<Store> Stores { get; set; }
-        public System.Data.Entity.DbSet<Discount> Discounts { get; set; }
-        public System.Data.Entity.DbSet<Member> Members { get; set; }
-        public System.Data.Entity.DbSet<Order> Orders { get; set; }
-        public System.Data.Entity.DbSet<Order_Detail> Order_Details { get; set; }
-        public System.Data.Entity.DbSet<Payment> Payments { get; set; }
-        public System.Data.Entity.DbSet<Product> Products { get; set; }
-        public System.Data.Entity.DbSet<Product_Detail> Product_Details { get; set; }
-        public System.Data.Entity.DbSet<Product_Feature> Product_Features { get; set; }
-        public System.Data.Entity.DbSet<Product_Picture> Product_Pictures { get; set; }
-        public System.Data.Entity.DbSet<Shopping_Cart> Shopping_Carts { get; set; }
-        public System.Data.Entity.DbSet<Delivery_way> Delivery_Ways { get; set; }
-        public System.Data.Entity.DbSet<Battery_store> Battery_Stores { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AspNetRoles>()
+                   .HasMany(e => e.AspNetUsers)
+                   .WithMany(e => e.AspNetRoles)
+                   .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserClaims)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .HasMany(e => e.AspNetUserLogins)
+                .WithRequired(e => e.AspNetUsers)
+                .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<Products>()
+                .HasOptional(e => e.Shopping_Cart)
+                .WithRequired(e => e.Products);
+
+            modelBuilder.Entity<Stores>()
+                .HasMany(e => e.Orders)
+                .WithOptional(e => e.Stores)
+                .HasForeignKey(e => e.Delive_Way_s_id);
+        }
     }
 }

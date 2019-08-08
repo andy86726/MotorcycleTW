@@ -52,10 +52,11 @@
     font-weight: bold;
 }
 
-    .text-center input:hover {
+    .l input:hover {
         background: #00FFCC;
         border: 1px solid #00FFCC;
     }
+
 
 
 .left {
