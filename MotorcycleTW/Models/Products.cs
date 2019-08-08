@@ -35,6 +35,8 @@ namespace MotorcycleTW.Models
         public string p_color { get; set; }
 
         public int? p_onorder { get; set; }
+        public DateTime m_dateTime { get; set; }
+        public int p_number { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Classifies> Classifies { get; set; }

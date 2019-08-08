@@ -11,6 +11,8 @@ namespace MotorcycleTW.Models
         [Key]
         public int od_id { get; set; }
 
+        public string p_name { get; set; }
+
         public int od_quantity { get; set; }
 
         public decimal od_price { get; set; }
