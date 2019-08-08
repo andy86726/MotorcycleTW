@@ -6,86 +6,50 @@
 
 @section topCSS {
 <style>
-    .gs-product-nav {
-        position: relative;
-        z-index: 1000;
-        font-size: 14px;
+    body {
+        background: #121116;
     }
-    .gs-product-nav-inner-wrap.sticking {
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top:0;
-        width: 100%;
-        max-width: 100%;
-        background:#000000;
-        height:44px;
+    h4{
+        color:#ddd;
     }
-    .gs-product-nav__curtain {
-        display: none;
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
+    .abc li {
+        padding: 0 10px;
     }
-    .gs-product-nav__list {
-        display: block;
+        .abc li a {
+            color: #838388;
+        }
+
+        .abc li a:hover {
+        text-decoration: none;
+        color: #FF1C41;
+        }
+
+        .abc  li a:active {
+                color: #FF1C41;
+        }
+
+    .gs-hero__banner {
         position: absolute;
+        top: 94px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        top: 43px;
-        max-height: 0;
-        overflow: hidden;
-        text-align: center;
-        transition: max-height 0.5s, background 0.5s;
-    }
-    .gs-product-nav__item{
-        padding:0 10px;
-    }
-
-    .reset-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    @@media (min-width: 992px) {}
-    .gs-product-nav__link:active {
-    color: #FF1C41;
-    }
-
-    @@media (min-width: 992px){}
-    .gs-product-nav__link {
-    padding: 0;
-    font-family: "graphik-semib", "PingFangTC-Semibold", "Noto Sans Bold";
-    }
-    .flex {
+        align-items: flex-end;
         display: flex;
-    }
-    .justify-between {
-        justify-content: space-between;
-    }
-    .gs-product-nav__list {
-        display: flex;
-        border: none;
-        max-height: initial;
-        position: static;
-        width: auto;
     }
     .gs-hero__bg {
         position: absolute;
         left: 0;
         right: 0;
-        top: 72px;
+        top: 0;
         height: 90%;
         background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-bg.jpg) center no-repeat;
-        background-size: auto 100%;
     }
     .gs-hero__s {
         position: absolute;
         left: 0;
         right: 0;
-        top: 72px;
+        top: 0;
         height: 90%;
         background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-s.png) center no-repeat;
         background-size: auto 100%;
@@ -94,109 +58,1180 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 72px;
+        top: 0;
         height: 90%;
         background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-scooter.png) center no-repeat;
         background-size: auto 100%;
     }
     .gs-hero__text {
         position: absolute;
-        top: 80%;
+        top: 70%;
         bottom: 0;
         left: 0;
         padding: 0;
         width: 100%;
         text-align: center;
     }
-    .gs-hero__text .container {
-        width: 600px;
-    }
-    .gs-hero__title, .gs-hero__subtitle {
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
-    .gs-section-intro-badges {
-        background-color: #18181C;
-        color: #535357;
-    }
-    .gs-section-intro-badges {
-        background-color: #18181C;
-        color: #535357;
-    }
-    .gs-section-intro-badges {
-        background-color: #18181C;
-        color: #535357;
-    }
-    .slick-slider {
-        position: relative;
-        display: block;
-        height: 100% !important;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -ms-touch-action: none;
-        -webkit-tap-highlight-color: transparent;
+
+    .gs-spec-header-section {
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/header-image.jpg) center no-repeat;
+        background-size: 100% auto;
     }
 
+    .gs-spec-intro-badge:nth-child(1):before {
+        height: 12vw;
+        width: 13.2vw;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/7.2.png);
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/7.2.svg);
+    }
+    .gs-spec-intro-badge:before {
+        content: '';
+        display: inline-block;
+        vertical-align: bottom;
+        background-position: center right;
+        background-repeat: no-repeat;
+    }
+    .gs-spec-intro-badge {
+        width: auto;
+        margin: 50px 0;
+    }
+
+        .gs-spec-intro-badge:nth-child(2):before {
+            height: 12vw;
+            width: 15vw;
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/3.7.png);
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/3.7.svg);
+        }
+
+        .gs-spec-intro-badge:nth-child(3):before {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/202.svg);
+        }
+        .gs-spec-intro-badge:before {
+            content: '';
+            display: inline-block;
+            vertical-align: bottom;
+            background-position: center right;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+        }
+        .gs-spec-intro-badge:nth-child(1):before, .gs-spec-intro-badge:nth-child(2):before, .gs-spec-intro-badge:nth-child(3):before {
+            margin-right: 5px;
+            height: 73px;
+            width: 120px;
+        }
+
+    .gs-specs-list {
+        color: #b9bcbf;
+        list-style: none;
+        padding: 0;
+        margin-bottom:30px;
+    }
+    .gs-specs-list li{
+        font-size:18px;
+    }
+    .gs-spec-section {
+        color: #E6E6E6;
+    }
+    .gs-spec-description-headline {
+        font-size: 36px;
+        padding-top: 50px;
+        margin: 0;
+        margin-bottom: 50px;
+        border-top: 1px solid #2E2E34;
+    }
+    @@media (min-width: 992px) {
+    }
+    .gs-spec-appearance-bg {
+        position: static;
+        margin-top: -30px;
+        width: 33.33%;
+    }
+    .gs-spec-appearance-bg {
+        right: 15px;
+        top: 60px;
+        height: 100px;
+        width: 100px;
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/al.png) center top no-repeat;
+        background-size: 100px;
+    }
+
+    .gs-section-buy {
+        background-color: #121215;
+        padding: 80px 0;
+        position: relative;
+        z-index: 1;
+    }
+    .gs-buy-s-icon {
+        height: 181px;
+        width: 129px;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/buy-s-icon.png);
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/buy-s-icon.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gs-buy-text {
+        padding: 25px 0 50px 0;
+        color: #838388;
+    }
+    .gs-buy-text-title, .gs-buy-price {
+        display: block;
+        color: #fff;
+        font-size:18px;
+    }
+    .gs-buy-btn {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        color: #fff;
+        padding: 15px 50px;
+        border-radius: 100px;
+        background-color: #202023;
+        font-size:18px;
+    }
+        .gs-buy-btn:hover {
+            color: #FF1C41;
+            text-decoration:none;
+        }
+    .text-xs-center {
+        text-align: center !important;
+    }
+    .gs-buy-btn:before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        bottom: -2px;
+        right: -2px;
+        border-radius: 100px;
+        overflow: hidden;
+        background: linear-gradient(45deg, #832D89, #E82A4C);
+    }
+    .gs-spec-drivetrain-bg {
+        position: static;
+        height: 180px;
+        top: 120px;
+        width: 33.3%;
+        background-size: 180px;
+        margin-top: -30px;
+    }
+    .gs-spec-drivetrain-bg {
+        display: block;
+        height: 180px;
+        width: 180px;
+        right: 15px;
+        top: 80px;
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/drivetrain-s-badge.png) center no-repeat;
+        background-size: 180px;
+    }
 </style>
 }
-
-
 <main id="ggr_main_container">
-    <section class="gs-section-hero play">
-        <nav class="gs-product-nav gc-nav-against">
-            @*<input type="checkbox" class="gs-menustate hidden-xs-up" id="gs-menustate">*@
-            <label class="gs-product-nav__curtain" for="gs-menustate"></label>
-
-            <div class="gs-product-nav-inner-wrap container sticking">
-                <div class="container">
-                    <div class="flex justify-between">
-                        <div style="line-height:44px;">
-                            <span class="gs-product-nav__name font-w5" style="color:#808080";>Gogoro S1</span>
-                            <label class="gs-menucta hidden-lg-up" style="color:#808080"; for="gs-menustate">性能</label>
-                        </div>
-                        <div style="line-height:44px;">
-                            <ul class="gs-product-nav__list reset-list">
-                                <li class="gs-product-nav__item"><a class="gs-product-nav__link gs-product-nav__link--active" href="#">性能</a></li>
-                                <li class="gs-product-nav__item"><a class="gs-product-nav__link " href="/tw/smartscooter/s-performance/s1/design">設計</a></li>
-                                <li class="gs-product-nav__item"><a class="gs-product-nav__link " href="/tw/smartscooter/s-performance/s1/spec">規格</a></li>
-
-                                <li class="gs-product-nav__item hidden-md-down" ><a class="gs-product-nav__link gs-product-nav__link--primary" style="border-radius:22px; border:1px solid #FF1C41; padding: 5px 20px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);color: #fff;" href="https://store.gogoro.com/tw/scooter?model=my20gs" target="_blank"><strong>打造愛車</strong></a></li>
-
-                            </ul>
-                        </div>
-                    </div>
+    <div style="padding:10px 0;">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <strong>
+                        <span class="ggg" style="color: #838388;">Gogoro S1</span>
+                    </strong>
+                </div>
+                <div>
+                    <ul class="abc" style="display:flex; justify-content:space-between; list-style:none; margin:0; padding:0;">
+                        <li class=""><a class="ab" href="">性能</a></li>
+                        <li class=""><a class="ab" href="">設計</a></li>
+                        <li class=""><a class="ab" href="">規格</a></li>
+                        <li class=""><a class="cd" style="color:#fff; padding:0 20px;border-radius:10px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);" href="https://store.gogoro.com/tw/scooter?model=my20gs"><strong>打造愛車</strong></a></li>
+                    </ul>
                 </div>
             </div>
-        </nav>
-
-
-
-        <div class="gs-hero__banner flex items-end">
-            <div class="gs-hero__bg"></div>
-            <div class="gs-hero__s"></div>
-            <div class="gs-hero__scooter"></div>
         </div>
-
-        <div class="gs-hero__text items-center justify-center">
-            <div>
-                <div class="container">
-                    <h2 class="gs-hero__title">疾速耀眼</h2>
-
-                    <div class="gs-hero__subtitle text-xs-center gs-content-max-width center-block">
-                        無數細節只為實現你對極致性能的渴望。快如閃電、流暢滑順、靈活敏捷，騎乘的五感驚豔，從此躍入全新里程碑。
+    </div>
+    <section class="gs-spec-header-section" style="height:800px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="padding:0 18px;">
+                    <div class="" style="margin-top:70px; font-size:45px; color:#ddd;">主要數據</div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="gs-spec-intro-badges text-xs-left text-lg-right">
+                        <div class="gs-spec-intro-badge" style="width:auto;margin: 50px 0;color: #535357;">
+                            <div class="gs-spec-intro-badge__text">
+                                KW<br>馬達<br>輸出
+                            </div>
+                        </div>
+                        <div class="gs-spec-intro-badge text-lg-right " style="width:auto;margin: 50px 0;color: #535357;">
+                            <div class="gs-spec-intro-badge__text">
+                                SEC<br>0-50 KM/H<br>直線加速
+                            </div>
+                        </div>
+                        <div class="gs-spec-intro-badge text-xs-right text-lg-right hidden-md-down" style="width:auto;margin: 50px 0;color: #535357;">
+                            <div class="gs-spec-intro-badge__text">
+                                Nm<br>輪上扭力
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    @*<div>
+        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--hide flb-bar--s">
+            <div class="gc-container">
+                <div class="flb-container">
+                    <button class="flb-close"></button><div class="flb-content">
+                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
+                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+    <!-- Appearance -->
+    <section class="gs-spec-section gs-spec-appearance-section" style="margin-top:-200px;">
+        <div class="gs-spec-appearance-container container">
+            <h2 class="gs-spec-description-headline" style="">外觀造型</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">車色選擇</div>
+                            石墨灰
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">車架顏色</div>
+                            銀河黑
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">前搖臂 / 後搖臂顏色</div>
+                            銀河黑
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">鋁合金輪圈顏色</div>
+                            極致黑
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">龍頭功能按鈕</div>
+                            消光黑，電子式微動開關，具 LED 背光
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">儀表板</div>
+                            全彩背光無邊界儀表板
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">側腳架</div>
+                            鋁合金鍛造內嵌式側腳架
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">後座腳踏</div>
+                            鋁合金鍛造內嵌式飛旋踏板
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">側腳架 / 後座腳踏顏色</div>
+                            深鈦灰
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            快速更換個性化面板
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            自動回復隱藏式掛勾(最大掛載2kg)
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col-lg-4 gs-spec-appearance-bg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrades -->
+    <section class="gs-spec-section gs-spec-upgrades-section">
+        <div class="gs-spec-upgrades-container container">
+            <h2 class="gs-spec-description-headline">升級配備</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            燻黑造型風鏡
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            轉向輔助照地燈 (燻黑)
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            輔助剎車燈 (燻黑)
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            置物箱小燈及 USB 充電插孔
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            Snap-on 快拆配件系統 (深鈦灰)
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            S 系列一體成型鋁合金踏墊（深鈦灰）
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Dimension -->
+    <section class="gs-spec-section gs-spec-dimension-section">
+        <div class="gs-spec-dimension-container container">
+            <h2 class="gs-spec-description-headline">尺寸規格</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">長 x 寬 x 高</div>
+                            1,730 x 690 x 1,035 mm
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">軸距</div>
+                            1,230 mm
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">重量</div>
+                            94 kg
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">重量(含兩顆電池)</div>
+                            112 kg
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">置物空間</div>
+                            24.5 L
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Performance -->
+    <section class="gs-spec-section gs-spec-performance-section">
+        <div class="gs-spec-performance-container container">
+            <h2 class="gs-spec-description-headline">性能表現</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">最大功率</div>
+                            @*7,200W @ 5,000 rpm*@
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">最大馬力</div>
+                            @*9.65hp @ 5,000 rpm*@
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">最大扭力 (馬達/輪上)</div>
+                            @*27/202Nm @ 0-2,250 rpm*@
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">安全極速*</div>
+                            95 km/h
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">0~50km/h 直線加速*</div>
+                            3.7 秒
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">爬坡能力*</div>
+                            30% (17°): 40 km/h<br>20% (11°): 50 km/h<br>10% (6°): 70 km/h
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">傾角 (不含中駐架)</div>
+                            左：45 度<br>右：48.5 度
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">單次換電可續航里程 * (定速 30 km/h)</div>
+                            約 125 km
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Drivetrain -->
+    <section class="gs-spec-section gs-spec-drivetrain-section">
+        <div class="gs-spec-drivetrain-container container">
+            <h2 class="gs-spec-description-headline">動力系統</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">油門控制</div>
+                            Saferide™線傳電子油門
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">倒車控制</div>
+                            線傳電子倒車油門
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">動力模式</div>
+                            智慧模式 / 標準模式 / 競速模式
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">電池連接埠</div>
+                            全方向性電池連接埠
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">馬達</div>
+                            G1-S 鋁合金水冷永磁同步馬達
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">馬達控制器</div>
+                            MOSFET 水冷馬達控制器
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">散熱系統</div>
+                            直通式內導流氣道水冷系統
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">減速機構</div>
+                            整合式行星齒輪組
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">傳動方式</div>
+                            Gates 高張力碳纖維複合皮帶
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4 gs-spec-drivetrain-bg"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Construction -->
+    <section class="gs-spec-section gs-spec-construction-section">
+        <div class="gs-spec-construction-container container">
+            <h2 class="gs-spec-description-headline">車體結構</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">車架</div>
+                            Aeroframe™鋁合金單體車架
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">前懸吊系統</div>
+                            鋁合金單臂軸心式倒叉，阻尼可調
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">後懸吊系統</div>
+                            鋁合金多連桿
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">後避震器</div>
+                            無段式預載可調，阻尼可調
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">煞車系統</div>
+                            油壓碟煞
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">煞車油管</div>
+                            金屬
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">卡鉗型式</div>
+                            前：對向四活塞<br>後：浮動單活塞
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">碟盤規格</div>
+                            前：226 mm 打孔碟<br>後：162 mm 打孔碟
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">輪胎規格</div>
+                            前：100/60-12 (45L)<br>後：110/60-12 (49L)
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">原廠配備輪胎</div>
+                            前：Maxxis M6237 SPORT 性能胎<br>後：Maxxis M6237 雙能複合胎 (節能＋性能)
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">智慧感測器</div>
+                            重力及加速度感測器<br>環境亮度感測器<br>溫度感測器
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- User Interface -->
+    <section class="gs-spec-section gs-spec-user-interface-section">
+        <div class="gs-spec-user-interface-container container">
+            <h2 class="gs-spec-description-headline">使用者介面</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">解鎖及上鎖</div>
+                            iQ System® 智慧鑰匙卡 / 智慧型手機 / Apple Watch
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">無線通訊方式</div>
+                            NFC 及藍牙 4.0，256 位元加密技術
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">置物箱開啟方式</div>
+                            車上按鍵 / iQ System® 智慧鑰匙卡 / 智慧型手機 / Apple Watch
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">智慧型手機 APP 支援系統</div>
+                            iOS 及 Android
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Safety -->
+    <section class="gs-spec-section gs-spec-safety-section">
+        <div class="gs-spec-safety-container container">
+            <h2 class="gs-spec-description-headline">安全配備</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">前大燈</div>
+                            SmartBrite® LED可調式頭燈，含光環式定位燈
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">前方向燈</div>
+                            LED 方向燈
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+                            <div class="gs-spec-small-heading">尾燈組</div>
+                            LED 燈組，含煞車燈、後方向燈、環抱式定位燈
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            雙閃警示燈
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- iQ System -->
+    <section class="gs-spec-section gs-spec-iq-system-section">
+        <div class="gs-spec-iq-system-container container">
+            <h2 class="gs-spec-description-headline">iQ System™ 智慧功能</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            動態動力曲線
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            全時點燈
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            光感應儀表板亮度調節
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            頭燈亮度自動調節
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            過彎感應方向燈
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            低電量緩行模式
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            GoStation® 及 App 異常回報與故障通知
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            側腳架自動斷電功能
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Personalization -->
+    <section class="gs-spec-section gs-spec-personalization-section" >
+        <div class="gs-spec-personalization-container container" style="padding-bottom:50px; border-bottom:1px solid #2E2E34;">
+            <h2 class="gs-spec-description-headline">個人化設定</h2>
+
+            <div class="row">
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            超速 / 低速提示音
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            電能回充強度
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            自動上鎖時間
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            頭燈延遲熄滅
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            儀表板背光色彩可調<br>129,600 色
+
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            音效及燈光主題
+                        </li>
+
+                    </ul>
+
+                    <ul class="gs-specs-list">
+
+                        <li class="gs-specs-list__item">
+
+                            LED 定位燈模式
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gs-spec-section gs-spec-sosumi-section" style="margin-top:20px;">
+        <div class="container" style="color:#4F4F53">
+
+            <p>* 於晴朗微風之情況下，Gogoro以整車重量（含騎士1人及2顆滿電狀態Gogoro®電池）在175公斤以下，胎壓設定為Gogoro出廠設定值之Gogoro S1，行駛於平面柏油道路上，以進行下列測試：</p>
+            <ul>
+                <li>安全極速與加速能力之測試情境：開啟競速模式，並使用性能提升服務，行駛於無車輛且目測係坡度為零度之平面柏油道路。</li>
+                <li>爬坡能力之測試情境：除行駛道路之坡度分別為 10%（6 度）、20%（11 度）及 30%（17度）外，其餘測試情境同上。</li>
+                <li>單次換電續航里程之測試情境：以時速 40 公里連續行駛於無車輛且目測係坡度為零度之平面柏油道路至電力用罄。</li>
+            </ul>
+            <p>* 本表僅供參考，Gogoro保留隨時對車款及產品出售與否或對其內容記載變更之權利，不另行告知。任何於本網站所提及之效能數據、測試結果或騎乘距離等，均可能因其他因素之影響而造成結果有所差異。</p>
+            <p>* 規格配備以實車為準。</p>
+
+        </div>
+    </section>
+
+
+
+    <section class="gs-section-buy text-xs-center" style="border-bottom:2px solid #CE2B5C;">
+        <div class="container">
+            <div class="gs-buy-s-icon center-block"></div>
+            <div class="gs-buy-text">
+                <span class="gs-buy-text-title">前往 Gogoro 門市賞車</span>
+
+            </div>
+            <a href="/tw/findus/?filter=010" class="gs-buy-btn">搜尋門市</a>
+        </div>
+    </section>
+
+    <div class="gs-gradient-line"></div>
+
+</main>
+    @*<div style="padding:10px 0;">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <strong>
+                        <span class="ggg" style="color: #838388;">Gogoro S1</span>
+                    </strong>
+                </div>
+                <div>
+                    <ul class="abc" style="display:flex; justify-content:space-between; list-style:none; margin:0; padding:0;">
+                        <li class=""><a class="ab" href="">性能</a></li>
+                        <li class=""><a class="ab" href="">設計</a></li>
+                        <li class=""><a class="ab" href="">規格</a></li>
+                        <li class=""><a class="cd"   style="color:#fff; padding:0 20px;border-radius:10px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);" href="https://store.gogoro.com/tw/scooter?model=my20gs"><strong>打造愛車</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gs-hero__banner flex items-end">
+        <div class="gs-hero__bg"></div>
+        <div class="gs-hero__s"></div>
+        <div class="gs-hero__scooter"></div>
+    </div>
+
+    <div class="gs-hero__text flex items-center justify-center">
+        <div>
+            <div class="container">
+                <h2 class="gs-hero__title" style="width:600px;color: #fff; margin:auto;">疾速耀眼</h2>
+
+                <div class="gs-hero__subtitle text-xs-center gs-content-max-width center-block"style="width:600px;color: #fff;">
+                    無數細節只為實現你對極致性能的渴望。快如閃電、流暢滑順、靈活敏捷，騎乘的五感驚豔，從此躍入全新里程碑。
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="gs-section-intro-badges">
         <svg class="gs-intro-badges-defs">
@@ -209,10 +1244,10 @@
         </svg>
 
         <div class="gs-intro-badges-container">
-            <div class="js-intro-badges slick-initialized slick-slider gs-intro-badge-active-3">
+            <div class="js-intro-badges slick-initialized slick-slider gs-intro-badge-active-2">
 
                 <div aria-live="polite" class="slick-list draggable">
-                    <div class="slick-track" style="opacity: 1;display:flex;  transform: translate3d(0px, 0px, 0px);" role="listbox">
+                    <div class="slick-track" style="opacity: 1; display:flex; justify-content:center; transform: translate3d(0px, 0px, 0px);" role="listbox">
                         <div class="gs-intro-badge text-xs-center slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
                             <div class="gs-intro-badge-inner-wrap flex flex-column justify-center">
                                 <div class="gs-intro-badge__name">瞬間加速</div>
@@ -235,7 +1270,7 @@
               c0-14,10.1-21.9,23.2-21.9c15,0,22.6,9.8,22.6,25.1c0,21.2-8.9,36.7-22.9,54.6l-15.4,20.4v0.3H117v4.2H69.3V103z"></path>
             </svg>
                                     <span class="gs-intro-badge__subscript inline-block">
-                                        @*kW @<br>5,000 RPM*@
+                                        kW @<br>5,000 RPM
 
                                     </span>
                                 </div>
@@ -258,501 +1293,4 @@
                 </div>
             </div>
         </div>
-    </section>
-
-
-
-    <section class="gs-section-video-banner gs-section-video-banner--performance flex flex-column justify-center items-center">
-        <div class="container width-100 text-lg-left text-xs-center">
-            <div class="row">
-                <div class="col-lg-offset-1">
-                    <div class="gs-video-banner-title">
-                        為奔馳<br>在時代尖端<br>的騎士而造
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <a class="launch-video-modal" data-video-src="//www.youtube.com/embed/UERDBF_bsoU?enablejsapi=1&amp;autoplay=1&amp;rel=0&amp;vq=hd720" data-video-id="faster-clean-video">
-            <span class="gs-video-banner-play-btn hidden-md-down"></span>
-            <span class="gs-btn hidden-lg-up">PLAY VIDEO</span>
-        </a>
-    </section>
-
-
-    <section class="gs-section-be-first">
-        <div class="gs-be-first-copy lg-flex items-center">
-            <div class="container">
-                <div class="gs-be-first-header flex items-center">
-                    <div class="gs-be-first-banner flex-1 flex justify-center">
-                        <div class="gs-be-first-banner__number">
-                            <div class="hidden-lg-up text-xs-center m-b-1">0-50 KM/H</div>
-                            <img class="img-fluid hidden-lg-up" src="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/mobile-0370.png">
-
-                            <svg class="hidden-md-down" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-3.5 213.9 606.2 172.1" enable-background="new -3.5 213.9 606.2 172.1" xml:space="preserve">
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="613.1559" y1="715.6722" x2="160.2502" y2="262.7665" gradientTransform="matrix(0.7692 0 0 -0.7692 0 678.8462)">
-<stop offset="0" style="stop-color:#FF1C41"></stop>
-<stop offset="8.400000e-03" style="stop-color:#FF1C41"></stop>
-<stop offset="1" style="stop-color:#802984"></stop>
-</linearGradient>
-<path class="gs-be-first-svg-path" fill="none" stroke="url(#SVGID_1_)" stroke-width="1.5" stroke-miterlimit="10" d="M165.3,261.7c1.1-6.7,3.4-12.8,6.5-18.2
-c3.1-5.4,7.1-10.1,11.9-13.9c4.7-3.9,10.1-6.9,16-8.9c5.9-2,12.3-3.1,18.9-3.1c5.7,0,11.2,0.8,16.4,2.5c5.1,1.6,9.8,4.1,13.8,7.3
-s7.2,7.3,9.5,12.2c2.3,4.9,3.5,10.6,3.5,17.1c0,5-0.7,9.7-2.2,14c-1.4,4.3-3.5,8.2-6.3,11.6c-2.7,3.4-6.1,6.4-10,8.8
-s-8.4,4.3-13.4,5.5c4,1.1,7.6,2.7,10.8,4.8s5.9,4.7,8.2,7.7c2.2,3,4,6.5,5.2,10.3c1.2,3.8,1.8,8,1.8,12.6c0,8.1-1.5,15.3-4.3,21.5
-s-6.8,11.6-11.8,15.9c-5,4.3-11,7.6-17.8,9.8c-6.7,2.2-14.2,3.4-22.1,3.4c-7.7,0-14.8-1.1-21.2-3.2c-6.3-2.1-11.9-5.3-16.4-9.4
-c-4.6-4.1-8.2-9.1-10.7-14.9s-3.8-12.5-3.9-19.9 M238.8,282.7c6.5-5.5,10.5-14,10.5-25.7c0-8.9-3-16.1-8.4-21.1s-13.3-7.8-23-7.8
-c-10.4,0-19.5,3-26.6,8.7s-12.2,14.1-14.7,24.9 M170.2,361.9c6.8,6.5,16.8,10.2,30.1,10.2c12.3,0,23-3.2,30.6-9.8
-c7.6-6.6,12.1-16.7,12.1-30.3c0-8.5-2.5-16.1-8-21.6c-5.5-5.5-13.9-8.9-25.6-8.9h-5h-5 M285.6,372.3c0-5.4,4.3-9.7,9.5-9.7
-c5.4,0,9.7,4.3,9.7,9.7c0,5.2-4.3,9.5-9.5,9.5C289.9,381.8,285.6,377.5,285.6,372.3z M374.1,354.1l6.2-11.1l10.6-18.9l10.6-18.9
-l10.6-18.9l10.6-18.9l10.6-18.9l10.6-18.9h-10.8h-10.8h-10.8h-10.8h-10.8H379h-10.8h-10.8 M372.5,219.3h38h25.8h25.8l-0.1,0.5
-l-0.1,0.5l-0.1,0.5l-0.1,0.5l-22.3,39.8L417.1,301l-22.3,39.8l-22.3,39.8 M100.3,363.5c-11.4,12.4-26.4,19.2-44.7,19.2
-c-19.5,0-33.5-6.6-42.6-17.3c-9.2-10.8-13.5-25.8-13.5-42.6c0-3.4,0.1-6.8,0.4-10.2c0.3-3.4,0.7-6.7,1.2-10l1-6.6l1-6.6
-c3.6-22.5,11.8-40.6,23.7-53c11.9-12.4,27.3-19.2,45.6-19.2c19.2,0,32.8,6.7,41.6,17.6c8.8,10.9,12.8,25.9,12.9,42.6
-c0,3.3-0.1,6.6-0.4,10c-0.3,3.4-0.7,6.8-1.2,10.2l-1.1,6.6 M14.5,296.8l-1,6.4c-0.5,3.2-0.8,6.4-1.1,9.6c-0.3,3.3-0.5,6.5-0.5,9.8
-c0.1,13.2,2.8,25.6,9.7,34.6s17.8,14.7,34.4,14.7c14.9,0,26.9-5.4,36-16s15.3-26.2,18.7-46.7l1-6.6l1-6.6c0.5-3.1,0.8-6.2,1-9.3
-c0.2-3.1,0.3-6.3,0.3-9.5c0-13.2-2.7-25.7-9.4-34.8c-6.7-9.1-17.3-15-33.1-15c-14.6,0-27,5.7-36.5,16.3 M596.6,253.9
-c2.1,7.2,3.1,15.1,3.2,23.4c0,1.6,0,3.3-0.1,5c-0.1,1.7-0.2,3.3-0.3,5c-0.1,1.7-0.3,3.4-0.5,5.1c-0.2,1.7-0.4,3.4-0.7,5.1l-0.6,3.3
-l-0.6,3.3l-0.6,3.3l-0.6,3.3c-1.8,11.2-4.6,21.3-8.4,30.1c-3.8,8.8-8.6,16.4-14.2,22.6c-5.7,6.2-12.3,11-19.8,14.2
-c-7.5,3.2-15.8,4.9-25,4.9c-9.7,0-18.1-1.6-25.2-4.6c-7.1-3-12.9-7.3-17.5-12.7c-4.6-5.4-7.9-11.8-10.2-19
-c-2.2-7.2-3.3-15.2-3.3-23.6c0-1.7,0-3.4,0.1-5.1s0.2-3.4,0.3-5.1c0.1-1.7,0.3-3.4,0.5-5c0.2-1.7,0.4-3.3,0.7-5l0.5-3.3l0.5-3.3
-l0.5-3.3l0.5-3.3c1.8-11.3,4.8-21.4,8.7-30.3c4-8.9,9-16.5,14.9-22.7c5.9-6.2,12.8-11,20.4-14.3c7.6-3.2,16.1-4.9,25.2-4.9
-M508.1,368c5.7,2.6,12.6,4,20.9,4c7.5,0,14.2-1.4,20.2-4c6-2.7,11.3-6.7,15.8-11.9c4.6-5.3,8.4-11.8,11.5-19.6
-c3.1-7.8,5.5-16.8,7.2-27.1l0.5-3.3l0.5-3.3l0.5-3.3l0.5-3.3c0.2-1.5,0.4-3.1,0.6-4.6c0.2-1.6,0.3-3.1,0.4-4.7
-c0.1-1.6,0.2-3.1,0.3-4.7c0.1-1.6,0.1-3.2,0.1-4.7c0-6.6-0.7-13-2.2-18.9s-3.9-11.3-7.2-15.9c-3.3-4.6-7.7-8.3-13.1-10.9
-c-5.5-2.6-12.1-4.1-20-4.1c-7.3,0-14,1.4-20.2,4.2c-6.1,2.7-11.6,6.8-16.4,12.2c-4.8,5.3-8.9,11.9-12.1,19.7
-c-3.3,7.8-5.8,16.7-7.4,26.7l-0.5,3.2l-0.5,3.2l-0.5,3.2l-0.5,3.2c-0.2,1.6-0.4,3.2-0.6,4.8c-0.2,1.6-0.4,3.2-0.5,4.9
-c-0.1,1.6-0.3,3.3-0.3,4.9c-0.1,1.6-0.1,3.3-0.1,4.9"></path>
-</svg>
-
-
-                            <div class="gs-separator hidden-lg-up m-t-1 m-b-0"></div>
-                        </div>
-                        <div class="gs-be-first-banner__superscript hidden-md-down">
-                            <div class="gs-be-first-banner__superscript-top">Sec</div>
-                            <div class="gs-be-first-banner__superscript-bottom font-w5">0-50 KM/H</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gs-separator hidden-md-down"></div>
-
-                <div class="gs-be-first-footer  text-xs-center flex items-center justify-center">
-                    <div class="gs-be-first-text">
-                        <h2 class="line-height-1">沒有敵手的競逐</h2>
-                        <div class="gs-content-max-width center-block">時速 0 到 50 公里瞬間加速僅需 3.7 秒*，驅動系統隨傳隨到的超強滑順動力，瞬間釋放前所未有的扭矩爆發力。綠燈，就是你的起跑槍聲。</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div>
-        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--s">
-            <div class="gc-container">
-                <div class="flb-container">
-                    <button class="flb-close"></button><div class="flb-content">
-                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
-                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="gs-section-intro-graph">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-11 col-xl-offset-1">
-                    <div class="gs-intro-graph lg-flex row-reverse">
-                        <div class="gs-intro-graph__graph">
-
-
-                            <div class="gs-gbs-graph play">
-                                <div class="gs-gbs-graph__content-area">
-                                    <div class="gs-gbs-graph__grid">
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">0<sup>KM/H</sup></span>
-                                        </div>
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">10<sup>KM/H</sup></span>
-                                        </div>
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">20<sup>KM/H</sup></span>
-                                        </div>
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">30<sup>KM/H</sup></span>
-                                        </div>
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">40<sup>KM/H</sup></span>
-                                        </div>
-                                        <div class="gs-gbs-graph__axis">
-                                            <span class="gs-gbs-graph__axis-label">50<sup>KM/H</sup></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="gs-gbs-graph__line gs-gbs-graph__line--primary"></div>
-                                    <div class="gs-gbs-graph__line gs-gbs-graph__line--secondary"></div>
-
-                                    <div class="gs-gbs-graph__text gs-gbs-graph__text--primary">Gogoro S1</div>
-                                    <div class="gs-gbs-graph__text gs-gbs-graph__text--secondary">125CC</div>
-
-                                    <div class="gs-gbs-graph__value-wrap">
-                                        <span class="gs-gbs-graph__value">3.7</span>
-                                        <sub>Sec</sub>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="gs-intro-graph__text text-xs-center text-lg-left">
-                            <h2>望塵莫及</h2>
-                            <p>
-                            </p><p>體驗前所未有的扭力，對破風手而言，0.5 秒是領先與落後之別。Gogoro S1 競速模式讓車陣只能對平日低調的你行注目禮。</p>
-                            <span class="gs-text-small">*需搭配性能提升服務</span>
-
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="gs-section-s-performance">
-        <div class="container text-xs-center">
-            <div class="gs-separator"></div>
-            <h2>為超越而生的調校</h2>
-            <div class="gs-content-max-width center-block">
-                <div class="hidden-md-down">G1 馬達的性能，無論在市區或賽道皆有傲人表現。Gogoro 在不可能的極限上再次挑戰自我，和自己比賽，推出 G1-S 馬達，更快速、更高效。我們驕傲地說，這種空前但不絕後的扭力輸出，就是你一直在等的。</div>
-                <div class="hidden-lg-up">Gogoro 在不可能的極限上再次挑戰自我，推出 G1-S 馬達，更快速、更高效。我們驕傲地說，這種空前但不絕後的扭力輸出，就是你一直在等的。</div>
-
-            </div>
-
-            <div class="gs-s-performance-chart">
-                <div class="gs-s-performance-chart__row lg-flex row-reverse">
-                    <div class="gs-s-performance-chart__chart  flex flex-column justify-center items-center">
-                        <div>
-                            <div class="gs-quicker-graph play">
-                                <div class="gs-quicker-graph__content-area">
-
-                                    <div class="gs-quicker-graph__axis"></div>
-                                    <div class="gs-quicker-graph__axis"></div>
-                                    <div class="gs-quicker-graph__axis"></div>
-                                    <div class="gs-quicker-graph__axis"></div>
-                                    <div class="gs-quicker-graph__axis"></div>
-                                    <svg class="gs-quicker-graph__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
-                                    <g>
-
-                                    <linearGradient id="gs-quicker-graph-gradient1" gradientUnits="userSpaceOnUse" x1="0.1073" y1="427.1996" x2="229.6429" y2="427.1996" gradientTransform="matrix(2.6067 0 0 -2.6067 0 1564.041)">
-                                    <stop offset="0" style="stop-color:#202023"></stop>
-                                    <stop offset="2.600000e-03" style="stop-color:#202023"></stop>
-                                    <stop offset="0.9988" style="stop-color:#66666D"></stop>
-                                    <stop offset="1" style="stop-color:#66666D"></stop>
-                    </linearGradient>
-                                    <path class="gs-quicker-graph__secondary-line" fill="none" stroke="url(#gs-quicker-graph-gradient1)" stroke-width="3" stroke-miterlimit="10" d="M0.3,597.8c0,0,491.9-7.4,594.6-297.3"></path>
-
-                                    <linearGradient id="gs-quicker-graph-gradient2" gradientUnits="userSpaceOnUse" x1="229.4718" y1="484.8185" x2="0.1114" y2="484.8185" gradientTransform="matrix(2.6067 0 0 -2.6067 0 1564.041)">
-                                    <stop offset="0" style="stop-color:#FF1C41"></stop>
-                                    <stop offset="8.400000e-03" style="stop-color:#FF1C41"></stop>
-                                    <stop offset="1" style="stop-color:#802984"></stop>
-                    </linearGradient>
-                                    <path class="gs-quicker-graph__primary-line" fill="none" stroke="url(#gs-quicker-graph-gradient2)" stroke-width="3" stroke-miterlimit="10" d="M0.3,597.8C64.6,597,596.1,539.9,594.3,-1.2"></path>
-                  </g>
-                </svg>
-                                </div>
-                                <div class="gs-quicker-graph__text">202 Nm</div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="gs-s-performance-chart__text flex flex-column justify-center items-center">
-                        <div>
-                            <h2>快上加快</h2>
-                            G1-S 馬達不僅提升扭力，傳動皮帶更採用賽車等級碳纖維材質，無處不是你的發射台。
-                        </div>
-                    </div>
-                </div>
-                <div class="gs-s-performance-chart__row gs-s-performance-chart__row--stronger lg-flex">
-                    <div class="gs-s-performance-chart__chart flex flex-column justify-center items-center">
-
-                        <div>
-                            <div class="gs-stronger-graph play">
-                                <div class="gs-stronger-graph__content-area">
-                                    <div class="gs-stronger-graph__axis"></div>
-                                    <div class="gs-stronger-graph__axis"></div>
-                                    <div class="gs-stronger-graph__axis"></div>
-                                    <div class="gs-stronger-graph__axis"></div>
-                                    <div class="gs-stronger-graph__axis"></div>
-
-                                    <div class="gs-stronger-graph__baseline"></div>
-                                    <div class="gs-stronger-graph__secondary-line"></div>
-                                    <div class="gs-stronger-graph__primary-line"></div>
-                                </div>
-                                <div class="gs-stronger-graph__text">30%: 40 KM/H</div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="gs-s-performance-chart__text flex flex-column justify-center items-center">
-                        <div>
-                            <h2>極速衝勁</h2>
-                            平地領先不稀奇，陡坡勝出才是真本領；再挑戰的路況 Gogoro S1 都有足夠力道征服。
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section class="gs-section-slogan flex items-center justify-center">
-        <div>
-            <div class="gs-slogan-container container">
-                <div class="gs-slogan text-xs-center">
-                    <div class="gs-slogan__body">
-                        <div class="display-4 gs-slogan__title">
-                            念頭到 <br class="hidden-xl-up">剎車就到
-
-                        </div>
-
-                        <div class="gs-content-max-width center-block">
-                            少了終極控制，哪撐得住終極動力？煞車系統的提升，就是絕對操控感的提升。Gogoro S1 人車合一的煞車系統，反應靈敏，說停，就停。
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="gs-section-brake-story lg-flex items-center">
-        <div class="container width-100">
-            <div class="gs-brake lg-flex text-lg-left text-xs-center">
-
-                <div class="gs-brake__bg-block">
-                    <div class="gs-brake__bg"></div>
-                </div>
-
-                <div class="gs-brake__text-block lg-flex items-center">
-                    <div class="gs-brake__text">
-                        <h2>更大，更強大</h2>
-
-                        <p class="gs-brake__story gs-content-max-width center-block">對應更佳的動力及速度，Gogoro S1 配置了更大的煞車碟盤、對向四活塞卡鉗、及全新金屬油管，精準傳達每分剎車力道。配備 Gogoro 車系最先進的 SBS 同步煞車系統，造就最完美的整體制動力。</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="gs-section-suspension text-xs-center">
-
-        <div class="gs-xl-container container">
-            <div class="gs-suspension lg-flex row-reverse">
-                <div class="gs-suspension__bg-block">
-                    <div class="gs-suspension__bg gs-suspension__bg--right"></div>
-                </div>
-                <div class="gs-suspension__text-block" style="transform: translateY(0%);">
-                    <div class="gs-suspension__text">
-                        <h2>前懸吊可調</h2>
-                        <div class="gs-content-max-width center-block">
-                            史無前例，Gogoro 首次開放前懸吊的調整功能，簡單操作就能打造自己的騎乘風格。山路過彎或車陣穿梭，每次挑戰都信心十足。
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/suspension-adjustable-front.jpg">
-                </div>
-            </div>
-
-            <div class="suspension-container gs-suspension lg-flex">
-                <div class="gs-suspension__bg-block">
-                    <div class="gs-suspension__bg gs-suspension__bg--left"></div>
-                </div>
-                <div class="gs-suspension__text-block" style="transform: translateY(0%);">
-                    <div class="gs-suspension__text">
-                        <h2>後懸吊可調</h2>
-                        <div class="gs-content-max-width center-block">
-                            Gogoro 獨家的鋁合金多連桿後懸吊設計，讓輪胎緊緊貼住地面，遭遇各種城市中的特殊路況，Gogoro S1 仍然維持一樣的精準與穩定，分毫不差。
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/suspension-adjustable-rear.jpg">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section class="gs-section-tire text-xs-center">
-        <div class="gs-tire__text flex items-center">
-            <div class="container">
-                <h2>更快、更強勁、更敏捷</h2>
-                <p class="gs-content-max-width center-block">
-                    專為 Smartscooter® 智慧雙輪量身訂製的後輪「雙能複合胎」兼顧性能與節能，讓你可以騎得更快、更遠。前輪則選用「性能胎」，提供良好的路感和抓地力。
-                </p>
-                <div class="gs-section-tire-support-by m-b-1">Performance Front Tire by</div>
-                <div class="gs-section-tire-maxxis center-block"></div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="gs-section-intro-graph">
-        <div class="gs-xl-container container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <div class="gs-intro-graph lg-flex row-reverse">
-                        <div class="gs-intro-graph__graph flex items-center">
-                            <svg class="gs-sport-activation play" width="100%" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 904.736 194.795" enable-background="new 0 0 904.736 194.795" xml:space="preserve">
-                            <linearGradient id="igsa-lg-1" gradientUnits="userSpaceOnUse" x1="739.5094" y1="61.2364" x2="475.9911" y2="324.7547">
-                            <stop offset="0" style="stop-color:#FF1C41"></stop>
-                            <stop offset="1" style="stop-color:#802984"></stop>
-              </linearGradient>
-                            <path class="gs-sport-activation-hill-4" fill-rule="evenodd" clip-rule="evenodd" fill="url(#igsa-lg-1)" d="M861.908,192.902c91.999,1.031-517.77,0-517.77,0
-                c163.664,0,173.41-151.613,268.599-151.613C707.024,41.289,730.849,191.433,861.908,192.902z"></path>
-                            <linearGradient id="igsa-lg-2" gradientUnits="userSpaceOnUse" x1="0" y1="183.2157" x2="495.7573" y2="183.2157">
-                            <stop offset="0" style="stop-color:#231F20;stop-opacity:0.2"></stop>
-                            <stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0.2"></stop>
-              </linearGradient>
-                            <path class="gs-sport-activation-hill-1" fill-rule="evenodd" clip-rule="evenodd" fill="url(#igsa-lg-2)" d="M485.831,193.36c92.004,0-485.831,0-485.831,0
-                c185.873,0,193.626-20.288,248.761-20.288C304.524,173.071,321.377,193.36,485.831,193.36z"></path>
-                            <linearGradient id="igsa-lg-3" gradientUnits="userSpaceOnUse" x1="726.985" y1="155.2562" x2="210.7417" y2="155.2562">
-                            <stop offset="0" style="stop-color:#FF1C41"></stop>
-                            <stop offset="1" style="stop-color:#802984"></stop>
-              </linearGradient>
-                            <path class="gs-sport-activation-hill-3" fill-rule="evenodd" clip-rule="evenodd" fill="url(#igsa-lg-3)" d="M717.371,193.012c92.004,0-506.629,0.348-506.629,0.348
-                c201.449,0,206.014-76.207,264.992-76.207C539.211,117.153,558.635,193.012,717.371,193.012z"></path>
-                            <linearGradient id="igsa-lg-4" gradientUnits="userSpaceOnUse" x1="120.3694" y1="173.3766" x2="616.1268" y2="173.3766">
-                            <stop offset="0" style="stop-color:#231F20;stop-opacity:0.2"></stop>
-                            <stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0.2"></stop>
-              </linearGradient>
-                            <path class="gs-sport-activation-hill-2" fill-rule="evenodd" clip-rule="evenodd" fill="url(#igsa-lg-4)" d="M606.2,193.36c92.004,0-485.831,0-485.831,0
-                c185.873,0,193.626-39.967,248.761-39.967C424.893,153.393,441.747,193.36,606.2,193.36z"></path>
-                            <linearGradient id="igsa-lg-5" gradientUnits="userSpaceOnUse" x1="904.7357" y1="193.7951" x2="64.7357" y2="193.7951">
-                            <stop offset="0" style="stop-color:#FF1C41"></stop>
-                            <stop offset="1" style="stop-color:#802984"></stop>
-              </linearGradient>
-                            <path class="gs-sport-activation-baseline" fill-rule="evenodd" clip-rule="evenodd" fill="url(#igsa-lg-5)" d="M64.736,192.795h840v2h-840V192.795z"></path>
-                            <g class="gs-sport-activation-logo">
-                            <g>
-                            <path fill="#FFFFFF" d="M414.528,79.45h3.963l0.884-4.887h4.42l0.884,4.887h4.359l-4.237-21.803h-5.853L414.528,79.45z
-                     M420.076,71.082l1.494-8.58h0.091l1.433,8.58H420.076z"></path>
-                            <path fill="#FFFFFF" d="M436.69,79.785c3.323,0,5.853-2.015,5.853-5.435v-2.229h-3.902v1.984c0,1.13-0.762,1.893-1.89,1.893
-                    c-1.25,0-1.951-0.763-1.951-2.076v-10.87c0-1.191,0.61-1.985,1.921-1.985c1.158,0,1.92,0.733,1.92,1.893v2.046h3.902v-2.412
-                    c0-3.359-2.561-5.252-5.822-5.252c-3.506,0-6.28,2.016-6.28,5.618v11.146C430.441,77.922,433.093,79.785,436.69,79.785z"></path>
-                            <path fill="#FFFFFF" d="M447.725,79.45h4.329V61.31h4.085v-3.633H443.61v3.633h4.115V79.45z"></path>
-                            <path fill="#FFFFFF" d="M457.998,79.45h4.298V57.677h-4.298V79.45z"></path>
-                            <path fill="#FFFFFF" d="M468.027,79.54h4.542l4.176-21.863h-3.871l-2.347,14.047h-0.122l-2.347-14.047h-4.268L468.027,79.54z"></path>
-                            <path fill="#FFFFFF" d="M476.318,79.45h3.963l0.884-4.887h4.42l0.884,4.887h4.359l-4.237-21.803h-5.853L476.318,79.45z
-                     M481.866,71.082l1.494-8.58h0.091l1.433,8.58H481.866z"></path>
-                            <path fill="#FFFFFF" d="M494.761,79.45h4.329V61.31h4.085v-3.633h-12.528v3.633h4.115V79.45z"></path>
-                            <path fill="#FFFFFF" d="M505.034,79.45h4.298V57.677h-4.298V79.45z"></path>
-                            <path fill="#FFFFFF" d="M518.019,79.785c3.505,0,6.31-1.955,6.31-6.015V63.204c0-4.031-2.774-5.863-6.279-5.863
-                    c-3.597,0-6.31,2.046-6.31,5.924v10.566C511.74,77.892,514.3,79.785,518.019,79.785z M518.05,75.998
-                    c-1.28,0-1.951-0.884-1.951-2.106V63.113c0-1.222,0.64-2.016,1.92-2.016c1.189,0,1.981,0.733,1.981,1.985v10.84
-                    C520,75.113,519.33,75.998,518.05,75.998z"></path>
-                            <path fill="#FFFFFF" d="M526.737,79.45h3.81V66.41h0.092l5.091,13.04h3.871V57.677h-3.81v11.634h-0.091l-4.572-11.634h-4.39V79.45
-                    z"></path>
-                            <path fill="#FFFFFF" d="M427.288,52.882c6.528,0,10.477-4.561,10.477-10.331c0-4.395-2.139-7.748-5.924-11.373l-3.456-3.407
-                    c-1.865-1.759-4.004-3.736-4.004-5.825c0-1.814,0.878-3.296,2.798-3.296c2.414,0,3.072,2.252,3.346,5.11l6.802-0.22
-                    c-0.329-8.571-4.882-11.1-9.764-11.1c-6.967,0-10.367,4.672-10.367,10.112c0,4.286,2.139,7.528,5.65,10.825l3.73,3.681
-                    c2.249,2.143,3.62,3.736,3.62,5.88c0,1.758-0.658,3.625-2.852,3.625c-2.743,0-3.291-2.802-3.511-5.219l-7.241,0.219
-                    C416.976,48.541,420.761,52.882,427.288,52.882z"></path>
-                            <path fill="#FFFFFF" d="M441.55,52.277h7.734V37.991h3.84c6.857,0,9.874-4.891,9.874-12.914c0-7.748-3.182-11.978-9.6-11.978
-                    H441.55V52.277z M449.285,31.671V19.528h2.743c2.413,0,3.401,1.87,3.401,5.714c0,4.342-1.152,6.429-3.456,6.429H449.285z"></path>
-                            <path fill="#FFFFFF" d="M477.974,52.882c6.308,0,11.355-3.516,11.355-10.825V23.044c0-7.253-4.992-10.549-11.3-10.549
-                    c-6.473,0-11.355,3.681-11.355,10.66v19.012C466.674,49.475,471.282,52.882,477.974,52.882z M478.029,46.068
-                    c-2.304,0-3.511-1.592-3.511-3.79V22.88c0-2.198,1.152-3.627,3.456-3.627c2.139,0,3.566,1.319,3.566,3.573v19.506
-                    C481.539,44.475,480.332,46.068,478.029,46.068z"></path>
-                            <path fill="#FFFFFF" d="M493.662,52.277h7.734V36.728h2.578l4.004,15.549h8.009l-5.047-17.253
-                    c2.743-1.484,4.553-4.672,4.553-10.33c0-7.968-4.004-11.595-10.587-11.595h-11.245V52.277z M501.396,30.958v-11.43h2.798
-                    c2.413,0,3.566,1.978,3.566,5.661c0,4.232-1.317,5.769-3.511,5.769H501.396z"></path>
-                            <path fill="#FFFFFF" d="M524.984,52.277h7.789V19.638h7.351v-6.539h-22.545v6.539h7.405V52.277z"></path>
-                </g>
-                            <path fill="#FFFFFF" d="M551.495,91.637H404.657V0h146.838V91.637z M409.763,86.531H546.39V5.105H409.763V86.531z"></path>
-              </g>
-            </svg>
-                        </div>
-                        <div class="gs-intro-graph__text text-xs-center text-lg-left">
-                            <h2>性能提升方案</h2>
-                            <p>
-                                開啟性能提升方案將 G1-S 馬達的潛能完全釋放，進而重新定義你的 Gogoro S1 最高時速與加速曲線，讓你在綠燈亮起後絕無敵手。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="gs-section-gallery lg-flex hidden-md-down">
-        <div class="flex-4 lg-flex flex-column">
-            <div class="flex-2 lg-flex">
-                <div class="gs-gallery-item gs-gallery-item-bg-tertiary flex-1">
-
-                    <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/motor-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/motor.jpg);"></a>
-
-                </div>
-                <div class="gs-gallery-item gs-gallery-item-bg-secondary flex-1">
-
-                    <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/erdisc-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/erdisc.jpg);"></a>
-
-                </div>
-            </div>
-            <div class="gs-gallery-item gs-gallery-item-bg-primary flex flex-3">
-
-                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/seat-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/seat.jpg);"></a>
-
-            </div>
-        </div>
-
-        <div class="flex-3 lg-flex flex-column">
-            <div class="gs-gallery-item gs-gallery-item-bg-tertiary flex-3">
-
-                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/view-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/view.jpg);"></a>
-
-            </div>
-            <div class="gs-gallery-item gs-gallery-item-bg-secondary flex-2">
-
-                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/rrsus-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/rrsus.jpg);"></a>
-
-            </div>
-        </div>
-
-        <div class="gs-gallery-item gs-gallery-item-bg-primary flex-3">
-
-            <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/dyrrview-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/dyrrview.jpg);"></a>
-
-        </div>
-
-
-
-    </section>
-
-    <section class="gs-section-mobile-gallery hidden-lg-up slick-initialized slick-slider slick-dotted" style="">
-        <!-- inject items by js-->
-        <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);" role="listbox"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-dyrrview.jpg" class="img-fluid"></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-motor.jpg" class="img-fluid"></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-erdisc.jpg" class="img-fluid"></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-seat.jpg" class="img-fluid"></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-view.jpg" class="img-fluid"></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide04" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-rrsus.jpg" class="img-fluid"></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide05" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-dyrrview.jpg" class="img-fluid"></div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" tabindex="-1" style="width: 0px;"><img src="https://cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/gallery/mobile-motor.jpg" class="img-fluid"></div></div></div><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01"><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02"><button type="button" data-role="none" role="button" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03"><button type="button" data-role="none" role="button" tabindex="0">4</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation04" id="slick-slide04"><button type="button" data-role="none" role="button" tabindex="0">5</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation05" id="slick-slide05"><button type="button" data-role="none" role="button" tabindex="0">6</button></li></ul>
-    </section>
-
-
-
-    <a href="/tw/smartscooter/s-performance/s1/design/" class="gs-next gs-next--design text-xs-center">
-        <div class="container">
-            <span class="font-w5">下一頁</span>
-            <div class="gs-next-name">設計</div>
-        </div>
-    </a>
-
-
-</main>
-
+    </section>*@
