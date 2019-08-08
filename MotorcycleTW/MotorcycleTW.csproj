@@ -213,9 +213,6 @@
       <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201908051544145_Change_members.cs" />
-    <Compile Include="Migrations\201908051544145_Change_members.Designer.cs">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRoles.cs" />
@@ -365,6 +362,7 @@
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
+    <Content Include="Views\Shared\_Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -385,9 +383,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
       <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908051544145_Change_members.resx">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

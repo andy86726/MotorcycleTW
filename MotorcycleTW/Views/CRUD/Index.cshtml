@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MotorcycleTW.Models.Product>
+﻿@model IEnumerable<MotorcycleTW.Models.Products>
+
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
 }
-
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -16,9 +16,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.p_unitprice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.p_lauchdate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.c_id)
@@ -36,9 +33,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.p_unitprice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.p_lauchdate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.c_id)

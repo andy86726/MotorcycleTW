@@ -21,20 +21,24 @@ namespace MotorcycleTW.Models
 
         public string p_name { get; set; }
 
-        public decimal? p_unitprice { get; set; }
+        //public decimal? p_unitprice { get; set; }
 
         public int? c_id { get; set; }
 
-        public string p_status { get; set; }
+        //public string p_status { get; set; }
 
-        public string p_photo { get; set; }
+        //public string p_photo { get; set; }
 
-        public int? p_stock { get; set; }
+        //public int? p_stock { get; set; }
 
-        [StringLength(50)]
-        public string p_color { get; set; }
+        //[StringLength(50)]
+        //public string p_color { get; set; }
 
-        public int? p_onorder { get; set; }
+        //public int? p_onorder { get; set; }
+
+        public DateTime p_month { get; set; }
+
+        public int p_number { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Classifies> Classifies { get; set; }

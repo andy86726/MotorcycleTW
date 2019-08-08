@@ -1,5 +1,6 @@
 namespace MotorcycleTW.Migrations
 {
+    using MotorcycleTW.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
