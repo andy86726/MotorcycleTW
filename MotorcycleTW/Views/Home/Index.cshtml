@@ -3,76 +3,79 @@
     ViewBag.Title = "Index";
 }
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="~/Assets/images/HomeCarsouel/pictures/3.jpg" alt="...">
-            <div class="carousel-caption d-none d-md-block ">
-                <div class="" style="margin-bottom: 500px;">
-                    <h1 class="text-dark">Gogoro 3系列</h1>
-                    <h3 class="text-dark mt-3">跨世代 &nbsp&nbsp新標配</h3>
-                    <button type="button" class="btn btn-dark mt-3 " style="border-radius:10px;">了解更多</button>
+<body class="p-0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Assets/images/HomeCarsouel/pictures/3.jpg" alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                    <div class="" style="margin-bottom: 500px;">
+                        <h1 class="text-dark">Gogoro 3系列</h1>
+                        <h3 class="text-dark mt-3">跨世代 &nbsp&nbsp新標配</h3>
+                        <button type="button" class="btn btn-dark mt-3 " style="border-radius:10px;">了解更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Assets/images/HomeCarsouel/pictures/2.jpg" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="text-white">Gogoro 2 Rumbler</h1>
+                    <h3 class="text-white mt-3 mb-2">閃爆街頭・智慧雙輪</h3>
+                    <button type="button" class="btn btn-outline-light mt-2 text-white"
+                            style="border-radius:10px;">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop poster="~/Assets/images/HomeCarsouel/pictures/4.jpg">
+                    <source src="~/Assets/images/HomeCarsouel/video/change_battery.mp4" type="video/mp4" style="width:100%;height:820px">
+                </video>
+                <div class="carousel-caption d-none d-md-block" style="margin-bottom: 300px;">
+                    <h1 class="text-white">Gogoro &nbsp能源網路</h1>
+                    <h3 class="text-white mt-3 mb-2">最智慧、最穩定</h3>
+                    <button type="button" class="btn btn-outline-light mt-2 text-white"
+                            style="border-radius:10px;">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop poster="~/Assets/images/HomeCarsouel/pictures/6.jpg">
+                    <source src="~/Assets/images/HomeCarsouel/video/com_loop_futurenow_x.mp4" type="video/mp4" style="width:100%;height:820px">
+                </video>
+                <div class="carousel-caption d-none d-md-block" style="margin-bottom: 300px;">
+                    <h1 class="text-white">FUTURE NOW</h1>
+                    <h3 class="text-white mt-3 mb-2">衝出未來 新車上市</h3>
+                    <button type="button" class="btn btn-outline-light mt-2 text-white"
+                            style="border-radius:10px;">
+                        了解更多
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
-            <img src="~/Assets/images/HomeCarsouel/pictures/2.jpg" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h1 class="text-white">Gogoro 2 Rumbler</h1>
-                <h3 class="text-white mt-3 mb-2">閃爆街頭・智慧雙輪</h3>
-                <button type="button" class="btn btn-outline-light mt-2 text-white"
-                        style="border-radius:10px;">
-                    了解更多
-                </button>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <video autoplay muted loop poster="~/Assets/images/HomeCarsouel/pictures/4.jpg">
-                <source src="~/Assets/images/HomeCarsouel/video/change_battery.mp4" type="video/mp4" style="width:100%;height:820px">
-            </video>
-            <div class="carousel-caption d-none d-md-block" style="margin-bottom: 300px;">
-                <h1 class="text-white">Gogoro &nbsp能源網路</h1>
-                <h3 class="text-white mt-3 mb-2">最智慧、最穩定</h3>
-                <button type="button" class="btn btn-outline-light mt-2 text-white"
-                        style="border-radius:10px;">
-                    了解更多
-                </button>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <video autoplay muted loop poster="~/Assets/images/HomeCarsouel/pictures/6.jpg" >
-                <source src="~/Assets/images/HomeCarsouel/video/com_loop_futurenow_x.mp4" type="video/mp4" style="width:100%;height:820px">
-            </video>
-            <div class="carousel-caption d-none d-md-block" style="margin-bottom: 300px;">
-                <h1 class="text-white">FUTURE NOW</h1>
-                <h3 class="text-white mt-3 mb-2">衝出未來 新車上市</h3>
-                <button type="button" class="btn btn-outline-light mt-2 text-white"
-                        style="border-radius:10px;">
-                    了解更多
-                </button>
-            </div>
-        </div>
-    </div>
 
-</div>
-<div class="container">
-    <div class="">
-        <div class="d-flex justify-content-center">
-            <img src="~/Assets/images/1.jpg" alt="">
-            <img src="~/Assets/images/2.jpg" alt="">
+    </div>
+    <div class="container">
+        <div class="">
+            <div class="d-flex justify-content-center">
+                <img src="~/Assets/images/1.jpg" alt="">
+                <img src="~/Assets/images/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="mt-2 d-flex justify-content-center" style="">
+            <img src="~/Assets/images/3.jpg" alt="">
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+            <img src="~/Assets/images/4.jpg" alt="">
+            <img src="~/Assets/images/5.jpg" alt="">
         </div>
     </div>
-    <div class="mt-2 d-flex justify-content-center" style="">
-        <img src="~/Assets/images/3.jpg" alt="">
-    </div>
-    <div class="d-flex justify-content-center mt-2">
-        <img src="~/Assets/images/4.jpg" alt="">
-        <img src="~/Assets/images/5.jpg" alt="">
-    </div>
-</div>
+</body>
+
