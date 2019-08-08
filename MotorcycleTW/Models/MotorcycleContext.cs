@@ -11,6 +11,7 @@ namespace MotorcycleTW.Models
             : base("name=MotorclcleDB")
         {
         }
+
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
@@ -29,14 +30,13 @@ namespace MotorcycleTW.Models
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Shopping_Cart> Shopping_Cart { get; set; }
         public virtual DbSet<Stores> Stores { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRoles>()
-                   .HasMany(e => e.AspNetUsers)
-                   .WithMany(e => e.AspNetRoles)
-                   .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
+                .HasMany(e => e.AspNetUsers)
+                .WithMany(e => e.AspNetRoles)
+                .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
 
             modelBuilder.Entity<AspNetUsers>()
                 .HasMany(e => e.AspNetUserClaims)
@@ -47,6 +47,15 @@ namespace MotorcycleTW.Models
                 .HasMany(e => e.AspNetUserLogins)
                 .WithRequired(e => e.AspNetUsers)
                 .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<Order_Detail>()
+                .HasOptional(e => e.Order_Detail1)
+                .WithRequired(e => e.Order_Detail2);
+
+            modelBuilder.Entity<Products>()
+                .HasMany(e => e.Order_Detail)
+                .WithRequired(e => e.Products)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Products>()
                 .HasOptional(e => e.Shopping_Cart)

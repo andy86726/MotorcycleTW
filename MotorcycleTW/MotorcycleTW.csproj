@@ -204,21 +204,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908041422132_Create_Database.cs" />
-    <Compile Include="Migrations\201908041422132_Create_Database.Designer.cs">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908081543595_Create_Dashboard_Database.cs" />
+    <Compile Include="Migrations\201908081543595_Create_Dashboard_Database.Designer.cs">
+      <DependentUpon>201908081543595_Create_Dashboard_Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.cs" />
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.Designer.cs">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
+    <Compile Include="Migrations\201908081655008_Product_SeedData.cs" />
+    <Compile Include="Migrations\201908081655008_Product_SeedData.Designer.cs">
+      <DependentUpon>201908081655008_Product_SeedData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908051544145_Change_members.cs" />
-    <Compile Include="Migrations\201908051544145_Change_members.Designer.cs">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908081133476_test_database.cs" />
-    <Compile Include="Migrations\201908081133476_test_database.Designer.cs">
-      <DependentUpon>201908081133476_test_database.cs</DependentUpon>
+    <Compile Include="Migrations\201908081656031_Product_SeedData1.cs" />
+    <Compile Include="Migrations\201908081656031_Product_SeedData1.Designer.cs">
+      <DependentUpon>201908081656031_Product_SeedData1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -243,7 +239,6 @@
     <Compile Include="Models\Product_Picture.cs" />
     <Compile Include="Models\Shopping_Cart.cs" />
     <Compile Include="Models\Stores.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
@@ -384,17 +379,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908041422132_Create_Database.resx">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908081543595_Create_Dashboard_Database.resx">
+      <DependentUpon>201908081543595_Create_Dashboard_Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908081655008_Product_SeedData.resx">
+      <DependentUpon>201908081655008_Product_SeedData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908051544145_Change_members.resx">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908081133476_test_database.resx">
-      <DependentUpon>201908081133476_test_database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908081656031_Product_SeedData1.resx">
+      <DependentUpon>201908081656031_Product_SeedData1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
