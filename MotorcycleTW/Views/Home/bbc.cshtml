@@ -1,15 +1,1 @@
 ﻿
-@{
-    ViewBag.Title = "bbc";
-}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<button>获得 JSON 数据</button>
-<script>
-$(document).ready(function () {
-        $("button").click(function () {
-            $.get("https://localhost:44388/api/Test", function (json) {
-                alert(JSON.stringify(json));
-            });
-        });
-    });
-</script>
