@@ -4,231 +4,8 @@
     Layout = "~/Views/Shared/_Layout4.1.cshtml";
 }
 
-@section topCSS {
-<style>
-    body {
-        background: #121116;
-    }
-    h4{
-        color:#ddd;
-    }
-    .abc li {
-        padding: 0 10px;
-    }
-        .abc li a {
-            color: #838388;
-        }
+<link href="~/Assets/css/MotoPage/S1.css" rel="stylesheet" />
 
-        .abc li a:hover {
-        text-decoration: none;
-        color: #FF1C41;
-        }
-
-        .abc  li a:active {
-                color: #FF1C41;
-        }
-
-    .gs-hero__banner {
-        position: absolute;
-        top: 94px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        align-items: flex-end;
-        display: flex;
-    }
-    .gs-hero__bg {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 90%;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-bg.jpg) center no-repeat;
-    }
-    .gs-hero__s {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 90%;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-s.png) center no-repeat;
-        background-size: auto 100%;
-    }
-    .gs-hero__scooter {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 90%;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/performance/hero-scooter.png) center no-repeat;
-        background-size: auto 100%;
-    }
-    .gs-hero__text {
-        position: absolute;
-        top: 70%;
-        bottom: 0;
-        left: 0;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .gs-spec-header-section {
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/header-image.jpg) center no-repeat;
-        background-size: 100% auto;
-    }
-
-    .gs-spec-intro-badge:nth-child(1):before {
-        height: 12vw;
-        width: 13.2vw;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/7.2.png);
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/7.2.svg);
-    }
-    .gs-spec-intro-badge:before {
-        content: '';
-        display: inline-block;
-        vertical-align: bottom;
-        background-position: center right;
-        background-repeat: no-repeat;
-    }
-    .gs-spec-intro-badge {
-        width: auto;
-        margin: 50px 0;
-    }
-
-        .gs-spec-intro-badge:nth-child(2):before {
-            height: 12vw;
-            width: 15vw;
-            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/3.7.png);
-            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/3.7.svg);
-        }
-
-        .gs-spec-intro-badge:nth-child(3):before {
-            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/202.svg);
-        }
-        .gs-spec-intro-badge:before {
-            content: '';
-            display: inline-block;
-            vertical-align: bottom;
-            background-position: center right;
-            background-size: auto 100%;
-            background-repeat: no-repeat;
-        }
-        .gs-spec-intro-badge:nth-child(1):before, .gs-spec-intro-badge:nth-child(2):before, .gs-spec-intro-badge:nth-child(3):before {
-            margin-right: 5px;
-            height: 73px;
-            width: 120px;
-        }
-
-    .gs-specs-list {
-        color: #b9bcbf;
-        list-style: none;
-        padding: 0;
-        margin-bottom:30px;
-    }
-    .gs-specs-list li{
-        font-size:18px;
-    }
-    .gs-spec-section {
-        color: #E6E6E6;
-    }
-    .gs-spec-description-headline {
-        font-size: 36px;
-        padding-top: 50px;
-        margin: 0;
-        margin-bottom: 50px;
-        border-top: 1px solid #2E2E34;
-    }
-    @@media (min-width: 992px) {
-    }
-    .gs-spec-appearance-bg {
-        position: static;
-        margin-top: -30px;
-        width: 33.33%;
-    }
-    .gs-spec-appearance-bg {
-        right: 15px;
-        top: 60px;
-        height: 100px;
-        width: 100px;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/al.png) center top no-repeat;
-        background-size: 100px;
-    }
-
-    .gs-section-buy {
-        background-color: #121215;
-        padding: 80px 0;
-        position: relative;
-        z-index: 1;
-    }
-    .gs-buy-s-icon {
-        height: 181px;
-        width: 129px;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/buy-s-icon.png);
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/buy-s-icon.svg);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .gs-buy-text {
-        padding: 25px 0 50px 0;
-        color: #838388;
-    }
-    .gs-buy-text-title, .gs-buy-price {
-        display: block;
-        color: #fff;
-        font-size:18px;
-    }
-    .gs-buy-btn {
-        display: inline-block;
-        cursor: pointer;
-        position: relative;
-        text-transform: uppercase;
-        letter-spacing: .15em;
-        color: #fff;
-        padding: 15px 50px;
-        border-radius: 100px;
-        background-color: #202023;
-        font-size:18px;
-    }
-        .gs-buy-btn:hover {
-            color: #FF1C41;
-            text-decoration:none;
-        }
-    .text-xs-center {
-        text-align: center !important;
-    }
-    .gs-buy-btn:before {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        left: -2px;
-        top: -2px;
-        bottom: -2px;
-        right: -2px;
-        border-radius: 100px;
-        overflow: hidden;
-        background: linear-gradient(45deg, #832D89, #E82A4C);
-    }
-    .gs-spec-drivetrain-bg {
-        position: static;
-        height: 180px;
-        top: 120px;
-        width: 33.3%;
-        background-size: 180px;
-        margin-top: -30px;
-    }
-    .gs-spec-drivetrain-bg {
-        display: block;
-        height: 180px;
-        width: 180px;
-        right: 15px;
-        top: 80px;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/spec/drivetrain-s-badge.png) center no-repeat;
-        background-size: 180px;
-    }
-</style>
-}
 <main id="ggr_main_container">
     <div style="padding:10px 0;">
         <div class="container">
@@ -279,16 +56,16 @@
     </section>
 
     @*<div>
-        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--hide flb-bar--s">
-            <div class="gc-container">
-                <div class="flb-container">
-                    <button class="flb-close"></button><div class="flb-content">
-                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
-                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+            <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--hide flb-bar--s">
+                <div class="gc-container">
+                    <div class="flb-container">
+                        <button class="flb-close"></button><div class="flb-content">
+                            即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
+                        </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
 
     <!-- Appearance -->
@@ -1081,7 +858,7 @@
 
 
     <!-- Personalization -->
-    <section class="gs-spec-section gs-spec-personalization-section" >
+    <section class="gs-spec-section gs-spec-personalization-section">
         <div class="gs-spec-personalization-container container" style="padding-bottom:50px; border-bottom:1px solid #2E2E34;">
             <h2 class="gs-spec-description-headline">個人化設定</h2>
 
@@ -1195,7 +972,7 @@
     <div class="gs-gradient-line"></div>
 
 </main>
-    @*<div style="padding:10px 0;">
+@*<div style="padding:10px 0;">
         <div class="container">
             <div style="display:flex; justify-content:space-between;">
                 <div>
