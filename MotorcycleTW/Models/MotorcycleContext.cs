@@ -48,23 +48,24 @@ namespace MotorcycleTW.Models
                 .WithRequired(e => e.AspNetUsers)
                 .HasForeignKey(e => e.UserId);
 
-            modelBuilder.Entity<Order_Detail>()
-                .HasOptional(e => e.Order_Detail1)
-                .WithRequired(e => e.Order_Detail2);
+            modelBuilder.Entity<Delivery_way>()
+                .HasMany(e => e.Orders)
+                .WithOptional(e => e.Delivery_way)
+                .WillCascadeOnDelete();
 
-            modelBuilder.Entity<Products>()
+            modelBuilder.Entity<Members>()
+                .HasMany(e => e.Orders)
+                .WithOptional(e => e.Members)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Orders>()
                 .HasMany(e => e.Order_Detail)
-                .WithRequired(e => e.Products)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.Orders)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<Products>()
                 .HasOptional(e => e.Shopping_Cart)
                 .WithRequired(e => e.Products);
-
-            modelBuilder.Entity<Stores>()
-                .HasMany(e => e.Orders)
-                .WithOptional(e => e.Stores)
-                .HasForeignKey(e => e.Delive_Way_s_id);
         }
     }
 }

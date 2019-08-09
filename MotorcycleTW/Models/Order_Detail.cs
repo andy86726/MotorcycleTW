@@ -11,20 +11,16 @@ namespace MotorcycleTW.Models
         [Key]
         public int od_id { get; set; }
 
-        public int od_quantity { get; set; }
+        public int? od_quantity { get; set; }
 
-        public float od_discount { get; set; }
+        public float? od_discount { get; set; }
 
-        public int o_id { get; set; }
+        public int? o_id { get; set; }
 
-        public int p_id { get; set; }
+        public int? p_id { get; set; }
 
         public virtual Orders Orders { get; set; }
 
         public virtual Products Products { get; set; }
-
-        public virtual Order_Detail Order_Detail1 { get; set; }
-
-        public virtual Order_Detail Order_Detail2 { get; set; }
     }
 }

@@ -204,17 +204,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908081543595_Create_Dashboard_Database.cs" />
-    <Compile Include="Migrations\201908081543595_Create_Dashboard_Database.Designer.cs">
-      <DependentUpon>201908081543595_Create_Dashboard_Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908091734457_Create Database.cs" />
+    <Compile Include="Migrations\201908091734457_Create Database.Designer.cs">
+      <DependentUpon>201908091734457_Create Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908081655008_Product_SeedData.cs" />
-    <Compile Include="Migrations\201908081655008_Product_SeedData.Designer.cs">
-      <DependentUpon>201908081655008_Product_SeedData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908081656031_Product_SeedData1.cs" />
-    <Compile Include="Migrations\201908081656031_Product_SeedData1.Designer.cs">
-      <DependentUpon>201908081656031_Product_SeedData1.cs</DependentUpon>
+    <Compile Include="Migrations\201908091735486_Add SeedData.cs" />
+    <Compile Include="Migrations\201908091735486_Add SeedData.Designer.cs">
+      <DependentUpon>201908091735486_Add SeedData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -245,8 +241,8 @@
     <Compile Include="ViewModel\RegisterViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
-    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
+    <Content Include="App_Data\MotorcycleTW.mdf" />
+    <Content Include="App_Data\MotorcycleTW_log.ldf" />
     <Content Include="Assets\css\MotoPage\Index.css" />
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
@@ -379,14 +375,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908081543595_Create_Dashboard_Database.resx">
-      <DependentUpon>201908081543595_Create_Dashboard_Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908091734457_Create Database.resx">
+      <DependentUpon>201908091734457_Create Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908081655008_Product_SeedData.resx">
-      <DependentUpon>201908081655008_Product_SeedData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908081656031_Product_SeedData1.resx">
-      <DependentUpon>201908081656031_Product_SeedData1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908091735486_Add SeedData.resx">
+      <DependentUpon>201908091735486_Add SeedData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

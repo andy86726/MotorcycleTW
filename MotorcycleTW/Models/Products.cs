@@ -32,11 +32,13 @@ namespace MotorcycleTW.Models
 
         public int? p_stock { get; set; }
 
-        [StringLength(50)]
+        public int? p_onorder { get; set; }
+
         public string p_color_1 { get; set; }
+
         public string p_color_2 { get; set; }
 
-        public int? p_onorder { get; set; }
+        public virtual Categories Categories { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Classifies> Classifies { get; set; }
