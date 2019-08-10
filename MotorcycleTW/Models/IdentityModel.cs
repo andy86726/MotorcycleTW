@@ -21,7 +21,7 @@ namespace MotorcycleTW.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("MotorclcleDB", throwIfV1Schema: false)
+            : base("MotorcycleDB", throwIfV1Schema: false)
         {
         }
 

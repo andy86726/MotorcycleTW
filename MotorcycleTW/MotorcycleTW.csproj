@@ -204,17 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908041422132_Create_Database.cs" />
-    <Compile Include="Migrations\201908041422132_Create_Database.Designer.cs">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.cs" />
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.Designer.cs">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908051544145_Change_members.cs" />
-    <Compile Include="Migrations\201908051544145_Change_members.Designer.cs">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
+    <Compile Include="Migrations\201908100818117_Create Database.cs" />
+    <Compile Include="Migrations\201908100818117_Create Database.Designer.cs">
+      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -239,7 +231,6 @@
     <Compile Include="Models\Product_Picture.cs" />
     <Compile Include="Models\Shopping_Cart.cs" />
     <Compile Include="Models\Stores.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
@@ -380,14 +371,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908041422132_Create_Database.resx">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908051544145_Change_members.resx">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908100818117_Create Database.resx">
+      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

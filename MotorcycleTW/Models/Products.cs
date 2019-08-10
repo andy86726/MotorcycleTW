@@ -12,8 +12,10 @@ namespace MotorcycleTW.Models
         public Products()
         {
             Classifies = new HashSet<Classifies>();
+            Order_Detail = new HashSet<Order_Detail>();
             Product_Feature = new HashSet<Product_Feature>();
             Product_Picture = new HashSet<Product_Picture>();
+            Shopping_Cart = new HashSet<Shopping_Cart>();
         }
 
         [Key]
@@ -31,13 +33,19 @@ namespace MotorcycleTW.Models
 
         public int? p_stock { get; set; }
 
-        [StringLength(50)]
-        public string p_color { get; set; }
-
         public int? p_onorder { get; set; }
+
+        public string p_color_1 { get; set; }
+
+        public string p_color_2 { get; set; }
+
+        public virtual Categories Categories { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Classifies> Classifies { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Detail> Order_Detail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Feature> Product_Feature { get; set; }
@@ -45,6 +53,7 @@ namespace MotorcycleTW.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Picture> Product_Picture { get; set; }
 
-        public virtual Shopping_Cart Shopping_Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shopping_Cart> Shopping_Cart { get; set; }
     }
 }

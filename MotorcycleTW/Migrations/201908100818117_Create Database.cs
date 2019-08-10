@@ -3,7 +3,7 @@ namespace MotorcycleTW.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Create_Database : DbMigration
+    public partial class CreateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -96,6 +96,25 @@ namespace MotorcycleTW.Migrations
                 .Index(t => t.c_id);
             
             CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        p_id = c.Int(nullable: false, identity: true),
+                        p_name = c.String(),
+                        p_unitprice = c.Decimal(precision: 18, scale: 2),
+                        c_id = c.Int(),
+                        p_status = c.String(),
+                        p_photo = c.String(),
+                        p_stock = c.Int(),
+                        p_onorder = c.Int(),
+                        p_color_1 = c.String(),
+                        p_color_2 = c.String(),
+                    })
+                .PrimaryKey(t => t.p_id)
+                .ForeignKey("dbo.Categories", t => t.c_id)
+                .Index(t => t.c_id);
+            
+            CreateTable(
                 "dbo.Classifies",
                 c => new
                     {
@@ -109,20 +128,98 @@ namespace MotorcycleTW.Migrations
                 .Index(t => t.p_id);
             
             CreateTable(
-                "dbo.Products",
+                "dbo.Order_Detail",
                 c => new
                     {
-                        p_id = c.Int(nullable: false, identity: true),
-                        p_name = c.String(),
-                        p_unitprice = c.Decimal(precision: 18, scale: 2),
-                        c_id = c.Int(),
-                        p_status = c.String(),
-                        p_photo = c.String(),
-                        p_stock = c.Int(),
-                        p_color = c.String(maxLength: 50),
-                        p_onorder = c.Int(),
+                        od_id = c.Int(nullable: false, identity: true),
+                        od_quantity = c.Int(),
+                        od_discount = c.Single(),
+                        o_id = c.Int(),
+                        p_id = c.Int(),
                     })
-                .PrimaryKey(t => t.p_id);
+                .PrimaryKey(t => t.od_id)
+                .ForeignKey("dbo.Orders", t => t.o_id, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.p_id)
+                .Index(t => t.o_id)
+                .Index(t => t.p_id);
+            
+            CreateTable(
+                "dbo.Orders",
+                c => new
+                    {
+                        o_id = c.Int(nullable: false, identity: true),
+                        o_date = c.DateTime(),
+                        o_receiver = c.String(),
+                        o_cellphonenumber = c.Int(),
+                        o_email = c.String(),
+                        o_address = c.String(),
+                        o_delivedate = c.DateTime(),
+                        o_status = c.String(),
+                        pay_id = c.Int(),
+                        dw_id = c.Int(),
+                        m_id = c.Int(),
+                    })
+                .PrimaryKey(t => t.o_id)
+                .ForeignKey("dbo.Delivery_way", t => t.dw_id, cascadeDelete: true)
+                .ForeignKey("dbo.Members", t => t.m_id, cascadeDelete: true)
+                .ForeignKey("dbo.Payments", t => t.pay_id)
+                .Index(t => t.pay_id)
+                .Index(t => t.dw_id)
+                .Index(t => t.m_id);
+            
+            CreateTable(
+                "dbo.Delivery_way",
+                c => new
+                    {
+                        dw_id = c.Int(nullable: false, identity: true),
+                        dw_way = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.dw_id);
+            
+            CreateTable(
+                "dbo.Members",
+                c => new
+                    {
+                        m_id = c.Int(nullable: false, identity: true),
+                        m_email = c.String(),
+                        m_password = c.String(),
+                        m_birthday = c.DateTime(nullable: false),
+                        m_address = c.String(),
+                        m_phone = c.Int(nullable: false),
+                        m_identitiy = c.String(),
+                        m_identitiy_number = c.String(),
+                        m_zipcode = c.String(),
+                        m_lastName = c.String(),
+                        m_firstName = c.String(),
+                        m_city = c.String(),
+                        m_area = c.String(),
+                        m_industry = c.String(),
+                    })
+                .PrimaryKey(t => t.m_id);
+            
+            CreateTable(
+                "dbo.Shopping_Cart",
+                c => new
+                    {
+                        cart_id = c.Int(nullable: false),
+                        m_id = c.Int(nullable: false),
+                        p_id = c.Int(nullable: false),
+                        cart_quantity = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.cart_id)
+                .ForeignKey("dbo.Members", t => t.m_id, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.p_id)
+                .Index(t => t.m_id)
+                .Index(t => t.p_id);
+            
+            CreateTable(
+                "dbo.Payments",
+                c => new
+                    {
+                        pay_id = c.Int(nullable: false, identity: true),
+                        pay_name = c.String(),
+                    })
+                .PrimaryKey(t => t.pay_id);
             
             CreateTable(
                 "dbo.Product_Feature",
@@ -151,98 +248,6 @@ namespace MotorcycleTW.Migrations
                 .Index(t => t.p_id);
             
             CreateTable(
-                "dbo.Shopping_Cart",
-                c => new
-                    {
-                        cart_id = c.Int(nullable: false),
-                        m_id = c.Int(nullable: false),
-                        p_id = c.Int(nullable: false),
-                        cart_quantity = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.cart_id)
-                .ForeignKey("dbo.Members", t => t.m_id, cascadeDelete: true)
-                .ForeignKey("dbo.Products", t => t.cart_id)
-                .Index(t => t.cart_id)
-                .Index(t => t.m_id);
-            
-            CreateTable(
-                "dbo.Members",
-                c => new
-                    {
-                        m_id = c.Int(nullable: false, identity: true),
-                        m_name = c.String(),
-                        m_email = c.String(),
-                        m_password = c.String(),
-                        m_birthday = c.DateTime(nullable: false),
-                        m_address = c.String(),
-                        m_phone = c.Int(nullable: false),
-                        m_identitiy = c.String(),
-                        m_identitiy_number = c.String(),
-                        m_zipcode = c.String(),
-                    })
-                .PrimaryKey(t => t.m_id);
-            
-            CreateTable(
-                "dbo.Orders",
-                c => new
-                    {
-                        o_id = c.Int(nullable: false, identity: true),
-                        o_date = c.DateTime(nullable: false),
-                        o_receiver = c.String(),
-                        o_cellphonenumber = c.Int(nullable: false),
-                        o_email = c.String(),
-                        o_address = c.String(),
-                        o_delivedate = c.DateTime(nullable: false),
-                        o_status = c.String(),
-                        pay_id = c.Int(nullable: false),
-                        dw_id = c.Int(nullable: false),
-                        m_id = c.Int(nullable: false),
-                        Delive_Way_s_id = c.Int(),
-                    })
-                .PrimaryKey(t => t.o_id)
-                .ForeignKey("dbo.Delivery_way", t => t.dw_id, cascadeDelete: true)
-                .ForeignKey("dbo.Members", t => t.m_id, cascadeDelete: true)
-                .ForeignKey("dbo.Payments", t => t.pay_id, cascadeDelete: true)
-                .ForeignKey("dbo.Stores", t => t.Delive_Way_s_id)
-                .Index(t => t.pay_id)
-                .Index(t => t.dw_id)
-                .Index(t => t.m_id)
-                .Index(t => t.Delive_Way_s_id);
-            
-            CreateTable(
-                "dbo.Delivery_way",
-                c => new
-                    {
-                        dw_id = c.Int(nullable: false, identity: true),
-                        dw_way = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.dw_id);
-            
-            CreateTable(
-                "dbo.Order_Detail",
-                c => new
-                    {
-                        od_id = c.Int(nullable: false, identity: true),
-                        od_quantity = c.Int(nullable: false),
-                        od_price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        od_discount = c.Single(nullable: false),
-                        o_id = c.Int(nullable: false),
-                        pd_id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.od_id)
-                .ForeignKey("dbo.Orders", t => t.o_id, cascadeDelete: true)
-                .Index(t => t.o_id);
-            
-            CreateTable(
-                "dbo.Payments",
-                c => new
-                    {
-                        pay_id = c.Int(nullable: false, identity: true),
-                        pay_name = c.String(),
-                    })
-                .PrimaryKey(t => t.pay_id);
-            
-            CreateTable(
                 "dbo.Stores",
                 c => new
                     {
@@ -252,18 +257,6 @@ namespace MotorcycleTW.Migrations
                         s_address = c.String(),
                     })
                 .PrimaryKey(t => t.s_id);
-            
-            CreateTable(
-                "dbo.sysdiagrams",
-                c => new
-                    {
-                        diagram_id = c.Int(nullable: false, identity: true),
-                        name = c.String(nullable: false, maxLength: 128),
-                        principal_id = c.Int(nullable: false),
-                        version = c.Int(),
-                        definition = c.Binary(),
-                    })
-                .PrimaryKey(t => t.diagram_id);
             
             CreateTable(
                 "dbo.AspNetUserRoles",
@@ -282,16 +275,17 @@ namespace MotorcycleTW.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Shopping_Cart", "cart_id", "dbo.Products");
-            DropForeignKey("dbo.Shopping_Cart", "m_id", "dbo.Members");
-            DropForeignKey("dbo.Orders", "Delive_Way_s_id", "dbo.Stores");
-            DropForeignKey("dbo.Orders", "pay_id", "dbo.Payments");
-            DropForeignKey("dbo.Order_Detail", "o_id", "dbo.Orders");
-            DropForeignKey("dbo.Orders", "m_id", "dbo.Members");
-            DropForeignKey("dbo.Orders", "dw_id", "dbo.Delivery_way");
+            DropForeignKey("dbo.Shopping_Cart", "p_id", "dbo.Products");
             DropForeignKey("dbo.Product_Picture", "p_id", "dbo.Products");
             DropForeignKey("dbo.Product_Feature", "p_id", "dbo.Products");
+            DropForeignKey("dbo.Order_Detail", "p_id", "dbo.Products");
+            DropForeignKey("dbo.Orders", "pay_id", "dbo.Payments");
+            DropForeignKey("dbo.Order_Detail", "o_id", "dbo.Orders");
+            DropForeignKey("dbo.Shopping_Cart", "m_id", "dbo.Members");
+            DropForeignKey("dbo.Orders", "m_id", "dbo.Members");
+            DropForeignKey("dbo.Orders", "dw_id", "dbo.Delivery_way");
             DropForeignKey("dbo.Classifies", "p_id", "dbo.Products");
+            DropForeignKey("dbo.Products", "c_id", "dbo.Categories");
             DropForeignKey("dbo.Discounts", "c_id", "dbo.Categories");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
@@ -299,32 +293,32 @@ namespace MotorcycleTW.Migrations
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
-            DropIndex("dbo.Order_Detail", new[] { "o_id" });
-            DropIndex("dbo.Orders", new[] { "Delive_Way_s_id" });
+            DropIndex("dbo.Product_Picture", new[] { "p_id" });
+            DropIndex("dbo.Product_Feature", new[] { "p_id" });
+            DropIndex("dbo.Shopping_Cart", new[] { "p_id" });
+            DropIndex("dbo.Shopping_Cart", new[] { "m_id" });
             DropIndex("dbo.Orders", new[] { "m_id" });
             DropIndex("dbo.Orders", new[] { "dw_id" });
             DropIndex("dbo.Orders", new[] { "pay_id" });
-            DropIndex("dbo.Shopping_Cart", new[] { "m_id" });
-            DropIndex("dbo.Shopping_Cart", new[] { "cart_id" });
-            DropIndex("dbo.Product_Picture", new[] { "p_id" });
-            DropIndex("dbo.Product_Feature", new[] { "p_id" });
+            DropIndex("dbo.Order_Detail", new[] { "p_id" });
+            DropIndex("dbo.Order_Detail", new[] { "o_id" });
             DropIndex("dbo.Classifies", new[] { "p_id" });
+            DropIndex("dbo.Products", new[] { "c_id" });
             DropIndex("dbo.Discounts", new[] { "c_id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropTable("dbo.AspNetUserRoles");
-            DropTable("dbo.sysdiagrams");
             DropTable("dbo.Stores");
-            DropTable("dbo.Payments");
-            DropTable("dbo.Order_Detail");
-            DropTable("dbo.Delivery_way");
-            DropTable("dbo.Orders");
-            DropTable("dbo.Members");
-            DropTable("dbo.Shopping_Cart");
             DropTable("dbo.Product_Picture");
             DropTable("dbo.Product_Feature");
-            DropTable("dbo.Products");
+            DropTable("dbo.Payments");
+            DropTable("dbo.Shopping_Cart");
+            DropTable("dbo.Members");
+            DropTable("dbo.Delivery_way");
+            DropTable("dbo.Orders");
+            DropTable("dbo.Order_Detail");
             DropTable("dbo.Classifies");
+            DropTable("dbo.Products");
             DropTable("dbo.Discounts");
             DropTable("dbo.Categories");
             DropTable("dbo.Battery_store");

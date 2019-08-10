@@ -9,6 +9,7 @@ namespace MotorcycleTW.Models
     public partial class Shopping_Cart
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int cart_id { get; set; }
 
         public int m_id { get; set; }
