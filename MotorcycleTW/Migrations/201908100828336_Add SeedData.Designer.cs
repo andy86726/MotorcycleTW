@@ -7,13 +7,13 @@ namespace MotorcycleTW.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateDatabase : IMigrationMetadata
+    public sealed partial class AddSeedData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddSeedData));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908091734457_Create Database"; }
+            get { return "201908100828336_Add SeedData"; }
         }
         
         string IMigrationMetadata.Source

@@ -204,13 +204,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908091734457_Create Database.cs" />
-    <Compile Include="Migrations\201908091734457_Create Database.Designer.cs">
-      <DependentUpon>201908091734457_Create Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908100826383_Create Database.cs" />
+    <Compile Include="Migrations\201908100826383_Create Database.Designer.cs">
+      <DependentUpon>201908100826383_Create Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908091735486_Add SeedData.cs" />
-    <Compile Include="Migrations\201908091735486_Add SeedData.Designer.cs">
-      <DependentUpon>201908091735486_Add SeedData.cs</DependentUpon>
+    <Compile Include="Migrations\201908100828336_Add SeedData.cs" />
+    <Compile Include="Migrations\201908100828336_Add SeedData.Designer.cs">
+      <DependentUpon>201908100828336_Add SeedData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -375,11 +375,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908091734457_Create Database.resx">
-      <DependentUpon>201908091734457_Create Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908100826383_Create Database.resx">
+      <DependentUpon>201908100826383_Create Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908091735486_Add SeedData.resx">
-      <DependentUpon>201908091735486_Add SeedData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908100828336_Add SeedData.resx">
+      <DependentUpon>201908100828336_Add SeedData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

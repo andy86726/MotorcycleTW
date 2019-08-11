@@ -17,7 +17,7 @@ namespace MotorcycleTW.Controllers
         // GET: CRUD
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            return View(db.Order_Detail.ToList());
         }
 
         // GET: CRUD/Details/5
