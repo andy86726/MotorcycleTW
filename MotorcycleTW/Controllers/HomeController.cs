@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using MotorcycleTW.Models;
@@ -37,12 +38,23 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
-        public ActionResult StorePage()//網路商店
+        public ActionResult StorePage(string a)//網路商店
         {
 
             return View();
         }
-        public ActionResult ShoppingCart()//購物車
+        [HttpPost]
+        public ActionResult StorePage()
+        {
+            return View();
+        }
+
+        public ActionResult ShoppingCart(string a)//購物車
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ShoppingCart()
         {
             return View();
         }
