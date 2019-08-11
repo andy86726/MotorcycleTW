@@ -37,12 +37,12 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
-        public ActionResult StorePage()
+        public ActionResult StorePage()//網路商店
         {
 
             return View();
         }
-        public ActionResult ShoppingCart()
+        public ActionResult ShoppingCart()//購物車
         {
             return View();
         }
