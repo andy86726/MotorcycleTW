@@ -37,6 +37,14 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
-        
+        public ActionResult StorePage()
+        {
+
+            return View();
+        }
+        public ActionResult ShoppingCart()
+        {
+            return View();
+        }
     }
 }
