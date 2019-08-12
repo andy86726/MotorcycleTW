@@ -37,6 +37,9 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
-
+        public ActionResult shopIndex()
+        {
+            return View();
+        }
     }
 }
