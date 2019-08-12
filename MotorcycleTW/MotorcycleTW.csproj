@@ -359,6 +359,7 @@
     <Content Include="Views\Home\gogoromap.cshtml" />
     <Content Include="Views\Home\shopIndex.cshtml" />
     <Content Include="Views\Shop\makecar.cshtml" />
+    <Content Include="Views\Shop\shopya.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
