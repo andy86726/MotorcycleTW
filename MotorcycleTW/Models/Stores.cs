@@ -8,12 +8,6 @@ namespace MotorcycleTW.Models
 
     public partial class Stores
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Stores()
-        {
-            Orders = new HashSet<Orders>();
-        }
-
         [Key]
         public int s_id { get; set; }
 
@@ -22,8 +16,5 @@ namespace MotorcycleTW.Models
         public string s_block { get; set; }
 
         public string s_address { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

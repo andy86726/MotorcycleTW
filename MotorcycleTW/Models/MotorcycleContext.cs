@@ -8,9 +8,10 @@ namespace MotorcycleTW.Models
     public partial class MotorcycleContext : DbContext
     {
         public MotorcycleContext()
-            : base("name=MotorclcleDB")
+            : base("name=MotorcycleDB")
         {
         }
+
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
@@ -29,14 +30,13 @@ namespace MotorcycleTW.Models
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Shopping_Cart> Shopping_Cart { get; set; }
         public virtual DbSet<Stores> Stores { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRoles>()
-                   .HasMany(e => e.AspNetUsers)
-                   .WithMany(e => e.AspNetRoles)
-                   .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
+                .HasMany(e => e.AspNetUsers)
+                .WithMany(e => e.AspNetRoles)
+                .Map(m => m.ToTable("AspNetUserRoles").MapLeftKey("RoleId").MapRightKey("UserId"));
 
             modelBuilder.Entity<AspNetUsers>()
                 .HasMany(e => e.AspNetUserClaims)
@@ -48,14 +48,25 @@ namespace MotorcycleTW.Models
                 .WithRequired(e => e.AspNetUsers)
                 .HasForeignKey(e => e.UserId);
 
-            modelBuilder.Entity<Products>()
-                .HasOptional(e => e.Shopping_Cart)
-                .WithRequired(e => e.Products);
-
-            modelBuilder.Entity<Stores>()
+            modelBuilder.Entity<Delivery_way>()
                 .HasMany(e => e.Orders)
-                .WithOptional(e => e.Stores)
-                .HasForeignKey(e => e.Delive_Way_s_id);
+                .WithOptional(e => e.Delivery_way)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Members>()
+                .HasMany(e => e.Orders)
+                .WithOptional(e => e.Members)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Orders>()
+                .HasMany(e => e.Order_Detail)
+                .WithOptional(e => e.Orders)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Products>()
+                .HasMany(e => e.Shopping_Cart)
+                .WithRequired(e => e.Products)
+                .WillCascadeOnDelete(false);
         }
     }
 }

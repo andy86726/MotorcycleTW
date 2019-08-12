@@ -205,17 +205,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908041422132_Create_Database.cs" />
-    <Compile Include="Migrations\201908041422132_Create_Database.Designer.cs">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.cs" />
-    <Compile Include="Migrations\201908041701054_Change_MemberTable.Designer.cs">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908051544145_Change_members.cs" />
-    <Compile Include="Migrations\201908051544145_Change_members.Designer.cs">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
+    <Compile Include="Migrations\201908100818117_Create Database.cs" />
+    <Compile Include="Migrations\201908100818117_Create Database.Designer.cs">
+      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -240,7 +232,6 @@
     <Compile Include="Models\Product_Picture.cs" />
     <Compile Include="Models\Shopping_Cart.cs" />
     <Compile Include="Models\Stores.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
@@ -277,6 +268,22 @@
     <Content Include="Assets\images\Product\g1_extended_rear_grip_blackchrome_medium.jpg" />
     <Content Include="Assets\images\Product\g1_pebble_windshield_black_medium.jpg" />
     <Content Include="Assets\images\Product\turbine_frame_slider_medium.jpg" />
+    <Content Include="Assets\images\StorePage\001.svg" />
+    <Content Include="Assets\images\StorePage\002.svg" />
+    <Content Include="Assets\images\StorePage\003.svg" />
+    <Content Include="Assets\images\StorePage\004.svg" />
+    <Content Include="Assets\images\StorePage\005.svg" />
+    <Content Include="Assets\images\StorePage\gogorocard.png" />
+    <Content Include="Assets\images\StorePage\Store001.jpg" />
+    <Content Include="Assets\images\StorePage\Store002.png" />
+    <Content Include="Assets\images\StorePage\Store003.png" />
+    <Content Include="Assets\images\StorePage\Store004.jpg" />
+    <Content Include="Assets\images\StorePage\Store005.jpg" />
+    <Content Include="Assets\images\StorePage\Store006.jpg" />
+    <Content Include="Assets\images\StorePage\Store007.jpg" />
+    <Content Include="Assets\images\StorePage\Store008.jpg" />
+    <Content Include="Assets\images\StorePage\Store009.jpg" />
+    <Content Include="Assets\images\StorePage\Store010.jpg" />
     <Content Include="Assets\js\Myscript.js" />
     <Content Include="Assets\js\site4.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -367,14 +374,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908041422132_Create_Database.resx">
-      <DependentUpon>201908041422132_Create_Database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908041701054_Change_MemberTable.resx">
-      <DependentUpon>201908041701054_Change_MemberTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908051544145_Change_members.resx">
-      <DependentUpon>201908051544145_Change_members.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908100818117_Create Database.resx">
+      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
