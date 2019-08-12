@@ -39,6 +39,7 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult shopIndex()
         {
+            var a = 1;
             return View();
         }
     }
