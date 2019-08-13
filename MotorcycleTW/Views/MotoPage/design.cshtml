@@ -1,0 +1,967 @@
+﻿
+@{
+    ViewBag.Title = "S1_2";
+    Layout = "~/Views/Shared/_Layout4.1.cshtml";
+}
+
+<link href="~/Assets/css/MotoPage/S1.css" rel="stylesheet" />
+
+@section topCSS {
+<style>
+        body {
+            color:#fff;
+        }
+        .gs-section-design-hero {
+            position: relative;
+            /*padding: 50px 0 50px 0;*/
+            height: 46.875vw;
+            min-height: 800px;
+            z-index: 2;
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/hero-banner.jpg) #150F13 center no-repeat;
+            background-size: cover;
+        }
+        .gs-design-hero__text {
+            position: absolute;
+            top: 70%;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .gs-design-hero__title {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+        .gs-section-video-banner--design {
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/video-banner.jpg) center no-repeat;
+        }
+        .gs-section-video-banner {
+            height: 31.25vw;
+        }
+        .gs-section-video-banner {
+            position: relative;
+            height: 425px;
+            background-color: #202023;
+        }
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .flex-column {
+            flex-flow: column;
+        }
+
+        .flex {
+            display: flex;
+        }
+        .gs-video-banner-title {
+            font-size: 60px;
+            text-indent: 0;
+            margin-bottom: 0;
+        }
+    .gs-video-banner-play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -90px 0 0 -90px;
+    }
+
+    .gs-video-banner-play-btn {
+        display: block;
+        height: 180px;
+        width: 180px;
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/video-play-circle.png) center no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s;
+        overflow: hidden;
+        z-index: 1;
+    }
+        .gs-video-banner-play-btn:before {
+            content: "\f105";
+            display: block;
+            position: absolute;
+            line-height: 180px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            font-family: FontAwesome;
+            font-size: 52px;
+        }
+        .gs-video-banner-play-btn:after {
+            content: 'WATCH FULL VIDEO';
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 2px;
+            font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold";
+            text-transform: uppercase;
+            width: 5em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -30px 0 0 -2.5em;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(-78px);
+        }
+        .gs-video-banner-play-btn:before, .gs-video-banner-play-btn:after {
+            transition: opacity 0.5s, -webkit-transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+        }
+
+    .gs-section-graphite-outfit {
+        height: 42.1875vw;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/graphite-outfit.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    @@media (min-width: 992px) {
+    }
+
+    .gs-graphite-outfit__title {
+        letter-spacing: .1em;
+    }
+
+    .display-3 {
+        font-size: 120px;
+        line-height: 1.1em;
+        margin-bottom: 1.8rem;
+        text-transform: uppercase;
+    }
+
+    @@media (min-width: 992px) {
+    }
+
+    .gs-section-design-details {
+        position:relative;
+        padding: 100px 0 200px 0;
+        background-position: center bottom;
+        background-size: 100% auto;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/blurred-colors.jpg);
+    }
+    .gs-separator {
+        margin: 50px 0;
+    }
+        .gs-separator:before {
+            transform: translateX(-10px);
+        }
+
+        .gs-separator:before, .gs-separator:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 1px;
+            background-color: #535357;
+            margin: 5px auto;
+        }
+        .gs-separator:after {
+            -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+        }
+
+        .gs-separator:before, .gs-separator:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 1px;
+            background-color: #535357;
+            margin: 5px auto;
+        }
+    .gs-section-design-details {
+        position: relative;
+        overflow: hidden;
+        background-color: #18181C;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+    .gs-content-max-width {
+        max-width: 600px;
+    }
+
+    .center-block {
+        display: block;
+        margin:auto;
+    }
+    .gs-xl-container {
+        max-width: 1500px;
+    }
+    .gs-design-details-list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .gs-design-details-item {
+        position: relative;
+    }
+    .gs-design-details-item__bg--large {
+    padding-bottom: 40%;
+}
+    @@media (min-width: 992px) {
+    }
+    .gs-design-details-item__bg {
+        height: auto;
+    }
+.gs-design-details-item__bg--performance {
+    background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/performance.jpg);
+}
+.gs-design-details-item__bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+    .gs-design-details-item__copy-block--absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+    @@media (min-width: 992px) {
+    }
+.gs-design-details-item__copy-block {
+    padding: 0;
+}
+    .gs-design-details-item__copy-block2 {
+        padding: 0;
+        background: #18181C;
+    }
+    .container {
+        width: 1349px;
+    }
+    .gs-design-details-header {
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+    .gs-design-details__heading {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .flex-1 {
+        flex: 1;
+    }
+
+    .gs-design-details-item__bg--buttons {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
+    }
+
+    .gs-design-details-item__bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .lg-flex {
+        display: flex;
+    }
+    .gs-design-details-item__bg--buttons {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
+    }
+
+    .gs-design-details-item__bg2 {
+        height: auto;
+        padding-bottom: 77.4%;
+    }
+
+    .gs-design-details-item__bg--keyfob {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/keyfob.jpg);
+    }
+    .gs-design-details-item__copy {
+        font-size: 18px;
+    }
+    .gs-design-details-item__bg--floor {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/floor.jpg);
+    }
+    .gs-design-details-item__bg--tail-light {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/tail-light.jpg);
+    }
+    .gs-design-details-item__bg--seat {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/seat.jpg);
+    }
+    .gs-design-details-item__bg2 {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .gs-section-vibrant-dashboard {
+        padding: 0;
+        height: 46.875vw;
+        min-height: 800px;
+    }
+
+    .gs-section-vibrant-dashboard {
+        position: relative;
+        z-index: 1;
+    }
+        .gs-section-vibrant-dashboard:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(to right, #832D89, #E82A4C);
+        }
+    .gs-vibrant-copy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 35.41666667%;
+    }
+    .gs-section-vibrant-dashboard:after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/vibrant-dashboard.png) center bottom no-repeat;
+        background-size: cover;
+    }
+
+    .gs-section-vibrant-dashboard:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+    }
+    .gs-section-aluminum-chassis {
+        padding: 0 0 200px 0;
+    }
+
+    .gs-section-aluminum-chassis {
+        position: relative;
+        z-index: 1;
+        background-color: #000;
+        overflow: hidden;
+    }
+
+    .gs-aluminum-chassis {
+        margin: 0;
+        height: 50vw;
+    }
+
+    .gs-aluminum-chassis-animation {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height: 50vw;
+        transform: none;
+    }
+
+    .gs-aluminum-chassis-animation {
+        display: block;
+        top: 0;
+    }
+    .gs-separator:before, .gs-separator:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: #535357;
+        margin: 5px auto;
+    }
+    .gs-aluminum-chassis.play .gs-aluminum-chassis-title {
+        opacity: 1;
+        transition: opacity 0.8s 0.3s;
+    }
+    .gs-aluminum-chassis.play:after {
+    opacity: 1;
+    transition: all 0.3s;
+}
+.gs-aluminum-chassis:after {
+    width: 100%;
+    left: 0;
+    height: 50vw;
+    transform: none;
+}
+.gs-aluminum-chassis:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/spot-lights.jpg) center no-repeat;
+    background-size: cover;
+}
+    .gs-aluminum-story__bg {
+        height: auto;
+        padding-bottom: 77.4%;
+    }
+
+    .gs-aluminum-story__bg--material {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/material.jpg);
+    }
+
+    .gs-aluminum-story__bg {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gs-aluminum-story__copy {
+        font-size:18px;
+    }
+    .gs-aluminum-story__copy-block {
+        background: #18181C;
+    }
+    .gs-aluminum-story__bg {
+        height: auto;
+        padding-bottom: 77.4%;
+    }
+
+    .gs-aluminum-story__bg--structure {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/structure.jpg);
+    }
+
+    .gs-aluminum-story__bg--manufacture {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/manufacture.jpg);
+    }
+    .gs-section-slogan {
+        height: 800px;
+        background: #18181C;
+    }
+    .gs-slogan-container {
+        max-width: 1140px;
+    }
+    .gs-slogan:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        z-index: 0;
+        background-color: #18181C;
+    }
+
+    .gs-slogan {
+        padding: 130px 50px;
+        position: relative;
+        background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
+    }
+    .gs-slogan__body {
+        position: relative;
+        z-index: 1;
+    }
+    .display-4 {
+        font-size: 72px;
+        line-height: 1.1em;
+        margin-bottom: 1.8rem;
+        text-transform: uppercase;
+    }
+    .gs-section-smart-brite {
+        height: 31.25vw;
+    }
+
+    .gs-section-smart-brite {
+        position: relative;
+        background-color: #202023;
+    }
+    .gs-smart-brite__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: auto;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/smart-brite.jpg);
+    }
+
+    .gs-smart-brite__bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .text-lg-left {
+        text-align: left !important;
+    }
+    .gs-section-auto-turn-signal {
+        height: 39vw;
+    }
+
+    .gs-section-auto-turn-signal {
+        position: relative;
+        background-color: #202023;
+    }
+    .gs-auto-turn-signal__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: auto;
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/auto-turn-signal.jpg);
+    }
+
+    .gs-auto-turn-signal__bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .gs-section-ethos {
+        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/ethos.jpg);
+        height: 46.875vw;
+    }
+
+    .gs-section-ethos {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .gs-section-gallery {
+    position: relative;
+    height: 50vw;
+    background-color: #202023;
+    }
+    .lg-flex {
+        display: flex;
+    }
+
+    .flex-3 {
+        flex: 3;
+    }
+    .flex-4 {
+        flex: 4;
+    }
+
+    .flex-column {
+        flex-flow: column;
+    }
+    .gs-gallery-item {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .gs-gallery-link {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .gs-gallery-link {
+        display: block;
+        padding: 50px;
+        opacity: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s;
+    }
+    .gs-next {
+        padding: 180px 0;
+    }
+
+    .gs-next--spec {
+        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/next-bg2.png) center,linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
+    }
+
+    .gs-next, .gs-next:hover {
+        color: #fff;
+        text-decoration:none;
+    }
+
+    .gs-next {
+        display: block;
+    }
+</style>
+    }
+<main id="ggr_main_container">
+    <section class="gs-section-design-hero flex flex-column justify-between">
+<div style="padding:10px 0;">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <strong>
+                        <span class="ggg" style="color: #838388;">Gogoro S1</span>
+                    </strong>
+                </div>
+                <div>
+                    <ul class="abc" style="display:flex; justify-content:space-between; list-style:none; margin:0; padding:0;">
+                        <li class=""><a class="ab" onclick="a()" href="">性能</a></li>
+                        <li>@Html.ActionLink("設計", "design", "MotoPage", null, new { @onclick = "b()", @class = "ab" })</li>
+                        <li>@Html.ActionLink("規格", "spec", "MotoPage", null, new { @onclick = "c()", @class = "ab" })</li>
+                        <li class=""><a class="cd" style="color:#fff; padding:0 20px;border-radius:10px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);" href="https://store.gogoro.com/tw/scooter?model=my20gs"><strong>打造愛車</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="gs-design-hero__text flex items-center justify-center" style="margin-top:20px;">
+                <div class="container" style="width:600px; ">
+                    <h2 class="gs-design-hero__title">劃破黑夜</h2>
+
+                    <div class="gs-design-hero__subtitle text-xs-center gs-content-max-width center-block" style="font-size:18px;">
+                        <div class="hidden-md-down" >嶄新登場特造版 Gogoro S1，來自滿足世界頂尖騎士的雄心；在車身呈現的每個細節，都思考再三，無數洗鍊，只為了更超越的呈現。唯有與眾不同的車，才配得上與眾不同的你。</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <section class="gs-section-video-banner gs-section-video-banner--design flex flex-column justify-center items-center">
+        <div class="container width-100 text-lg-left text-xs-center">
+            <div class="row">
+                <div class="col-lg-offset-1">
+                    <div class="gs-video-banner-title">
+                        最完美<br>的身影
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="launch-video-modal" data-video-src="//www.youtube.com/embed/1ECqhy2g0lE?enablejsapi=1&amp;autoplay=1&amp;rel=0&amp;vq=hd720" data-video-id="faster-clean-video">
+            <span class="gs-video-banner-play-btn hidden-md-down"></span>
+            @*<span class="gs-btn hidden-lg-up">PLAY VIDEO</span>*@
+        </a>
+    </section>
+
+
+    <section class="gs-section-graphite-outfit flex items-center">
+        <div class="gs-xl-container container text-xs-center">
+            <div class="gs-graphite-outfit__title display-3"><strong>如影 隨行</strong></div>
+        </div>
+    </section>
+
+
+    <section class="gs-section-design-details">
+        <div class="gs-separator hidden-md-down"></div>
+
+        <div class="gs-design-details-header container text-xs-center">
+            <h2 style="margin:0; margin-bottom:30px; font-size:36px;">為黑夜而生</h2>
+            <div class="gs-content-max-width center-block">
+                <div class="hidden-md-down" style="font-size:18px;">從亮麗的龍頭到石墨色調的車架主體，琢磨再三的每個細節，成就了 Gogoro S1 簡潔流暢的線條與外型。宛如一閃即逝的幻影，穿越城市的黑夜與白天。</div>
+            </div>
+        </div>
+
+        <div class="gs-xl-container container">
+            <div class="gs-design-details-list">
+
+
+                <div class="gs-design-details-item">
+                    <div class="gs-design-details-item__bg gs-design-details-item__bg--large gs-design-details-item__bg--performance"></div>
+                    <div class="row gs-design-details-item__copy-block gs-design-details-item__copy-block--absolute flex items-center">
+                        <div class="gs-design-details-item__copy col-lg-offset-7 col-lg-4  text-lg-left">
+                            <h2 style="font-size:18px;"><strong class="gs-design-details__heading">黑鉻色彈簧</strong></h2>
+                            <div style="font-size:18px;">對比消光墨灰色車身，黑鉻色彈簧讓後懸吊系統更顯搶眼。屬於 Gogoro S1 的駕馭靈魂，誰都無法忽視！</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gs-design-details-item lg-flex row-reverse">
+
+                    <div class="gs-design-details-item__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-design-details-item__copy">
+                                    <strong class="gs-design-details__heading">極黑消光按鈕</strong>
+                                    <div>
+                                        <div class="hidden-md-down">延續車身的獨特美學，Gogoro S1 的控制介面，擁有貼合手指的舒適曲線，每次按壓與操控，都是呢絨般的輕撫接觸；搭配極黑消光的霧面烤漆，內斂卻不失動感的線條，有如光影中的絲綢之舞。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gs-design-details-item__bg-block flex-1">
+                        <div class="gs-design-details-item__bg2 gs-design-details-item__bg--buttons"></div>
+                    </div>
+                </div>
+
+                <div class="gs-design-details-item lg-flex">
+                    <div class="gs-design-details-item__bg-block flex-1">
+                        <div class="gs-design-details-item__bg2 gs-design-details-item__bg--keyfob"></div>
+                    </div>
+                    <div class="gs-design-details-item__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-design-details-item__copy">
+                                    <strong class="gs-design-details__heading">鏡面黑輪圈</strong>
+                                    <div>
+                                        <div class="hidden-md-down">光亮如鏡的極致黑色烤漆，讓 Gogoro 專屬的六爪輪圈，更顯俐落與搶眼。每盞路過的燈，都將隨著輪圈的轉動，反射成絢麗的光影。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gs-design-details-item">
+                    <div class="gs-design-details-item__bg gs-design-details-item__bg--large gs-design-details-item__bg--floor"></div>
+                    <div class="gs-design-details-item__copy-block gs-design-details-item__copy-block--absolute flex items-center row">
+                        <div class="gs-design-details-item__copy col-lg-offset-2 col-lg-4  text-xs-center text-lg-left">
+                            <strong class="gs-design-details__heading">S 系列一體成型鋁合金踏墊</strong>
+                            <div>Gogoro S1 專屬的深鈦灰鋁合金踏墊，不僅為車體提供日常的防護，避免意外碰撞的磨損，更以獨特的視覺風格，提供足部更穩定的支撐。再激烈的騎乘，依然步履優雅。</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gs-design-details-item lg-flex">
+                    <div class="gs-design-details-item__bg-block flex-1">
+                        <div class="gs-design-details-item__bg2 gs-design-details-item__bg--tail-light"></div>
+                    </div>
+                    <div class="gs-design-details-item__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-design-details-item__copy">
+                                    <strong class="gs-design-details__heading">燻黑煞車燈罩</strong>
+                                    <div>完美來自每個細節，就算是稍縱即逝的片刻，也是靈感迸發的所在。Gogoro S1 採用煙燻黑色打造煞車燈罩，使它融入於車身的設計中。只在煞車瞬間，綻放耀眼光芒。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gs-design-details-item lg-flex row-reverse">
+
+                    <div class="gs-design-details-item__copy-block2 flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-design-details-item__copy">
+                                    <strong class="gs-design-details__heading">S 系列風格坐墊</strong>
+                                    <div>Gogoro S1 針對更進階的操駕打造高抓力坐墊，提供騎士身體更穩固而舒適的支撐。速度改變或彎道壓車時，身體依然緊貼車身，穩操勝券。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gs-design-details-item__bg-block flex-1">
+                        <div class="gs-design-details-item__bg2 gs-design-details-item__bg--seat"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @*<div>
+        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--s">
+            <div class="gc-container">
+                <div class="flb-container">
+                    <button class="flb-close"></button><div class="flb-content">
+                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
+                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+    <section class="gs-section-vibrant-dashboard">
+        <div class="gs-vibrant-copy flex items-center">
+            <div class="container text-xs-center">
+                <h2>無邊界儀表板</h2>
+                <div class="gs-content-max-width center-block">
+                    <div class="hidden-md-down">為了打造更簡潔俐落的操作介面，所有儀表板的顯示功能，都被整合在透射式的外殼底下。無邊界設計，有著藝術品般的流線輪廓，讓騎乘時的全彩顯示字幕，不只醒目，更是賞心悅目。</div>
+                    <div class="hidden-lg-up">為了打造更簡潔俐落的操作介面，所有儀表板的顯示功能，都被整合在透射式的外殼底下。無邊界設計，讓騎乘時的全彩顯示字幕，不只醒目，更是賞心悅目。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gs-section-aluminum-chassis">
+
+        <div class="gs-aluminum-chassis">
+            <canvas class="gs-aluminum-chassis-animation"></canvas>
+            <div class="gs-aluminum-chassis-copy">
+                <div class="container text-xs-center">
+                    <div class="gs-separator hidden-md-down"></div>
+                    <h2 class="gs-aluminum-chassis-title"  style="font-size:36px; margin-bottom:30px;">一體成型，強韌輕盈</h2>
+                    <div class="gs-aluminum-chassis-content gs-content-max-width center-block" style="font-size:18px;">Gogoro S1 的出色外觀與性能，都來自核心的 Aeroframe™ 鋁合金單體車架。以一整片由龍頭延伸到車身的底盤為主體，打造出中空腔體式結構，沒有任何焊接點，所以更輕、更強、更堅韌。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gs-xl-container container">
+            <div class="gs-aluminum-story-list">
+
+
+                <div class="gs-aluminum-story lg-flex">
+                    <div class="gs-aluminum-story__bg-block flex-1">
+                        <div class="gs-aluminum-story__bg gs-aluminum-story__bg--material"></div>
+                    </div>
+                    <div class="gs-aluminum-story__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-aluminum-story__copy">
+                                    <strong class="gs-aluminum-story__heading">航太級鋁合金</strong>
+                                    <div>重量僅有鋼的三分之一，帶給 Gogoro 不可思議的輕盈與堅韌，也讓續航力大為提昇。它是優秀的太空素材，更是完美的賽車材料。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gs-aluminum-story lg-flex row-reverse">
+
+                    <div class="gs-aluminum-story__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-aluminum-story__copy">
+                                    <strong class="gs-aluminum-story__heading">韌度千錘百鍊</strong>
+                                    <div>取法自超跑與戰鬥機，Aeroframe™ 鋁合金單體車架是由鋁合金結構所組合成的中空腔體，同時擁有極佳的剛性與韌性，在騎乘過程中適時地分散應力，不扭曲變形。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gs-aluminum-story__bg-block flex-1">
+                        <div class="gs-aluminum-story__bg gs-aluminum-story__bg--structure"></div>
+                    </div>
+                </div>
+
+
+                <div class="gs-aluminum-story lg-flex">
+                    <div class="gs-aluminum-story__bg-block flex-1">
+                        <div class="gs-aluminum-story__bg gs-aluminum-story__bg--manufacture"></div>
+                    </div>
+                    <div class="gs-aluminum-story__copy-block flex items-center flex-1">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 text-xs-center">
+                                <div class="gs-aluminum-story__copy">
+                                    <strong class="gs-aluminum-story__heading">航太級熱膠合</strong>
+                                    <div>捨棄傳統的焊接工序，Gogoro 採用航太級的膠合工法，在高溫下接合的結構膠，剛性與強度都與車架本身合為一體，使鋁合金單體車架具有驚人的耐久性。經十萬公里的嚴苛測試，一樣堅實有力。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gs-section-slogan flex items-center justify-center">
+        <div>
+            <div class="gs-slogan-container container">
+                <div class="gs-slogan text-xs-center">
+                    <div class="gs-slogan__body">
+                        <div class="display-4 gs-slogan__title" style="font-size:110px;">
+                            穿透黑暗的高亮度
+                        </div>
+
+                        <div class="gs-content-max-width center-block" style="font-size:18px;">
+                            高亮度、高效能的 SmartBrite® LED 燈組，全天候照亮你的每趟旅程，即使再黑暗的路都可以成為你的賽道。
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="gs-section-smart-brite lg-flex items-center">
+        <div class="gs-smart-brite__bg"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-5">
+                    <div class="gs-smart-brite__copy text-lg-left">
+                        <h2 style="font-size:36px; margin-bottom:30px;">智慧光感應</h2>
+                        <div style="font-size:18px;">
+                            隨著環境的變換，以及靜止、起步、轉向等作動，iQ System™ 智慧系統聰明地控制每一顆 LED 的明滅與亮度。精準地運用每一分能源，也帶給你更專注而自在的旅程。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="gs-section-auto-turn-signal lg-flex items-center">
+        <div class="gs-auto-turn-signal__bg"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-7 col-lg-4">
+                    <div class="gs-auto-turn-signal__copy  text-lg-left">
+                        <h2 style="font-size:36px; margin-bottom:30px;">360˚ 聚焦放閃</h2>
+                        <div style="font-size:18px;">
+                            <div class="hidden-md-down">從可調式頭燈到環抱式尾燈，Gogoro S1 的每個角度都閃耀著 LED 的清晰光芒。低耗電、不炫光的特性，夜間、霧中或暗處，打亮你的每一段路程。騎到哪裡，眾人的目光就跟到哪裡。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="gs-section-ethos flex items-center">
+        <div class="container">
+            <div class="gs-content-max-width center-block text-xs-center">
+                <div class="gs-ethos-heading" style="font-size:18px;">
+                    設計哲學:
+                </div>
+                <h2 style="font-size:36px; margin-bottom:30px;">以簡馭繁</h2>
+                <div class="p-x-1" style="font-size:18px;">
+                    <div class="hidden-md-down">即使千里之行，也是從最簡單的細節出發。Gogoro S1 延續一貫的「負設計」哲學，去除不必要的銳角，打造流暢的零風阻線條。以無數看似微不足道的巧思，創造超越想像的美好旅程。</div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gs-section-gallery lg-flex hidden-md-down">
+        <div class="flex-3 lg-flex flex-column">
+            <div class="flex-3 gs-gallery-item">
+                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/dashboard-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/dashboard.jpg);"></a>
+            </div>
+            <div class="gs-gallery-item flex flex-4">
+                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/frsus-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/frsus.jpg);"></a>
+            </div>
+        </div>
+
+        <div class="flex-3 gs-gallery-item">
+
+            <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/frview-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/frview.jpg);"></a>
+
+        </div>
+
+        <div class="flex-4 lg-flex flex-column">
+            <div class="gs-gallery-item flex-4">
+                <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/leftprofile-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/leftprofile.jpg);"></a>
+            </div>
+            <div class="lg-flex flex-3">
+                <div class="gs-gallery-item flex-1">
+                    <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/rightprofile-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/rightprofile.jpg);"></a>
+                </div>
+                <div class="gs-gallery-item flex-1">
+                    <a class="gs-gallery-link" href="//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/scaliper-open.jpg" style="background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/gallery/scaliper.jpg);"></a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <a href="https://www.gogoro.com/tw/smartscooter/s-performance/s1/spec/" class="gs-next gs-next--spec text-xs-center">
+        <div class="container">
+            <span class="font-w5" style="font-size:18px;">下一頁</span>
+            <div class="gs-next-name"style="font-size:55px;">規格</div>
+        </div>
+    </a>
+
+
+</main>

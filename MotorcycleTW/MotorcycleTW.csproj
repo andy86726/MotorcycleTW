@@ -241,6 +241,7 @@
     <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
     <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
     <Content Include="Assets\css\MotoPage\Index.css" />
+    <Content Include="Assets\css\MotoPage\S1.css" />
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
@@ -353,7 +354,7 @@
     <Content Include="Views\Account\VerifyRegistration.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\MotoPage\Index.cshtml" />
-    <Content Include="Views\MotoPage\S1.cshtml" />
+    <Content Include="Views\MotoPage\spec.cshtml" />
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\gogoromap.cshtml" />
@@ -361,6 +362,7 @@
     <Content Include="Views\Shop\makecar.cshtml" />
     <Content Include="Views\Shop\shopya.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
+    <Content Include="Views\MotoPage\design.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
