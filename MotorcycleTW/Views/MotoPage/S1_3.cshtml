@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "S1";
-    Layout = "~/Views/Shared/_Layout4.cshtml";
+    ViewBag.Title = "S1_3";
+    Layout = "~/Views/Shared/_Layout4.1.cshtml";
 }
 
 <link href="~/Assets/css/MotoPage/S1.css" rel="stylesheet" />
 
-<main id="ggr_main_container">
+<main id="ggr_main_container" class="a" onclick="a()">
     <div style="padding:10px 0;">
         <div class="container">
             <div style="display:flex; justify-content:space-between;">
@@ -17,9 +17,9 @@
                 </div>
                 <div>
                     <ul class="abc" style="display:flex; justify-content:space-between; list-style:none; margin:0; padding:0;">
-                        <li class=""><a class="ab" href="">性能</a></li>
-                        <li class=""><a class="ab" href="">設計</a></li>
-                        <li class=""><a class="ab" href="">規格</a></li>
+                        <li class=""><a class="ab" onclick="a()" href="">性能</a></li>
+                        <li class=""><a class="ab" onclick="b()" href="">設計</a></li>
+                        <li class=""><a class="ab" onclick="c()" href="">規格</a></li>
                         <li class=""><a class="cd" style="color:#fff; padding:0 20px;border-radius:10px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);" href="https://store.gogoro.com/tw/scooter?model=my20gs"><strong>打造愛車</strong></a></li>
                     </ul>
                 </div>
@@ -969,9 +969,16 @@
         </div>
     </section>
 
-    <div class="gs-gradient-line"></div>
+    <div class="gs-gradient-ine"></div>
 
 </main>
+
+
+
+
+    
+
+
 @*<div style="padding:10px 0;">
         <div class="container">
             <div style="display:flex; justify-content:space-between;">
@@ -1071,3 +1078,15 @@
             </div>
         </div>
     </section>*@
+@section endJS {
+    <script>
+        function a() {
+            $(".a").removeClass("hidden");
+            $(".b").addClass("hidden");
+        }
+        function b() {
+            $(".a").addClass("hidden");
+            $(".b").removeClass("hidden");
+        }
+    </script>
+}
