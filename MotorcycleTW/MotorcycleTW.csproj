@@ -208,6 +208,30 @@
     <Compile Include="Migrations\201908100818117_Create Database.Designer.cs">
       <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908130745300_Add SeedData.cs" />
+    <Compile Include="Migrations\201908130745300_Add SeedData.Designer.cs">
+      <DependentUpon>201908130745300_Add SeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908130752221_second.cs" />
+    <Compile Include="Migrations\201908130752221_second.Designer.cs">
+      <DependentUpon>201908130752221_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908130757114_test.cs" />
+    <Compile Include="Migrations\201908130757114_test.Designer.cs">
+      <DependentUpon>201908130757114_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908130807269_test1.cs" />
+    <Compile Include="Migrations\201908130807269_test1.Designer.cs">
+      <DependentUpon>201908130807269_test1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908130808438_test11.cs" />
+    <Compile Include="Migrations\201908130808438_test11.Designer.cs">
+      <DependentUpon>201908130808438_test11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908130810292_test12.cs" />
+    <Compile Include="Migrations\201908130810292_test12.Designer.cs">
+      <DependentUpon>201908130810292_test12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRoles.cs" />
@@ -219,6 +243,7 @@
     <Compile Include="Models\Classifies.cs" />
     <Compile Include="Models\Delivery_way.cs" />
     <Compile Include="Models\Discounts.cs" />
+    <Compile Include="Models\Product_Reminders.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
@@ -235,6 +260,7 @@
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\RegisterViewModels.cs" />
+    <Compile Include="ViewModel\StorePageViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
@@ -267,6 +293,7 @@
     <Content Include="Assets\images\Product\g1_extended_rear_grip_blackchrome_medium.jpg" />
     <Content Include="Assets\images\Product\g1_pebble_windshield_black_medium.jpg" />
     <Content Include="Assets\images\Product\turbine_frame_slider_medium.jpg" />
+    <Content Include="Assets\images\Product\後置物架＆行李箱組.jpg" />
     <Content Include="Assets\images\StorePage\001.svg" />
     <Content Include="Assets\images\StorePage\002.svg" />
     <Content Include="Assets\images\StorePage\003.svg" />
@@ -374,6 +401,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908100818117_Create Database.resx">
       <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130745300_Add SeedData.resx">
+      <DependentUpon>201908130745300_Add SeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130752221_second.resx">
+      <DependentUpon>201908130752221_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130757114_test.resx">
+      <DependentUpon>201908130757114_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130807269_test1.resx">
+      <DependentUpon>201908130807269_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130808438_test11.resx">
+      <DependentUpon>201908130808438_test11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908130810292_test12.resx">
+      <DependentUpon>201908130810292_test12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

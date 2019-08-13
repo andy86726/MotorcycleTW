@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using MotorcycleTW.Models;
-
+using MotorcycleTW.ViewModel;
 namespace MotorcycleTW.Controllers
 {
     public class HomeController : Controller
@@ -36,16 +36,18 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult SalesPage()
         {
+
             return View();
         }
-        public ActionResult StorePage(string a)//網路商店
+        public ActionResult StorePage()//網路商店
         {
 
             return View();
         }
         [HttpPost]
-        public ActionResult StorePage()
+        public ActionResult StorePage(StorePageViewModels ShoppingmeMber)
         {
+            var a = 123;
             return View();
         }
 

@@ -37,9 +37,26 @@ namespace MotorcycleTW.Migrations
                 new Products { p_id = 7, p_name = "Gogoro 2 Plus", p_unitprice = 80980, p_color_1 = "#00d7FF", p_color_2 = "#F7E300", c_id = 3 },
                 new Products { p_id = 8, p_name = "Gogoro 2 Delight", p_unitprice = 844980, p_color_1 = "linear-gradient(135deg,#cda6a3,#dcbcbb,#f1dadd,#fbeaef,#e2c5c6,#cda6a3)", p_color_2 = "linear-gradient(135deg,#99a6b2,#bfc9d2,#d9dde3,#eef3f6,#d8dfe5,#b4bcc4)", c_id = 3 },
                 new Products { p_id = 9, p_name = "Gogoro 2 Rumbler", p_unitprice = 87980, p_color_1 = "linear-gradient(135deg,#4f5053,#929495,#c7c8c9,#ebeced,#c6c8ca,#787c80)", c_id = 3 },
-                new Products { p_id = 10, p_name = "Gogoro 1 Plus", p_unitprice = 118000, p_color_1 = "white" }
+                new Products { p_id = 10,p_name = "Gogoro 1 Plus", p_unitprice = 118000, p_color_1 = "white" },
+                new Products { p_id = 11,p_name = "後置物架＆行李箱組",p_unitprice = 4680 }
                 );
-
+            context.Product_Reminders.AddOrUpdate(
+                x=>x.pr_id,
+                new Product_Reminders { pr_id = 1, p_id = 11, pr_detail = "Gogoro S2 Adventure 及 Gogoro S2 Adventure Tour Edition 已有標配 Gogoro 2 後置架。" },
+                new Product_Reminders { pr_id = 2, p_id = 11, pr_detail = "套件組內之各項產品之特性及應注意事項，請詳閱各商品頁之溫馨提醒。" },
+                new Product_Reminders { pr_id = 3, p_id = 11, pr_detail = "本套件組適用於 Gogoro 2 系列全車款及 Gogoro S2 系列全車款。" },
+                new Product_Reminders { pr_id = 4, p_id = 11, pr_detail = "Gogoro 2 後製物架限重 5 kg、 SHAD 行李箱 原廠限重 3 公斤，請注意勿超過承重範圍。" },
+                new Product_Reminders { pr_id = 5, p_id = 11, pr_detail = "SHAD 行李箱為輕量塑膠材質所製，洗車時請先將箱體由快拆拆除，避免高壓水柱直接沖擊箱體造成損傷。" },
+                new Product_Reminders { pr_id = 5, p_id = 11, pr_detail = "專業安裝服務需酌收安裝費。" }
+                );
+            context.Product_Picture.AddOrUpdate(
+                x=>x.pp_id,
+                new Product_Picture { pp_id=1,p_id=11,pp_path="~/Assets/images/Product/後置物架＆行李箱組.jpg"}
+                );
+            context.Product_Feature.AddOrUpdate(
+                x=>x.pf_id,
+                new Product_Feature { pf_id=1,p_id=11,pf_note= "『延伸置物，輕鬆滿載』" ,pf_description= "後製物架採精選堅固耐用鐵製材質，搭配黑色霧面烤漆，為一兼具設計、實用、堅固的承載檯面。後行李箱可輕鬆放入一頂全罩式的安全帽，或是兩頂四分之三罩安全帽。置物空間的延伸讓收納更方便，每趟出行都可完備無虞。" }
+                );
         }
     }
 }
