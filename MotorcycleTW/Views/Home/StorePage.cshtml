@@ -16,19 +16,21 @@
                 <li><h1>後置物架＆行李箱組</h1></li>
                 <li><h3>$4,680</h3></li>
                 <li><h3 class="font-weight-light">GA009-PB0-02</h3></li>
-                @using (Html.BeginForm("StorePage", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                @using (Html.BeginForm("ShoppingCart", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     <li>
                         <div class="d-flex flex-row">
-                            <div class="input-group" style="width: 30%;">
-                               @{ 
-                                   List<SelectList> ShoppingmeMberList = new List<SelectList>
-                                   {
-                                       new SelectListItem{Text="1",Value=}
-                                   };
-                               }
+                            <div class="form-group row" style="display:flex; margin:0;">
+                                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;">
+                                    <select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="ShoppingmeMber" id="ShoppingmeMber" onchange="bbc()">
+                                        <option>縣　市</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                    </select>
+                                </div>
                             </div>
-                            <input type="submit" value="加入購物車" class="btn btn-dark"/>
+                            <input type="submit" value="加入購物車" class="btn btn-dark" />
                         </div>
                     </li>
                  }

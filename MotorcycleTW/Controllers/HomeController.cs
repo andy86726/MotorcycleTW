@@ -44,14 +44,8 @@ namespace MotorcycleTW.Controllers
 
             return View();
         }
-        [HttpPost]
-        public ActionResult StorePage(StorePageViewModels ShoppingmeMber)
-        {
-            var a = 123;
-            return View();
-        }
-
-        public ActionResult ShoppingCart(string a)//購物車
+        [Authorize]
+        public ActionResult ShoppingCart(StorePageViewModels model)//購物車
         {
             return View();
         }
