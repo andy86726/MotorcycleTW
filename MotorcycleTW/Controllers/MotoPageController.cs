@@ -14,11 +14,11 @@ namespace MotorcycleTW.Controllers
             return View();
         }
 
-        public ActionResult S1_2()
+        public ActionResult design()
         {
             return View();
         }
-        public ActionResult S1_3()
+        public ActionResult spec()
         {
             return View();
         }
