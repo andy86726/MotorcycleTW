@@ -360,6 +360,7 @@
     <Content Include="Views\Home\shopIndex.cshtml" />
     <Content Include="Views\Shop\makecar.cshtml" />
     <Content Include="Views\Shop\shopya.cshtml" />
+    <Content Include="Views\Home\SalesPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
