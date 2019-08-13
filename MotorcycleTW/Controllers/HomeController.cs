@@ -33,10 +33,14 @@ namespace MotorcycleTW.Controllers
             //var b=db.Products.FirstOrDefault();
             return View();
         }
-        public ActionResult SalesPage()
+        public ActionResult gogoromap()
         {
             return View();
         }
-        
+        public ActionResult shopIndex()
+        {
+            var a = 1;
+            return View();
+        }
     }
 }

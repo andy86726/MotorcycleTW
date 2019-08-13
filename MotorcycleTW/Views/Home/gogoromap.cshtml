@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "gogoromap";
+}
+
+<h2>gogoromap</h2>
+<body>
+
+    <div id="mapContainer">
+
+        <div>
+            <h2>目前暫點87個</h2>
+        </div>
+        <button id="pg2">規劃全部路徑</button>
+
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    @*<link rel="stylesheet" type="text/css" href="demo.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="../template.css" />
+    <script type="text/javascript" src='../test-credentials.js'></script>*@
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    @*<script type="text/javascript" src='../js-examples-rendering-helpers/iframe-height.js'></script>*@
+    <script>
+
+        var hidpi = ('devicePixelRatio' in window && devicePixelRatio > 1);
+
+        var platform = new H.service.Platform({
+            'app_id': 'OngksD1vZ1DUr73k6LID',
+            'app_code': 'v0xqQWskjgM8HyVvx2oBpw',
+            userHTTPS: true
+        });
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers(hidpi ? 512 : 256, hidpi ? 320 : null);
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.terrain.base,
+            {
+                center: { lng: 121.4, lat: 23.1 },
+                zoom: 7
+            });
+
+        //設定縮放按鈕位置
+        var ui = H.ui.UI.createDefault(map, defaultLayers);
+        ui.getControl('zoom').setAlignment('bottom-center');
+        ui.getControl('scalebar').setAlignment('bottom-center');
+        ui.getControl('mapsettings').setAlignment('bottom-center');
+        //滾輪縮放
+        var mapBehavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+        $.ajax({
+
+            type: "get",
+            url: "https://wapi.gogoro.com/tw/api/vm/list",
+            dataType: "json",
+            success: function (response) {
+
+                for (var i of response.data) {
+
+                    var midMarker = new H.map.Marker(
+                        {
+                            lat: i.Latitude,
+                            lng: i.Longitude,
+                        }); map.addObject(midMarker); console.log(midMarker);
+                }
+            }
+        });
+                    // $("#pg2").click(function () {
+                    //     console.log(map.);
+                    // });
+
+
+
+
+    </script>
+
+
+</body>
