@@ -55,7 +55,9 @@ namespace MotorcycleTW.Controllers
             var a = db.Products.Where(x => x.p_name == name).FirstOrDefault();
             var productprice = a.p_unitprice;
             var productpicture = a.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault().pp_path;
-
+            ShoppingCartViewModel shoppingCartViewModel = new ShoppingCartViewModel() {
+                p_id=
+            };
             return View();
         }
     }
