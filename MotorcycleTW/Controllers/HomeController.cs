@@ -45,12 +45,12 @@ namespace MotorcycleTW.Controllers
             return View();
         }
         [Authorize]
-        public ActionResult ShoppingCart(StorePageViewModels model)//購物車
+        public ActionResult ShoppingCart()//購物車
         {
             return View();
         }
         [HttpPost]
-        public ActionResult ShoppingCart()
+        public ActionResult ShoppingCart(StorePageViewModels model, string titlename)
         {
             return View();
         }

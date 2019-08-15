@@ -384,6 +384,7 @@
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
     <Content Include="Views\Home\StorePage.cshtml" />
+    <Content Include="Views\Home\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
