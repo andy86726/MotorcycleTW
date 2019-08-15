@@ -10,6 +10,7 @@ namespace MotorcycleTW.Controllers
 {
     public class HomeController : Controller
     {
+        MotorcycleContext db = new MotorcycleContext();
         public ActionResult Index()
         {
             return View();
@@ -44,14 +45,17 @@ namespace MotorcycleTW.Controllers
 
             return View();
         }
-        [Authorize]
         public ActionResult ShoppingCart()//購物車
         {
             return View();
         }
         [HttpPost]
-        public ActionResult ShoppingCart(StorePageViewModels model, string titlename)
+        public ActionResult ShoppingCart(StorePageViewModels model,string name)
         {
+            var a = db.Products.Where(x => x.p_name == name).FirstOrDefault();
+            var productprice = a.p_unitprice;
+            var productpicture = a.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault().pp_path;
+
             return View();
         }
     }
