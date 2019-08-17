@@ -1,4 +1,4 @@
-﻿
+﻿@model MotorcycleTW.ViewModel.StorePageViewModels
 @{
     ViewBag.Title = "StorePage";
 }
@@ -13,25 +13,27 @@
         <div class="col-5" style="">
 
             <ul class="list-unstyled">
-                <li><h1>後置物架＆行李箱組</h1></li>
+                <li><h1 id="titlename">後置物架＆行李箱組</h1></li>
                 <li><h3>$4,680</h3></li>
                 <li><h3 class="font-weight-light">GA009-PB0-02</h3></li>
-                <div class="d-flex flex-row">
-                    <div class="input-group" style="width: 30%;">
-
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">購買數量</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">1</a>
-                                <a class="dropdown-item" href="#">2</a>
-                                <a class="dropdown-item" href="#">3</a>
-
+                @using (Html.BeginForm("ShoppingCart", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <li>
+                        <div class="d-flex flex-row">
+                            <div class="form-group row" style="display:flex; margin:0;">
+                                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;">
+                                    <select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="ShoppingmeMber" id="ShoppingmeMber">
+                                        <option>縣　市</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                    </select>
+                                </div>
                             </div>
+                            <input type="submit" value="加入購物車" class="btn btn-dark" onclick="bbc()" />
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-dark">加入購物車</button>
-
-                </div>
+                    </li>
+                }
                 <li class="pt-4"><h4 class="text-danger border-top border-dark">本配件需至您所指定之門市領取或安裝，並酌收安裝工資費。</h4></li>
             </ul>
         </div>
@@ -67,3 +69,13 @@
     </div>
 
 </div>
+<script>
+    function bbc() {
+        var a = $("#titlename").text();
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:44388/Home/ShoppingCart",
+            data: { name: a }
+        });
+    };
+</script>

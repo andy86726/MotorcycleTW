@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <div class="ShoppingCart-wrap">
+        <h1 class="ShoppingCart-Title">
+            我的購物車
+        </h1>
+        <div class="ShoppingCart-Content">
+            <header class="ShoppingCart-Header ShoppingCart-Header-Product">
+                <div class="ShoppingCart-headerLeft">
+                    <h1 class="ShoppingCart-headerPrice">
+                        <span>
+
+                        </span>
+                    </h1>
+                    <p class="ShoppingCart-headerInfo">
+                        訂單總額
+                    </p>
+                </div>
+                <div class="ShoppingCart-headerRight">
+                   @Html.ActionLink("繼續選購", "StorePage", "Home", null, new { @class="ShoppingCart-headerLink link_ligthGrayFat"}) 
+                    <button class="btn btn_blackOS">
+                        結 帳
+                    </button>
+                </div>
+            </header>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
