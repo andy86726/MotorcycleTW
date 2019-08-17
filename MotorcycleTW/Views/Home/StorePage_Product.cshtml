@@ -1,0 +1,83 @@
+﻿@model MotorcycleTW.ViewModel.StorePageViewModels
+@{
+    ViewBag.Title = "StorePage_Product";
+}
+
+
+
+<div class="container-fluid">
+    <div class="d-flex flex-row">
+        <div class="col-7">
+            <img src="http://images.gogoroapp.com/store/upload/product/20181031_shad_trunk_basic_large.jpg" alt="" style="width: 100%;height: 100%;">
+        </div>
+        <div class="col-5" style="">
+
+            <ul class="list-unstyled">
+                <li><h1 id="titlename">後置物架＆行李箱組</h1></li>
+                <li><h3>$4,680</h3></li>
+                <li><h3 class="font-weight-light">GA009-PB0-02</h3></li>
+
+                <li>
+                    @using (Html.BeginForm("ShoppingCart", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        <div class="d-flex flex-row">
+                            <div class="form-group row" style="display:flex; margin:0;">
+                                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;">
+                                    <select style="height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="ShoppingmeMber" id="ShoppingmeMber">
+                                        <option>縣　市</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="submit" value="加入購物車" class="btn btn-dark" onclick="bbc()" />
+                        </div>
+                    }
+                </li>
+                <li class="pt-4"><h4 class="text-danger border-top border-dark">本配件需至您所指定之門市領取或安裝，並酌收安裝工資費。</h4></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h1 class="font-weight-bold">商品資訊</h1><br>
+    <div class="d-flex flex-row">
+        <div class="col-8 mt-4 m-3">
+            <h4 class="text-primary font-weight-bold">商品介紹:</h4><br>
+            <h5>
+                實用裝載必備
+                『延伸置物，輕鬆滿載』
+                後製物架採精選堅固耐用鐵製材質，搭配黑色霧面烤漆，為一兼具設計、實用、
+                堅固的承載檯面。後行李箱可輕鬆放入一頂全罩式的安全帽，或是兩頂四分之
+                罩安全帽。置物空間的延伸讓收納更方便，每趟出行都可完備無虞。
+            </h5>
+            <h4 class="font-weight-bold">溫馨提醒:</h4>
+            <ul>
+                <li>Gogoro S2 Adventure 及 Gogoro S2 Adventure Tour Edition 已有標配 Gogoro 2 後置架。</li>
+                <li>套件組內之各項產品之特性及應注意事項，請詳閱各商品頁之溫馨提醒。</li>
+                <li>本套件組適用於 Gogoro 2 系列全車款及 Gogoro S2 系列全車款。</li>
+                <li>Gogoro 2 後製物架限重 5 kg、 SHAD 行李箱 原廠限重 3 公斤，請注意勿超過承重範圍。</li>
+                <li>SHAD 行李箱為輕量塑膠材質所製，洗車時請先將箱體由快拆拆除，避免高壓水柱直接沖擊箱體造成損傷。</li>
+                <li>專業安裝服務需酌收安裝費。</li>
+            </ul>
+        </div>
+        <div class="col-4 m-3">
+            <h4 class="text-primary font-weight-bold">商品規格:</h4>
+            <h4 class="font-weight-bold">原產品＆主材質</h4>
+            <h4>請詳閱各品項之商品頁  </h4>
+        </div>
+    </div>
+
+</div>
+<script>
+    document.onchange
+    function bbc() {
+        var a = $("#titlename").text();
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:44388/Home/ShoppingCart",
+            data: { name: a }
+        });
+    };
+</script>

@@ -45,6 +45,10 @@ namespace MotorcycleTW.Controllers
 
             return View();
         }
+        public ActionResult StorePage_Product(Products model)//網路商店-產品頁
+        {
+            return View();
+        }
         public ActionResult ShoppingCart()//購物車
         {
             return View();
