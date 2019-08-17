@@ -61,5 +61,9 @@ namespace MotorcycleTW.Controllers
             };
             return View();
         }
+        public ActionResult BillPage()//結帳頁面
+        {
+            return View();
+        }
     }
 }
