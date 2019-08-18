@@ -370,6 +370,7 @@
     <Content Include="Views\shopcaar\shopcar1.cshtml" />
     <Content Include="Views\Home\StorePage_Product.cshtml" />
     <Content Include="Views\Home\StorePage.cshtml" />
+    <Content Include="Views\Home\gogoromap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

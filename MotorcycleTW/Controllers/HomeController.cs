@@ -108,5 +108,9 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
+        public ActionResult gogoromap()
+        {
+            return View();
+        }
     }
 }
