@@ -3,7 +3,7 @@ namespace MotorcycleTW.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDatabase : DbMigration
+    public partial class CrateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -240,10 +240,21 @@ namespace MotorcycleTW.Migrations
                     {
                         pp_id = c.Int(nullable: false, identity: true),
                         pp_path = c.String(),
-                        pp_uploadtime = c.DateTime(nullable: false),
                         p_id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.pp_id)
+                .ForeignKey("dbo.Products", t => t.p_id, cascadeDelete: true)
+                .Index(t => t.p_id);
+            
+            CreateTable(
+                "dbo.Product_Reminders",
+                c => new
+                    {
+                        pr_id = c.Int(nullable: false, identity: true),
+                        pr_detail = c.String(),
+                        p_id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.pr_id)
                 .ForeignKey("dbo.Products", t => t.p_id, cascadeDelete: true)
                 .Index(t => t.p_id);
             
@@ -276,6 +287,7 @@ namespace MotorcycleTW.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Shopping_Cart", "p_id", "dbo.Products");
+            DropForeignKey("dbo.Product_Reminders", "p_id", "dbo.Products");
             DropForeignKey("dbo.Product_Picture", "p_id", "dbo.Products");
             DropForeignKey("dbo.Product_Feature", "p_id", "dbo.Products");
             DropForeignKey("dbo.Order_Detail", "p_id", "dbo.Products");
@@ -293,6 +305,7 @@ namespace MotorcycleTW.Migrations
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
+            DropIndex("dbo.Product_Reminders", new[] { "p_id" });
             DropIndex("dbo.Product_Picture", new[] { "p_id" });
             DropIndex("dbo.Product_Feature", new[] { "p_id" });
             DropIndex("dbo.Shopping_Cart", new[] { "p_id" });
@@ -309,6 +322,7 @@ namespace MotorcycleTW.Migrations
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Stores");
+            DropTable("dbo.Product_Reminders");
             DropTable("dbo.Product_Picture");
             DropTable("dbo.Product_Feature");
             DropTable("dbo.Payments");

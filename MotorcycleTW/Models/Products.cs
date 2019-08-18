@@ -16,6 +16,7 @@ namespace MotorcycleTW.Models
             Product_Feature = new HashSet<Product_Feature>();
             Product_Picture = new HashSet<Product_Picture>();
             Shopping_Cart = new HashSet<Shopping_Cart>();
+            Product_Reminders = new HashSet<Product_Reminders>();
         }
 
         [Key]
@@ -55,5 +56,7 @@ namespace MotorcycleTW.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shopping_Cart> Shopping_Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product_Reminders> Product_Reminders { get; set; }
     }
 }

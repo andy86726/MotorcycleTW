@@ -19,9 +19,12 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44388</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>
+    </IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>
+    </IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -200,14 +203,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MotoPageController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908100818117_Create Database.cs" />
-    <Compile Include="Migrations\201908100818117_Create Database.Designer.cs">
-      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908181455397_Crate Database.cs" />
+    <Compile Include="Migrations\201908181455397_Crate Database.Designer.cs">
+      <DependentUpon>201908181455397_Crate Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908181940534_Change Seed.cs" />
+    <Compile Include="Migrations\201908181940534_Change Seed.Designer.cs">
+      <DependentUpon>201908181940534_Change Seed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,6 +226,7 @@
     <Compile Include="Models\Classifies.cs" />
     <Compile Include="Models\Delivery_way.cs" />
     <Compile Include="Models\Discounts.cs" />
+    <Compile Include="Models\Product_Reminders.cs" />
     <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Members.cs" />
@@ -236,12 +243,12 @@
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\RegisterViewModels.cs" />
+    <Compile Include="ViewModel\StorePageViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
     <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
     <Content Include="Assets\css\MotoPage\Index.css" />
-    <Content Include="Assets\css\MotoPage\S1.css" />
     <Content Include="Assets\css\Register.css" />
     <Content Include="Assets\css\Login.css" />
     <Content Include="Assets\css\MemberInfomation.css" />
@@ -269,6 +276,7 @@
     <Content Include="Assets\images\Product\g1_extended_rear_grip_blackchrome_medium.jpg" />
     <Content Include="Assets\images\Product\g1_pebble_windshield_black_medium.jpg" />
     <Content Include="Assets\images\Product\turbine_frame_slider_medium.jpg" />
+    <Content Include="Assets\images\Product\後置物架＆行李箱組.jpg" />
     <Content Include="Assets\images\StorePage\001.svg" />
     <Content Include="Assets\images\StorePage\002.svg" />
     <Content Include="Assets\images\StorePage\003.svg" />
@@ -354,15 +362,14 @@
     <Content Include="Views\Account\VerifyRegistration.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\MotoPage\Index.cshtml" />
-    <Content Include="Views\MotoPage\spec.cshtml" />
+    <Content Include="Views\MotoPage\S1.cshtml" />
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
-    <Content Include="Views\Home\gogoromap.cshtml" />
-    <Content Include="Views\Home\shopIndex.cshtml" />
-    <Content Include="Views\Shop\makecar.cshtml" />
-    <Content Include="Views\Shop\shopya.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
-    <Content Include="Views\MotoPage\design.cshtml" />
+    <Content Include="Views\Home\ShoppingCart.cshtml" />
+    <Content Include="Views\shopcaar\shopcar1.cshtml" />
+    <Content Include="Views\Home\StorePage_Product.cshtml" />
+    <Content Include="Views\Home\StorePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -378,11 +385,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908100818117_Create Database.resx">
-      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908181455397_Crate Database.resx">
+      <DependentUpon>201908181455397_Crate Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908181940534_Change Seed.resx">
+      <DependentUpon>201908181940534_Change Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -12,11 +12,8 @@ namespace MotorcycleTW.Models
         public int pp_id { get; set; }
 
         public string pp_path { get; set; }
-
-        public DateTime pp_uploadtime { get; set; }
-
         public int p_id { get; set; }
-
+        [ForeignKey("p_id")]
         public virtual Products Products { get; set; }
     }
 }

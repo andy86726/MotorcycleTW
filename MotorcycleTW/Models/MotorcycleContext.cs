@@ -11,7 +11,7 @@ namespace MotorcycleTW.Models
             : base("name=MotorcycleDB")
         {
         }
-
+        public virtual DbSet<Product_Reminders> Product_Reminders { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
