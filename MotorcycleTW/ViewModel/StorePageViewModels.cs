@@ -7,7 +7,7 @@ namespace MotorcycleTW.ViewModel
 {
     public class StorePageViewModels
     {
-        public int ShoppingmeMber { get; set; }
+        public string arrays { get; set; }
     }
     public class ShoppingCartViewModel
     {
@@ -15,5 +15,6 @@ namespace MotorcycleTW.ViewModel
         public decimal? price { get; set; }
         public string name { get; set; }
         public string path { get; set; }
+        public int member { get; set; }
     }
 }

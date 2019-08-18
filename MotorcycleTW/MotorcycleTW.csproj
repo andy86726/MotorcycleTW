@@ -207,33 +207,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908100818117_Create Database.cs" />
-    <Compile Include="Migrations\201908100818117_Create Database.Designer.cs">
-      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
+    <Compile Include="Migrations\201908181455397_Crate Database.cs" />
+    <Compile Include="Migrations\201908181455397_Crate Database.Designer.cs">
+      <DependentUpon>201908181455397_Crate Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908130745300_Add SeedData.cs" />
-    <Compile Include="Migrations\201908130745300_Add SeedData.Designer.cs">
-      <DependentUpon>201908130745300_Add SeedData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908130752221_second.cs" />
-    <Compile Include="Migrations\201908130752221_second.Designer.cs">
-      <DependentUpon>201908130752221_second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908130757114_test.cs" />
-    <Compile Include="Migrations\201908130757114_test.Designer.cs">
-      <DependentUpon>201908130757114_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908130807269_test1.cs" />
-    <Compile Include="Migrations\201908130807269_test1.Designer.cs">
-      <DependentUpon>201908130807269_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908130808438_test11.cs" />
-    <Compile Include="Migrations\201908130808438_test11.Designer.cs">
-      <DependentUpon>201908130808438_test11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908130810292_test12.cs" />
-    <Compile Include="Migrations\201908130810292_test12.Designer.cs">
-      <DependentUpon>201908130810292_test12.cs</DependentUpon>
+    <Compile Include="Migrations\201908181940534_Change Seed.cs" />
+    <Compile Include="Migrations\201908181940534_Change Seed.Designer.cs">
+      <DependentUpon>201908181940534_Change Seed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -405,29 +385,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908100818117_Create Database.resx">
-      <DependentUpon>201908100818117_Create Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908181455397_Crate Database.resx">
+      <DependentUpon>201908181455397_Crate Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130745300_Add SeedData.resx">
-      <DependentUpon>201908130745300_Add SeedData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130752221_second.resx">
-      <DependentUpon>201908130752221_second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130757114_test.resx">
-      <DependentUpon>201908130757114_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130807269_test1.resx">
-      <DependentUpon>201908130807269_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130808438_test11.resx">
-      <DependentUpon>201908130808438_test11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908130810292_test12.resx">
-      <DependentUpon>201908130810292_test12.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908181940534_Change Seed.resx">
+      <DependentUpon>201908181940534_Change Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
