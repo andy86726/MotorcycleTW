@@ -1,35 +1,12 @@
-﻿
-@{
-    ViewBag.Title = "gogoromap";
-    //Layout = "~/Views/Shared/_LayoutTest.cshtml";
-}
+﻿<html>
 
-<h2>gogoromap</h2>
+<head>
 
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-@*<div id="mapContainer1">
+    <link rel="stylesheet" type="text/css"
+          href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
 
-        <div>
-            <h2>目前暫點87個</h2>
-        </div>
-        <button id="pg2">規劃全部路徑</button>
-
-    </div>*@
-
-
-
-<div class="right_panel_background">
-</div>
-
-<div id="mapContainer"></div>
-
-
-@section topCSS{
-    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
-}
-
-
-@section topJS{
     <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js"
             type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js"
@@ -39,11 +16,19 @@
     <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script src="https://js.api.here.com/v3/3.0/mapsjs-places.js"
             type="text/javascript" charset="utf-8"></script>
-}
 
-@section endJS{
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">-->
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="right_panel_background">
+    </div>
+
+    <div id="mapContainer"></div>
 
     <script>
         var hidpi = ('devicePixelRatio' in window && devicePixelRatio > 1);
@@ -95,12 +80,6 @@
 
     </script>
 
+</body>
 
-}
-
-
-
-
-
-
-
+</html>
