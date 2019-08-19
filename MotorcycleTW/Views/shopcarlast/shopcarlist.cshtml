@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "shopcarlist";
+}
+
+<div class="container">
+    <div class="d-flex ">
+        <h1>1.我的購物清單</h1>
+
+        <h2 class="ml-auto mr-5">商品金額 $8,640</h2>
+        <p id="hiddenshoplist" class="mt-auto">隱藏購物明細</p>
+    </div>
+    <table class="table border " id="shoplist">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <h1>$8,640</h1>
+                    訂單總額
+                </th>
+                <th scope="col"></th>
+                <th scope="col">繼續選購</th>
+                <th scope="col"><button type="button" class="btn btn-dark">結帳</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="height: 150px;">
+
+                <td>
+                    <img src="//images.gogoroapp.com/store/upload/product/g2_pebble_windshield_black_medium.jpg"
+                         alt="" style="width: 150px;">
+                </td>
+                <td>
+                    <h4 class="font-weight-bold" style="line-height: 150px;">PEBBLE 多功能風鏡 V2 - VIGORPLUS</h4>
+                </td>
+                <td>
+                    <select name="" id="" style=" width:70px;border-radius:10px;" class="mt-5">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td>
+                    <h5 style="line-height: 130px;">$8,640</h5>
+                </td>
+            </tr>
+
+            <tr>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col">
+                    <ul class="list-unstyled">
+                        <li>
+                            <h4 class="font-weight-bold">商品金額</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold">運費(滿590免運)</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold text-primary">折扣</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold">訂單總額</h4>
+                        </li>
+                    </ul>
+                </td>
+                <td scope="col">
+                    <ul class="list-unstyled">
+                        <li>
+                            <h4 class="font-weight-bold">$8,640</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold">$0</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold text-primary">-$0</h4>
+                        </li>
+                        <li>
+                            <h4 class="font-weight-bold">$8,640</h4>
+                        </li>
+                        <button id="abc123" type="button" class="btn btn-primary " style="width:100px;height:50px;border-radius:20px;margin-top:50px;"><h3>繼續</h3></button>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="ml-auto">
+
+    </div>
+
+    <div>
+        <h1>2.訂購資料</h1>
+        <div>
+            <input type="checkbox" name="vehicle" value="check1">
+            我已閱讀並同意 Gogoro 個人資料蒐集、處理及利用同意書， Gogoro 網路商店條款<br>
+            <input type="checkbox" name="vehicle" value="check2">
+            我已於購買時瞭解本商品因機構、設計或特性等需求，須進行專業安裝，並另酌收安裝工資費；若非經專業安裝而導致商品無法正常使用或損壞，本公司概不負責或賠償。
+        </div>
+        <div>
+            <br>
+            <p class="font-weight-bold">購買人帳號:</p>
+
+            <br>
+
+            <i>洪佑昇, 09123456789, zxcv86294@gmail.com, 新竹市香山區五福路707號</i>
+        </div>
+        <div class="d-flex" style="margin-top:30px;">
+            <div class="col-4">
+                <p class="font-weight-bold">寄送資料</p>
+                <input type="checkbox" name="vehicle" value="check3">
+                同登入帳號
+            </div>
+            <div class="col-8">
+                <p class="font-weight-bold">取貨人姓名*</p>
+                <input type="text" style="width:542px;height:40px;" placeholder="請輸入取貨人姓名">
+                <p class="font-weight-bold">取貨人手機號碼*</p>
+                <input type="text" style="width:542px;height:40px;" placeholder="請輸入取貨人手機號碼">
+                <p class="font-weight-bold">安裝門市*</p>
+                <select name="" id="" style="border-radius:10px;height: 40px;width: 100px;margin-right: 10px">
+                    <option value="">&nbsp&nbsp&nbsp&nbsp縣/市</option>
+                    <option value="">台北市</option>
+                    <option value="">新北市</option>
+                    <option value="">桃園市</option>
+                    <option value="">新竹市</option>
+                </select>
+                <select name="" id="" style="border-radius:10px;height: 40px;width:200px;">
+                    <option value="">請選擇門市</option>
+                    <option value="">光華八德門市</option>
+                    <option value="">師大和平門市</option>
+                    <option value="">萬華中華門市</option>
+                    <option value="">松山饒河門市</option>
+                    <option value="">圓山承德門市</option>
+                    <option value="">內湖民權服務中心</option>
+                </select>
+                <p class="font-weight-bold">車主姓名*</p>
+                <input type="text" style="width:542px;height:40px;" placeholder="請輸入車主姓名">
+                <p class="font-weight-bold">車牌號碼*</p>
+                <input type="text" style="width:542px;height:40px;" placeholder="範例車牌號碼 ABC-1234">
+            </div>
+        </div>
+
+        <script>
+            $("#hiddenshoplist").click(function () {
+                $("#shoplist").toggle(200000);
+            });
+        </script>
+        <script>
+            $("#abc123").click(function () {
+                $("#shoplist").toggle(200000);
+            });
+        </script>
