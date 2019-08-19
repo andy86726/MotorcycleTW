@@ -60,9 +60,9 @@
                 <td scope="col">
                     <ul class="list-unstyled">
                         <li><h4 id="price" class="font-weight-bold">$8,640</h4></li>
-                        <li><h4 class="font-weight-bold">$0</h4></li>
-                        <li><h4 class="font-weight-bold text-primary">-$0</h4></li>
-                        <li><h4 class="font-weight-bold">$8,640</h4></li>
+                        <li><h4 id="delieve" class="font-weight-bold">$0</h4></li>
+                        <li><h4 id="discount" class="font-weight-bold text-primary">-$0</h4></li>
+                        <li><h4 id ="total_price" class="font-weight-bold">$8,640</h4></li>
                     </ul>
                 </td>
             </tr>
@@ -109,6 +109,8 @@
     var a = document.getElementById("member");
     var b = a.getElementsByTagName("option");
     b[@int.Parse(ShoppingList[4])-1].selected = true;
+    document.getElementById("price").innerHTML = "$@ShoppingList[2].ToString()";
+    document.getElementById("total_price").innerHTML = "$@ShoppingList[2].ToString()";
     function bbc()
     {    
         $(".form-horizontal").submit();
