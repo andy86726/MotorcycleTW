@@ -5,607 +5,19 @@
 
 <link href="~/Assets/css/MotoPage/S1.css" rel="stylesheet" />
 
-@section topCSS {
-<style>
-        body {
-            color:#fff;
-        }
-        .gs-section-design-hero {
-            position: relative;
-            /*padding: 50px 0 50px 0;*/
-            height: 46.875vw;
-            min-height: 800px;
-            z-index: 2;
-            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/hero-banner.jpg) #150F13 center no-repeat;
-            background-size: cover;
-        }
-        .gs-design-hero__text {
-            position: absolute;
-            top: 70%;
-            bottom: 0;
-            left: 0;
-            padding: 0;
-            width: 100%;
-            text-align: center;
-        }
-        .gs-design-hero__title {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-        .gs-section-video-banner--design {
-            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/video-banner.jpg) center no-repeat;
-        }
-        .gs-section-video-banner {
-            height: 31.25vw;
-        }
-        .gs-section-video-banner {
-            position: relative;
-            height: 425px;
-            background-color: #202023;
-        }
-        .items-center {
-            align-items: center;
-        }
 
-        .justify-center {
-            justify-content: center;
-        }
-
-        .flex-column {
-            flex-flow: column;
-        }
-
-        .flex {
-            display: flex;
-        }
-        .gs-video-banner-title {
-            font-size: 60px;
-            text-indent: 0;
-            margin-bottom: 0;
-        }
-    .gs-video-banner-play-btn {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin: -90px 0 0 -90px;
-    }
-
-    .gs-video-banner-play-btn {
-        display: block;
-        height: 180px;
-        width: 180px;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/video-play-circle.png) center no-repeat;
-        background-size: contain;
-        cursor: pointer;
-        border-radius: 50%;
-        color: #fff;
-        transition: all 0.3s;
-        overflow: hidden;
-        z-index: 1;
-    }
-        .gs-video-banner-play-btn:before {
-            content: "\f105";
-            display: block;
-            position: absolute;
-            line-height: 180px;
-            top: 0;
-            left: 0;
-            width: 100%;
-            bottom: 0;
-            text-align: center;
-            font-family: FontAwesome;
-            font-size: 52px;
-        }
-        .gs-video-banner-play-btn:after {
-            content: 'WATCH FULL VIDEO';
-            font-size: 18px;
-            line-height: 20px;
-            letter-spacing: 2px;
-            font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold";
-            text-transform: uppercase;
-            width: 5em;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin: -30px 0 0 -2.5em;
-            text-align: center;
-            opacity: 0;
-            transform: translateX(-78px);
-        }
-        .gs-video-banner-play-btn:before, .gs-video-banner-play-btn:after {
-            transition: opacity 0.5s, -webkit-transform 0.5s;
-            transition: opacity 0.5s, transform 0.5s;
-            transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
-        }
-
-    .gs-section-graphite-outfit {
-        height: 42.1875vw;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/graphite-outfit.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    @@media (min-width: 992px) {
-    }
-
-    .gs-graphite-outfit__title {
-        letter-spacing: .1em;
-    }
-
-    .display-3 {
-        font-size: 120px;
-        line-height: 1.1em;
-        margin-bottom: 1.8rem;
-        text-transform: uppercase;
-    }
-
-    @@media (min-width: 992px) {
-    }
-
-    .gs-section-design-details {
-        position:relative;
-        padding: 100px 0 200px 0;
-        background-position: center bottom;
-        background-size: 100% auto;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/blurred-colors.jpg);
-    }
-    .gs-separator {
-        margin: 50px 0;
-    }
-        .gs-separator:before {
-            transform: translateX(-10px);
-        }
-
-        .gs-separator:before, .gs-separator:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 1px;
-            background-color: #535357;
-            margin: 5px auto;
-        }
-        .gs-separator:after {
-            -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-        }
-
-        .gs-separator:before, .gs-separator:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 1px;
-            background-color: #535357;
-            margin: 5px auto;
-        }
-    .gs-section-design-details {
-        position: relative;
-        overflow: hidden;
-        background-color: #18181C;
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-    }
-    .gs-content-max-width {
-        max-width: 600px;
-    }
-
-    .center-block {
-        display: block;
-        margin:auto;
-    }
-    .gs-xl-container {
-        max-width: 1500px;
-    }
-    .gs-design-details-list {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .gs-design-details-item {
-        position: relative;
-    }
-    .gs-design-details-item__bg--large {
-    padding-bottom: 40%;
-}
-    @@media (min-width: 992px) {
-    }
-    .gs-design-details-item__bg {
-        height: auto;
-    }
-.gs-design-details-item__bg--performance {
-    background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/performance.jpg);
-}
-.gs-design-details-item__bg {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-    .gs-design-details-item__copy-block--absolute {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-    @@media (min-width: 992px) {
-    }
-.gs-design-details-item__copy-block {
-    padding: 0;
-}
-    .gs-design-details-item__copy-block2 {
-        padding: 0;
-        background: #18181C;
-    }
-    .container {
-        width: 1349px;
-    }
-    .gs-design-details-header {
-        margin-top: 0;
-        margin-bottom: 100px;
-    }
-    .gs-design-details__heading {
-        display: block;
-        margin-bottom: 15px;
-    }
-    .flex-1 {
-        flex: 1;
-    }
-
-    .gs-design-details-item__bg--buttons {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
-    }
-
-    .gs-design-details-item__bg {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .lg-flex {
-        display: flex;
-    }
-    .gs-design-details-item__bg--buttons {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
-    }
-
-    .gs-design-details-item__bg2 {
-        height: auto;
-        padding-bottom: 77.4%;
-    }
-
-    .gs-design-details-item__bg--keyfob {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/keyfob.jpg);
-    }
-    .gs-design-details-item__copy {
-        font-size: 18px;
-    }
-    .gs-design-details-item__bg--floor {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/floor.jpg);
-    }
-    .gs-design-details-item__bg--tail-light {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/tail-light.jpg);
-    }
-    .gs-design-details-item__bg--seat {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/seat.jpg);
-    }
-    .gs-design-details-item__bg2 {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .gs-section-vibrant-dashboard {
-        padding: 0;
-        height: 46.875vw;
-        min-height: 800px;
-    }
-
-    .gs-section-vibrant-dashboard {
-        position: relative;
-        z-index: 1;
-    }
-        .gs-section-vibrant-dashboard:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(to right, #832D89, #E82A4C);
-        }
-    .gs-vibrant-copy {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 35.41666667%;
-    }
-    .gs-section-vibrant-dashboard:after {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/vibrant-dashboard.png) center bottom no-repeat;
-        background-size: cover;
-    }
-
-    .gs-section-vibrant-dashboard:after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
-    }
-    .gs-section-aluminum-chassis {
-        padding: 0 0 200px 0;
-    }
-
-    .gs-section-aluminum-chassis {
-        position: relative;
-        z-index: 1;
-        background-color: #000;
-        overflow: hidden;
-    }
-
-    .gs-aluminum-chassis {
-        margin: 0;
-        height: 50vw;
-    }
-
-    .gs-aluminum-chassis-animation {
-        position: absolute;
-        left: 0;
-        width: 100vw;
-        height: 50vw;
-        transform: none;
-    }
-
-    .gs-aluminum-chassis-animation {
-        display: block;
-        top: 0;
-    }
-    .gs-separator:before, .gs-separator:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 1px;
-        background-color: #535357;
-        margin: 5px auto;
-    }
-    .gs-aluminum-chassis.play .gs-aluminum-chassis-title {
-        opacity: 1;
-        transition: opacity 0.8s 0.3s;
-    }
-    .gs-aluminum-chassis.play:after {
-    opacity: 1;
-    transition: all 0.3s;
-}
-.gs-aluminum-chassis:after {
-    width: 100%;
-    left: 0;
-    height: 50vw;
-    transform: none;
-}
-.gs-aluminum-chassis:after {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/spot-lights.jpg) center no-repeat;
-    background-size: cover;
-}
-    .gs-aluminum-story__bg {
-        height: auto;
-        padding-bottom: 77.4%;
-    }
-
-    .gs-aluminum-story__bg--material {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/material.jpg);
-    }
-
-    .gs-aluminum-story__bg {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .gs-aluminum-story__copy {
-        font-size:18px;
-    }
-    .gs-aluminum-story__copy-block {
-        background: #18181C;
-    }
-    .gs-aluminum-story__bg {
-        height: auto;
-        padding-bottom: 77.4%;
-    }
-
-    .gs-aluminum-story__bg--structure {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/structure.jpg);
-    }
-
-    .gs-aluminum-story__bg--manufacture {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/manufacture.jpg);
-    }
-    .gs-section-slogan {
-        height: 800px;
-        background: #18181C;
-    }
-    .gs-slogan-container {
-        max-width: 1140px;
-    }
-    .gs-slogan:before {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        right: 2px;
-        bottom: 2px;
-        z-index: 0;
-        background-color: #18181C;
-    }
-
-    .gs-slogan {
-        padding: 130px 50px;
-        position: relative;
-        background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
-    }
-    .gs-slogan__body {
-        position: relative;
-        z-index: 1;
-    }
-    .display-4 {
-        font-size: 72px;
-        line-height: 1.1em;
-        margin-bottom: 1.8rem;
-        text-transform: uppercase;
-    }
-    .gs-section-smart-brite {
-        height: 31.25vw;
-    }
-
-    .gs-section-smart-brite {
-        position: relative;
-        background-color: #202023;
-    }
-    .gs-smart-brite__bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        height: auto;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/smart-brite.jpg);
-    }
-
-    .gs-smart-brite__bg {
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .text-lg-left {
-        text-align: left !important;
-    }
-    .gs-section-auto-turn-signal {
-        height: 39vw;
-    }
-
-    .gs-section-auto-turn-signal {
-        position: relative;
-        background-color: #202023;
-    }
-    .gs-auto-turn-signal__bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        height: auto;
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/auto-turn-signal.jpg);
-    }
-
-    .gs-auto-turn-signal__bg {
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .gs-section-ethos {
-        background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/ethos.jpg);
-        height: 46.875vw;
-    }
-
-    .gs-section-ethos {
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .gs-section-gallery {
-    position: relative;
-    height: 50vw;
-    background-color: #202023;
-    }
-    .lg-flex {
-        display: flex;
-    }
-
-    .flex-3 {
-        flex: 3;
-    }
-    .flex-4 {
-        flex: 4;
-    }
-
-    .flex-column {
-        flex-flow: column;
-    }
-    .gs-gallery-item {
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-    }
-    .gs-gallery-link {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-    }
-
-    .gs-gallery-link {
-        display: block;
-        padding: 50px;
-        opacity: 1;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        transition: all 0.3s;
-    }
-    .gs-next {
-        padding: 180px 0;
-    }
-
-    .gs-next--spec {
-        background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/next-bg2.png) center,linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
-    }
-
-    .gs-next, .gs-next:hover {
-        color: #fff;
-        text-decoration:none;
-    }
-
-    .gs-next {
-        display: block;
-    }
-</style>
-    }
 <main id="ggr_main_container">
     <section class="gs-section-design-hero flex flex-column justify-between">
-<div style="padding:10px 0;">
-        <div class="container">
-            <div style="display:flex; justify-content:space-between;">
-                <div>
-                    <strong>
-                        <span class="ggg" style="color: #838388;">Gogoro S1</span>
-                    </strong>
-                </div>
-                <div>
-                    <ul class="abc" style="display:flex; justify-content:space-between; list-style:none; margin:0; padding:0;">
-                        <li class=""><a class="ab" onclick="a()" href="">性能</a></li>
-                        <li>@Html.ActionLink("設計", "design", "MotoPage", null, new { @onclick = "b()", @class = "ab" })</li>
-                        <li>@Html.ActionLink("規格", "spec", "MotoPage", null, new { @onclick = "c()", @class = "ab" })</li>
-                        <li class=""><a class="cd" style="color:#fff; padding:0 20px;border-radius:10px; background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);" href="https://store.gogoro.com/tw/scooter?model=my20gs"><strong>打造愛車</strong></a></li>
-                    </ul>
+        @Html.Partial("MotopagePartailView")
+        <div class="gs-design-hero__text flex items-center justify-center" style="margin-top:20px;">
+            <div class="container" style="width:600px; ">
+                <h2 class="gs-design-hero__title">劃破黑夜</h2>
+
+                <div class="gs-design-hero__subtitle text-xs-center gs-content-max-width center-block" style="font-size:18px;">
+                    <div class="hidden-md-down">嶄新登場特造版 Gogoro S1，來自滿足世界頂尖騎士的雄心；在車身呈現的每個細節，都思考再三，無數洗鍊，只為了更超越的呈現。唯有與眾不同的車，才配得上與眾不同的你。</div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-        <div class="gs-design-hero__text flex items-center justify-center" style="margin-top:20px;">
-                <div class="container" style="width:600px; ">
-                    <h2 class="gs-design-hero__title">劃破黑夜</h2>
-
-                    <div class="gs-design-hero__subtitle text-xs-center gs-content-max-width center-block" style="font-size:18px;">
-                        <div class="hidden-md-down" >嶄新登場特造版 Gogoro S1，來自滿足世界頂尖騎士的雄心；在車身呈現的每個細節，都思考再三，無數洗鍊，只為了更超越的呈現。唯有與眾不同的車，才配得上與眾不同的你。</div>
-                    </div>
-                </div>
-            </div>
     </section>
 
 
@@ -746,16 +158,16 @@
     </section>
 
     @*<div>
-        <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--s">
-            <div class="gc-container">
-                <div class="flb-container">
-                    <button class="flb-close"></button><div class="flb-content">
-                        即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
-                    </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+            <div class="flb-bar-placeholder"></div><div class="flb-bar flb-bar--s">
+                <div class="gc-container">
+                    <div class="flb-container">
+                        <button class="flb-close"></button><div class="flb-content">
+                            即刻入手 Gogoro 全系列，享六個月電池服務資費0元起
+                        </div><div class="flb-actions"><a href="https://promotion.gogoro.com/tw/sp-six-month299/" target="_blank" class="flb-cta">了解更多</a><a href="/tw/book-a-ride/?model=gogoro-2-plus" target="_blank" class="flb-cta">預約試騎</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
 
     <section class="gs-section-vibrant-dashboard">
@@ -779,7 +191,7 @@
             <div class="gs-aluminum-chassis-copy">
                 <div class="container text-xs-center">
                     <div class="gs-separator hidden-md-down"></div>
-                    <h2 class="gs-aluminum-chassis-title"  style="font-size:36px; margin-bottom:30px;">一體成型，強韌輕盈</h2>
+                    <h2 class="gs-aluminum-chassis-title" style="font-size:36px; margin-bottom:30px;">一體成型，強韌輕盈</h2>
                     <div class="gs-aluminum-chassis-content gs-content-max-width center-block" style="font-size:18px;">Gogoro S1 的出色外觀與性能，都來自核心的 Aeroframe™ 鋁合金單體車架。以一整片由龍頭延伸到車身的底盤為主體，打造出中空腔體式結構，沒有任何焊接點，所以更輕、更強、更堅韌。</div>
                 </div>
             </div>
@@ -913,7 +325,7 @@
                 </div>
                 <h2 style="font-size:36px; margin-bottom:30px;">以簡馭繁</h2>
                 <div class="p-x-1" style="font-size:18px;">
-                    <div class="hidden-md-down">即使千里之行，也是從最簡單的細節出發。Gogoro S1 延續一貫的「負設計」哲學，去除不必要的銳角，打造流暢的零風阻線條。以無數看似微不足道的巧思，創造超越想像的美好旅程。</div> 
+                    <div class="hidden-md-down">即使千里之行，也是從最簡單的細節出發。Gogoro S1 延續一貫的「負設計」哲學，去除不必要的銳角，打造流暢的零風阻線條。以無數看似微不足道的巧思，創造超越想像的美好旅程。</div>
                 </div>
             </div>
         </div>
@@ -958,9 +370,646 @@
     <a href="https://www.gogoro.com/tw/smartscooter/s-performance/s1/spec/" class="gs-next gs-next--spec text-xs-center">
         <div class="container">
             <span class="font-w5" style="font-size:18px;">下一頁</span>
-            <div class="gs-next-name"style="font-size:55px;">規格</div>
+            <div class="gs-next-name" style="font-size:55px;">規格</div>
         </div>
     </a>
-
-
 </main>
+@section topCSS {
+    <style>
+        body {
+            color: #fff;
+        }
+
+        .gs-section-design-hero {
+            position: relative;
+            /*padding: 50px 0 50px 0;*/
+            height: 46.875vw;
+            min-height: 800px;
+            z-index: 2;
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/hero-banner.jpg) #150F13 center no-repeat;
+            background-size: cover;
+        }
+
+        .gs-design-hero__text {
+            position: absolute;
+            top: 70%;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gs-design-hero__title {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .gs-section-video-banner--design {
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/video-banner.jpg) center no-repeat;
+        }
+
+        .gs-section-video-banner {
+            height: 31.25vw;
+        }
+
+        .gs-section-video-banner {
+            position: relative;
+            height: 425px;
+            background-color: #202023;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .flex-column {
+            flex-flow: column;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .gs-video-banner-title {
+            font-size: 60px;
+            text-indent: 0;
+            margin-bottom: 0;
+        }
+
+        .gs-video-banner-play-btn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -90px 0 0 -90px;
+        }
+
+        .gs-video-banner-play-btn {
+            display: block;
+            height: 180px;
+            width: 180px;
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/video-play-circle.png) center no-repeat;
+            background-size: contain;
+            cursor: pointer;
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+            .gs-video-banner-play-btn:before {
+                content: "\f105";
+                display: block;
+                position: absolute;
+                line-height: 180px;
+                top: 0;
+                left: 0;
+                width: 100%;
+                bottom: 0;
+                text-align: center;
+                font-family: FontAwesome;
+                font-size: 52px;
+            }
+
+            .gs-video-banner-play-btn:after {
+                content: 'WATCH FULL VIDEO';
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 2px;
+                font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold";
+                text-transform: uppercase;
+                width: 5em;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -30px 0 0 -2.5em;
+                text-align: center;
+                opacity: 0;
+                transform: translateX(-78px);
+            }
+
+            .gs-video-banner-play-btn:before, .gs-video-banner-play-btn:after {
+                transition: opacity 0.5s, -webkit-transform 0.5s;
+                transition: opacity 0.5s, transform 0.5s;
+                transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+            }
+
+        .gs-section-graphite-outfit {
+            height: 42.1875vw;
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/graphite-outfit.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @@media (min-width: 992px) {
+        }
+
+        .gs-graphite-outfit__title {
+            letter-spacing: .1em;
+        }
+
+        .display-3 {
+            font-size: 120px;
+            line-height: 1.1em;
+            margin-bottom: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        @@media (min-width: 992px) {
+        }
+
+        .gs-section-design-details {
+            position: relative;
+            padding: 100px 0 200px 0;
+            background-position: center bottom;
+            background-size: 100% auto;
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/blurred-colors.jpg);
+        }
+
+        .gs-separator {
+            margin: 50px 0;
+        }
+
+            .gs-separator:before {
+                transform: translateX(-10px);
+            }
+
+            .gs-separator:before, .gs-separator:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 1px;
+                background-color: #535357;
+                margin: 5px auto;
+            }
+
+            .gs-separator:after {
+                -webkit-transform: translateX(10px);
+                transform: translateX(10px);
+            }
+
+            .gs-separator:before, .gs-separator:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 1px;
+                background-color: #535357;
+                margin: 5px auto;
+            }
+
+        .gs-section-design-details {
+            position: relative;
+            overflow: hidden;
+            background-color: #18181C;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .gs-content-max-width {
+            max-width: 600px;
+        }
+
+        .center-block {
+            display: block;
+            margin: auto;
+        }
+
+        .gs-xl-container {
+            max-width: 1500px;
+        }
+
+        .gs-design-details-list {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .gs-design-details-item {
+            position: relative;
+        }
+
+        .gs-design-details-item__bg--large {
+            padding-bottom: 40%;
+        }
+
+        @@media (min-width: 992px) {
+        }
+
+        .gs-design-details-item__bg {
+            height: auto;
+        }
+
+        .gs-design-details-item__bg--performance {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/performance.jpg);
+        }
+
+        .gs-design-details-item__bg {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .gs-design-details-item__copy-block--absolute {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @@media (min-width: 992px) {
+        }
+
+        .gs-design-details-item__copy-block {
+            padding: 0;
+        }
+
+        .gs-design-details-item__copy-block2 {
+            padding: 0;
+            background: #18181C;
+        }
+
+        .container {
+            width: 1349px;
+        }
+
+        .gs-design-details-header {
+            margin-top: 0;
+            margin-bottom: 100px;
+        }
+
+        .gs-design-details__heading {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .gs-design-details-item__bg--buttons {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
+        }
+
+        .gs-design-details-item__bg {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .lg-flex {
+            display: flex;
+        }
+
+        .gs-design-details-item__bg--buttons {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/buttons.jpg);
+        }
+
+        .gs-design-details-item__bg2 {
+            height: auto;
+            padding-bottom: 77.4%;
+        }
+
+        .gs-design-details-item__bg--keyfob {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/keyfob.jpg);
+        }
+
+        .gs-design-details-item__copy {
+            font-size: 18px;
+        }
+
+        .gs-design-details-item__bg--floor {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/floor.jpg);
+        }
+
+        .gs-design-details-item__bg--tail-light {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/tail-light.jpg);
+        }
+
+        .gs-design-details-item__bg--seat {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/seat.jpg);
+        }
+
+        .gs-design-details-item__bg2 {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .gs-section-vibrant-dashboard {
+            padding: 0;
+            height: 46.875vw;
+            min-height: 800px;
+        }
+
+        .gs-section-vibrant-dashboard {
+            position: relative;
+            z-index: 1;
+        }
+
+            .gs-section-vibrant-dashboard:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                background: linear-gradient(to right, #832D89, #E82A4C);
+            }
+
+        .gs-vibrant-copy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 35.41666667%;
+        }
+
+        .gs-section-vibrant-dashboard:after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/vibrant-dashboard.png) center bottom no-repeat;
+            background-size: cover;
+        }
+
+        .gs-section-vibrant-dashboard:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+        }
+
+        .gs-section-aluminum-chassis {
+            padding: 0 0 200px 0;
+        }
+
+        .gs-section-aluminum-chassis {
+            position: relative;
+            z-index: 1;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .gs-aluminum-chassis {
+            margin: 0;
+            height: 50vw;
+        }
+
+        .gs-aluminum-chassis-animation {
+            position: absolute;
+            left: 0;
+            width: 100vw;
+            height: 50vw;
+            transform: none;
+        }
+
+        .gs-aluminum-chassis-animation {
+            display: block;
+            top: 0;
+        }
+
+        .gs-separator:before, .gs-separator:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 1px;
+            background-color: #535357;
+            margin: 5px auto;
+        }
+
+        .gs-aluminum-chassis.play .gs-aluminum-chassis-title {
+            opacity: 1;
+            transition: opacity 0.8s 0.3s;
+        }
+
+        .gs-aluminum-chassis.play:after {
+            opacity: 1;
+            transition: all 0.3s;
+        }
+
+        .gs-aluminum-chassis:after {
+            width: 100%;
+            left: 0;
+            height: 50vw;
+            transform: none;
+        }
+
+        .gs-aluminum-chassis:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/spot-lights.jpg) center no-repeat;
+            background-size: cover;
+        }
+
+        .gs-aluminum-story__bg {
+            height: auto;
+            padding-bottom: 77.4%;
+        }
+
+        .gs-aluminum-story__bg--material {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/material.jpg);
+        }
+
+        .gs-aluminum-story__bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .gs-aluminum-story__copy {
+            font-size: 18px;
+        }
+
+        .gs-aluminum-story__copy-block {
+            background: #18181C;
+        }
+
+        .gs-aluminum-story__bg {
+            height: auto;
+            padding-bottom: 77.4%;
+        }
+
+        .gs-aluminum-story__bg--structure {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/structure.jpg);
+        }
+
+        .gs-aluminum-story__bg--manufacture {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/manufacture.jpg);
+        }
+
+        .gs-section-slogan {
+            height: 800px;
+            background: #18181C;
+        }
+
+        .gs-slogan-container {
+            max-width: 1140px;
+        }
+
+        .gs-slogan:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            z-index: 0;
+            background-color: #18181C;
+        }
+
+        .gs-slogan {
+            padding: 130px 50px;
+            position: relative;
+            background: linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
+        }
+
+        .gs-slogan__body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .display-4 {
+            font-size: 72px;
+            line-height: 1.1em;
+            margin-bottom: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .gs-section-smart-brite {
+            height: 31.25vw;
+        }
+
+        .gs-section-smart-brite {
+            position: relative;
+            background-color: #202023;
+        }
+
+        .gs-smart-brite__bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            height: auto;
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/smart-brite.jpg);
+        }
+
+        .gs-smart-brite__bg {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .text-lg-left {
+            text-align: left !important;
+        }
+
+        .gs-section-auto-turn-signal {
+            height: 39vw;
+        }
+
+        .gs-section-auto-turn-signal {
+            position: relative;
+            background-color: #202023;
+        }
+
+        .gs-auto-turn-signal__bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            height: auto;
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/auto-turn-signal.jpg);
+        }
+
+        .gs-auto-turn-signal__bg {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .gs-section-ethos {
+            background-image: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/design/ethos.jpg);
+            height: 46.875vw;
+        }
+
+        .gs-section-ethos {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .gs-section-gallery {
+            position: relative;
+            height: 50vw;
+            background-color: #202023;
+        }
+
+        .lg-flex {
+            display: flex;
+        }
+
+        .flex-3 {
+            flex: 3;
+        }
+
+        .flex-4 {
+            flex: 4;
+        }
+
+        .flex-column {
+            flex-flow: column;
+        }
+
+        .gs-gallery-item {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .gs-gallery-link {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .gs-gallery-link {
+            display: block;
+            padding: 50px;
+            opacity: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s;
+        }
+
+        .gs-next {
+            padding: 180px 0;
+        }
+
+        .gs-next--spec {
+            background: url(//cdn.gogoro.com/resources/images/1-series/gogoro-s/common/next-bg2.png) center,linear-gradient(80deg, #832D89 0%, #E82A4C 80%, #E82A4C 100%);
+        }
+
+        .gs-next, .gs-next:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .gs-next {
+            display: block;
+        }
+    </style>
+}
