@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201908190833233_orderchange.Designer.cs">
       <DependentUpon>201908190833233_orderchange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908191908264_Change Order%25OrderDetail.cs" />
+    <Compile Include="Migrations\201908191908264_Change Order%25OrderDetail.Designer.cs">
+      <DependentUpon>201908191908264_Change Order%25OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRoles.cs" />
@@ -349,7 +353,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Views\Home\SalesPage.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -414,6 +417,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\BillPage.cshtml" />
+    <Content Include="Views\Home\BillPagePartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -429,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908190833233_orderchange.resx">
       <DependentUpon>201908190833233_orderchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908191908264_Change Order%25OrderDetail.resx">
+      <DependentUpon>201908191908264_Change Order%25OrderDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

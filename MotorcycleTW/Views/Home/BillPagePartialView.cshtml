@@ -1,0 +1,20 @@
+﻿@model int
+@{
+    var ShoppingList = (List<List<string>>)Session["shoppingCartViewModel"];
+}
+<tr style="height: 150px;">
+
+    <td>
+        <img src="@ShoppingList[Model][3]"
+             alt="" style="width: 150px;">
+    </td>
+    <td>
+        <h4 class="font-weight-bold" style="line-height: 150px;">@ShoppingList[Model][1]</h4>
+    </td>
+    <td>
+        <h4 style="text-align:center;line-height:130px">x @ShoppingList[Model][4]</h4>
+    </td>
+    <td>
+        <h5 style="line-height: 130px;">$ @ShoppingList[Model][2]</h5>
+    </td>
+</tr>

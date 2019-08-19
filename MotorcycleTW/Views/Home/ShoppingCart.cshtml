@@ -10,18 +10,22 @@
         <thead>
             <tr>
                 <th scope="col">
-                    <h1 id="total_price_title">$8,640</h1>
+                    <h1>@ShoppingList[0][0]</h1>
                     訂單總額
                 </th>
                 <th scope="col"></th>
-                <th scope="col">繼續選購</th>
-                <th scope="col"><button type="button" class="btn btn-dark">結帳</button></th>
+                <th scope="col">
+                    @Html.ActionLink("繼續選購", "StorePage", "Home", null)
+                </th>
+                <th scope="col">
+                    @Html.ActionLink("結帳", "BillPage", "Home", null, new { @class = "btn btn-dark" })
+                </th>
             </tr>
         </thead>
         @if(Session["shoppingCartViewModel"]!=null){
-            for(var i = 0; i < ShoppingList.Count(); i++) {
+            for(var i = 1; i < ShoppingList.Count(); i++) {
     <tbody>
-        @Html.Partial("ShoppingCartPartialView", i)
+            @Html.Partial("ShoppingCartPartialView", i)
         <tr>
             <td scope="col"></td>
             <td scope="col"></td>
@@ -35,10 +39,10 @@
             </td>
             <td scope="col">
                 <ul class="list-unstyled">
-                    <li><h4 id="price" class="font-weight-bold">$8,640</h4></li>
+                    <li><h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4></li>
                     <li><h4 id="delieve" class="font-weight-bold">$0</h4></li>
                     <li><h4 id="discount" class="font-weight-bold text-primary">-$0</h4></li>
-                    <li><h4 id="total_price" class="font-weight-bold">$8,640</h4></li>
+                    <li><h4 id="total_price" class="font-weight-bold">@ShoppingList[0][0]</h4></li>
                 </ul>
             </td>
         </tr>
@@ -84,9 +88,7 @@
     </div>
 </div>
 <script>
-    document.getElementById("price").innerHTML = "$@ShoppingList[0][2].ToString()";
-    document.getElementById("total_price_title").innerHTML = "$@ShoppingList[0][2].ToString()";
-    document.getElementById("total_price").innerHTML = "$@ShoppingList[0][2].ToString()";
+
     function bbc()
     {
         $(".form-horizontal").submit();

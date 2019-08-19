@@ -74,17 +74,21 @@ namespace MotorcycleTW.Controllers
             var Product_Picture = db.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault();
             if (Session["shoppingCartViewModel"] != null)
             {
+                decimal totalprice=0;
                 var ShoppingCartSession = (List<List<string>>)Session["shoppingCartViewModel"];
-                for(var i = 0; i < ShoppingCartSession.Count(); i++)
+                for(var i = 1; i < ShoppingCartSession.Count(); i++)
                 {
                     if (ShoppingCartSession[i][1] == productname)
                     {
                         ShoppingCartSession[i][2] = (member * a.p_unitprice).ToString();
+                        totalprice = decimal.Parse(ShoppingCartSession[i][2]) + totalprice;
                         ShoppingCartSession[i][4] = member.ToString();
+                        ShoppingCartSession[0][0] = "$" + totalprice.ToString();
                         Session["shoppingCartViewModel"] = ShoppingCartSession;
                     }
                     else if (ShoppingCartSession[i][1] != productname)
                     {
+                        totalprice = decimal.Parse(ShoppingCartSession[i][2]) + totalprice;
                         ShoppingCartSession.Add(new List<string>()
                         {
                             a.p_id.ToString(),//產品id
@@ -94,12 +98,14 @@ namespace MotorcycleTW.Controllers
                             member.ToString(),//產品數量
                             a.p_unitprice.ToString()//產品單價
                         });
+                        ShoppingCartSession[0][0] = "$" + totalprice.ToString();
                         Session["shoppingCartViewModel"] = ShoppingCartSession;
                     };
                 }
             }
             else {
                 List<List<string>> shoppingCartViewModel = new List<List<string>>();
+                shoppingCartViewModel.Add(new List<string>() { "0" });
                 shoppingCartViewModel.Add(new List<string>()
                 {
                     a.p_id.ToString(),//產品id
@@ -109,6 +115,7 @@ namespace MotorcycleTW.Controllers
                     member.ToString(),//產品數量
                     a.p_unitprice.ToString()//產品單價
                 });
+                shoppingCartViewModel[0][0] = "$"+shoppingCartViewModel[1][2];
                 Session["shoppingCartViewModel"] = shoppingCartViewModel;
             };
             //}
@@ -135,6 +142,22 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult BillPage()//結帳頁面
         {
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> BillPage(BillPageViewModel model)
+        {
+            var order = new Orders() { o_receiver = model.name, o_cellphonenumber = model.cellphonenumber, o_address = model.storecity + model.storename, o_email = model.email };
+            db.Orders.Add(order);
+            db.SaveChanges();
+            var shoppingCartViewModel = (List<List<string>>)Session["shoppingCartViewModel"];
+            for (var i = 0; i < shoppingCartViewModel.Count(); i++)
+            {
+                var orderdetail = new Order_Detail() { od_carnumber = model.car_number, od_carname = model.car_name, o_id = order.o_id, od_quantity = int.Parse(shoppingCartViewModel[i][4].ToString()), od_price = decimal.Parse(shoppingCartViewModel[i][2].ToString()) };
+                db.Order_Detail.Add(orderdetail);
+                db.SaveChanges();
+            }
             return View();
         }
         public ActionResult gogoromap()
