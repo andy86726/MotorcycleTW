@@ -64,24 +64,53 @@ namespace MotorcycleTW.Controllers
             //    return View("ShoppingCart");
             //}
             //else { 
-                var member = int.Parse(models.arrays[0].ToString());
-                var productname=models.arrays[1].ToString();
-                for(var i = 2; i < models.arrays.Length; i++)
+            var member = int.Parse(models.arrays[0].ToString());
+            var productname=models.arrays[1].ToString();
+            for(var i = 2; i < models.arrays.Length; i++)
+            {
+                productname = productname + models.arrays[i].ToString();
+            }
+            var a = db.Products.Where(x => x.p_name == productname).FirstOrDefault();
+            var Product_Picture = db.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault();
+            if (Session["shoppingCartViewModel"] != null)
+            {
+                var ShoppingCartSession = (List<List<string>>)Session["shoppingCartViewModel"];
+                for(var i = 0; i < ShoppingCartSession.Count(); i++)
                 {
-                    productname = productname + models.arrays[i].ToString();
+                    if (ShoppingCartSession[i][1] == productname)
+                    {
+                        ShoppingCartSession[i][2] = (member * a.p_unitprice).ToString();
+                        ShoppingCartSession[i][4] = member.ToString();
+                        Session["shoppingCartViewModel"] = ShoppingCartSession;
+                    }
+                    else if (ShoppingCartSession[i][1] != productname)
+                    {
+                        ShoppingCartSession.Add(new List<string>()
+                        {
+                            a.p_id.ToString(),//產品id
+                            a.p_name,//產品名
+                            (member * a.p_unitprice).ToString(),//產品總價
+                            Product_Picture.pp_path,//產品圖片
+                            member.ToString(),//產品數量
+                            a.p_unitprice.ToString()//產品單價
+                        });
+                        Session["shoppingCartViewModel"] = ShoppingCartSession;
+                    };
                 }
-                var a = db.Products.Where(x => x.p_name == productname).FirstOrDefault();
-                var Product_Picture = db.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault();
-                    List<string> shoppingCartViewModel = new List<string>()
+            }
+            else {
+                List<List<string>> shoppingCartViewModel = new List<List<string>>();
+                shoppingCartViewModel.Add(new List<string>()
                 {
                     a.p_id.ToString(),//產品id
                     a.p_name,//產品名
-                    (member*a.p_unitprice).ToString(),//產品總價
+                    (member * a.p_unitprice).ToString(),//產品總價
                     Product_Picture.pp_path,//產品圖片
                     member.ToString(),//產品數量
                     a.p_unitprice.ToString()//產品單價
-                };
+                });
                 Session["shoppingCartViewModel"] = shoppingCartViewModel;
+            };
             //}
             return View("ShoppingCart");
         }
