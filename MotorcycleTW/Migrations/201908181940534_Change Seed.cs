@@ -3,7 +3,7 @@ namespace MotorcycleTW.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class test : DbMigration
+    public partial class ChangeSeed : DbMigration
     {
         public override void Up()
         {
