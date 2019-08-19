@@ -140,6 +140,7 @@ namespace MotorcycleTW.Controllers
             };
             return View(shoppingCartViewModel);
         }
+        [Authorize]
         public ActionResult BillPage()//結帳頁面
         {
 

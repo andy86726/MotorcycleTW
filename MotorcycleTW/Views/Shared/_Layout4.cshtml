@@ -157,12 +157,15 @@
                         <h4>@Html.ActionLink("最新優惠", "SalesPage", "Home", null, new { @class = "h4", style = "text-decoration:none" })</h4>
                     </li>
                     <li>
+                        <h4>@Html.ActionLink("購物車", "ShoppingCart", "", null, new { @class = "h4", style = "text-decoration:none" })</h4>
+                    </li>
+                    <li>
                         @if (Request.IsAuthenticated)
                         {
-                            <div>
-                                <h4>@Html.ActionLink("會員管理", "MemberInfomation", "Account", null, new { @class = "h4", style = "text-decoration:none" })</h4>
-                                <h4>@Html.ActionLink("登出", "LogOff", "Account", null, new { @class = "h4", style = "text-decoration:none" })</h4>
-                            </div>
+                        <div>
+                            <h4>@Html.ActionLink("會員管理", "MemberInfomation", "Account", null, new { @class = "h4", style = "text-decoration:none" })</h4>
+                            <h4>@Html.ActionLink("登出", "LogOff", "Account", null, new { @class = "h4", style = "text-decoration:none" })</h4>
+                        </div>
                         }
                         else
                         {

@@ -10,7 +10,14 @@
         <thead>
             <tr>
                 <th scope="col">
+                    @if (Session["shoppingCartViewModel"] != null) { 
                     <h1>@ShoppingList[0][0]</h1>
+                    }
+                    else
+                    {
+                    <h1>$0</h1>
+
+                    }
                     訂單總額
                 </th>
                 <th scope="col"></th>
@@ -18,38 +25,63 @@
                     @Html.ActionLink("繼續選購", "StorePage", "Home", null)
                 </th>
                 <th scope="col">
-                    @Html.ActionLink("結帳", "BillPage", "Home", null, new { @class = "btn btn-dark" })
+                    @if (Session["shoppingCartViewModel"] != null)
+                    {
+                        @Html.ActionLink("結帳", "BillPage", "Home", null, new { @class = "btn btn-dark" })
+                    }
                 </th>
             </tr>
         </thead>
-        @if(Session["shoppingCartViewModel"]!=null){
-            for(var i = 1; i < ShoppingList.Count(); i++) {
-    <tbody>
-            @Html.Partial("ShoppingCartPartialView", i)
-        <tr>
-            <td scope="col"></td>
-            <td scope="col"></td>
-            <td scope="col">
-                <ul class="list-unstyled">
-                    <li><h4 class="font-weight-bold">商品金額</h4></li>
-                    <li><h4 class="font-weight-bold">運費(滿590免運)</h4></li>
-                    <li><h4 class="font-weight-bold text-primary">折扣</h4></li>
-                    <li><h4 class="font-weight-bold">訂單總額</h4></li>
-                </ul>
-            </td>
-            <td scope="col">
-                <ul class="list-unstyled">
-                    <li><h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4></li>
-                    <li><h4 id="delieve" class="font-weight-bold">$0</h4></li>
-                    <li><h4 id="discount" class="font-weight-bold text-primary">-$0</h4></li>
-                    <li><h4 id="total_price" class="font-weight-bold">@ShoppingList[0][0]</h4></li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
 
-            }   
-        }
+        <tbody>
+            @if (Session["shoppingCartViewModel"] != null)
+            {
+                for (var i = 1; i < ShoppingList.Count(); i++)
+                {
+                    @Html.Partial("ShoppingCartPartialView", i)
+                }   
+            }
+                    <tr>
+                        <td scope="col"></td>
+                        <td scope="col"></td>
+                        <td scope="col">
+                            <ul class="list-unstyled">
+                                <li><h4 class="font-weight-bold">商品金額</h4></li>
+                                <li><h4 class="font-weight-bold">運費(滿590免運)</h4></li>
+                                <li><h4 class="font-weight-bold text-primary">折扣</h4></li>
+                                <li><h4 class="font-weight-bold">訂單總額</h4></li>
+                            </ul>
+                        </td>
+                        <td scope="col">
+                            <ul class="list-unstyled">
+                                <li>
+                                    @if (Session["shoppingCartViewModel"] != null)
+                                    {
+                                        <h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4 id="price" class="font-weight-bold">$0</h4>
+                                    }
+                                </li>
+                                <li><h4 id="delieve" class="font-weight-bold">$0</h4></li>
+                                <li><h4 id="discount" class="font-weight-bold text-primary">-$0</h4></li>
+                                <li>
+                                    @if (Session["shoppingCartViewModel"] != null)
+                                    {
+                                        <h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4 id="price" class="font-weight-bold">$0</h4>
+                                    }
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+
+
     </table>
     <div style="margin-top: 150px;">
         <h1>Gogoro 車友最愛</h1>
