@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MotorcycleTW.Models;
 using MotorcycleTW.ViewModel;
 namespace MotorcycleTW.Controllers
@@ -106,7 +107,31 @@ namespace MotorcycleTW.Controllers
         }
         public ActionResult BillPage()//結帳頁面
         {
+            
             return View();
         }
+        [HttpPost]
+        public async Task<ActionResult> BillPage(BillPageViewModel model)
+        {
+            var shoppingCartViewModel = (List<string>)Session["shoppingCartViewModel"];
+            var order = new Orders() {o_receiver=model.name,o_cellphonenumber=model.cellphonenumber,o_address=model.storecity+model.storename,o_email=model.email };
+            db.Orders.Add(order);
+            db.SaveChanges();
+            var orderdetail = new Order_Detail() { od_carnumber = model.car_number, od_carname = model.car_name, o_id = order.o_id,od_quantity=int.Parse(shoppingCartViewModel[4].ToString()),od_price=decimal.Parse(shoppingCartViewModel[2].ToString()) };
+            db.Order_Detail.Add(orderdetail);
+            db.SaveChanges();
+
+            return View();
+        }
+        //private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
+        //{
+        //    string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+        //    var callbackUrl = Url.Action("ConfirmEmail", "Account",
+        //       new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+        //    await UserManager.SendEmailAsync(userID, subject,
+        //       "請按此<a href=\"" + callbackUrl + "\">連結</a>以驗證您的帳號 ");
+
+        //    return callbackUrl;
+        //}
     }
 }
