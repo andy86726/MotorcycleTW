@@ -7,29 +7,18 @@
 <div class="center">
     <h2 class="text-center">@ViewBag.Title</h2>
     <div class="inner">
-        <section id="loginForm">
+        <section  id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <div class="text-center">
-                    <a href="#" class="btn btn-solid-light-gray btn-facebook-login">
-                        <div class="layout-row">
-                            <div class="layout-cell">
-                                <img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png"
-                                     style="margin-right: 10px;" alt="">用 Facebook 登入
-                            </div>
-                        </div><!-- layout-table -->
-                    </a>
-                    <p style="margin:20px 0;">或</p>
-                </div>
-                <div class="input">
+                <div style="margin:0 0 0 60px" class="input">
                     @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                     <div class="">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="input">
+                <div style="margin:0 0 0 60px" class="input">
                     @Html.LabelFor(m => m.Password, new { @class = " control-label" })
                     <div class="">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })

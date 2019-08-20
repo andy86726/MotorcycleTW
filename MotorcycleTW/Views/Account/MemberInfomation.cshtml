@@ -21,12 +21,6 @@
     <div class="col-lg-7">
             <h3 class="first">會員資料</h3>
 
-            <div class="form-group">
-                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-                </div>
-            </div>
             <div class="form-group first-column col-lg-6">
                 <label for="LastName"><strong>姓氏</strong></label>
                 <input type="text" value="@member.m_lastName" class="form-control ng-pristine ng-valid ng-valid-special-char ng-valid-required ng-valid-maxlength ng-touched" id="LastName" ng-model="user.LastName" name="LastName" required="" special-char-validator="" maxlength="20" placeholder="請輸入你的姓氏">
@@ -109,50 +103,39 @@
                 <label for="Mobile"><strong>手機號碼</strong></label>
                 <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" id="Mobile" name="Mobile" ng-model="user.Mobile" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,10}$/" placeholder=" 請輸入手機號碼" value="@member.m_phone">
                 <div class="error-container ng-hide" ng-show="submitted">
-
-                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.minlength">
-                        手機號碼必需為十個數字
-                    </span>
-                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.maxlength">
-                        手機號碼必需為十個數字
-                    </span>
-                    <span class="help-block ng-hide" ng-show="frm.Mobile.$error.pattern">
-                        手機號碼的格式不正確
-                    </span>
                 </div>
             </div>
 
             <div class="form-group col-lg-6">
                 <label for="HomePhone"><strong>住家號碼</strong></label>
-                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="">
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="HomePhone" name="HomePhone" ng-model="user.HomePhone" placeholder="請輸入住家號碼" value="@member.m_zipcode">
             </div>
 
             <!-- Home address -->
             <div class="form-group col-lg-12">
                 <div class="form-group select-block">
                     <label class="block" for=""><strong>聯絡地址</strong></label>
+                </div>
+                <div class="form-group select-block">
+                    <label class="block" for="SelectCountry"><strong>國家</strong></label>
                     <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
                         <select ng-options="country.id as country.name for country in countries" ng-required="user.Address" name="SelectCountry" ng-model="temp.Country" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="台灣">台灣</option></select>
                     </span>
                 </div>
-
                 <div class="form-group select-block">
-                    <label class="block" for=""><strong></strong></label>
+                    <label class="block" for="SelectCity"><strong>縣市</strong></label>
                     <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
                         <select id="city" ng-required="user.Address" name="SelectCity" ng-change="cityOnSelected(temp.City)" ng-options="city.Id as city.ChineseName for city in cities" ng-model="temp.City" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="基隆市">基隆市</option><option value="1" label="臺北市">臺北市</option><option value="2" selected="selected" label="新北市">新北市</option><option value="3" label="桃園市">桃園市</option><option value="4" label="新竹市">新竹市</option><option value="5" label="新竹縣">新竹縣</option><option value="6" label="苗栗縣">苗栗縣</option><option value="7" label="臺中市">臺中市</option><option value="8" label="彰化縣">彰化縣</option><option value="9" label="南投縣">南投縣</option><option value="10" label="雲林縣">雲林縣</option><option value="11" label="嘉義市">嘉義市</option><option value="12" label="嘉義縣">嘉義縣</option><option value="13" label="臺南市">臺南市</option><option value="14" label="高雄市">高雄市</option><option value="15" label="屏東縣">屏東縣</option><option value="16" label="臺東縣">臺東縣</option><option value="17" label="花蓮縣">花蓮縣</option><option value="18" label="宜蘭縣">宜蘭縣</option><option value="19" label="澎湖縣">澎湖縣</option><option value="20" label="金門縣">金門縣</option><option value="21" label="連江縣">連江縣</option></select>
                     </span>
                 </div>
 
                 <div class="form-group select-block">
-                    <label class="block" for=""><strong></strong></label>
+                    <label class="block" for="SelectDistrict"><strong>地區</strong></label>
                     <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
                         <select ng-change="districtOnSelected(temp.City,temp.District)" ng-required="user.Address" name="SelectDistrict" ng-options="district.Id as district.ChineseName for district in districts" ng-model="temp.District" class="ng-pristine ng-untouched ng-valid ng-valid-required" required="required"><option value="" class="">請選擇</option><option value="0" label="萬里區">萬里區</option><option value="1" label="金山區">金山區</option><option value="2" label="板橋區">板橋區</option><option value="3" selected="selected" label="汐止區">汐止區</option><option value="4" label="深坑區">深坑區</option><option value="5" label="石碇區">石碇區</option><option value="6" label="瑞芳區">瑞芳區</option><option value="7" label="平溪區">平溪區</option><option value="8" label="雙溪區">雙溪區</option><option value="9" label="貢寮區">貢寮區</option><option value="10" label="新店區">新店區</option><option value="11" label="坪林區">坪林區</option><option value="12" label="烏來區">烏來區</option><option value="13" label="永和區">永和區</option><option value="14" label="中和區">中和區</option><option value="15" label="土城區">土城區</option><option value="16" label="三峽區">三峽區</option><option value="17" label="樹林區">樹林區</option><option value="18" label="鶯歌區">鶯歌區</option><option value="19" label="三重區">三重區</option><option value="20" label="新莊區">新莊區</option><option value="21" label="泰山區">泰山區</option><option value="22" label="林口區">林口區</option><option value="23" label="蘆洲區">蘆洲區</option><option value="24" label="五股區">五股區</option><option value="25" label="八里區">八里區</option><option value="26" label="淡水區">淡水區</option><option value="27" label="三芝區">三芝區</option><option value="28" label="石門區">石門區</option></select>
                     </span>
                 </div>
-                <div class="form-group select-block">
-                    <label class="block" for="ZipCode"><strong></strong> <span class="optional">(自動産生)</span></label>
-                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="ZipCode" readonly="" ng-model="temp.ZipCode" placeholder="區碼">
-                </div>
+
                 <div class="form-group select-block">
                     <label class="block" for=""><strong></strong></label>
                     <span class="gogoro-select gogoro-select--xs-100 ng-isolate-scope" gogoro-select="">
@@ -160,17 +143,7 @@
                     </span>
                 </div>
                 <input type="text" class="form-control" id="Address" name="Address" ng-mode="user.Address" value="明峰街111號12樓" placeholder="請輸入住家地址">
-                <div class="error-container ng-hide" ng-show="submitted">
-                    <span class="help-block ng-hide" ng-show="frm.SelectCountry.$error.required">
-                        請選擇國家
-                    </span>
-                    <span class="help-block ng-hide" ng-show="frm.SelectCity.$error.required">
-                        請選擇縣市
-                    </span>
-                    <span class="help-block ng-hide" ng-show="frm.SelectDistrict.$error.required">
-                        請選擇地區
-                    </span>
-                </div>
+                
             </div>
 
             <div class="form-group col-lg-12">
@@ -214,39 +187,10 @@
             <div class="form-group col-lg-12">
                 <label for="NewConfimPassword"><strong>確認新密碼</strong></label>
                 <input type="password" class="form-control ng-pristine ng-untouched ng-valid ng-valid-minlength ng-valid-maxlength" id="NewConfimPassword" name="NewConfimPassword" ng-minlength="8" ng-maxlength="20" ng-model="newConfimPassword" placeholder="請輸入確認新密碼">
-                <div class="error-container ng-hide" ng-show="submitted">
-                    <span class="help-block ng-hide" ng-show="frm.NewConfimPassword.$error.minlength">
-                        請輸入最少8以及最多20個數字的密碼
-                    </span>
-                    <span class="help-block ng-hide" ng-show="frm.NewConfimPassword.$error.maxlength">
-                        請輸入最少8以及最多20個數字的密碼
-                    </span>
-                </div>
+
             </div>
 
-            <h3 class="col-lg-12">社群平台連結</h3>
-            <div class="form-group col-lg-12">
-
-                <p class="facebook-notice">立即與<span class="graphik-light">Facebook</span>帳號連結，體驗最完整的<span class="graphik-light">Gogoro</span>樂趣。在沒有您的同意下，我們保證不會張貼任何東西到<span class="graphik-light">Facebook</span>個人頁面。</p>
-
-                <a ng-click="facebookLinkConnect(); $event.preventDefault();" ng-show="facebookLink==0" href="#" class="btn btn-solid-light-gray btn-facebook-login">
-                    <div class="layout-table">
-                        <div class="layout-row">
-                            <div class="layout-cell"><img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png" alt=""></div>
-                            <div class="layout-cell vbottom">跟<span class="graphik-semibold">Facebook</span>帳戶連結</div>
-                        </div>
-                    </div><!-- layout-table -->
-                </a>
-                <a ng-click="$event.preventDefault();" ng-show="facebookLink==1" href="#" class="btn btn-solid-light-gray btn-facebook-login ng-hide">
-                    <div class="layout-table">
-                        <div class="layout-row">
-                            <div class="layout-cell"><img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png" alt=""></div>
-                            <div class="layout-cell vbottom"><span class="graphik-semibold ng-binding"></span></div>
-                        </div>
-                    </div><!-- layout-table -->
-                </a>
-                <a ng-show="facebookLink==1" ng-click="facebookUnlinkConnect();$event.preventDefault();" class="btn btn-text-gray ng-hide">取消連結</a>
-            </div>
+            
     </div>
     <div class="col-lg-5">
         <div class="aside-inner-container">

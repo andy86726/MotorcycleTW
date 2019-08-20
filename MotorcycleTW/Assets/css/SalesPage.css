@@ -1,0 +1,31 @@
+﻿.btn-dark:hover {
+    background: #fff;
+    color: #000;
+    border: 2px solid;
+}
+
+/* .main-menu li:hover{
+            background: #6981cb;
+        } */
+.infinity-icon {
+    background: url(image/Store016.png) center no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    /* border: 1.5px solid;
+            border-radius: 30px; */
+    color: #323237;
+}
+
+.nav-item {
+    padding: 0;
+}
+
+    .nav-item a {
+        padding: 0;
+    }
+
+        .nav-item a:hover {
+            background: #007bff;
+        }

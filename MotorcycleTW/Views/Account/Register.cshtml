@@ -16,17 +16,6 @@
         @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
-            <div class="text-center">
-                <a href="#" class="btn btn-solid-light-gray btn-facebook-login">
-                    <div class="layout-row">
-                        <div class="layout-cell">
-                            <img src="//images.gogoroapp.com/my-gogoro/facebook-login-icon.png"
-                                 style="margin-right: 10px;" alt="">用 Facebook 註冊
-                        </div>
-                    </div><!-- layout-table -->
-                </a>
-                <p style="margin:20px 0;">或</p>
-            </div>
 
 
             @Html.ValidationSummary("", new { @class = "text-danger" })

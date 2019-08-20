@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using MotorcycleTW.Models;
 using MotorcycleTW.ViewModel;
 namespace MotorcycleTW.Controllers
@@ -65,24 +64,60 @@ namespace MotorcycleTW.Controllers
             //    return View("ShoppingCart");
             //}
             //else { 
-                var member = int.Parse(models.arrays[0].ToString());
-                var productname=models.arrays[1].ToString();
-                for(var i = 2; i < models.arrays.Length; i++)
+            var member = int.Parse(models.arrays[0].ToString());
+            var productname=models.arrays[1].ToString();
+            for(var i = 2; i < models.arrays.Length; i++)
+            {
+                productname = productname + models.arrays[i].ToString();
+            }
+            var a = db.Products.Where(x => x.p_name == productname).FirstOrDefault();
+            var Product_Picture = db.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault();
+            if (Session["shoppingCartViewModel"] != null)
+            {
+                decimal totalprice=0;
+                var ShoppingCartSession = (List<List<string>>)Session["shoppingCartViewModel"];
+                for(var i = 1; i < ShoppingCartSession.Count(); i++)
                 {
-                    productname = productname + models.arrays[i].ToString();
+                    if (ShoppingCartSession[i][1] == productname)
+                    {
+                        ShoppingCartSession[i][2] = (member * a.p_unitprice).ToString();
+                        totalprice = decimal.Parse(ShoppingCartSession[i][2]) + totalprice;
+                        ShoppingCartSession[i][4] = member.ToString();
+                        ShoppingCartSession[0][0] = "$" + totalprice.ToString();
+                        Session["shoppingCartViewModel"] = ShoppingCartSession;
+                    }
+                    else if (ShoppingCartSession[i][1] != productname)
+                    {
+                        totalprice = decimal.Parse(ShoppingCartSession[i][2]) + totalprice;
+                        ShoppingCartSession.Add(new List<string>()
+                        {
+                            a.p_id.ToString(),//產品id
+                            a.p_name,//產品名
+                            (member * a.p_unitprice).ToString(),//產品總價
+                            Product_Picture.pp_path,//產品圖片
+                            member.ToString(),//產品數量
+                            a.p_unitprice.ToString()//產品單價
+                        });
+                        ShoppingCartSession[0][0] = "$" + totalprice.ToString();
+                        Session["shoppingCartViewModel"] = ShoppingCartSession;
+                    };
                 }
-                var a = db.Products.Where(x => x.p_name == productname).FirstOrDefault();
-                var Product_Picture = db.Product_Picture.Where(x => x.p_id == a.p_id).FirstOrDefault();
-                    List<string> shoppingCartViewModel = new List<string>()
+            }
+            else {
+                List<List<string>> shoppingCartViewModel = new List<List<string>>();
+                shoppingCartViewModel.Add(new List<string>() { "0" });
+                shoppingCartViewModel.Add(new List<string>()
                 {
                     a.p_id.ToString(),//產品id
                     a.p_name,//產品名
-                    (member*a.p_unitprice).ToString(),//產品總價
+                    (member * a.p_unitprice).ToString(),//產品總價
                     Product_Picture.pp_path,//產品圖片
                     member.ToString(),//產品數量
                     a.p_unitprice.ToString()//產品單價
-                };
+                });
+                shoppingCartViewModel[0][0] = "$"+shoppingCartViewModel[1][2];
                 Session["shoppingCartViewModel"] = shoppingCartViewModel;
+            };
             //}
             return View("ShoppingCart");
         }
@@ -105,33 +140,30 @@ namespace MotorcycleTW.Controllers
             };
             return View(shoppingCartViewModel);
         }
+        [Authorize]
         public ActionResult BillPage()//結帳頁面
         {
-            
+
             return View();
         }
         [HttpPost]
         public async Task<ActionResult> BillPage(BillPageViewModel model)
         {
-            var shoppingCartViewModel = (List<string>)Session["shoppingCartViewModel"];
-            var order = new Orders() {o_receiver=model.name,o_cellphonenumber=model.cellphonenumber,o_address=model.storecity+model.storename,o_email=model.email };
+            var order = new Orders() { o_receiver = model.name, o_cellphonenumber = model.cellphonenumber, o_address = model.storecity + model.storename, o_email = model.email };
             db.Orders.Add(order);
             db.SaveChanges();
-            var orderdetail = new Order_Detail() { od_carnumber = model.car_number, od_carname = model.car_name, o_id = order.o_id,od_quantity=int.Parse(shoppingCartViewModel[4].ToString()),od_price=decimal.Parse(shoppingCartViewModel[2].ToString()) };
-            db.Order_Detail.Add(orderdetail);
-            db.SaveChanges();
-
+            var shoppingCartViewModel = (List<List<string>>)Session["shoppingCartViewModel"];
+            for (var i = 0; i < shoppingCartViewModel.Count(); i++)
+            {
+                var orderdetail = new Order_Detail() { od_carnumber = model.car_number, od_carname = model.car_name, o_id = order.o_id, od_quantity = int.Parse(shoppingCartViewModel[i][4].ToString()), od_price = decimal.Parse(shoppingCartViewModel[i][2].ToString()) };
+                db.Order_Detail.Add(orderdetail);
+                db.SaveChanges();
+            }
             return View();
         }
-        //private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
-        //{
-        //    string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-        //    var callbackUrl = Url.Action("ConfirmEmail", "Account",
-        //       new { userId = userID, code = code }, protocol: Request.Url.Scheme);
-        //    await UserManager.SendEmailAsync(userID, subject,
-        //       "請按此<a href=\"" + callbackUrl + "\">連結</a>以驗證您的帳號 ");
-
-        //    return callbackUrl;
-        //}
+        public ActionResult gogoromap()
+        {
+            return View();
+        }
     }
 }

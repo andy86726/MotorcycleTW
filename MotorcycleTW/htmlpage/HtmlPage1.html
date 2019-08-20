@@ -1,0 +1,85 @@
+﻿<html>
+
+<head>
+
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    <link rel="stylesheet" type="text/css"
+          href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-places.js"
+            type="text/javascript" charset="utf-8"></script>
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="right_panel_background">
+    </div>
+
+    <div id="mapContainer"></div>
+
+    <script>
+        var hidpi = ('devicePixelRatio' in window && devicePixelRatio > 1);
+
+        var platform = new H.service.Platform({
+            'apikey': '2wPaUPxIopyEz1O9ptExwb5GomRGxbg0KuFG1IZqy5g'
+        });
+
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers(hidpi ? 512 : 256, hidpi ? 320 : null);
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.terrain.base,
+            {
+
+                center: { lng: 121.4, lat: 23.1 },
+                zoom: 7
+            });
+
+        //設定縮放按鈕位置
+        var ui = H.ui.UI.createDefault(map, defaultLayers);
+        ui.getControl('zoom').setAlignment('bottom-center');
+        ui.getControl('scalebar').setAlignment('bottom-center');
+        ui.getControl('mapsettings').setAlignment('bottom-center');
+        //滾輪縮放
+        var mapBehavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+        //地圖上的點
+
+        //搜尋
+        $.ajax({
+
+            type: "get",
+            url: "https://wapi.gogoro.com/tw/api/vm/list",
+            dataType: "json",
+            success: function (response) {
+
+                for (var i of response.data) {
+
+                    var midMarker = new H.map.Marker(
+                        {
+                            lat: i.Latitude,
+                            lng: i.Longitude,
+                        }); map.addObject(midMarker); console.log(midMarker);
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "shopcarlist";
-    var session = (List<string>)Session["shoppingCartViewModel"];
+    var ShoppingList = (List<List<string>>)Session["shoppingCartViewModel"];
 }
 
 <div class="container">
@@ -12,7 +12,7 @@
         <thead>
             <tr>
                 <th scope="col">
-                    <h1>$8,640</h1>
+                    <h1>@ShoppingList[0][0]</h1>
                     訂單總額
                 </th>
                 <th scope="col"></th>
@@ -21,23 +21,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr style="height: 150px;">
-
-                <td>
-                    <img src="//images.gogoroapp.com/store/upload/product/g2_pebble_windshield_black_medium.jpg"
-                         alt="" style="width: 150px;">
-                </td>
-                <td>
-                    <h4 class="font-weight-bold" style="line-height: 150px;">PEBBLE 多功能風鏡 V2 - VIGORPLUS</h4>
-                </td>
-                <td>
-                    <h4 style="text-align:center;line-height:130px">x1</h4>
-                </td>
-                <td>
-                    <h5 style="line-height: 130px;">$8,640</h5>
-                </td>
-            </tr>
-
+            @for (var i = 1; i < ShoppingList.Count(); i++) {
+                @Html.Partial("BillPagePartialView",i)
+            }
             <tr>
                 <td scope="col"></td>
                 <td scope="col"></td>
@@ -60,7 +46,7 @@
                 <td scope="col">
                     <ul class="list-unstyled">
                         <li>
-                            <h4 class="font-weight-bold">$8,640</h4>
+                            <h4 class="font-weight-bold">@ShoppingList[0][0]</h4>
                         </li>
                         <li>
                             <h4 class="font-weight-bold">$0</h4>
@@ -69,7 +55,7 @@
                             <h4 class="font-weight-bold text-primary">-$0</h4>
                         </li>
                         <li>
-                            <h4 class="font-weight-bold">$8,640</h4>
+                            <h4 class="font-weight-bold">@ShoppingList[0][0]</h4>
                         </li>
                     </ul>
                 </td>
@@ -80,7 +66,7 @@
     <div class="ml-auto">
 
     </div>
-
+    </div>
     <div>
         <h1>2.訂購資料</h1>
         <div>
@@ -138,7 +124,7 @@
         </div>
             }
         </div>
-
+        </div>
         <script>
             $("#hiddenshoplist").click(function () {
                 $("#shoplist").toggle(200000);

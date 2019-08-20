@@ -1,8 +1,7 @@
-﻿@model MotorcycleTW.ViewModel.StorePageViewModels
+﻿
 @{
-    ViewBag.Title = "StorePage_Product";
+    ViewBag.Title = "shopya";
 }
-
 
 
 <div class="container-fluid">
@@ -13,27 +12,25 @@
         <div class="col-5" style="">
 
             <ul class="list-unstyled">
-                <li><h1 id="titlename">後置物架＆行李箱組</h1></li>
+                <li><h1>後置物架＆行李箱組</h1></li>
                 <li><h3>$4,680</h3></li>
                 <li><h3 class="font-weight-light">GA009-PB0-02</h3></li>
-                <li>
-                    @using (Html.BeginForm("StorePage_Product", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        <div class="d-flex flex-row">
-                            <div class="form-group row" style="display:flex; margin:0;">
-                                <div class="col-lg-4" style="margin:0; padding:10px 0; text-align:center;">
-                                    <select style=" margin-right:10px;height:100%; background:#ddd; border:1px solid #ddd; border-radius:15px;" name="arrays" id="arrays" onchange="bbc()">
-                                        <option>請選擇</option>
-                                        <option value="1後置物架＆行李箱組">1</option>
-                                        <option value="2後置物架＆行李箱組">2</option>
-                                        <option value="3後置物架＆行李箱組">3</option>
-                                    </select>
-                                </div>
+                <div class="d-flex flex-row">
+                    <div class="input-group" style="width: 30%;">
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">購買數量</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+
                             </div>
-                            <input type="submit" value="加入購物車" class="btn btn-dark" onclick="bbc()" />
                         </div>
-                    }
-                </li>
+                    </div>
+                    <button type="button" class="btn btn-dark">加入購物車</button>
+
+                </div>
                 <li class="pt-4"><h4 class="text-danger border-top border-dark">本配件需至您所指定之門市領取或安裝，並酌收安裝工資費。</h4></li>
             </ul>
         </div>
@@ -69,10 +66,3 @@
     </div>
 
 </div>
-@*<script>
-    function bbc() {
-        var a = $("#ShoppingmeMber").val()
-        document.getElementById(ShoppingmeMber).val()=
-        //location.replace("https://localhost:44388/Home/ShoppingCart");
-    };
-</script>*@

@@ -6,25 +6,14 @@ using System.Web.Mvc;
 
 namespace MotorcycleTW.Controllers
 {
-    public class MotoPageController : Controller
+    public class ShopController : Controller
     {
-        // GET: MotoPage
+        // GET: Shop
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult design()
-        {
-            return View();
-        }
-        public ActionResult spec()
-        {
-            return View();
-        }
-
-
-        public ActionResult Plus1()
+        public ActionResult makecar()
         {
             return View();
         }
