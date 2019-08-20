@@ -20,12 +20,17 @@
     <style>
         body {
             font-family: 'Microsoft JhengHei';
+            padding:0;
+        }
+        ul li h4 {
+            margin:0;
+            line-height:60px;
         }
     </style>
     <header>
         <div>
-            <div class="container">
-                <ul class="d-flex justify-content-around mb-3" style="list-style:none;height: 60px;">
+            <div class="container" style="padding:0;">
+                <ul class="d-flex justify-content-around mb-0" style="list-style:none;height: 60px; padding:0; ">
                     <li>
                         <h4>Gogoro</h4>
                     </li>
@@ -48,7 +53,7 @@
                         <h4>預約試騎</h4>
                     </li>
                     <li>
-                        <h4>@Html.ActionLink("登入", "Login", "Account", null, new { @class = "text-dark", style = "text-decoration:none" })</h4>
+                        <h4>@Html.ActionLink("登入", "Login", "Account", null, new { @class = "text-light", style = "text-decoration:none" })</h4>
                     </li>
                 </ul>
             </div>
@@ -56,12 +61,12 @@
     </header>
     <div>
         <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
+        <main role="main" class="">
             @RenderBody()
         </main>
     </div>
 
-    @*<footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted">
         <div class="p-3 mb-2 bg-secondary text-white">
             <div class="container my-5">
                 <div class="d-flex justify-content-around text-white">
@@ -107,7 +112,7 @@
                 </div>
             </div>
         </div>
-    </footer>*@
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
             asp-fallback-src="~/lib/jquery/dist/jquery.min.js"

@@ -18,7 +18,7 @@ namespace MotorcycleTW.Models
         public int o_id { get; set; }
 
         public DateTime? o_date { get; set; }
-
+        public string o_name { get; set; }
         public string o_receiver { get; set; }
 
         public int? o_cellphonenumber { get; set; }

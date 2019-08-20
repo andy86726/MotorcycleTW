@@ -1,0 +1,38 @@
+﻿@model int
+@{
+    var ShoppingList = (List<List<string>>)Session["shoppingCartViewModel"];
+ }
+<tr style="height: 150px;">
+
+    <td>
+        <img src="@ShoppingList[Model][3]"
+             alt="" style="width: 150px;">
+    </td>
+    <td>
+        <h4 class="font-weight-bold" style="line-height: 150px;">@ShoppingList[Model][1]</h4>
+    </td>
+    <td>
+        @using (Html.BeginForm("StorePage_Product", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <select id="member_@ShoppingList[Model][1]" name="arrays" style=" width:70px;border-radius:10px;" class="mt-5 " onchange="bbc()">
+                <option value="1後置物架＆行李箱組">1</option>
+                <option value="2後置物架＆行李箱組">2</option>
+                <option value="3後置物架＆行李箱組">3</option>
+                <option value="4後置物架＆行李箱組">4</option>
+                <option value="5後置物架＆行李箱組">5</option>
+            </select>
+        }
+    </td>
+    <td>
+        <h5 class="product_price" style="line-height: 130px;">$@ShoppingList[Model][2]</h5>
+    </td>
+</tr>
+<script>
+    var a = document.getElementById("member_@ShoppingList[Model][1]");
+    var b = a.getElementsByTagName("option");
+    b[@int.Parse(ShoppingList[Model][4])-1].selected = true;
+    function bbc()
+    {
+        $(".form-horizontal").submit();
+    }
+</script>

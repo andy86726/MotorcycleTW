@@ -10,10 +10,11 @@ namespace MotorcycleTW.Models
     {
         [Key]
         public int od_id { get; set; }
-
         public int? od_quantity { get; set; }
-
+        public string od_carnumber { get; set; }
+        public string od_carname { get; set; }
         public float? od_discount { get; set; }
+        public decimal? od_price { get; set; }
 
         public int? o_id { get; set; }
 

@@ -1,6 +1,6 @@
-﻿@model MotorcycleTW.ViewModel.ShoppingCartViewModel
+﻿@model MotorcycleTW.ViewModel.StorePageViewModels
 @{
-    var ShoppingList = (List<string>)Session["shoppingCartViewModel"];
+    var ShoppingList = (List<List<string>>)Session["shoppingCartViewModel"];
     ViewBag.Title = "shopcar1";
 }
 
@@ -10,64 +10,78 @@
         <thead>
             <tr>
                 <th scope="col">
-                    <h1>$8,640</h1>
+                    @if (Session["shoppingCartViewModel"] != null) { 
+                    <h1>@ShoppingList[0][0]</h1>
+                    }
+                    else
+                    {
+                    <h1>$0</h1>
+
+                    }
                     訂單總額
                 </th>
                 <th scope="col"></th>
-                <th scope="col">繼續選購</th>
-                <th scope="col"><button type="button" class="btn btn-dark">結帳</button></th>
+                <th scope="col">
+                    @Html.ActionLink("繼續選購", "StorePage", "Home", null)
+                </th>
+                <th scope="col">
+                    @if (Session["shoppingCartViewModel"] != null)
+                    {
+                        @Html.ActionLink("結帳", "BillPage", "Home", null, new { @class = "btn btn-dark" })
+                    }
+                </th>
             </tr>
         </thead>
-        @if(Session["shoppingCartViewModel"]!=null){
+
         <tbody>
-            <tr style="height: 150px;">
+            @if (Session["shoppingCartViewModel"] != null)
+            {
+                for (var i = 1; i < ShoppingList.Count(); i++)
+                {
+                    @Html.Partial("ShoppingCartPartialView", i)
+                }   
+            }
+                    <tr>
+                        <td scope="col"></td>
+                        <td scope="col"></td>
+                        <td scope="col">
+                            <ul class="list-unstyled">
+                                <li><h4 class="font-weight-bold">商品金額</h4></li>
+                                <li><h4 class="font-weight-bold">運費(滿590免運)</h4></li>
+                                <li><h4 class="font-weight-bold text-primary">折扣</h4></li>
+                                <li><h4 class="font-weight-bold">訂單總額</h4></li>
+                            </ul>
+                        </td>
+                        <td scope="col">
+                            <ul class="list-unstyled">
+                                <li>
+                                    @if (Session["shoppingCartViewModel"] != null)
+                                    {
+                                        <h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4 id="price" class="font-weight-bold">$0</h4>
+                                    }
+                                </li>
+                                <li><h4 id="delieve" class="font-weight-bold">$0</h4></li>
+                                <li><h4 id="discount" class="font-weight-bold text-primary">-$0</h4></li>
+                                <li>
+                                    @if (Session["shoppingCartViewModel"] != null)
+                                    {
+                                        <h4 id="price" class="font-weight-bold">@ShoppingList[0][0]</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4 id="price" class="font-weight-bold">$0</h4>
+                                    }
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
 
-                <td>
-                    <img src="@ShoppingList[3]"
-                         alt="" style="width: 150px;">
-                </td>
-                <td>
-                    <h4 class="font-weight-bold" style="line-height: 150px;">@ShoppingList[1]</h4>
-                </td>
-                <td>
-                    @using (Html.BeginForm("StorePage_Product", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        <select id="member" name="arrays" style=" width:70px;border-radius:10px;" class="mt-5 " onchange="bbc()">
-                            <option value="1後置物架＆行李箱組">1</option>
-                            <option value="2後置物架＆行李箱組">2</option>
-                            <option value="3後置物架＆行李箱組">3</option>
-                            <option value="4後置物架＆行李箱組">4</option>
-                            <option value="5後置物架＆行李箱組">5</option>
-                        </select>
-                    }
-                </td>
-                <td>
-                    <h5 class="product_price" style="line-height: 130px;">$@ShoppingList[2]</h5>
-                </td>
-            </tr>
 
-            <tr>
-                <td scope="col"></td>
-                <td scope="col"></td>
-                <td scope="col">
-                    <ul class="list-unstyled">
-                        <li><h4 class="font-weight-bold">商品金額</h4></li>
-                        <li><h4 class="font-weight-bold">運費(滿590免運)</h4></li>
-                        <li><h4 class="font-weight-bold text-primary">折扣</h4></li>
-                        <li><h4 class="font-weight-bold">訂單總額</h4></li>
-                    </ul>
-                </td>
-                <td scope="col">
-                    <ul class="list-unstyled">
-                        <li><h4 id="price" class="font-weight-bold">$8,640</h4></li>
-                        <li><h4 class="font-weight-bold">$0</h4></li>
-                        <li><h4 class="font-weight-bold text-primary">-$0</h4></li>
-                        <li><h4 class="font-weight-bold">$8,640</h4></li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-        }
     </table>
     <div style="margin-top: 150px;">
         <h1>Gogoro 車友最愛</h1>
@@ -106,11 +120,9 @@
     </div>
 </div>
 <script>
-    var a = document.getElementById("member");
-    var b = a.getElementsByTagName("option");
-    b[@int.Parse(ShoppingList[4])-1].selected = true;
+
     function bbc()
-    {    
+    {
         $(".form-horizontal").submit();
     }
 </script>
