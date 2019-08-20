@@ -11,20 +11,71 @@
             width:1110px;
             margin:auto;
         }
-        .store ul {
-            display:flex;
-            margin:0;
-            padding:0;
+        .store .qwert {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            border-right: 2px solid #e0e2e3;
         }
-            .store ul li {
+            .store ul .q {
+                position: relative;
+                display: block;
                 font-size: 18px;
                 list-style: none;
                 justify-content: space-around;
                 height: 119px;
                 line-height: 119px;
                 width: 20%;
-                text-align:center;
-                
+                text-align: center;
+                border-left: 2px solid #e0e2e3;
+            }
+            .store ul .w {
+                position: relative;
+                display: block;
+                font-size: 18px;
+                list-style: none;
+                justify-content: space-around;
+                height: 119px;
+                line-height: 119px;
+                width: 20%;
+                text-align: center;
+                border-left: 2px solid #e0e2e3;
+            }
+            .store ul .e {
+                position: relative;
+                display: block;
+                font-size: 18px;
+                list-style: none;
+                justify-content: space-around;
+                height: 119px;
+                line-height: 119px;
+                width: 20%;
+                text-align: center;
+                border-left: 2px solid #e0e2e3;
+            }
+            .store ul .r {
+                position: relative;
+                display: block;
+                font-size: 18px;
+                list-style: none;
+                justify-content: space-around;
+                height: 119px;
+                line-height: 119px;
+                width: 20%;
+                text-align: center;
+                border-left: 2px solid #e0e2e3;
+            }
+            .store ul .t {
+                position: relative;
+                display: block;
+                font-size: 18px;
+                list-style: none;
+                justify-content: space-around;
+                height: 119px;
+                line-height: 119px;
+                width: 20%;
+                text-align: center;
+                border-left: 2px solid #e0e2e3;
             }
                 
                 .store ul li a {
@@ -41,20 +92,115 @@
                 background: #00D7FF;
                 text-decoration: none;
             }
-            .store ul .e a:hover {
+            .store ul .e .ee:hover {
                 color: #fff;
                 background: #28e1a5;
                 text-decoration: none;
             }
-            .store ul .r a:hover {
+        .store ul .e a:hover {
+            text-decoration: none;
+            font-weight: 700;
+        }
+            .store ul .r .rr:hover {
                 color: #fff;
                 background: #00b946;
                 text-decoration: none;
             }
-            .store ul .t a:hover {
+        .store ul .r a:hover {
+            text-decoration: none;
+            font-weight: 700;
+        }
+            .store ul .t .tt:hover {
                 color: #fff;
                 background: #c0df16;
                 text-decoration: none;
+            }
+        .store ul .t a:hover {
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        
+        
+
+        .StoreNav-subCategory1 {
+            display: none;
+            position: absolute;
+            right: -1px;
+            width: 590px;
+            z-index: 9;
+        }
+        .StoreNav-subCategory2 {
+            display: none;
+            position: absolute;
+            right: -1px;
+            width: 590px;
+            z-index: 9;
+        }
+        .StoreNav-subCategory3 {
+            display: none;
+            position: absolute;
+            right: -1px;
+            width: 590px;
+            z-index: 9;
+        }
+
+        .StoreNav-focusWrap {
+            display: inline-block;
+            width: 358px;
+            min-height: 462px;
+            padding: 38px;
+            background-color: #e3e4e4;
+            text-align: center;
+        }
+        .StoreNav-focusTitle {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0 0 22px;
+        }
+        .StoreNav-focusPro {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .StoreNav-focusLink {
+            display: block;
+            width: 50%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            color: #323237;
+            text-decoration: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .StoreNav-focusInfo {
+            font-size: 12px;
+            line-height: 18px;
+            height: 35px;
+            margin: 2px 0 0;
+        }
+        .StoreNav-proCategory {
+            width: 232px;
+            padding: 38px;
+            background-color: #d7d9d9;
+        }
+        .store .StoreNav-categoryLists {
+            display:block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .store .StoreNav-categoryLists li {
+            width: auto;
+            height:20px;
+            margin-bottom: 6px;
+            line-height:1;
+        }
+            .store .StoreNav-categoryLists a {
+                height: 20px;
+                width: auto;
+                margin-bottom: 6px;
             }
 
         .a {
@@ -195,12 +341,28 @@
 
 <nav class="StoreNav">
     <div class="store">
-            <ul>
-                <li class="q"><a href="#"><div class="StoreNav-iconWrap"><span class="StoreNav-icon"></span><span>網路商店</span></div></a></li>
+            <ul class="qwert">
+                <li class="q">
+                    <a href="#">
+                        <div class="StoreNav-iconWrap">
+                            <span class="StoreNav-icon"></span>
+                            <span>網路商店</span>
+                        </div>
+                    </a>
+                </li>
                 <li class="w"><a href="#">成為車主</a></li>
-                <li class="e"><a href="#">改造愛車</a></li>
-                <li class="r"><a href="#">穿搭潮流</a></li>
-                <li class="t"><a href="#">更多服務</a></li>
+                <li class="e">
+                    <a href="#" class="ee">改造愛車</a>
+                    <div class="StoreNav-subCategory1"><div class="StoreNav-focusWrap"><h3 class="StoreNav-focusTitle">焦點商品</h3><div class="StoreNav-focusPro"><a class="StoreNav-focusLink" href="/tw/store/product/47f09483-67f8-4dfe-b639-b8a637f65721"><img src="//images.gogoroapp.com/store/upload/product/20181031_handle_bar_basic_medium.jpg" alt="金屬裸把＆金屬裸把座"><p class="StoreNav-focusInfo">金屬裸把＆金屬裸把座</p></a><a class="StoreNav-focusLink" href="/tw/store/product/eb01e3b2-0aee-4b98-80aa-0ca1a6537037"><img src="//images.gogoroapp.com/store/upload/product/20181031_shad_trunk_basic_medium.jpg" alt="後置物架＆行李箱組"><p class="StoreNav-focusInfo">後置物架＆行李箱組</p></a><a class="StoreNav-focusLink" href="/tw/store/product/dfefd0d0-234c-40ec-9dcf-e8cc06949fb4"><img src="//images.gogoroapp.com/store/upload/product/20181031_aluminum_fender_basic_medium.jpg" alt="深鈦灰鋁合金土除組"><p class="StoreNav-focusInfo">深鈦灰鋁合金土除組</p></a><a class="StoreNav-focusLink" href="/tw/store/product/4adec701-0ac8-401e-be80-9b272294549b"><img src="//images.gogoroapp.com/store/upload/product/20181031_side_rack_basic_medium.jpg" alt="側面板造型架組 (左＋右)"><p class="StoreNav-focusInfo">側面板造型架組 (左＋右)</p></a></div></div><div class="StoreNav-proCategory"><ul class="StoreNav-categoryLists"><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/accessory/combo">超值套件組合</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/accessory/go1-add-on?group=1">Gogoro 1 系列</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/accessory/go2-add-on?group=2">Gogoro 2 系列</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/accessory/go3-add-on?group=6">Gogoro 3 系列</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/accessory/s-add-on?group=4">S Performance</a></li></ul></div></div>
+                </li>
+                <li class="r">
+                    <a href="#" class="rr">穿搭潮流</a>
+                    <div class="StoreNav-subCategory2"><div class="StoreNav-focusWrap"><h3 class="StoreNav-focusTitle">焦點商品</h3><div class="StoreNav-focusPro"><a class="StoreNav-focusLink" href="/tw/store/product/1c23abc2-4b0d-4448-bc41-5e0a478da572"><img src="//images.gogoroapp.com/store/upload/product/helmet_mochaccino/helmet_mochaccino_basic_medium.jpg" alt="GOGORO 安全帽可口玩色 - 楓糖摩卡"><p class="StoreNav-focusInfo">GOGORO 安全帽可口玩色 - 楓糖摩卡</p></a><a class="StoreNav-focusLink" href="/tw/store/product/a02ccc51-fac4-4fd5-8cc7-7b37346121e6"><img src="//images.gogoroapp.com/store/upload/product/helmet_lemon_sorbet/helmet_lemon_sorbet_basic_medium.jpg" alt="GOGORO 安全帽可口玩色 - 甜漬檸檬"><p class="StoreNav-focusInfo">GOGORO 安全帽可口玩色 - 甜漬檸檬</p></a><a class="StoreNav-focusLink" href="/tw/store/product/6fdd4764-2397-4290-8605-977041ed77c5"><img src="//images.gogoroapp.com/store/upload/product/helmet_lemon_slices/helmet_lemon_slices_basic_medium.jpg" alt="GOGORO 安全帽可口玩色 - 檸檬雪酪"><p class="StoreNav-focusInfo">GOGORO 安全帽可口玩色 - 檸檬雪酪</p></a><a class="StoreNav-focusLink" href="/tw/store/product/6d05fd65-d136-417e-b049-cd1a6f4d6706"><img src="//images.gogoroapp.com/store/upload/product/helmet_berry_wafers/helmet_berry_wafers_basic_medium.jpg" alt="GOGORO 安全帽可口玩色 - 漿果夾心"><p class="StoreNav-focusInfo">GOGORO 安全帽可口玩色 - 漿果夾心</p></a></div></div><div class="StoreNav-proCategory"><ul class="StoreNav-categoryLists"><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/merchandise/helmet">造型帽款</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/merchandise/lifestyle">品味生活</a></li><li><a class="StoreNav-categoryLink" href="/tw/store/product-list-more/merchandise/outfit">穿搭潮流</a></li><li><a class="StoreNav-categoryLink active" href="/tw/store/product-list-more/merchandise/pre-order">預購專區</a></li></ul></div></div>
+                </li>
+                <li class="t">
+                    <a href="#" class="tt">更多服務</a>
+                    <div class="StoreNav-subCategory3"><div class="StoreNav-focusWrap"><h3 class="StoreNav-focusTitle">焦點商品</h3><div class="StoreNav-focusPro"><a class="StoreNav-focusLink" href="/tw/store/product/70042cad-b39f-47ce-beec-edae4ae68d27?group=1"><img src="//images.gogoroapp.com/store/upload/product/sportactivation_medium.jpg" alt="性能提升方案"><p class="StoreNav-focusInfo">性能提升方案</p></a><a class="StoreNav-focusLink" href="/tw/store/product/3ba6589e-4251-42ff-9bb7-b4aaefcdd8ee?group=1"><img src="//images.gogoroapp.com/store/upload/product/20180808_hc_gocharger_basic_medium.jpg" alt="GoCharger®智慧電池標準座(整新)"><p class="StoreNav-focusInfo">GoCharger®智慧電池標準座(整新)</p></a><a class="StoreNav-focusLink" href="/tw/store/product/f35b4e3b-5707-418a-85fc-4e786fd3032d?group=1"><img src="//images.gogoroapp.com/store/upload/product/g2_onboard_charger_02_medium.jpg" alt="GoCharger® Mobile 隨車電池充電器"><p class="StoreNav-focusInfo">GoCharger® Mobile 隨車電池充電器</p></a><a class="StoreNav-focusLink" href="/tw/store/product/13d7a33e-3bbc-47d3-acfd-afe03562f498?group=1"><img src="//images.gogoroapp.com/store/upload/product/20180808_hc_gocharger_basic_medium.jpg" alt="GoCharger® Plus 智慧電池快充座(全新)"><p class="StoreNav-focusInfo">GoCharger® Plus 智慧電池快充座(全新)</p></a></div></div><div class="StoreNav-proCategory"><ul class="StoreNav-categoryLists"><li><a class="StoreNav-categoryLink active" href="/tw/store/product-list-more/value-added/energy">特別推薦</a></li></ul></div></div>
+                </li>
             </ul>
         </div>
 </nav>
@@ -235,5 +397,43 @@
 
 @section Scripts{
     <script>
+        $(document).ready(function () {
+            $(".ee").hover(function () {
+                $(".StoreNav-subCategory1").css("display", "flex");
+            }, function () {
+                $(".StoreNav-subCategory1").css("display", "none");
+                }),
+                $(".StoreNav-subCategory1").hover(function () {
+                    $(".StoreNav-subCategory1").css("display", "flex");
+                }, function () {
+                    $(".StoreNav-subCategory1").css("display", "none");
+                });
+        });
+
+        $(document).ready(function () {
+            $(".rr").hover(function () {
+                $(".StoreNav-subCategory2").css("display", "flex");
+            }, function () {
+                $(".StoreNav-subCategory2").css("display", "none");
+            }),
+                $(".StoreNav-subCategory2").hover(function () {
+                    $(".StoreNav-subCategory2").css("display", "flex");
+                }, function () {
+                    $(".StoreNav-subCategory2").css("display", "none");
+                });
+        });
+
+        $(document).ready(function () {
+            $(".tt").hover(function () {
+                $(".StoreNav-subCategory3").css("display", "flex");
+            }, function () {
+                $(".StoreNav-subCategory3").css("display", "none");
+            }),
+                $(".StoreNav-subCategory3").hover(function () {
+                    $(".StoreNav-subCategory3").css("display", "flex");
+                }, function () {
+                    $(".StoreNav-subCategory3").css("display", "none");
+                });
+        });
     </script>
     }
