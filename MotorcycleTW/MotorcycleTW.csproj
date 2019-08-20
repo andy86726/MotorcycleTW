@@ -423,6 +423,7 @@
     <Content Include="Views\MotoPage\Plus1.cshtml" />
     <Content Include="Views\MotoPage\spec.cshtml" />
     <Content Include="Views\MotoPage\MotopagePartailView.cshtml" />
+    <Content Include="Views\shopcaar\solopagee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
