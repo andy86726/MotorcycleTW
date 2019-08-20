@@ -256,8 +256,10 @@
     <Compile Include="ViewModel\StorePageViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854.mdf" />
-    <Content Include="App_Data\aspnet-MotorcycleTW-20190708043854_log.ldf" />
+    <Content Include="App_Data\MotorcycleTW.mdf" />
+    <Content Include="App_Data\MotorcycleTW_log.ldf">
+      <DependentUpon>MotorcycleTW.mdf</DependentUpon>
+    </Content>
     <Content Include="Assets\css\MotoPage\Index.css" />
     <Content Include="Assets\css\MotoPage\S1.css" />
     <Content Include="Assets\css\Register.css" />
@@ -335,6 +337,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\MotorcycleTW20190820083213 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -399,7 +402,6 @@
     <Content Include="Views\Account\VerifyRegistration.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\MotoPage\Index.cshtml" />
-    <Content Include="Views\MotoPage\S1.cshtml" />
     <Content Include="Views\Shared\_Layout4.1.cshtml" />
     <Content Include="Views\Shared\MotoPage.cshtml" />
     <Content Include="Views\Home\SalesPage.cshtml" />
