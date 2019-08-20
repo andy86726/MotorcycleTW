@@ -165,5 +165,9 @@ namespace MotorcycleTW.Controllers
         {
             return View();
         }
+        public ActionResult polopage()
+        {
+            return View();
+        }
     }
 }
