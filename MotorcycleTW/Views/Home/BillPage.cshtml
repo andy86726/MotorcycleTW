@@ -22,7 +22,7 @@
         </thead>
         <tbody>
             @for (var i = 1; i < ShoppingList.Count(); i++) {
-                @Html.Partial("BillPagePartialView",i)
+                @Html.Partial("BillPagePartialView",ShoppingList[i])
             }
             <tr>
                 <td scope="col"></td>

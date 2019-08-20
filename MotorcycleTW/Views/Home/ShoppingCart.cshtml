@@ -38,7 +38,7 @@
             {
                 for (var i = 1; i < ShoppingList.Count(); i++)
                 {
-                    @Html.Partial("ShoppingCartPartialView", i)
+                    @Html.Partial("ShoppingCartPartialView",ShoppingList[i])
                 }   
             }
                     <tr>

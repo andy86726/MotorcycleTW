@@ -147,7 +147,7 @@ namespace MotorcycleTW.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<ActionResult> BillPage(BillPageViewModel model)
+        public ActionResult BillPage(BillPageViewModel model)
         {
             var order = new Orders() { o_receiver = model.name, o_cellphonenumber = model.cellphonenumber, o_address = model.storecity + model.storename, o_email = model.email };
             db.Orders.Add(order);
