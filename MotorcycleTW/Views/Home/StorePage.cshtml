@@ -1,1 +1,239 @@
 ﻿
+@{
+    ViewBag.Title = "StorePage";
+}
+
+
+
+@section topCSS{
+    <style>
+        .StoreNav {
+            width:1110px;
+            margin:auto;
+        }
+        .store ul {
+            display:flex;
+            margin:0;
+            padding:0;
+        }
+            .store ul li {
+                font-size: 18px;
+                list-style: none;
+                justify-content: space-around;
+                height: 119px;
+                line-height: 119px;
+                width: 20%;
+                text-align:center;
+                
+            }
+                
+                .store ul li a {
+                    color: #000;
+                    display: block;
+                }
+            .store ul .q a {
+                color: #fff;
+                background: #0069d2;
+                text-decoration: none;
+            }
+            .store ul .w a:hover {
+                color: #fff;
+                background: #00D7FF;
+                text-decoration: none;
+            }
+            .store ul .e a:hover {
+                color: #fff;
+                background: #28e1a5;
+                text-decoration: none;
+            }
+            .store ul .r a:hover {
+                color: #fff;
+                background: #00b946;
+                text-decoration: none;
+            }
+            .store ul .t a:hover {
+                color: #fff;
+                background: #c0df16;
+                text-decoration: none;
+            }
+
+        .a {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/banners/2018/20181228_mega_promotion.png);
+            height: 700px;
+            background-position: calc(50% + 15px) 50%;
+            background-size: cover;
+        }
+        .aa {
+            width: 1110px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            height: 180px;
+            line-height: 180px;
+        }
+            .aa a {
+                color: #28e1a5;
+                background-color: initial;
+                border: 2px solid #28e1a5;
+                padding: 18px 30px;
+                font-size: 20px;
+                border-radius:32px;
+            }
+                .aa a:hover {
+                    text-decoration: none;
+                    background: #28e1a5;
+                    color: #fff;
+                    transition: background-color .3s,border-color .3s;
+                }
+        .bb {
+            width: 1110px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            height: 180px;
+            line-height: 180px;
+        }
+
+            .bb a {
+                color: #00b946;
+                background-color: initial;
+                border: 2px solid #00b946;
+                padding: 18px 30px;
+                font-size: 20px;
+                border-radius: 32px;
+            }
+
+                .bb a:hover {
+                    text-decoration: none;
+                    background: #00b946;
+                    color: #fff;
+                    transition: background-color .3s,border-color .3s;
+                }
+
+        .OsHome-photoWrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .OsHome-photo_1 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/2017/accessory_1_Desktop.jpg);
+        }
+        .OsHome-photo_2 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/2017/accessory_2-1_Desktop.jpg);
+        }
+        .OsHome-photo_3 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/2017/accessory_3_Desktop.jpg);
+        }
+        .OsHome-photo {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all .3s ease-in-out;
+        }
+        .OsHome-link {
+            width: 50vw;
+            height: 50vw;
+            max-height: 500px;
+            flex: 1 1 50%;
+            color: #fff;
+            overflow: hidden;
+            text-decoration: none;
+        }
+        .OsHome-link_full {
+            width: 100vw;
+            flex: 1 1 100%;
+        }
+        .OsHome-link:hover{
+            text-decoration:none;
+            color:#fff;
+        }
+
+        .OsHome-photo_4 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/2017/merchadise_1.1_Desktop.jpg);
+        }
+        .OsHome-photo_5 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/banners/2019/desktop_merchadise_mask_02.jpg);
+        }
+        .OsHome-photo_6 {
+            background-image: url(//images.gogoroapp.com/store/upload/store-front/banners/2019/desktop_merchadise_iQkeycardholder_01b.jpg);
+        }
+        .SF {
+            width:1110px;
+            margin:auto;
+        }
+        .StoreFooter ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 60px 0;
+        }
+            .StoreFooter ul li {
+                list-style: none;
+                width: 100%;
+                max-width: 160px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .StoreFooter ul li h2 {
+                font-size:20px;
+            }
+            .StoreFooter ul li p {
+                font-size:12px;
+            }
+            .StoreFooter ul li svg {
+                margin:auto;
+            }
+    </style>
+    }
+
+
+<nav class="StoreNav">
+    <div class="store">
+            <ul>
+                <li class="q"><a href="#"><div class="StoreNav-iconWrap"><span class="StoreNav-icon"></span><span>網路商店</span></div></a></li>
+                <li class="w"><a href="#">成為車主</a></li>
+                <li class="e"><a href="#">改造愛車</a></li>
+                <li class="r"><a href="#">穿搭潮流</a></li>
+                <li class="t"><a href="#">更多服務</a></li>
+            </ul>
+        </div>
+</nav>
+
+<div class="a">
+
+</div>
+<div class="aa">
+    <h2 style=" margin:0; line-height:180px; font-size:44px;">改造愛車</h2>
+    <div class="az"><a href="#"><strong>改造愛車 GO</strong></a></div>
+</div>
+
+<div class="OsHome-photoWrap"><a class="OsHome-link OsHome-link_full" href="/tw/store/product/243f3f09-972a-4d0c-9b22-d8e7598bd6cc"><div class="OsHome-photo OsHome-photo_1"><h2 class="OsHome-photoTitle"><span class="OsHome-photoEN">GOGORO2</span><br><span class="OsHome-photoZH">前置物架</span></h2></div></a><a class="OsHome-link" href="/tw/store/product/be9b406c-55ae-4a5c-b21d-5c40831fb489"><div class="OsHome-photo OsHome-photo_2"><h2 class="OsHome-photoTitle"><span class="OsHome-photoZH">儀表板</span><br><span class="OsHome-photoZH">飾桿</span></h2></div></a><a class="OsHome-link" href="/tw/store/product/fea137c4-a8a8-4117-9951-721a673570be"><div class="OsHome-photo OsHome-photo_3"><h2 class="OsHome-photoTitle"><span class="OsHome-photoEN">GOGORO2</span><br><span class="OsHome-photoZH">後置物架</span></h2></div></a></div>
+
+<div class="bb">
+    <h2 style=" margin:0; line-height:180px; font-size:44px;">穿搭潮流</h2>
+    <div class="az"><a href="#"><strong>穿搭潮流 GO</strong></a></div>
+</div>
+
+<div class="OsHome-photoWrap"><a class="OsHome-link OsHome-link_full" href="/tw/store/product/5167ab59-ac13-4b10-a636-d225c18aa138?c=c7156616-f87e-4e45-9bf2-c8f3c342fbf4"><div class="OsHome-photo OsHome-photo_4"><h2 class="OsHome-photoTitle"><span class="OsHome-photoEN">GOGORO</span><br><span class="OsHome-photoZH">安全帽</span></h2></div></a><a class="OsHome-link" href="/tw/store/product/e45bf7d3-5e72-4499-a0c9-ea6fcbf2cbf6"><div class="OsHome-photo OsHome-photo_5"><h2 class="OsHome-photoTitle"><span class="OsHome-photoZH">抗霾可水洗</span><br><span class="OsHome-photoZH">透氣口罩</span></h2></div></a><a class="OsHome-link" href="/tw/store/product/ac09f0a2-0047-4cb9-812e-7907ddc241e2"><div class="OsHome-photo OsHome-photo_6"><h2 class="OsHome-photoTitle"><span class="OsHome-photoZH">iQ System®</span><br><span class="OsHome-photoZH">智慧鑰匙卡</span><br><span class="OsHome-photoZH">矽膠套</span></h2></div></a></div>
+
+<div class="StoreFooter">
+    <ul class="SF">
+        <li>
+            <div class="StoreFooter-col"><div class="StoreFooter-icon"><svg width="48px" height="48px" viewBox="0 0 48 48"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icon-48/01" fill="#323237" fill-rule="nonzero"><path d="M22.9065,34.11 C22.9065,35.9107699 21.4468427,37.37 19.6465,37.37 C17.8453707,37.37 16.3855,35.9109835 16.3855,34.11 C16.3855,32.3090165 17.8453707,30.85 19.6465,30.85 C21.4468427,30.85 22.9065,32.3092301 22.9065,34.11 Z M21.1065,34.11 C21.1065,33.3034606 20.4528481,32.65 19.6465,32.65 C18.8392475,32.65 18.1855,33.303365 18.1855,34.11 C18.1855,34.916635 18.8392475,35.57 19.6465,35.57 C20.4528481,35.57 21.1065,34.9165394 21.1065,34.11 Z M30.6963543,34.9 L21.9519,34.9 L21.9519,33.1 L30.7594479,33.1 C31.1846544,31.7936885 32.4124646,30.85 33.861,30.85 C35.6613427,30.85 37.121,32.3092301 37.121,34.11 C37.121,35.9107699 35.6613427,37.37 33.861,37.37 C32.3323411,37.37 31.0495008,36.3190268 30.6963543,34.9 Z M15.9007697,16.3 L18.6083737,27.133 L35.8586941,27.133 L37.9287378,16.3 L15.9007697,16.3 Z M15.450877,14.5 L40.1052622,14.5 L37.3473059,28.933 L19.0582663,28.933 L19.7605405,31.7427669 L18.0142595,32.1792331 L12.9456606,11.9 L8.0004,11.9 L8.0004,10.1 L14.3511394,10.1 L15.450877,14.5 Z M35.321,34.11 C35.321,33.3034606 34.6673481,32.65 33.861,32.65 C33.0537475,32.65 32.4,33.303365 32.4,34.11 C32.4,34.916635 33.0537475,35.57 33.861,35.57 C34.6673481,35.57 35.321,34.9165394 35.321,34.11 Z" id="icon"></path></g></g></svg></div><h2 class="StoreFooter-title">全通路零售</h2><p class="StoreFooter-info">Gogoro 整合線上及線下通路──網路購物、門市安裝，消費體驗一氣呵成。</p><a class="StoreFooter-link" target="_blank" rel="noopener noreferrer" href="/tw/service/omnichannel-retailing/">了解更多<svg class="StoreFooter-linkSvg" width="6px" height="11px" viewBox="0 0 6 11"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Link" transform="translate(-52.000000, -6.000000)" fill="#0069D2" fill-rule="nonzero"><g id="icon"><polygon transform="translate(55.000000, 11.500000) rotate(-360.000000) translate(-55.000000, -11.500000) " points="56.2857143 11.5 52 7.33333333 52.8571429 6.5 58 11.5 52.8571429 16.5 52 15.6666667"></polygon></g></g></g></svg></a></div>
+        </li>
+        <li><div class="StoreFooter-col"><div class="StoreFooter-icon"><svg width="48px" height="48px" viewBox="0 0 48 48"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icon-48/02" fill="#323237" fill-rule="nonzero"><path d="M30.832,16.9007 L30.832,26.1497 L29.032,26.1497 L29.032,14.7997 L6.9,14.7997 L6.9,30.9997 L7.975,30.9997 L7.975,32.7997 L5.1,32.7997 L5.1,12.9997 L30.832,12.9997 L30.832,15.1007 L36.173,15.1007 C37.1846803,15.1007 38.121843,15.6260368 38.6480489,16.4885509 L42.919,23.4805694 L42.919,31.8997 L41.119,31.8997 L41.119,23.9868306 L37.1116955,17.4264303 C36.9122705,17.0995492 36.557538,16.9007 36.173,16.9007 L30.832,16.9007 Z M18.4822754,32.867 C18.2508958,35.0251716 16.4239609,36.706 14.204,36.706 C11.8271393,36.706 9.9,34.7792518 9.9,32.403 C9.9,30.0260527 11.8268347,28.1 14.204,28.1 C16.1146411,28.1 17.733832,29.3442936 18.295692,31.067 L30.711702,31.067 C31.2740858,29.3445064 32.8936915,28.1 34.804,28.1 C37.1809473,28.1 39.107,30.0268347 39.107,32.404 C39.107,34.7803608 37.1807518,36.707 34.804,36.707 C32.5836009,36.707 30.7556644,35.025567 30.5246306,32.867 L18.4822754,32.867 Z M16.707,32.403 C16.707,31.0200563 15.5869437,29.9 14.204,29.9 C12.8207837,29.9 11.7,31.0203288 11.7,32.403 C11.7,33.7850575 12.8211701,34.906 14.204,34.906 C15.5865575,34.906 16.707,33.78533 16.707,32.403 Z M37.307,32.404 C37.307,31.0207837 36.1866712,29.9 34.804,29.9 C33.4210563,29.9 32.3,31.0210563 32.3,32.404 C32.3,33.7860575 33.4211701,34.907 34.804,34.907 C36.1865575,34.907 37.307,33.78633 37.307,32.404 Z" id="icon"></path></g></g></svg></div><h2 class="StoreFooter-title">宅配到府</h2><p class="StoreFooter-info">商品享滿 $590 免運費，全省皆可外送。可安心使用信用卡即時線上刷卡，方便又快速。</p></div></li>
+        <li><div class="StoreFooter-col"><div class="StoreFooter-icon"><svg width="48px" height="48px" viewBox="0 0 48 48"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icon-48/03" fill="#343339" fill-rule="nonzero"><path d="M34.8084774,29.2646742 C35.4656109,29.4786751 35.8997391,29.4409241 36.1086544,29.2270867 C36.3570358,28.9732937 36.4149449,28.382537 36.2496068,27.830567 L31.2273394,23.2443103 C27.9684953,22.8801363 25.8250459,20.6026455 25.1939083,17.6645 L24.3148899,17.6645 C23.6202974,18.6256345 22.6215171,19.3329849 21.4630659,19.6786846 C20.3392779,20.0135005 19.1454486,19.9862648 18.2463398,19.5918971 C17.2251446,19.1409962 16.7337999,18.2559725 17.0208177,17.2847371 C17.3619822,16.1308218 18.0920621,14.9012265 19.0800377,13.8506179 C18.4488932,14.0523972 17.8048106,14.270228 17.1568238,14.4994916 C16.2619938,14.8160907 15.4506134,15.1235772 15.1381262,15.2498757 L14.8997163,15.3435368 L8.33981235,13.5534339 L5.79922233,23.7451968 L11.9185092,26.5202015 C12.1951908,26.1864111 12.4984232,25.8889868 12.7813224,25.6705143 C13.2973021,25.2754213 14.0771727,25.2709069 14.7888099,25.6068525 C15.1753101,25.7904207 15.4995826,26.0519088 15.7402332,26.3697423 C15.9603597,26.210394 16.1838783,26.0911027 16.4282556,26.0035849 C17.0917276,25.7668272 18.0173724,26.00104 18.6502821,26.5301327 C18.9762662,26.8030695 19.2121918,27.1413076 19.3479614,27.5238164 C20.1864435,27.4304208 20.9147857,27.6137229 21.4341747,28.0744123 C21.772688,28.3764392 21.9967501,28.7735671 22.107203,29.2486191 C23.0213774,29.4018336 23.7074061,30.0032563 23.8717873,30.872629 C24.0458467,31.803804 24.0966718,32.6911917 24.0460077,33.524672 C25.0578341,34.3515385 26.1482429,35.1038331 26.6149074,35.2257949 C26.935538,35.3097184 27.2138692,35.2779728 27.4342575,35.1448354 C27.6088959,35.0390544 27.7564382,34.8622439 27.8664337,34.617056 L23.8065609,30.5809372 L24.8878782,29.4910153 L29.1638901,33.7424402 C29.772143,33.9459013 30.2655407,33.8405579 30.5330991,33.5646858 C30.705673,33.3864622 30.7576447,33.1529527 30.6742928,32.8779192 L25.9534934,28.4620645 L27.0058055,27.3438036 L31.7343264,31.7669497 C32.4615405,31.9958825 32.9613653,31.82673 33.3178414,31.4432669 C33.6179003,31.1219057 33.7711361,30.6483104 33.7393837,30.3676614 L28.6382739,25.8037322 L29.6620969,24.6594595 L34.8084774,29.2646742 Z M22.3619524,31.1541151 C22.3159784,30.9102107 22.0684389,30.7445 21.6333,30.7445 C21.5861184,30.7445 21.5386917,30.7467495 21.4867591,30.7516077 C20.9914858,30.7948195 20.5900774,31.1969796 20.5329448,31.9622883 C20.4117692,33.6047574 20.4985146,34.3110662 20.9650353,34.8322308 C21.0937953,34.9762386 21.3149109,35.0665 21.5743,35.0665 C21.9809209,35.0665 22.2999362,34.8667095 22.3650151,34.5605395 C22.5802353,33.531963 22.5799503,32.3199327 22.3619524,31.1541151 Z M18.9761204,33.7529361 C18.9260668,33.2469247 18.9403821,32.6751486 19.000701,31.8490957 C19.0904192,30.6531528 19.6956174,29.8063594 20.5563125,29.4279653 C20.5181343,29.3409684 20.4690963,29.2726271 20.4102312,29.2204144 C20.2295956,29.0590796 19.901061,29.0049764 19.4999137,29.0521696 C19.2834173,29.0772832 19.0504787,29.3119581 18.4975707,30.0673407 C18.3652799,30.2504217 18.2527906,30.4017088 18.1411435,30.545255 C17.6427325,31.1867907 17.4771912,32.056045 17.6660361,33.1595816 C17.7242372,33.4972919 17.8248046,33.6762356 17.9581299,33.7559056 C18.1365746,33.8618332 18.4674212,33.8718817 18.9761204,33.7529361 Z M17.6642191,27.7067846 C17.4224803,27.5042779 17.0429761,27.4140116 16.9464225,27.448029 C16.8507893,27.4824025 16.75684,27.5324373 16.656998,27.6029767 C16.3683321,27.806922 16.1233786,28.075978 15.3585075,29.0012714 C14.9347063,29.5133982 14.7899898,30.2517479 14.9052006,31.5227289 C14.9342212,31.8384162 15.0190547,32.0190988 15.1523198,32.1180225 C15.3151628,32.2401471 15.6179953,32.2965309 16.0560618,32.2651353 C16.0646981,31.2375245 16.355522,30.340375 16.9287665,29.6033464 C17.0214751,29.4842638 17.0969822,29.3826908 17.2564344,29.1647245 C17.5742352,28.7293124 17.7539419,28.4965578 17.9477063,28.2935673 C17.9416249,28.0375928 17.8384812,27.853053 17.6642191,27.7067846 Z M14.1323408,26.9948808 C13.9240731,26.8968384 13.7201121,26.8857635 13.7159277,26.888987 C13.0551411,27.3966805 12.3633,28.3825074 12.3633,29.0485 C12.3633,29.2618533 12.4753281,29.4626613 12.667872,29.6424974 C12.8542375,29.8149336 13.1030821,29.9508856 13.3704524,30.0323465 C13.4624005,29.2176682 13.7207411,28.5706247 14.1736382,28.0244942 C14.3376134,27.8244886 14.485445,27.6467117 14.6216069,27.485955 C14.5353286,27.2622138 14.3473281,27.0964029 14.1323408,26.9948808 Z M25.1513545,12.5672091 C21.9120073,12.6777643 19.2235906,15.2553854 18.4939319,17.719756 C18.4391038,17.9059235 18.5606066,18.0515381 18.8658409,18.185918 C20.1554582,18.7539269 22.2667197,18.1247356 23.2445535,16.5012521 L23.4682048,16.1285 L26.5150498,16.1285 L26.5712063,16.5646494 L26.6011731,16.7973915 C26.9420153,19.4337717 28.7449668,21.5132777 31.6132338,21.7379411 L31.8771558,21.7580221 L37.0415841,26.4743459 L42.491279,23.7673196 L39.9830655,13.6658604 L32.9828452,16.3942206 L32.7575594,16.2136197 L32.6359207,16.1161067 C32.5064618,16.0119768 32.2260592,15.7985179 31.8673384,15.541749 C31.2745676,15.1174493 30.6336288,14.6940144 29.9685026,14.3000822 C28.2851741,13.3031028 26.7435906,12.6686423 25.5114758,12.5549185 L25.1513545,12.5672091 Z M41.0524958,11.6000233 L44.279332,24.5946965 L37.8187964,27.8034525 C37.9896964,28.7374698 37.806387,29.687438 37.2064582,30.3014115 C36.7393169,30.7782273 36.0760425,31.0144295 35.2299274,30.9244552 C35.1246314,31.488628 34.8447659,32.0556941 34.4406635,32.4897613 C33.8911264,33.0814547 33.1483537,33.4453306 32.2303901,33.4070129 C32.1708453,33.8629134 31.9683848,34.2871348 31.6354299,34.6323875 C31.0377299,35.2494027 30.1556431,35.4918982 29.225538,35.3368069 C28.9922415,35.8167763 28.6549409,36.199679 28.2284195,36.4581179 C27.8489863,36.6880393 27.4098691,36.8055 26.9473,36.8055 C26.7065116,36.8055 26.4636067,36.7739897 26.2270145,36.7112892 C25.6051182,36.5489531 24.7393891,36.0047319 23.7508459,35.248563 C23.4081333,36.0662822 22.5571819,36.6015 21.5743,36.6015 C20.8882676,36.6015 20.2488586,36.3333826 19.821375,35.8566733 C19.6505731,35.6665758 19.5076189,35.4596937 19.3902143,35.2356689 C19.026972,35.3237396 18.6878675,35.3715 18.3613,35.3715 C17.9167884,35.3715 17.5165593,35.2800464 17.1719721,35.0757971 C16.7181934,34.8048516 16.4066464,34.3680541 16.2382283,33.7922635 C16.097607,33.8043944 15.9619024,33.8105 15.8313,33.8105 C15.1856619,33.8105 14.6531556,33.6618793 14.2333081,33.3492541 C13.7290101,32.9730108 13.4423369,32.3934748 13.3764297,31.6635991 C12.7189569,31.4978425 12.0951697,31.203595 11.6256486,30.7684291 C11.1094769,30.2906298 10.8273,29.6927696 10.8273,29.0485 C10.8273,28.6507295 10.9228747,28.2437468 11.0985749,27.8333912 L3.99937171,24.6159016 L7.22877552,11.6585234 L14.8122645,13.7285544 C15.1845578,13.58367 15.6463593,13.409447 16.1816873,13.2153375 C17.089161,12.8862884 18.0236014,12.5676732 18.9525921,12.2769461 C21.5186432,11.4739019 23.6530721,11.0005 25.1253,11.0005 C26.6154792,11.0005 28.3655531,11.627486 30.2683637,12.6931287 C31.3966762,13.3250245 32.4280614,14.0236569 33.244804,14.6450335 L41.0524958,11.6000233 Z" id="icon"></path></g></g></svg></div><h2 class="StoreFooter-title">保固權益</h2><p class="StoreFooter-info">Gogoro 推出售後服務八大保障，提供優質的服務品質與保固權益。</p><a class="StoreFooter-link" target="_blank" rel="noopener noreferrer" href="//support.gogoro.com/tw/warranty/115010019348">了解更多<svg class="StoreFooter-linkSvg" width="6px" height="11px" viewBox="0 0 6 11"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Link" transform="translate(-52.000000, -6.000000)" fill="#0069D2" fill-rule="nonzero"><g id="icon"><polygon transform="translate(55.000000, 11.500000) rotate(-360.000000) translate(-55.000000, -11.500000) " points="56.2857143 11.5 52 7.33333333 52.8571429 6.5 58 11.5 52.8571429 16.5 52 15.6666667"></polygon></g></g></g></svg></a></div></li>
+        <li><div class="StoreFooter-col"><div class="StoreFooter-icon"><svg width="48px" height="48px" viewBox="0 0 48 48"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Icon-48/04" fill="#323237" fill-rule="nonzero"><path d="M13.5811745,35.0912136 C7.63285897,29.1801016 7.6025779,19.5313016 13.5131251,13.5824847 C19.424403,7.63293922 29.0722043,7.60200307 35.0230202,13.513487 C39.9966167,18.4567886 40.9251087,26.2584491 37.2951044,32.2120169 L38.6231072,38.752225 L31.961613,37.4426905 C26.0096271,40.921177 18.4981011,39.9768022 13.5811745,35.0912136 Z M35.3867353,31.8592167 L35.5849254,31.5514976 C38.9832335,26.2751278 38.2135388,19.2224152 33.7542886,14.7903269 C28.5088285,9.5795367 20.0006306,9.60681866 14.7900175,14.8511634 C9.58007306,20.0948413 9.60677768,28.6040382 14.8499295,33.8143969 C19.261747,38.1980958 26.0334303,38.9836536 31.3237092,35.726439 L31.6236055,35.5417935 L36.3220351,36.4654235 L35.3867353,31.8592167 Z" id="icon"></path></g></g></svg></div><h2 class="StoreFooter-title">支援服務</h2><p class="StoreFooter-info">提供客服信箱、客服專線、客服機器人等多元管道，即時回應各種需求。</p><a class="StoreFooter-link" target="_blank" rel="noopener noreferrer" href="//support.gogoro.com/tw/">了解更多<svg class="StoreFooter-linkSvg" width="6px" height="11px" viewBox="0 0 6 11"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Link" transform="translate(-52.000000, -6.000000)" fill="#0069D2" fill-rule="nonzero"><g id="icon"><polygon transform="translate(55.000000, 11.500000) rotate(-360.000000) translate(-55.000000, -11.500000) " points="56.2857143 11.5 52 7.33333333 52.8571429 6.5 58 11.5 52.8571429 16.5 52 15.6666667"></polygon></g></g></g></svg></a></div></li>
+    </ul>
+</div>
+
+@section Scripts{
+    <script>
+    </script>
+    }

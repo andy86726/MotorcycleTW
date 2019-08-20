@@ -11,7 +11,6 @@
           crossorigin="anonymous"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     <link href="~/Assets/css/MotoPage/Index.css" rel="stylesheet" />
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
     @RenderSection("topCSS", required: false)
@@ -26,7 +25,7 @@
     <header>
         <div style="position:relative;">
             <div class="container">
-                <ul class="d-flex justify-content-around mb-3" style="list-style:none;height: 60px;">
+                <ul class="d-flex justify-content-around" style="margin:0; padding:0; list-style:none;height: 60px;">
                     <li>
                         <h4>@Html.ActionLink("Angoro", "Index", "Home", null, new { @class = "h4", style = "text-decoration:none" })</h4>
                     </li>
@@ -178,7 +177,7 @@
     </header>
     <div>
         <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
+        <main role="main" class="">
             @RenderBody()
         </main>
     </div>
